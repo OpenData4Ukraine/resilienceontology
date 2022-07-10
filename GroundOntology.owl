@@ -1,0 +1,4280 @@
+Prefix: : <http://imash.leeds.ac.uk/ontologies/atu/GroundOntology.owl#>
+Prefix: owl: <http://www.w3.org/2002/07/owl#>
+Prefix: rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+Prefix: xml: <http://www.w3.org/XML/1998/namespace>
+Prefix: xsd: <http://www.w3.org/2001/XMLSchema#>
+Prefix: rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+
+
+Ontology: <http://imash.leeds.ac.uk/ontologies/atu/GroundOntology.owl>
+
+Annotations:
+	rdfs:Purpose "To describe properties and processes of the ground, as well as their relationships.",
+	rdfs:Scope "The ontology describes properties and processes of the ground, as well as how they affect each other.",
+	rdfs:KnowledgeSource "The main knowledge sources of this ontology include:
+
+- knowledge of domain experts;
+
+- Du, Heshan and Cohn, Anthony (2016) An Ontology of Soil Properties and Processes. University of Leeds. [Dataset] https://doi.org/10.5518/54. 
+
+- British Standards produced by the British Standards Institution, such as BS 5930 and BS 1377. ",
+	owl:versionInfo "Version 1",
+	rdfs:License "Creative Commons Attribution 4.0 International (CC BY 4.0)",
+	rdfs:comment "Although much care has been taken to provide accurate information, neither the ontology creator, the domain experts, nor the universities involved, the British Geological Survey, nor anyone else associated with this ontology, shall be liable for any loss, damage, or liability directly or indirectly caused or alleged to be caused by this ontology. The material contained herein is not intended to provide specific advice or recommendations for any specific situation.",
+	rdfs:DomainExperts "Prof. Barry Clarke, University of Leeds;
+David Entwisle, British Geological Survey;
+Dr. Ross Stirling, Newcastle University; 
+Dr. Giulio Curioni, University of Birmingham;
+Dr. David Gunn, British Geological Survey; 
+Dr. Helen Reeves, British Geological Survey",
+	rdfs:OntologyCreator "Dr. Heshan Du, University of Leeds, University of Nottingham Ningbo China",
+	rdfs:Date "May 2017",
+	rdfs:Acknowledgments "This research is supported by EPSRC under grant no.EP/K021699/1 (ASSESSING THE UNDERWORLD - AN INTEGRATED PERFORMANCE MODEL OF CITY INFRASTRUCTURES) which we gratefully acknowledge."
+	
+AnnotationProperty: rdfs:comment
+AnnotationProperty: rdfs:Scope
+AnnotationProperty: rdfs:Purpose
+AnnotationProperty: rdfs:KnowledgeSource
+AnnotationProperty: rdfs:OntologyCreator
+AnnotationProperty: rdfs:Date
+AnnotationProperty: rdfs:License
+AnnotationProperty: rdfs:DomainExperts
+AnnotationProperty: rdfs:Acknowledgments
+
+AnnotationProperty: owl:versionInfo
+    
+Datatype: xsd:string
+
+    
+ObjectProperty: increasedBy
+
+    Characteristics: 
+        Transitive
+    
+    SubPropertyOf: 
+        influencedBy
+    
+    InverseOf: 
+        increases
+    
+    
+ObjectProperty: influencedBy
+
+    Characteristics: 
+        Transitive
+    
+    InverseOf: 
+        hasImpactOn
+    
+    
+ObjectProperty: increases
+
+    Characteristics: 
+        Transitive
+    
+    SubPropertyOf: 
+        hasImpactOn
+    
+    InverseOf: 
+        increasedBy
+    
+    
+ObjectProperty: hasImpactOn
+
+    Characteristics: 
+        Transitive
+    
+    InverseOf: 
+        influencedBy
+    
+    
+ObjectProperty: decreasedBy
+
+    Characteristics: 
+        Transitive
+    
+    SubPropertyOf: 
+        influencedBy
+    
+    InverseOf: 
+        decreases
+    
+    
+ObjectProperty: decreases
+
+    Characteristics: 
+        Transitive
+    
+    SubPropertyOf: 
+        hasImpactOn
+    
+    InverseOf: 
+        decreasedBy
+    
+    
+Class: GroundCrackingIntensity
+
+    Annotations: 
+        rdfs:comment "The number of fissures, fractures, joints or faults in a volume of ground.
+
+Knowledge Source: Expert opinion
+
+"^^xsd:string
+    
+    SubClassOf: 
+        hasImpactOn some GroundBulkDensity,
+        hasImpactOn some GroundWaterEvapotranspiration,
+        hasImpactOn some GroundSaturatedWaterFlow,
+        influencedBy some GroundWaterContent,
+        increasedBy some GroundCracking,
+        hasImpactOn some GroundAirFlow,
+        hasImpactOn some GroundSwelling,
+        influencedBy some GroundShrinkageLimit,
+        hasImpactOn some GroundConsolidation,
+        hasImpactOn some GroundWaterInfiltration,
+        influencedBy some GroundWaterRetentionCurve,
+        hasImpactOn some GroundShrinking,
+        influencedBy some GroundShrinkSwellPotential,
+        increasedBy some GroundDegradation,
+        decreasedBy some GroundCompaction,
+        hasImpactOn some GroundCracking,
+        hasImpactOn some GroundDielectricPermittivity,
+        hasImpactOn some GroundChemicalTransport,
+        influencedBy some GroundWaterPressure,
+        increasedBy some GroundShrinking,
+        influencedBy some GroundCohesion,
+        increasedBy some GroundWaterEvapotranspiration,
+        hasImpactOn some GroundMineralization,
+        hasImpactOn some GroundMicrobialActivity,
+        hasImpactOn some GroundParticleMovement,
+        hasImpactOn some GroundElectricalConductivity,
+        increasedBy some GroundSwelling,
+        increasedBy some GroundErosion,
+        decreasedBy some GroundConsolidation,
+        hasImpactOn some GroundDeformation,
+        hasImpactOn some GroundUnsaturatedWaterFlow,
+        increasedBy some GroundParticleMovement,
+        hasImpactOn some GroundSoluteTransport,
+        hasImpactOn some GroundS-WaveVelocity,
+        hasImpactOn some GroundWaterFlow,
+        hasImpactOn some GroundP-WaveVelocity,
+        increasedBy some GroundFreezing,
+        hasImpactOn some GroundDegradation,
+        hasImpactOn some GroundErosion,
+        hasImpactOn some GroundPorosity,
+        influencedBy some GroundDeformation,
+        hasImpactOn some GroundVoidRatio,
+        hasImpactOn some GroundDryDensity,
+        GroundDescriptionProperty
+    
+    
+Class: GroundInterfaceFriction
+
+    Annotations: 
+        rdfs:comment "The angle of friction at the interface between the ground and a dissimilar material such as concrete, geotextile or the base of a road.
+
+Usual Units: °
+
+Knowledge Source: www.dot.ca.gov/hq/.../Subgrade_Enhancement_Geosynthetic_Guide_09212013.pdf
+
+"^^xsd:string
+    
+    SubClassOf: 
+        GroundMechanicalProperty,
+        influencedBy some GroundOrganicMatterContent,
+        influencedBy some GroundPorosity,
+        increasedBy some GroundSubsidence,
+        influencedBy some GroundDryDensity,
+        increasedBy some GroundConsolidation,
+        influencedBy some GroundChemicalChange,
+        influencedBy some GroundFabric,
+        decreasedBy some GroundSwelling,
+        influencedBy some GroundGravelContent,
+        influencedBy some GroundSiltContent,
+        influencedBy some GroundVoidRatio,
+        increasedBy some GroundShrinking,
+        increasedBy some GroundCompaction,
+        influencedBy some GroundParticleSizeDistribution,
+        influencedBy some GroundSandContent,
+        influencedBy some GroundParticleMovement,
+        decreasedBy some GroundThawing,
+        decreasedBy some GroundFreezing,
+        influencedBy some GroundPrincipalType,
+        decreasedBy some GroundDegradation,
+        influencedBy some GroundBulkDensity,
+        influencedBy some GroundMaximumDryDensity,
+        influencedBy some GroundMineralogy,
+        influencedBy some GroundClayContent,
+        influencedBy some GroundVeryLargeParticles,
+        decreasedBy some GroundCracking
+    
+    
+Class: GroundHydraulicConductivity
+
+    Annotations: 
+        rdfs:comment "A measure of how easily water can pass through the ground.
+
+Usual Units: m/s
+
+Knowledge Source: albertawater.com/how-water-flows-underground-recharge-permeability-and-porosity
+
+"^^xsd:string
+    
+    SubClassOf: 
+        influencedBy some GroundSiltContent,
+        influencedBy some GroundCavity,
+        decreasedBy some GroundThawing,
+        hasImpactOn some GroundWaterEvapotranspiration,
+        hasImpactOn some GroundSaturatedWaterFlow,
+        influencedBy some GroundAirContent,
+        hasImpactOn some GroundImmobilization,
+        influencedBy some GroundParticleSizeDistribution,
+        influencedBy some GroundBulkDensity,
+        influencedBy some GroundPlasticity,
+        GroundMechanicalProperty,
+        hasImpactOn some GroundWaterContent,
+        influencedBy some GroundWaterRetentionCurve,
+        influencedBy some GroundOptimumWaterContent,
+        influencedBy some GroundDegreeOfSaturation,
+        influencedBy some GroundChemicalChange,
+        hasImpactOn some GroundMicrobialActivity,
+        influencedBy some GroundMaximumDryDensity,
+        influencedBy some GroundGravelContent,
+        influencedBy some GroundFabric,
+        influencedBy some GroundParticleMovement,
+        decreasedBy some GroundSubsidence,
+        influencedBy some GroundSandContent,
+        influencedBy some GroundWaterContent,
+        hasImpactOn some GroundHeatCapacity,
+        decreasedBy some GroundCompaction,
+        influencedBy some GroundVoidRatio,
+        influencedBy some GroundPrincipalType,
+        hasImpactOn some GroundDeformation,
+        hasImpactOn some GroundChemicalTransport,
+        influencedBy some GroundWaterPressure,
+        decreasedBy some GroundSurfaceSealFormation,
+        hasImpactOn some GroundDegradation,
+        influencedBy some GroundVeryLargeParticles,
+        influencedBy some GroundClayContent,
+        hasImpactOn some GroundChemicalReaction,
+        decreasedBy some GroundFreezing,
+        influencedBy some GroundPorosity,
+        increasedBy some GroundSwelling,
+        increasedBy some GroundWaterInfiltration,
+        decreasedBy some GroundConsolidation,
+        hasImpactOn some GroundAirFlow,
+        hasImpactOn some GroundSoluteDiffusion,
+        hasImpactOn some GroundWaterRetentionCurve,
+        decreasedBy some GroundShrinking,
+        hasImpactOn some GroundMineralization,
+        hasImpactOn some GroundChemicalChange,
+        hasImpactOn some GroundWaterFlow,
+        hasImpactOn some GroundConsolidation,
+        influencedBy some GroundOrganicMatterContent,
+        hasImpactOn some GroundWaterInfiltration,
+        hasImpactOn some GroundUnsaturatedWaterFlow,
+        hasImpactOn some GroundSoluteTransport,
+        increasedBy some GroundCracking
+    
+    
+Class: GroundCohesion
+
+    Annotations: 
+        rdfs:comment "The component of strength of the ground that is independent of interparticle friction in a drained condition.
+
+Usual Units: kPa
+
+Knowledge Source: Wikipedia and expert opinion
+
+"^^xsd:string
+    
+    SubClassOf: 
+        influencedBy some GroundOrganicMatterContent,
+        influencedBy some GroundAirContent,
+        decreasedBy some GroundFreezing,
+        influencedBy some GroundShrinking,
+        decreasedBy some GroundWaterInfiltration,
+        hasImpactOn some GroundParticleMovement,
+        hasImpactOn some GroundCrackingIntensity,
+        influencedBy some GroundSoluteTransport,
+        influencedBy some GroundParticleSizeDistribution,
+        decreasedBy some GroundCracking,
+        decreasedBy some GroundThawing,
+        influencedBy some GroundWaterContent,
+        hasImpactOn some GroundConsolidation,
+        GroundMechanicalProperty,
+        hasImpactOn some GroundErosion,
+        influencedBy some GroundChemicalChange,
+        influencedBy some GroundWaterFlow,
+        influencedBy some GroundSubsidence,
+        influencedBy some GroundFabric,
+        influencedBy some GroundParticleMovement,
+        influencedBy some GroundDegreeOfSaturation,
+        influencedBy some GroundBulkDensity,
+        influencedBy some GroundDeformation,
+        influencedBy some GroundSoluteDiffusion,
+        hasImpactOn some GroundCracking,
+        influencedBy some GroundWaterPressure,
+        influencedBy some GroundUnsaturatedWaterFlow,
+        increasedBy some GroundWaterEvapotranspiration
+    
+    
+Class: GroundDryDensity
+
+    Annotations: 
+        rdfs:comment "The mass of dry soil after drying in an oven (generally at 105C ±5C), contained in a unit volume of undried material.
+
+Usual Units: Mg/m3
+
+Knowledge Source: BS1377-2 (1990)
+
+"^^xsd:string
+    
+    SubClassOf: 
+        hasImpactOn some GroundDeformation,
+        hasImpactOn some GroundWaterFlow,
+        hasImpactOn some GroundErosion,
+        influencedBy some GroundGravelContent,
+        influencedBy some GroundWaterContent,
+        influencedBy some GroundBulkDensity,
+        hasImpactOn some GroundInterfaceFriction,
+        decreasedBy some GroundChemicalReaction,
+        influencedBy some GroundVeryLargeParticles,
+        hasImpactOn some GroundShrinking,
+        hasImpactOn some GroundDielectricPermittivity,
+        influencedBy some GroundCrackingIntensity,
+        hasImpactOn some GroundHeatTransfer,
+        increasedBy some GroundShrinking,
+        hasImpactOn some GroundSubsidence,
+        hasImpactOn some GroundSoluteTransport,
+        influencedBy some GroundParticleDensity,
+        increasedBy some GroundSubsidence,
+        hasImpactOn some GroundUndrainedShearStrength,
+        hasImpactOn some GroundHeatAbsorption,
+        decreasedBy some GroundChemicalChange,
+        hasImpactOn some GroundElectricalConductivity,
+        influencedBy some GroundVoidRatio,
+        hasImpactOn some GroundCompaction,
+        influencedBy some GroundDeformation,
+        hasImpactOn some GroundMagneticPermeability,
+        influencedBy some GroundPorosity,
+        hasImpactOn some GroundS-WaveVelocity,
+        influencedBy some GroundOrganicMatterContent,
+        influencedBy some GroundPrincipalType,
+        hasImpactOn some GroundConsolidation,
+        hasImpactOn some GroundBulkDensity,
+        increasedBy some GroundCompaction,
+        influencedBy some GroundClayContent,
+        influencedBy some GroundSandContent,
+        hasImpactOn some GroundPorosity,
+        hasImpactOn some GroundThermalConductivity,
+        hasImpactOn some GroundP-WaveVelocity,
+        hasImpactOn some GroundWaterInfiltration,
+        hasImpactOn some GroundHeatCapacity,
+        hasImpactOn some GroundDegradation,
+        influencedBy some GroundMaximumDryDensity,
+        hasImpactOn some GroundStiffness,
+        hasImpactOn some GroundSwelling,
+        hasImpactOn some GroundSaturatedWaterFlow,
+        influencedBy some GroundCavity,
+        hasImpactOn some GroundFreezing,
+        influencedBy some GroundParticleMovement,
+        decreasedBy some GroundSwelling,
+        hasImpactOn some GroundUnsaturatedWaterFlow,
+        GroundStateVariable,
+        hasImpactOn some GroundChemicalTransport,
+        hasImpactOn some GroundParticleMovement,
+        decreasedBy some GroundFreezing,
+        hasImpactOn some GroundThawing,
+        influencedBy some GroundParticleSizeDistribution,
+        hasImpactOn some GroundWaterEvapotranspiration,
+        hasImpactOn some GroundPeakAngle,
+        influencedBy some GroundSiltContent,
+        increasedBy some GroundConsolidation,
+        hasImpactOn some GroundVoidRatio,
+        influencedBy some GroundAirContent
+    
+    
+Class: GroundErosion
+
+    Annotations: 
+        rdfs:comment "The removal of material from the surface or from underground (such as in karstic situations) to another place by various processes (including wind and water) either as particles or in solution.
+
+Knowledge Source: Encyclopaedia Britannica (https://www.britannica.com/science/erosion-geology) and expert knowledge
+
+"^^xsd:string
+    
+    SubClassOf: 
+        decreases some GroundGravelContent,
+        influencedBy some GroundVoidRatio,
+        influencedBy some GroundGravelContent,
+        influencedBy some GroundPeakAngle,
+        influencedBy some GroundParticleSizeDistribution,
+        influencedBy some GroundSandContent,
+        influencedBy some GroundSiltContent,
+        decreases some GroundSiltContent,
+        influencedBy some GroundCohesion,
+        influencedBy some GroundUndrainedShearStrength,
+        increases some GroundCavity,
+        influencedBy some GroundPrincipalType,
+        decreases some GroundBulkDensity,
+        influencedBy some GroundClayContent,
+        influencedBy some GroundOrganicMatterContent,
+        hasImpactOn some GroundFabric,
+        decreases some GroundClayContent,
+        decreases some GroundVeryLargeParticles,
+        GroundMechanicalProcess,
+        influencedBy some GroundBulkDensity,
+        decreases some GroundSandContent,
+        influencedBy some GroundDryDensity,
+        increases some GroundCrackingIntensity,
+        influencedBy some GroundCrackingIntensity,
+        influencedBy some GroundPorosity,
+        influencedBy some GroundFabric
+    
+    
+Class: GroundMagneticPermeability
+
+    Annotations: 
+        rdfs:comment "The measure of the ability of the ground to support the formation of a magnetic field affects Ground Probing Radar. 
+
+Usual Units: henries per m (H/m)
+
+Knowledge Source: https://info.ngwa.org/GWOL/pdf/900152827.PDF
+
+"^^xsd:string
+    
+    SubClassOf: 
+        influencedBy some GroundParticleMovement,
+        influencedBy some GroundDegreeOfSaturation,
+        influencedBy some GroundUnsaturatedWaterFlow,
+        influencedBy some GroundVoidRatio,
+        influencedBy some GroundSiltContent,
+        influencedBy some GroundPrincipalType,
+        influencedBy some GroundDryDensity,
+        influencedBy some GroundVeryLargeParticles,
+        influencedBy some GroundTemperature,
+        influencedBy some GroundMineralogy,
+        influencedBy some GroundGravelContent,
+        influencedBy some GroundFabric,
+        influencedBy some GroundWaterTableDepth,
+        influencedBy some GroundBulkDensity,
+        influencedBy some GroundParticleSpecificSurfaceArea,
+        influencedBy some GroundWaterContent,
+        decreasedBy some GroundWaterEvapotranspiration,
+        influencedBy some GroundSandContent,
+        influencedBy some GroundPorosity,
+        influencedBy some GroundMaximumDryDensity,
+        influencedBy some GroundParticleSizeDistribution,
+        GroundElectromagneticProperty,
+        increasedBy some GroundWaterInfiltration,
+        influencedBy some GroundAirContent,
+        influencedBy some GroundChemicalReaction,
+        influencedBy some GroundClayContent,
+        influencedBy some GroundSoluteTransport,
+        influencedBy some GroundSoluteDiffusion,
+        influencedBy some GroundOptimumWaterContent,
+        influencedBy some GroundMineralization,
+        influencedBy some GroundChemicalChange,
+        influencedBy some GroundWaterFlow
+    
+    
+Class: GroundSoluteTransport
+
+    Annotations: 
+        rdfs:comment "The movement of ions or soluble molecules from the surface into the ground or from one part of the ground to another generally by water movement but also diffusion.
+
+Knowledge Source: BBC Bitesize - GCSE Biology
+
+"^^xsd:string
+    
+    SubClassOf: 
+        influencedBy some GroundPlasticity,
+        influencedBy some GroundConsistencyLimits,
+        influencedBy some GroundWaterPressure,
+        influencedBy some GroundDryDensity,
+        influencedBy some GroundParticleSizeDistribution,
+        hasImpactOn some GroundCationExchangeCapacity,
+        influencedBy some GroundAirContent,
+        influencedBy some GroundGravelContent,
+        influencedBy some GroundFabric,
+        influencedBy some GroundClayContent,
+        hasImpactOn some GroundElectricalConductivity,
+        influencedBy some GroundDegreeOfSaturation,
+        influencedBy some GroundVoidRatio,
+        hasImpactOn some GroundDielectricPermittivity,
+        influencedBy some GroundPrincipalType,
+        GroundFluidProcess,
+        influencedBy some GroundMineralogy,
+        hasImpactOn some GroundWaterContent,
+        influencedBy some GroundActivity,
+        influencedBy some GroundOrganicMatterContent,
+        hasImpactOn some GroundConsistencyLimits,
+        hasImpactOn some GroundPlasticity,
+        hasImpactOn some GroundCohesion,
+        influencedBy some GroundHydraulicConductivity,
+        hasImpactOn some GroundMagneticPermeability,
+        influencedBy some GroundParticleSpecificSurfaceArea,
+        influencedBy some GroundSandContent,
+        influencedBy some GroundPorosity,
+        influencedBy some GroundSiltContent,
+        influencedBy some GroundWaterContent,
+        influencedBy some GroundCrackingIntensity
+    
+    
+Class: GroundMechanicalProperty
+
+    Annotations: 
+        rdfs:comment "Ground mechanical properties refer to engineering properties of soil that influence their behaviour when subject to a change in load (due to external loads such as traffic, and internal loads such as water pressure) or ground deformation.
+
+Knowledge Source: Expert knowledge
+
+"^^xsd:string
+    
+    SubClassOf: 
+        GroundProperty
+    
+    
+Class: GroundCracking
+
+    Annotations: 
+        rdfs:comment "The process of cracking of the ground, which can be the opening up of the fissures or other mechanical discontinuities in the ground generally due to drying but can be due to other process.
+
+Knowledge Source: Expert knowledge
+
+"^^xsd:string
+    
+    SubClassOf: 
+        increases some GroundCrackingIntensity,
+        influencedBy some GroundPlasticity,
+        decreases some GroundInterfaceFriction,
+        increases some GroundVoidRatio,
+        decreases some GroundStiffness,
+        influencedBy some GroundWaterContent,
+        influencedBy some GroundUndrainedShearStrength,
+        decreases some GroundUndrainedShearStrength,
+        influencedBy some GroundClayContent,
+        decreases some GroundP-WaveVelocity,
+        increases some GroundPorosity,
+        decreases some GroundPeakAngle,
+        influencedBy some GroundPrincipalType,
+        influencedBy some GroundTemperature,
+        influencedBy some GroundCohesion,
+        increases some GroundHydraulicConductivity,
+        influencedBy some GroundMineralogy,
+        decreases some GroundCohesion,
+        influencedBy some GroundGravelContent,
+        influencedBy some GroundFabric,
+        decreases some GroundS-WaveVelocity,
+        influencedBy some GroundSandContent,
+        influencedBy some GroundShrinkSwellPotential,
+        influencedBy some GroundPeakAngle,
+        influencedBy some GroundParticleSpecificSurfaceArea,
+        influencedBy some GroundCrackingIntensity,
+        influencedBy some GroundOrganicMatterContent,
+        influencedBy some GroundDegreeOfSaturation,
+        influencedBy some GroundSiltContent,
+        decreases some GroundThermalConductivity,
+        GroundTemporalProcess,
+        decreases some GroundHeatCapacity,
+        increases some GroundFabric,
+        influencedBy some GroundParticleSizeDistribution
+    
+    
+Class: GroundFreezing
+
+    Annotations: 
+        rdfs:comment "The freezing of water in the ground to form ice when the temperature of the atmosphere at or below zero. The depth of freezing depends on a number of factors including air temperature, and length of time below freezing, lithology and saturation. This is not to be confused with ground frost (surface of the ground) or the construction method.
+
+Knowledge Source: Expert knowledge
+
+"^^xsd:string
+    
+    SubClassOf: 
+        decreases some GroundDielectricPermittivity,
+        decreases some GroundUndrainedShearStrength,
+        influencedBy some GroundAirContent,
+        influencedBy some GroundConsistencyLimits,
+        decreases some GroundCohesion,
+        influencedBy some GroundPrincipalType,
+        influencedBy some GroundPlasticity,
+        decreases some GroundInterfaceFriction,
+        decreases some GroundStiffness,
+        influencedBy some GroundWaterTableDepth,
+        decreases some GroundDryDensity,
+        influencedBy some GroundTemperature,
+        increases some GroundCrackingIntensity,
+        decreases some GroundResidualAngle,
+        influencedBy some GroundMineralogy,
+        influencedBy some GroundWaterContent,
+        influencedBy some GroundClayContent,
+        influencedBy some GroundDryDensity,
+        influencedBy some GroundVoidRatio,
+        decreases some GroundPeakAngle,
+        decreases some GroundTemperature,
+        hasImpactOn some GroundP-WaveVelocity,
+        decreases some GroundBulkDensity,
+        influencedBy some GroundOrganicMatterContent,
+        influencedBy some GroundThermalConductivity,
+        influencedBy some GroundHeatCapacity,
+        GroundThermalProcess,
+        influencedBy some GroundBulkDensity,
+        hasImpactOn some GroundS-WaveVelocity,
+        increases some GroundFabric,
+        decreases some GroundHydraulicConductivity,
+        influencedBy some GroundParticleSpecificSurfaceArea,
+        influencedBy some GroundDegreeOfSaturation,
+        decreases some GroundElectricalConductivity,
+        influencedBy some GroundPorosity,
+        increases some GroundWaterPressure,
+        influencedBy some GroundParticleSizeDistribution
+    
+    
+Class: GroundParticleDensity
+
+    Annotations: 
+        rdfs:comment "The particle density of the mineral constituents present (also known as grain density).
+
+Usual Units: Mg/m3
+
+Knowledge Source: BS1377-2 (1990)
+
+"^^xsd:string
+    
+    SubClassOf: 
+        influencedBy some GroundOrganicMatterContent,
+        hasImpactOn some GroundBulkDensity,
+        hasImpactOn some GroundPorosity,
+        hasImpactOn some GroundThermalConductivity,
+        influencedBy some GroundMineralogy,
+        hasImpactOn some GroundHeatCapacity,
+        GroundClassificationProperty,
+        hasImpactOn some GroundDryDensity,
+        hasImpactOn some GroundVoidRatio
+    
+    
+Class: GroundEh
+
+    Annotations: 
+        rdfs:comment "It is the reduction potential that measures the tendency of the ground to acquire electrons and thereby be reduced.
+
+Usual Units: Volts (V) or millivolts (mV)
+
+Knowledge Source: Wikipedia and expert opinion
+
+"^^xsd:string
+    
+    SubClassOf: 
+        influencedBy some GroundTemperature,
+        GroundChemicalProperty,
+        hasImpactOn some GroundChemicalChange,
+        influencedBy some GroundpH,
+        influencedBy some GroundMineralogy,
+        influencedBy some GroundImmobilization,
+        influencedBy some GroundMineralization,
+        influencedBy some GroundDegreeOfSaturation,
+        hasImpactOn some GroundChemicalReaction,
+        influencedBy some GroundCationExchangeCapacity,
+        influencedBy some GroundMicrobialActivity,
+        influencedBy some GroundChemicalReaction,
+        influencedBy some GroundWaterContent,
+        hasImpactOn some GroundImmobilization,
+        influencedBy some GroundAirContent,
+        hasImpactOn some GroundMineralization,
+        influencedBy some GroundChemicalChange,
+        hasImpactOn some GroundCationExchangeCapacity,
+        hasImpactOn some GroundMicrobialActivity,
+        influencedBy some GroundOrganicMatterContent,
+        influencedBy some GroundParticleMovement,
+        influencedBy some GroundWaterTableDepth
+    
+    
+Class: GroundFluidProcess
+
+    Annotations: 
+        rdfs:comment "Ground fluid processes refer to processes that involve the movement of water in the ground due to infiltration, differences in potential because of external load and groundwater levels, and evapotranspiration.
+
+Knowledge Source: Expert knowledge
+
+"^^xsd:string
+    
+    SubClassOf: 
+        GroundProcess
+    
+    
+Class: GroundSiltContent
+
+    Annotations: 
+        rdfs:comment "The percentage of particle, by weight, that are between 0.002 mm and pass through a 0.063 mm.
+
+Usual Units: %
+
+Knowledge Source: BS5930: 2015
+
+"^^xsd:string
+    
+    SubClassOf: 
+        hasImpactOn some GroundBulkDensity,
+        hasImpactOn some GroundUnsaturatedWaterFlow,
+        hasImpactOn some GroundDielectricPermittivity,
+        hasImpactOn some GroundVoidRatio,
+        hasImpactOn some GroundPeakAngle,
+        hasImpactOn some GroundPrincipalType,
+        hasImpactOn some GroundSaturatedWaterFlow,
+        hasImpactOn some GroundSwelling,
+        hasImpactOn some GroundSoluteDiffusion,
+        hasImpactOn some GroundMineralogy,
+        hasImpactOn some GroundStiffness,
+        hasImpactOn some GroundConsolidation,
+        hasImpactOn some GroundThermalConductivity,
+        hasImpactOn some GroundWaterInfiltration,
+        hasImpactOn some GroundShrinking,
+        hasImpactOn some GroundSoluteTransport,
+        hasImpactOn some GroundHydraulicConductivity,
+        hasImpactOn some GroundMagneticPermeability,
+        influencedBy some GroundParticleMovement,
+        hasImpactOn some GroundCationExchangeCapacity,
+        hasImpactOn some GroundS-WaveVelocity,
+        hasImpactOn some GroundCracking,
+        hasImpactOn some GroundDeformation,
+        hasImpactOn some GroundPorosity,
+        hasImpactOn some GroundMaximumDryDensity,
+        hasImpactOn some GroundHeatCapacity,
+        hasImpactOn some GroundParticleSizeDistribution,
+        hasImpactOn some GroundP-WaveVelocity,
+        influencedBy some GroundParticleSizeDistribution,
+        hasImpactOn some GroundCompaction,
+        hasImpactOn some GroundUndrainedShearStrength,
+        hasImpactOn some GroundResidualAngle,
+        hasImpactOn some GroundInterfaceFriction,
+        GroundClassificationProperty,
+        hasImpactOn some GroundElectricalConductivity,
+        hasImpactOn some GroundDryDensity,
+        decreasedBy some GroundErosion,
+        hasImpactOn some GroundWaterRetentionCurve,
+        hasImpactOn some GroundOptimumWaterContent,
+        hasImpactOn some GroundErosion,
+        hasImpactOn some GroundWaterFlow,
+        hasImpactOn some GroundDegradation,
+        hasImpactOn some GroundParticleMovement
+    
+    
+Class: GroundConstuctionProperty
+
+    Annotations: 
+        rdfs:comment "Ground construction properties refer to engineering properties that are relevant when soil is used as a construction material.
+
+Knowledge Source: Expert knowledge
+
+"^^xsd:string
+    
+    SubClassOf: 
+        GroundProperty
+    
+    
+Class: GroundSurfaceSealFormation
+
+    Annotations: 
+        rdfs:comment "The process of the formation of an impervious layer generally due to the construction of man-made structures such as impervious pavements (roads, airports, sidewalks) but also other man-made constructions such as car parks, buildings etc.
+
+Knowledge Source: Wikipedia and expert knowledge
+
+"^^xsd:string
+    
+    SubClassOf: 
+        influencedBy some GroundParticleSizeDistribution,
+        decreases some GroundWaterContent,
+        decreases some GroundHydraulicConductivity,
+        influencedBy some GroundOrganicMatterContent,
+        influencedBy some GroundClayContent,
+        GroundConstructionProcess,
+        influencedBy some GroundConsistencyLimits,
+        influencedBy some GroundMineralogy
+    
+    
+Class: GroundVeryLargeParticles
+
+    Annotations: 
+        rdfs:comment "The percentage of particle, by weight, that will not pass through a 63 mm sieve.
+
+Usual Units: %
+
+Knowledge Source: BS5930: 2015
+
+"^^xsd:string
+    
+    SubClassOf: 
+        hasImpactOn some GroundThermalConductivity,
+        hasImpactOn some GroundDielectricPermittivity,
+        hasImpactOn some GroundMineralogy,
+        hasImpactOn some GroundS-WaveVelocity,
+        hasImpactOn some GroundCompaction,
+        hasImpactOn some GroundParticleSizeDistribution,
+        hasImpactOn some GroundOptimumWaterContent,
+        decreasedBy some GroundErosion,
+        hasImpactOn some GroundBulkDensity,
+        hasImpactOn some GroundMaximumDryDensity,
+        hasImpactOn some GroundInterfaceFriction,
+        hasImpactOn some GroundMagneticPermeability,
+        hasImpactOn some GroundHeatCapacity,
+        hasImpactOn some GroundDeformation,
+        influencedBy some GroundParticleMovement,
+        hasImpactOn some GroundPeakAngle,
+        hasImpactOn some GroundVoidRatio,
+        hasImpactOn some GroundDryDensity,
+        hasImpactOn some GroundElectricalConductivity,
+        hasImpactOn some GroundStiffness,
+        hasImpactOn some GroundPorosity,
+        hasImpactOn some GroundPrincipalType,
+        influencedBy some GroundParticleSizeDistribution,
+        hasImpactOn some GroundP-WaveVelocity,
+        hasImpactOn some GroundHydraulicConductivity,
+        GroundClassificationProperty
+    
+    
+Class: GroundColour
+
+    Annotations: 
+        rdfs:comment "The colour or colours of the ground.
+
+Usual Units: Chroma and hue
+
+Knowledge Source: Expert opinion
+
+"^^xsd:string
+    
+    SubClassOf: 
+        GroundDescriptionProperty,
+        influencedBy some GroundChemicalChange
+    
+    
+Class: GroundOptimumWaterContent
+
+    Annotations: 
+        rdfs:comment "The water content of a sample of the ground at a given compactive effort  will produce the maximum dry density.
+
+Usual Units: %
+
+Knowledge Source: Head 1992
+
+"^^xsd:string
+    
+    SubClassOf: 
+        influencedBy some GroundOrganicMatterContent,
+        hasImpactOn some GroundDensity,
+        hasImpactOn some GroundBulkDensity,
+        hasImpactOn some GroundWaterRetentionCurve,
+        hasImpactOn some GroundMagneticPermeability,
+        hasImpactOn some GroundS-WaveVelocity,
+        influencedBy some GroundPlasticity,
+        influencedBy some GroundParticleSizeDistribution,
+        hasImpactOn some GroundShrinkSwellPotential,
+        hasImpactOn some GroundConsistency,
+        influencedBy some GroundWaterContent,
+        influencedBy some GroundSiltContent,
+        hasImpactOn some GroundDielectricPermittivity,
+        influencedBy some GroundPrincipalType,
+        hasImpactOn some GroundThermalConductivity,
+        hasImpactOn some GroundCompaction,
+        hasImpactOn some GroundHeatCapacity,
+        influencedBy some GroundSandContent,
+        influencedBy some GroundChemicalChange,
+        influencedBy some GroundPorosity,
+        influencedBy some GroundGravelContent,
+        hasImpactOn some GroundWaterContent,
+        influencedBy some GroundParticleMovement,
+        hasImpactOn some GroundElectricalConductivity,
+        influencedBy some GroundDegreeOfSaturation,
+        influencedBy some GroundVoidRatio,
+        influencedBy some GroundClayContent,
+        hasImpactOn some GroundHydraulicConductivity,
+        decreasedBy some GroundCompaction,
+        hasImpactOn some GroundP-WaveVelocity,
+        influencedBy some GroundVeryLargeParticles,
+        GroundConstuctionProperty
+    
+    
+Class: GroundClayContent
+
+    Annotations: 
+        rdfs:comment "The percentage by weight of particles of less than 0.002 mm (which can be of clay or non-clay minerals).
+
+Usual Units: %
+
+Knowledge Source: Expert opinion
+
+"^^xsd:string
+    
+    SubClassOf: 
+        hasImpactOn some GroundSwelling,
+        hasImpactOn some GroundSaturatedWaterFlow,
+        hasImpactOn some GroundCompaction,
+        hasImpactOn some GroundFreezing,
+        influencedBy some GroundParticleSizeDistribution,
+        hasImpactOn some GroundCracking,
+        hasImpactOn some GroundS-WaveVelocity,
+        hasImpactOn some GroundCationExchangeCapacity,
+        hasImpactOn some GroundChemicalTransport,
+        hasImpactOn some GroundWaterRetentionCurve,
+        hasImpactOn some GroundInterfaceFriction,
+        hasImpactOn some GroundErosion,
+        hasImpactOn some GroundP-WaveVelocity,
+        hasImpactOn some GroundMineralization,
+        hasImpactOn some GroundHydraulicConductivity,
+        hasImpactOn some GroundHeatCapacity,
+        decreasedBy some GroundErosion,
+        hasImpactOn some GroundWaterFlow,
+        hasImpactOn some GroundStiffness,
+        hasImpactOn some GroundPrincipalType,
+        hasImpactOn some GroundShrinkSwellPotential,
+        hasImpactOn some GroundConsistencyLimits,
+        influencedBy some GroundParticleMovement,
+        hasImpactOn some GroundUnsaturatedWaterFlow,
+        hasImpactOn some GroundResidualAngle,
+        hasImpactOn some GroundDielectricPermittivity,
+        hasImpactOn some GroundPeakAngle,
+        hasImpactOn some GroundDensity,
+        hasImpactOn some GroundMaximumDryDensity,
+        hasImpactOn some GroundDryDensity,
+        hasImpactOn some GroundThermalConductivity,
+        hasImpactOn some GroundParticleSpecificSurfaceArea,
+        hasImpactOn some GroundpH,
+        hasImpactOn some GroundParticleMovement,
+        hasImpactOn some GroundVoidRatio,
+        hasImpactOn some GroundDeformation,
+        hasImpactOn some GroundParticleSizeDistribution,
+        hasImpactOn some GroundMicrobialActivity,
+        hasImpactOn some GroundSurfaceSealFormation,
+        hasImpactOn some GroundChemicalChange,
+        hasImpactOn some GroundShrinkageLimit,
+        hasImpactOn some GroundActivity,
+        GroundClassificationProperty,
+        hasImpactOn some GroundWaterInfiltration,
+        hasImpactOn some GroundWaterEvapotranspiration,
+        hasImpactOn some GroundElectricalConductivity,
+        hasImpactOn some GroundAirFlow,
+        hasImpactOn some GroundShrinking,
+        hasImpactOn some GroundPlasticity,
+        hasImpactOn some GroundMagneticPermeability,
+        hasImpactOn some GroundMineralogy,
+        hasImpactOn some GroundChemicalReaction,
+        hasImpactOn some GroundImmobilization,
+        hasImpactOn some GroundOptimumWaterContent,
+        hasImpactOn some GroundConsolidation,
+        hasImpactOn some GroundBulkDensity,
+        hasImpactOn some GroundSoluteTransport,
+        hasImpactOn some GroundConsistency,
+        hasImpactOn some GroundPorosity,
+        hasImpactOn some GroundDegradation,
+        hasImpactOn some GroundUndrainedShearStrength,
+        hasImpactOn some GroundSoluteDiffusion
+    
+    
+Class: GroundPlasticity
+
+    Annotations: 
+        rdfs:comment "Related to the plasticity index which is the  liquid limit - plastic limit
+
+Usual Units: %
+
+Knowledge Source: Expert opinion
+
+"^^xsd:string
+    
+    SubClassOf: 
+        influencedBy some GroundClayContent,
+        influencedBy some GroundSoluteDiffusion,
+        hasImpactOn some GroundCracking,
+        hasImpactOn some GroundChemicalTransport,
+        hasImpactOn some GroundThawing,
+        hasImpactOn some GroundChemicalReaction,
+        hasImpactOn some GroundMaximumDryDensity,
+        influencedBy some GroundImmobilization,
+        influencedBy some GroundMineralization,
+        influencedBy some GroundMineralogy,
+        hasImpactOn some GroundConsistencyLimits,
+        hasImpactOn some GroundHydraulicConductivity,
+        hasImpactOn some GroundResidualAngle,
+        GroundClassificationProperty,
+        hasImpactOn some GroundCationExchangeCapacity,
+        hasImpactOn some GroundShrinkageLimit,
+        hasImpactOn some GroundActivity,
+        hasImpactOn some GroundOptimumWaterContent,
+        hasImpactOn some GroundSoluteTransport,
+        influencedBy some GroundSoluteTransport,
+        hasImpactOn some GroundWaterFlow,
+        hasImpactOn some GroundDegradation,
+        hasImpactOn some GroundPeakAngle,
+        hasImpactOn some GroundCompaction,
+        influencedBy some GroundOrganicMatterContent,
+        hasImpactOn some GroundSoluteDiffusion,
+        influencedBy some GroundParticleSizeDistribution,
+        influencedBy some GroundParticleSpecificSurfaceArea,
+        influencedBy some GroundChemicalChange,
+        hasImpactOn some GroundWaterEvapotranspiration,
+        hasImpactOn some GroundSaturatedWaterFlow,
+        hasImpactOn some GroundShrinkSwellPotential,
+        influencedBy some GroundChemicalReaction,
+        hasImpactOn some GroundFreezing,
+        influencedBy some GroundConsistencyLimits,
+        hasImpactOn some GroundChemicalChange,
+        hasImpactOn some GroundDeformation,
+        hasImpactOn some GroundConsolidation,
+        hasImpactOn some GroundWaterInfiltration,
+        influencedBy some GroundActivity,
+        hasImpactOn some GroundShrinking,
+        hasImpactOn some GroundUnsaturatedWaterFlow,
+        hasImpactOn some GroundAirFlow,
+        hasImpactOn some GroundSwelling
+    
+    
+Class: GroundVoidRatio
+
+    Annotations: 
+        rdfs:comment "The volume of voids (water and air) expressed as a function of the total volume of the sample (porosity) or mass (voids ratio).
+
+Knowledge Source: Wikipedia and expert opinion
+
+"^^xsd:string
+    
+    SubClassOf: 
+        hasImpactOn some GroundSwelling,
+        hasImpactOn some GroundErosion,
+        hasImpactOn some GroundHeatCapacity,
+        hasImpactOn some GroundCompaction,
+        influencedBy some GroundDeformation,
+        GroundStateVariable,
+        influencedBy some GroundOrganicMatterContent,
+        hasImpactOn some GroundCationExchangeCapacity,
+        hasImpactOn some GroundOptimumWaterContent,
+        hasImpactOn some GroundSubsidence,
+        hasImpactOn some GroundThawing,
+        hasImpactOn some GroundHeatTransfer,
+        influencedBy some GroundSandContent,
+        hasImpactOn some GroundPeakAngle,
+        decreasedBy some GroundConsolidation,
+        hasImpactOn some GroundHydraulicConductivity,
+        hasImpactOn some GroundSoluteDiffusion,
+        influencedBy some GroundParticleMovement,
+        hasImpactOn some GroundStiffness,
+        hasImpactOn some GroundSaturatedWaterFlow,
+        influencedBy some GroundDryDensity,
+        influencedBy some GroundBulkDensity,
+        influencedBy some GroundCavity,
+        influencedBy some GroundFabric,
+        hasImpactOn some GroundFreezing,
+        increasedBy some GroundSwelling,
+        influencedBy some GroundParticleSizeDistribution,
+        hasImpactOn some GroundUnsaturatedWaterFlow,
+        hasImpactOn some GroundWaterInfiltration,
+        influencedBy some GroundClayContent,
+        influencedBy some GroundWaterInfiltration,
+        decreasedBy some GroundCompaction,
+        increasedBy some GroundCracking,
+        hasImpactOn some GroundChemicalTransport,
+        hasImpactOn some GroundWaterRetentionCurve,
+        hasImpactOn some GroundWaterEvapotranspiration,
+        hasImpactOn some GroundDeformation,
+        influencedBy some GroundAirContent,
+        influencedBy some GroundSiltContent,
+        hasImpactOn some GroundMicrobialActivity,
+        hasImpactOn some GroundDielectricPermittivity,
+        hasImpactOn some GroundWaterFlow,
+        influencedBy some GroundGravelContent,
+        hasImpactOn some GroundInterfaceFriction,
+        hasImpactOn some GroundHeatAbsorption,
+        hasImpactOn some GroundParticleMovement,
+        hasImpactOn some GroundAirFlow,
+        influencedBy some GroundVeryLargeParticles,
+        hasImpactOn some GroundWaterContent,
+        hasImpactOn some GroundThermalConductivity,
+        hasImpactOn some GroundShrinking,
+        hasImpactOn some GroundElectricalConductivity,
+        influencedBy some GroundCrackingIntensity,
+        hasImpactOn some GroundMagneticPermeability,
+        decreasedBy some GroundShrinking,
+        influencedBy some GroundPrincipalType,
+        hasImpactOn some GroundDryDensity,
+        hasImpactOn some GroundConsolidation,
+        hasImpactOn some GroundBulkDensity,
+        hasImpactOn some GroundSoluteTransport,
+        influencedBy some GroundParticleDensity,
+        hasImpactOn some GroundDegradation,
+        influencedBy some GroundWaterContent,
+        hasImpactOn some GroundUndrainedShearStrength,
+        influencedBy some GroundMaximumDryDensity
+    
+    
+Class: GroundConsistencyLimits
+
+    Annotations: 
+        rdfs:comment "The water content at which the a fine-grained engineering soil 1) passes from the plastic to liquid limit (liquid limit) as determined by the liquid limit test, 2) passes from plastic to solid state (plastic limit) as defined by the plastic limit test.
+
+Usual Units: %
+
+Knowledge Source: BS1377-2 (1990)
+
+"^^xsd:string
+    
+    SubClassOf: 
+        influencedBy some GroundSoluteTransport,
+        hasImpactOn some GroundSurfaceSealFormation,
+        influencedBy some GroundImmobilization,
+        influencedBy some GroundClayContent,
+        influencedBy some GroundSoluteDiffusion,
+        hasImpactOn some GroundShrinking,
+        influencedBy some GroundMineralization,
+        influencedBy some GroundMineralogy,
+        influencedBy some GroundChemicalChange,
+        hasImpactOn some GroundResidualAngle,
+        GroundClassificationProperty,
+        hasImpactOn some GroundShrinkageLimit,
+        hasImpactOn some GroundPlasticity,
+        hasImpactOn some GroundActivity,
+        hasImpactOn some GroundSoluteTransport,
+        hasImpactOn some GroundUndrainedShearStrength,
+        hasImpactOn some GroundWaterFlow,
+        hasImpactOn some GroundCompaction,
+        influencedBy some GroundPlasticity,
+        hasImpactOn some GroundSoluteDiffusion,
+        hasImpactOn some GroundStiffness,
+        hasImpactOn some GroundSaturatedWaterFlow,
+        influencedBy some GroundChemicalReaction,
+        hasImpactOn some GroundFreezing,
+        hasImpactOn some GroundShrinkSwellPotential,
+        influencedBy some GroundParticleSpecificSurfaceArea,
+        hasImpactOn some GroundConsolidation,
+        hasImpactOn some GroundSwelling
+    
+    
+Class: GroundSeismicProperty
+
+    Annotations: 
+        rdfs:comment "Ground seismic properties refer to the properties relevant to sensors that measure ground motion but are also properties that can influence the transfer of vibrations through the soil.
+
+Knowledge Source: Expert knowledge
+
+"^^xsd:string
+    
+    SubClassOf: 
+        GroundProperty
+    
+    
+Class: GroundDescriptionProperty
+
+    Annotations: 
+        rdfs:comment "Ground description refers to a visual description of the composition, structure and fabric of the ground including the position of the ground water table.
+
+Knowledge Source: Expert knowledge
+
+"^^xsd:string
+    
+    SubClassOf: 
+        GroundProperty
+    
+    
+Class: GroundDegreeOfSaturation
+
+    Annotations: 
+        rdfs:comment "The volume of water contained in the void space expressed as a percentage of the total voids.
+
+Usual Units: %
+
+Knowledge Source: Wikipedia and expert opinion
+
+"^^xsd:string
+    
+    SubClassOf: 
+        hasImpactOn some GroundShrinking,
+        hasImpactOn some GroundAirFlow,
+        hasImpactOn some GroundBulkDensity,
+        hasImpactOn some GroundAirContent,
+        hasImpactOn some GroundThermalConductivity,
+        hasImpactOn some GroundCohesion,
+        hasImpactOn some GroundParticleMovement,
+        hasImpactOn some GroundElectricalConductivity,
+        hasImpactOn some GroundThawing,
+        hasImpactOn some GroundHeatTransfer,
+        hasImpactOn some GroundCracking,
+        hasImpactOn some GroundDielectricPermittivity,
+        hasImpactOn some GroundChemicalTransport,
+        hasImpactOn some GroundMaximumDryDensity,
+        influencedBy some GroundWaterContent,
+        influencedBy some GroundWaterPressure,
+        hasImpactOn some GroundHeatCapacity,
+        decreasedBy some GroundWaterEvapotranspiration,
+        hasImpactOn some GroundWaterContent,
+        hasImpactOn some GroundMicrobialActivity,
+        hasImpactOn some GroundChemicalReaction,
+        GroundStateVariable,
+        hasImpactOn some GroundStiffness,
+        hasImpactOn some GroundHeatAbsorption,
+        increasedBy some GroundWaterInfiltration,
+        hasImpactOn some GroundDeformation,
+        increasedBy some GroundShrinking,
+        hasImpactOn some GroundWaterRetentionCurve,
+        hasImpactOn some GroundHydraulicConductivity,
+        hasImpactOn some GroundMineralization,
+        hasImpactOn some GroundUndrainedShearStrength,
+        hasImpactOn some GroundChemicalChange,
+        hasImpactOn some GroundWaterFlow,
+        hasImpactOn some GroundP-WaveVelocity,
+        influencedBy some GroundWaterTableDepth,
+        hasImpactOn some GroundSwelling,
+        hasImpactOn some GroundS-WaveVelocity,
+        hasImpactOn some GroundCompaction,
+        hasImpactOn some GroundSoluteTransport,
+        hasImpactOn some GroundUnsaturatedWaterFlow,
+        increasedBy some GroundConsolidation,
+        hasImpactOn some GroundSoluteDiffusion,
+        hasImpactOn some GroundpH,
+        hasImpactOn some GroundOptimumWaterContent,
+        hasImpactOn some GroundWaterEvapotranspiration,
+        hasImpactOn some GroundSaturatedWaterFlow,
+        influencedBy some GroundAirContent,
+        hasImpactOn some GroundImmobilization,
+        hasImpactOn some GroundFreezing,
+        hasImpactOn some GroundMagneticPermeability,
+        hasImpactOn some GroundEh,
+        influencedBy some GroundWaterFlow,
+        hasImpactOn some GroundConsolidation,
+        hasImpactOn some GroundWaterInfiltration
+    
+    
+Class: GroundHeatCapacity
+
+    Annotations: 
+        rdfs:comment "It is the amount of heat needed to raise the temperature of a known mass of the ground by 1K.
+
+Usual Units: J/K or 
+
+Knowledge Source: Wikipedia
+
+"^^xsd:string
+    
+    SubClassOf: 
+        influencedBy some GroundParticleDensity,
+        influencedBy some GroundBulkDensity,
+        influencedBy some GroundDryDensity,
+        decreasedBy some GroundCracking,
+        influencedBy some GroundWaterRetentionCurve,
+        influencedBy some GroundOptimumWaterContent,
+        influencedBy some GroundMineralogy,
+        influencedBy some GroundChemicalChange,
+        influencedBy some GroundGravelContent,
+        increasedBy some GroundSubsidence,
+        influencedBy some GroundParticleMovement,
+        hasImpactOn some GroundHeatAbsorption,
+        influencedBy some GroundDegreeOfSaturation,
+        hasImpactOn some GroundHeatTransfer,
+        hasImpactOn some GroundThawing,
+        influencedBy some GroundVoidRatio,
+        influencedBy some GroundPrincipalType,
+        hasImpactOn some GroundThermalConductivity,
+        influencedBy some GroundVeryLargeParticles,
+        influencedBy some GroundSandContent,
+        influencedBy some GroundPorosity,
+        influencedBy some GroundMaximumDryDensity,
+        influencedBy some GroundThermalConductivity,
+        increasedBy some GroundConsolidation,
+        increasedBy some GroundWaterInfiltration,
+        decreasedBy some GroundSwelling,
+        influencedBy some GroundHydraulicConductivity,
+        decreasedBy some GroundShrinking,
+        influencedBy some GroundClayContent,
+        hasImpactOn some GroundTemperature,
+        hasImpactOn some GroundFreezing,
+        influencedBy some GroundSiltContent,
+        influencedBy some GroundDeformation,
+        GroundThermalProperty,
+        influencedBy some GroundOrganicMatterContent,
+        influencedBy some GroundParticleSizeDistribution,
+        influencedBy some GroundAirContent,
+        increasedBy some GroundCompaction,
+        influencedBy some GroundWaterContent
+    
+    
+Class: GroundChemicalTransport
+
+    Annotations: 
+        rdfs:comment "The movement of chemicals from one part of the ground to another. This is generally in the form of ions that can be moved by diffusion or by groundwater movement.
+
+Knowledge Source: Expert knowledge
+
+"^^xsd:string
+    
+    SubClassOf: 
+        influencedBy some GroundOrganicMatterContent,
+        influencedBy some GroundParticleSpecificSurfaceArea,
+        influencedBy some GroundCationExchangeCapacity,
+        influencedBy some GroundPorosity,
+        influencedBy some GroundDryDensity,
+        influencedBy some GroundElectricalConductivity,
+        influencedBy some GroundCrackingIntensity,
+        influencedBy some GroundFabric,
+        influencedBy some GroundpH,
+        influencedBy some GroundVoidRatio,
+        influencedBy some GroundPlasticity,
+        influencedBy some GroundMineralogy,
+        influencedBy some GroundDegreeOfSaturation,
+        influencedBy some GroundPrincipalType,
+        influencedBy some GroundTemperature,
+        influencedBy some GroundClayContent,
+        influencedBy some GroundActivity,
+        influencedBy some GroundHydraulicConductivity,
+        influencedBy some GroundWaterContent,
+        influencedBy some GroundWaterTableDepth,
+        GroundChemicalProcess
+    
+    
+Class: GroundWaterFlow
+
+    Annotations: 
+        rdfs:comment "The movement of water through the ground including the infiltration, movement through the unsaturated zone, into and within the saturated zone and discharge through springs and seeps along a hydraulic or gravity gradient.
+
+Knowledge Source: USGS (water.usgs.gov/edu/watercycleinfiltration.html)
+
+"^^xsd:string
+    
+    SubClassOf: 
+        hasImpactOn some GroundElectricalConductivity,
+        influencedBy some GroundCrackingIntensity,
+        influencedBy some GroundWaterTableDepth,
+        influencedBy some GroundConsistencyLimits,
+        hasImpactOn some GroundWaterContent,
+        hasImpactOn some GroundUndrainedShearStrength,
+        influencedBy some GroundSandContent,
+        GroundFluidProcess,
+        influencedBy some GroundParticleSpecificSurfaceArea,
+        hasImpactOn some GroundWaterRetentionCurve,
+        hasImpactOn some GroundDegreeOfSaturation,
+        influencedBy some GroundOrganicMatterContent,
+        influencedBy some GroundParticleSizeDistribution,
+        influencedBy some GroundCavity,
+        hasImpactOn some GroundWaterTableDepth,
+        hasImpactOn some GroundBulkDensity,
+        hasImpactOn some GroundCohesion,
+        influencedBy some GroundAirContent,
+        influencedBy some GroundPrincipalType,
+        influencedBy some GroundDryDensity,
+        influencedBy some GroundWaterContent,
+        influencedBy some GroundPorosity,
+        influencedBy some GroundPlasticity,
+        influencedBy some GroundWaterRetentionCurve,
+        influencedBy some GroundHydraulicConductivity,
+        hasImpactOn some GroundMagneticPermeability,
+        influencedBy some GroundClayContent,
+        influencedBy some GroundVoidRatio,
+        hasImpactOn some GroundDielectricPermittivity,
+        influencedBy some GroundWaterPressure,
+        hasImpactOn some GroundThermalConductivity,
+        influencedBy some GroundMineralogy,
+        hasImpactOn some GroundAirContent,
+        influencedBy some GroundDegreeOfSaturation,
+        influencedBy some GroundGravelContent,
+        influencedBy some GroundFabric,
+        influencedBy some GroundSiltContent
+    
+    
+Class: GroundChemicalReaction
+
+    Annotations: 
+        rdfs:comment "The transformation of one set of chemical substances to another. 
+
+Knowledge Source: Expert knowledge
+
+"^^xsd:string
+    
+    SubClassOf: 
+        influencedBy some GroundParticleSpecificSurfaceArea,
+        influencedBy some GroundOrganicMatterContent,
+        decreases some GroundDryDensity,
+        hasImpactOn some GroundEh,
+        influencedBy some GroundAirContent,
+        influencedBy some GroundHydraulicConductivity,
+        hasImpactOn some GroundMagneticPermeability,
+        hasImpactOn some GroundS-WaveVelocity,
+        influencedBy some GroundWaterContent,
+        influencedBy some GroundCationExchangeCapacity,
+        influencedBy some GroundPlasticity,
+        GroundChemicalProcess,
+        influencedBy some GroundActivity,
+        influencedBy some GroundpH,
+        influencedBy some GroundElectricalConductivity,
+        influencedBy some GroundClayContent,
+        influencedBy some GroundWaterTableDepth,
+        hasImpactOn some GroundDielectricPermittivity,
+        hasImpactOn some GroundOrganicMatterContent,
+        influencedBy some GroundPrincipalType,
+        influencedBy some GroundMineralogy,
+        influencedBy some GroundEh,
+        influencedBy some GroundTemperature,
+        decreases some GroundBulkDensity,
+        hasImpactOn some GroundConsistencyLimits,
+        influencedBy some GroundDegreeOfSaturation,
+        hasImpactOn some GroundElectricalConductivity,
+        hasImpactOn some GroundCationExchangeCapacity,
+        hasImpactOn some GroundShrinkageLimit,
+        hasImpactOn some GroundPlasticity,
+        hasImpactOn some GroundActivity,
+        hasImpactOn some GroundShrinkSwellPotential,
+        hasImpactOn some GroundpH,
+        hasImpactOn some GroundP-WaveVelocity
+    
+    
+Class: GroundThermalConductivity
+
+    Annotations: 
+        rdfs:comment "It is the ability of the ground to conduct heat.
+
+Usual Units: W/mK
+
+Knowledge Source: Wikipedia and expert opinion
+
+"^^xsd:string
+    
+    SubClassOf: 
+        influencedBy some GroundParticleSizeDistribution,
+        influencedBy some GroundOrganicMatterContent,
+        influencedBy some GroundClayContent,
+        hasImpactOn some GroundHeatTransfer,
+        decreasedBy some GroundCracking,
+        influencedBy some GroundParticleDensity,
+        influencedBy some GroundWaterFlow,
+        influencedBy some GroundBulkDensity,
+        influencedBy some GroundDryDensity,
+        hasImpactOn some GroundHeatCapacity,
+        influencedBy some GroundOptimumWaterContent,
+        influencedBy some GroundMineralogy,
+        influencedBy some GroundChemicalChange,
+        influencedBy some GroundDegreeOfSaturation,
+        influencedBy some GroundGravelContent,
+        increasedBy some GroundSubsidence,
+        influencedBy some GroundParticleMovement,
+        hasImpactOn some GroundHeatAbsorption,
+        influencedBy some GroundSandContent,
+        influencedBy some GroundVoidRatio,
+        hasImpactOn some GroundThawing,
+        increasedBy some GroundSwelling,
+        influencedBy some GroundPrincipalType,
+        decreasedBy some GroundWaterEvapotranspiration,
+        influencedBy some GroundVeryLargeParticles,
+        influencedBy some GroundPorosity,
+        influencedBy some GroundMaximumDryDensity,
+        influencedBy some GroundSiltContent,
+        influencedBy some GroundHeatCapacity,
+        increasedBy some GroundWaterInfiltration,
+        decreasedBy some GroundConsolidation,
+        influencedBy some GroundWaterContent,
+        decreasedBy some GroundShrinking,
+        hasImpactOn some GroundFreezing,
+        hasImpactOn some GroundTemperature,
+        decreasedBy some GroundCompaction,
+        influencedBy some GroundDeformation,
+        influencedBy some GroundAirContent,
+        GroundThermalProperty
+    
+    
+Class: GroundDegradation
+
+    Annotations: 
+        rdfs:comment "Ground structural deterioration is the reduction in the structural capacity of the ground.
+
+Knowledge Source: Wikipedia
+
+"^^xsd:string
+    
+    SubClassOf: 
+        influencedBy some GroundClayContent,
+        influencedBy some GroundFabric,
+        decreases some GroundUndrainedShearStrength,
+        decreases some GroundS-WaveVelocity,
+        influencedBy some GroundCrackingIntensity,
+        decreases some GroundP-WaveVelocity,
+        influencedBy some GroundVoidRatio,
+        decreases some GroundPeakAngle,
+        influencedBy some GroundBulkDensity,
+        influencedBy some GroundParticleSizeDistribution,
+        influencedBy some GroundTemperature,
+        influencedBy some GroundGravelContent,
+        influencedBy some GroundHydraulicConductivity,
+        influencedBy some GroundMineralogy,
+        influencedBy some GroundSandContent,
+        influencedBy some GroundPorosity,
+        influencedBy some GroundSiltContent,
+        influencedBy some GroundWaterContent,
+        GroundTemporalProcess,
+        influencedBy some GroundPrincipalType,
+        influencedBy some GroundDryDensity,
+        increases some GroundFabric,
+        increases some GroundCrackingIntensity,
+        influencedBy some GroundPlasticity,
+        decreases some GroundInterfaceFriction,
+        influencedBy some GroundWaterRetentionCurve,
+        decreases some GroundStiffness,
+        influencedBy some GroundShrinkSwellPotential
+    
+    
+Class: GroundConstructionProcess
+
+    Annotations: 
+        rdfs:comment "Ground construction processes refer to anthropogenic processes such as excavation, dewatering, engineered fill and ground structures (e.g. foundations, retaining walls, tunnels).
+
+Knowledge Source: Expert knowledge
+
+"^^xsd:string
+    
+    SubClassOf: 
+        GroundProcess
+    
+    
+Class: GroundTemperature
+
+    Annotations: 
+        rdfs:comment "The temperature of the ground at a point, usually given in Celsius.
+
+Usual Units: C
+
+Knowledge Source: Expert opinion
+
+"^^xsd:string
+    
+    SubClassOf: 
+        hasImpactOn some GroundMineralization,
+        influencedBy some GroundHeatTransfer,
+        hasImpactOn some GroundMicrobialActivity,
+        hasImpactOn some GroundHeatAbsorption,
+        hasImpactOn some GroundMagneticPermeability,
+        influencedBy some GroundWaterContent,
+        hasImpactOn some GroundDegradation,
+        hasImpactOn some GroundEh,
+        hasImpactOn some GroundChemicalChange,
+        hasImpactOn some GroundHeatTransfer,
+        hasImpactOn some GroundImmobilization,
+        hasImpactOn some GroundThawing,
+        hasImpactOn some GroundpH,
+        increasedBy some GroundHeatAbsorption,
+        decreasedBy some GroundFreezing,
+        hasImpactOn some GroundCracking,
+        hasImpactOn some GroundChemicalTransport,
+        hasImpactOn some GroundChemicalReaction,
+        hasImpactOn some GroundDielectricPermittivity,
+        influencedBy some GroundHeatCapacity,
+        influencedBy some GroundThermalConductivity,
+        hasImpactOn some GroundElectricalConductivity,
+        hasImpactOn some GroundFreezing,
+        influencedBy some GroundWaterInfiltration,
+        GroundStateVariable
+    
+    
+Class: GroundOrganicMatterContent
+
+    Annotations: 
+        rdfs:comment "Complex, long chain compounds of hydrogen, oxygen, nitrogen and other elements produced by or derived from biological processes. 
+
+Usual Units: %
+
+Knowledge Source: Expert opinion
+
+"^^xsd:string
+    
+    SubClassOf: 
+        hasImpactOn some GroundHeatTransfer,
+        hasImpactOn some GroundChemicalChange,
+        hasImpactOn some GroundShrinkageLimit,
+        hasImpactOn some GroundActivity,
+        hasImpactOn some GroundHeatAbsorption,
+        decreasedBy some GroundMicrobialActivity,
+        hasImpactOn some GroundElectricalConductivity,
+        hasImpactOn some GroundPlasticity,
+        influencedBy some GroundChemicalReaction,
+        hasImpactOn some GroundEh,
+        hasImpactOn some GroundMaximumDryDensity,
+        hasImpactOn some GroundOptimumWaterContent,
+        hasImpactOn some GroundSubsidence,
+        hasImpactOn some GroundBulkDensity,
+        hasImpactOn some GroundSoluteTransport,
+        hasImpactOn some GroundPorosity,
+        hasImpactOn some GroundMineralization,
+        hasImpactOn some GroundWaterInfiltration,
+        hasImpactOn some GroundUndrainedShearStrength,
+        hasImpactOn some GroundSoluteDiffusion,
+        hasImpactOn some GroundThawing,
+        hasImpactOn some GroundImmobilization,
+        hasImpactOn some GroundStiffness,
+        hasImpactOn some GroundSwelling,
+        hasImpactOn some GroundSaturatedWaterFlow,
+        hasImpactOn some GroundCompaction,
+        hasImpactOn some GroundFreezing,
+        influencedBy some GroundParticleMovement,
+        hasImpactOn some GroundCracking,
+        hasImpactOn some GroundUnsaturatedWaterFlow,
+        hasImpactOn some GroundS-WaveVelocity,
+        influencedBy some GroundChemicalChange,
+        hasImpactOn some GroundCationExchangeCapacity,
+        hasImpactOn some GroundHeatCapacity,
+        hasImpactOn some GroundChemicalTransport,
+        hasImpactOn some GroundConsolidation,
+        hasImpactOn some GroundWaterRetentionCurve,
+        hasImpactOn some GroundWaterEvapotranspiration,
+        hasImpactOn some GroundParticleSpecificSurfaceArea,
+        hasImpactOn some GroundErosion,
+        hasImpactOn some GroundP-WaveVelocity,
+        hasImpactOn some GroundHydraulicConductivity,
+        hasImpactOn some GroundCohesion,
+        hasImpactOn some GroundDeformation,
+        hasImpactOn some GroundPeakAngle,
+        hasImpactOn some GroundWaterFlow,
+        hasImpactOn some GroundSurfaceSealFormation,
+        hasImpactOn some GroundChemicalReaction,
+        hasImpactOn some GroundDryDensity,
+        hasImpactOn some GroundShrinkSwellPotential,
+        hasImpactOn some GroundParticleDensity,
+        hasImpactOn some GroundShrinking,
+        hasImpactOn some GroundDielectricPermittivity,
+        GroundChemicalProperty,
+        hasImpactOn some GroundThermalConductivity,
+        hasImpactOn some GroundpH,
+        hasImpactOn some GroundInterfaceFriction,
+        hasImpactOn some GroundVoidRatio,
+        hasImpactOn some GroundParticleMovement,
+        hasImpactOn some GroundMicrobialActivity
+    
+    
+Class: GroundAirFlow
+
+    Annotations: 
+        rdfs:comment "The movement of air or gas within pores or voids in the ground from a high concentration to a low concentration. Affected by changes is water content, biological and man-made activity.  
+
+Knowledge Source: Wikipedia and expert knowledge
+
+"^^xsd:string
+    
+    SubClassOf: 
+        influencedBy some GroundMineralogy,
+        influencedBy some GroundGravelContent,
+        influencedBy some GroundPlasticity,
+        influencedBy some GroundParticleSizeDistribution,
+        influencedBy some GroundDegreeOfSaturation,
+        influencedBy some GroundBulkDensity,
+        influencedBy some GroundAirContent,
+        influencedBy some GroundCrackingIntensity,
+        GroundFluidProcess,
+        influencedBy some GroundClayContent,
+        influencedBy some GroundVoidRatio,
+        influencedBy some GroundWaterContent,
+        influencedBy some GroundPorosity,
+        influencedBy some GroundPrincipalType,
+        influencedBy some GroundHydraulicConductivity
+    
+    
+Class: GroundCompaction
+
+    Annotations: 
+        rdfs:comment "The process by which the ground or excavated material is made denser (reduced porosity) to engineering requirement.
+
+Knowledge Source: Wikipedia (geotechnical engineering) and expert knowledge
+
+"^^xsd:string
+    
+    SubClassOf: 
+        influencedBy some GroundMineralogy,
+        increases some GroundInterfaceFriction,
+        influencedBy some GroundDryDensity,
+        influencedBy some GroundGravelContent,
+        hasImpactOn some GroundElectricalConductivity,
+        influencedBy some GroundDegreeOfSaturation,
+        increases some GroundMaximumDryDensity,
+        influencedBy some GroundVoidRatio,
+        decreases some GroundCrackingIntensity,
+        increases some GroundP-WaveVelocity,
+        increases some GroundDensity,
+        decreases some GroundVoidRatio,
+        influencedBy some GroundParticleSpecificSurfaceArea,
+        increases some GroundConsistency,
+        hasImpactOn some GroundDielectricPermittivity,
+        increases some GroundStiffness,
+        influencedBy some GroundMaximumDryDensity,
+        increases some GroundBulkDensity,
+        influencedBy some GroundSiltContent,
+        influencedBy some GroundWaterContent,
+        influencedBy some GroundPrincipalType,
+        decreases some GroundPorosity,
+        GroundConstructionProcess,
+        decreases some GroundThermalConductivity,
+        increases some GroundS-WaveVelocity,
+        influencedBy some GroundVeryLargeParticles,
+        influencedBy some GroundConsistencyLimits,
+        influencedBy some GroundStiffness,
+        decreases some GroundHydraulicConductivity,
+        influencedBy some GroundAirContent,
+        influencedBy some GroundPlasticity,
+        influencedBy some GroundSandContent,
+        influencedBy some GroundOptimumWaterContent,
+        influencedBy some GroundUndrainedShearStrength,
+        influencedBy some GroundPorosity,
+        increases some GroundDryDensity,
+        decreases some GroundOptimumWaterContent,
+        influencedBy some GroundPeakAngle,
+        influencedBy some GroundClayContent,
+        decreases some GroundFabric,
+        influencedBy some GroundOrganicMatterContent,
+        decreases some GroundAirContent,
+        increases some GroundHeatCapacity,
+        influencedBy some GroundParticleSizeDistribution,
+        increases some GroundPeakAngle,
+        increases some GroundUndrainedShearStrength
+    
+    
+Class: GroundSoluteDiffusion
+
+    Annotations: 
+        rdfs:comment "The movement of ions or molecules from an area or zone of higher concentration to one of lower concentration.
+
+Knowledge Source: Wikipedia
+
+"^^xsd:string
+    
+    SubClassOf: 
+        influencedBy some GroundActivity,
+        influencedBy some GroundWaterRetentionCurve,
+        influencedBy some GroundClayContent,
+        influencedBy some GroundAirContent,
+        hasImpactOn some GroundDielectricPermittivity,
+        influencedBy some GroundPrincipalType,
+        influencedBy some GroundOrganicMatterContent,
+        hasImpactOn some GroundMagneticPermeability,
+        influencedBy some GroundParticleSizeDistribution,
+        influencedBy some GroundMineralogy,
+        influencedBy some GroundGravelContent,
+        influencedBy some GroundFabric,
+        hasImpactOn some GroundElectricalConductivity,
+        hasImpactOn some GroundCationExchangeCapacity,
+        hasImpactOn some GroundPlasticity,
+        influencedBy some GroundVoidRatio,
+        influencedBy some GroundWaterPressure,
+        GroundFluidProcess,
+        influencedBy some GroundDegreeOfSaturation,
+        influencedBy some GroundPorosity,
+        hasImpactOn some GroundConsistencyLimits,
+        influencedBy some GroundSiltContent,
+        hasImpactOn some GroundCohesion,
+        influencedBy some GroundWaterContent,
+        influencedBy some GroundHydraulicConductivity,
+        influencedBy some GroundConsistencyLimits,
+        influencedBy some GroundSandContent,
+        influencedBy some GroundParticleSpecificSurfaceArea,
+        influencedBy some GroundPlasticity
+    
+    
+Class: GroundBulkDensity
+
+    Annotations: 
+        rdfs:comment "The mass of the ground, including solid particles, water and air (or gas) contained in a unit volume.
+
+Usual Units: Mg/m3
+
+Knowledge Source: web.ead.anl.gov/resrad/datacoll/soildens.htm and expert opinion
+
+"^^xsd:string
+    
+    SubClassOf: 
+        hasImpactOn some GroundPorosity,
+        increasedBy some GroundConsolidation,
+        hasImpactOn some GroundP-WaveVelocity,
+        hasImpactOn some GroundDegradation,
+        hasImpactOn some GroundHydraulicConductivity,
+        hasImpactOn some GroundCohesion,
+        hasImpactOn some GroundConsolidation,
+        influencedBy some GroundMaximumDryDensity,
+        hasImpactOn some GroundStiffness,
+        hasImpactOn some GroundSwelling,
+        hasImpactOn some GroundHeatCapacity,
+        influencedBy some GroundDryDensity,
+        influencedBy some GroundWaterContent,
+        influencedBy some GroundCavity,
+        hasImpactOn some GroundFreezing,
+        influencedBy some GroundParticleMovement,
+        decreasedBy some GroundSwelling,
+        influencedBy some GroundParticleSizeDistribution,
+        increasedBy some GroundCompaction,
+        decreasedBy some GroundFreezing,
+        hasImpactOn some GroundSaturatedWaterFlow,
+        hasImpactOn some GroundInterfaceFriction,
+        hasImpactOn some GroundPeakAngle,
+        hasImpactOn some GroundErosion,
+        hasImpactOn some GroundVoidRatio,
+        influencedBy some GroundAirContent,
+        hasImpactOn some GroundElectricalConductivity,
+        influencedBy some GroundSiltContent,
+        decreasedBy some GroundWaterEvapotranspiration,
+        decreasedBy some GroundErosion,
+        influencedBy some GroundGravelContent,
+        hasImpactOn some GroundAirFlow,
+        influencedBy some GroundOptimumWaterContent,
+        hasImpactOn some GroundHeatAbsorption,
+        decreasedBy some GroundChemicalReaction,
+        influencedBy some GroundVeryLargeParticles,
+        hasImpactOn some GroundWaterContent,
+        influencedBy some GroundDegreeOfSaturation,
+        hasImpactOn some GroundShrinking,
+        hasImpactOn some GroundDielectricPermittivity,
+        influencedBy some GroundCrackingIntensity,
+        hasImpactOn some GroundMagneticPermeability,
+        increasedBy some GroundShrinking,
+        influencedBy some GroundClayContent,
+        hasImpactOn some GroundDryDensity,
+        influencedBy some GroundParticleDensity,
+        hasImpactOn some GroundDeformation,
+        hasImpactOn some GroundUndrainedShearStrength,
+        increasedBy some GroundSubsidence,
+        decreasedBy some GroundChemicalChange,
+        influencedBy some GroundPorosity,
+        influencedBy some GroundVoidRatio,
+        influencedBy some GroundDeformation,
+        influencedBy some GroundWaterTableDepth,
+        GroundStateVariable,
+        influencedBy some GroundWaterFlow,
+        hasImpactOn some GroundS-WaveVelocity,
+        influencedBy some GroundOrganicMatterContent,
+        influencedBy some GroundPrincipalType,
+        hasImpactOn some GroundThermalConductivity,
+        increasedBy some GroundWaterInfiltration,
+        hasImpactOn some GroundSubsidence,
+        influencedBy some GroundWaterPressure,
+        hasImpactOn some GroundHeatTransfer,
+        influencedBy some GroundSandContent
+    
+    
+Class: GroundShrinking
+
+    Annotations: 
+        rdfs:comment "The process by which the ground shrinks due to reduction in water content for instance during dry periods (including evapotranspiration) or by ground drainage.
+
+Knowledge Source: Expert knowledge
+
+"^^xsd:string
+    
+    SubClassOf: 
+        increases some GroundFabric,
+        increases some GroundBulkDensity,
+        influencedBy some GroundParticleSizeDistribution,
+        decreases some GroundPorosity,
+        hasImpactOn some GroundCohesion,
+        decreases some GroundThermalConductivity,
+        GroundMechanicalProcess,
+        decreases some GroundHeatCapacity,
+        influencedBy some GroundConsistencyLimits,
+        influencedBy some GroundAirContent,
+        decreases some GroundAirContent,
+        decreases some GroundHydraulicConductivity,
+        increases some GroundCrackingIntensity,
+        influencedBy some GroundClayContent,
+        decreases some GroundStiffness,
+        influencedBy some GroundCationExchangeCapacity,
+        influencedBy some GroundShrinkSwellPotential,
+        influencedBy some GroundPlasticity,
+        influencedBy some GroundFabric,
+        decreases some GroundUndrainedShearStrength,
+        influencedBy some GroundOrganicMatterContent,
+        influencedBy some GroundVoidRatio,
+        increases some GroundDegreeOfSaturation,
+        hasImpactOn some GroundDielectricPermittivity,
+        influencedBy some GroundDegreeOfSaturation,
+        influencedBy some GroundPrincipalType,
+        decreases some GroundVoidRatio,
+        influencedBy some GroundSiltContent,
+        influencedBy some GroundMineralogy,
+        increases some GroundInterfaceFriction,
+        influencedBy some GroundGravelContent,
+        hasImpactOn some GroundElectricalConductivity,
+        influencedBy some GroundShrinkageLimit,
+        influencedBy some GroundSandContent,
+        influencedBy some GroundDryDensity,
+        increases some GroundDryDensity,
+        increases some GroundP-WaveVelocity,
+        influencedBy some GroundParticleSpecificSurfaceArea,
+        influencedBy some GroundBulkDensity,
+        hasImpactOn some GroundPeakAngle,
+        increases some GroundS-WaveVelocity,
+        influencedBy some GroundCrackingIntensity,
+        influencedBy some GroundWaterContent,
+        influencedBy some GroundPorosity
+    
+    
+Class: GroundProperty
+
+    
+Class: GroundThermalProperty
+
+    Annotations: 
+        rdfs:comment "Ground thermal properties refer to the properties relevant to sensors that measure temperature but are also properties that can influence ground processes and their impact on buried structures.
+
+Knowledge Source: Expert knowledge
+
+"^^xsd:string
+    
+    SubClassOf: 
+        GroundProperty
+    
+    
+Class: GroundSaturatedWaterFlow
+
+    Annotations: 
+        rdfs:comment "The movement of water through saturated ground from a zone of higher potential to one of lower potential.
+
+Knowledge Source: Wikipedia and expert knowledge
+
+"^^xsd:string
+    
+    SubClassOf: 
+        influencedBy some GroundHydraulicConductivity,
+        influencedBy some GroundBulkDensity,
+        influencedBy some GroundAirContent,
+        influencedBy some GroundWaterContent,
+        influencedBy some GroundWaterRetentionCurve,
+        influencedBy some GroundClayContent,
+        influencedBy some GroundMineralogy,
+        influencedBy some GroundWaterTableDepth,
+        influencedBy some GroundPlasticity,
+        influencedBy some GroundParticleSpecificSurfaceArea,
+        influencedBy some GroundDegreeOfSaturation,
+        influencedBy some GroundConsistencyLimits,
+        influencedBy some GroundPorosity,
+        hasImpactOn some GroundWaterContent,
+        influencedBy some GroundCrackingIntensity,
+        influencedBy some GroundWaterPressure,
+        influencedBy some GroundDryDensity,
+        influencedBy some GroundFabric,
+        influencedBy some GroundOrganicMatterContent,
+        influencedBy some GroundSiltContent,
+        influencedBy some GroundVoidRatio,
+        influencedBy some GroundGravelContent,
+        hasImpactOn some GroundWaterTableDepth,
+        influencedBy some GroundParticleSizeDistribution,
+        influencedBy some GroundSandContent,
+        influencedBy some GroundPrincipalType,
+        GroundFluidProcess
+    
+    
+Class: GroundPorosity
+
+    Annotations: 
+        rdfs:comment "The volume of voids (water and air) expressed as a function of the total volume of the sample (porosity) or mass (voids ratio).
+
+Knowledge Source: Wikipedia and expert opinion
+
+"^^xsd:string
+    
+    SubClassOf: 
+        hasImpactOn some GroundThawing,
+        hasImpactOn some GroundUndrainedShearStrength,
+        hasImpactOn some GroundHeatTransfer,
+        hasImpactOn some GroundInterfaceFriction,
+        hasImpactOn some GroundErosion,
+        hasImpactOn some GroundAirFlow,
+        decreasedBy some GroundConsolidation,
+        hasImpactOn some GroundHydraulicConductivity,
+        influencedBy some GroundSandContent,
+        hasImpactOn some GroundSoluteDiffusion,
+        hasImpactOn some GroundElectricalConductivity,
+        influencedBy some GroundMaximumDryDensity,
+        hasImpactOn some GroundStiffness,
+        hasImpactOn some GroundSwelling,
+        hasImpactOn some GroundSaturatedWaterFlow,
+        influencedBy some GroundDryDensity,
+        influencedBy some GroundBulkDensity,
+        influencedBy some GroundCavity,
+        influencedBy some GroundFabric,
+        hasImpactOn some GroundFreezing,
+        increasedBy some GroundSwelling,
+        influencedBy some GroundParticleMovement,
+        hasImpactOn some GroundUnsaturatedWaterFlow,
+        decreasedBy some GroundCompaction,
+        increasedBy some GroundCracking,
+        hasImpactOn some GroundChemicalTransport,
+        influencedBy some GroundWaterContent,
+        hasImpactOn some GroundWaterRetentionCurve,
+        hasImpactOn some GroundWaterEvapotranspiration,
+        influencedBy some GroundParticleSizeDistribution,
+        influencedBy some GroundAirContent,
+        hasImpactOn some GroundDeformation,
+        hasImpactOn some GroundDielectricPermittivity,
+        hasImpactOn some GroundMicrobialActivity,
+        hasImpactOn some GroundWaterFlow,
+        influencedBy some GroundGravelContent,
+        hasImpactOn some GroundHeatAbsorption,
+        hasImpactOn some GroundPeakAngle,
+        influencedBy some GroundVeryLargeParticles,
+        hasImpactOn some GroundWaterContent,
+        influencedBy some GroundWaterInfiltration,
+        hasImpactOn some GroundShrinking,
+        influencedBy some GroundCrackingIntensity,
+        hasImpactOn some GroundMagneticPermeability,
+        decreasedBy some GroundShrinking,
+        influencedBy some GroundPrincipalType,
+        hasImpactOn some GroundDryDensity,
+        hasImpactOn some GroundConsolidation,
+        hasImpactOn some GroundBulkDensity,
+        hasImpactOn some GroundParticleMovement,
+        hasImpactOn some GroundSoluteTransport,
+        influencedBy some GroundParticleDensity,
+        hasImpactOn some GroundDegradation,
+        influencedBy some GroundSiltContent,
+        influencedBy some GroundClayContent,
+        hasImpactOn some GroundHeatCapacity,
+        hasImpactOn some GroundThermalConductivity,
+        hasImpactOn some GroundCompaction,
+        influencedBy some GroundDeformation,
+        GroundStateVariable,
+        hasImpactOn some GroundWaterInfiltration,
+        influencedBy some GroundOrganicMatterContent,
+        hasImpactOn some GroundCationExchangeCapacity,
+        hasImpactOn some GroundOptimumWaterContent,
+        hasImpactOn some GroundSubsidence
+    
+    
+Class: GroundBiologicalProcess
+
+    Annotations: 
+        rdfs:comment "Ground biological processes refer to processes involving organic material that lead to chemical changes to the ground.
+
+Knowledge Source: Expert knowledge
+
+"^^xsd:string
+    
+    SubClassOf: 
+        GroundProcess
+    
+    
+Class: GroundWaterContent
+
+    Annotations: 
+        rdfs:comment "The water content of the soil expressed as a percentage of the weight of water with respect to the weight of solids.
+
+Usual Units: %
+
+Knowledge Source: BS1377-2 (1990)
+
+"^^xsd:string
+    
+    SubClassOf: 
+        GroundStateVariable,
+        hasImpactOn some GroundCationExchangeCapacity,
+        influencedBy some GroundSoluteTransport,
+        hasImpactOn some GroundHeatCapacity,
+        hasImpactOn some GroundThawing,
+        increasedBy some GroundThawing,
+        hasImpactOn some GroundWaterRetentionCurve,
+        hasImpactOn some GroundThermalConductivity,
+        hasImpactOn some GroundMineralization,
+        hasImpactOn some GroundVoidRatio,
+        influencedBy some GroundAirContent,
+        hasImpactOn some GroundDeformation,
+        decreasedBy some GroundWaterEvapotranspiration,
+        hasImpactOn some GroundWaterFlow,
+        hasImpactOn some GroundChemicalChange,
+        hasImpactOn some GroundChemicalReaction,
+        influencedBy some GroundOptimumWaterContent,
+        influencedBy some GroundBulkDensity,
+        hasImpactOn some GroundWaterPressure,
+        decreasedBy some GroundConsolidation,
+        hasImpactOn some GroundAirFlow,
+        influencedBy some GroundHydraulicConductivity,
+        hasImpactOn some GroundShrinking,
+        hasImpactOn some GroundMicrobialActivity,
+        hasImpactOn some GroundDielectricPermittivity,
+        influencedBy some GroundPorosity,
+        hasImpactOn some GroundMaximumDryDensity,
+        decreasedBy some GroundSurfaceSealFormation,
+        hasImpactOn some GroundpH,
+        influencedBy some GroundSaturatedWaterFlow,
+        hasImpactOn some GroundWaterEvapotranspiration,
+        hasImpactOn some GroundDryDensity,
+        hasImpactOn some GroundChemicalTransport,
+        influencedBy some GroundParticleSizeDistribution,
+        hasImpactOn some GroundTemperature,
+        influencedBy some GroundDegreeOfSaturation,
+        hasImpactOn some GroundDegradation,
+        influencedBy some GroundUnsaturatedWaterFlow,
+        hasImpactOn some GroundHeatTransfer,
+        hasImpactOn some GroundSoluteDiffusion,
+        hasImpactOn some GroundHeatAbsorption,
+        influencedBy some GroundWaterRetentionCurve,
+        hasImpactOn some GroundElectricalConductivity,
+        hasImpactOn some GroundSubsidence,
+        influencedBy some GroundVoidRatio,
+        hasImpactOn some GroundAirContent,
+        influencedBy some GroundDeformation,
+        hasImpactOn some GroundMagneticPermeability,
+        influencedBy some GroundWaterTableDepth,
+        influencedBy some GroundWaterFlow,
+        hasImpactOn some GroundS-WaveVelocity,
+        hasImpactOn some GroundEh,
+        hasImpactOn some GroundOptimumWaterContent,
+        hasImpactOn some GroundConsolidation,
+        hasImpactOn some GroundBulkDensity,
+        influencedBy some GroundWaterPressure,
+        hasImpactOn some GroundSoluteTransport,
+        hasImpactOn some GroundPorosity,
+        hasImpactOn some GroundP-WaveVelocity,
+        hasImpactOn some GroundWaterInfiltration,
+        hasImpactOn some GroundHydraulicConductivity,
+        hasImpactOn some GroundDegreeOfSaturation,
+        hasImpactOn some GroundCohesion,
+        hasImpactOn some GroundUndrainedShearStrength,
+        hasImpactOn some GroundCrackingIntensity,
+        increasedBy some GroundWaterInfiltration,
+        hasImpactOn some GroundParticleMovement,
+        hasImpactOn some GroundImmobilization,
+        hasImpactOn some GroundStiffness,
+        hasImpactOn some GroundSwelling,
+        hasImpactOn some GroundSaturatedWaterFlow,
+        hasImpactOn some GroundCompaction,
+        hasImpactOn some GroundFreezing,
+        increasedBy some GroundSwelling,
+        influencedBy some GroundParticleMovement,
+        hasImpactOn some GroundCracking,
+        hasImpactOn some GroundUnsaturatedWaterFlow
+    
+    
+Class: GroundShrinkageLimit
+
+    Annotations: 
+        rdfs:comment "The water content below which a material ceases to shrink (significantly).
+
+Usual Units: %
+
+Knowledge Source: BS1377-2 (1990)
+
+"^^xsd:string
+    
+    SubClassOf: 
+        influencedBy some GroundMineralization,
+        hasImpactOn some GroundShrinkSwellPotential,
+        influencedBy some GroundPlasticity,
+        influencedBy some GroundChemicalChange,
+        influencedBy some GroundConsistencyLimits,
+        influencedBy some GroundImmobilization,
+        influencedBy some GroundOrganicMatterContent,
+        hasImpactOn some GroundCrackingIntensity,
+        GroundClassificationProperty,
+        influencedBy some GroundActivity,
+        influencedBy some GroundChemicalReaction,
+        influencedBy some GroundMineralogy,
+        influencedBy some GroundClayContent,
+        hasImpactOn some GroundSwelling,
+        influencedBy some GroundShrinkSwellPotential,
+        hasImpactOn some GroundShrinking,
+        influencedBy some GroundParticleSpecificSurfaceArea
+    
+    
+Class: GroundMicrobialActivity
+
+    Annotations: 
+        rdfs:comment "Microbial processes in the ground depending on the nature of the ground (chemistry, temperature etc.) and the microbes present.
+
+Knowledge Source: Expert knowledge
+
+"^^xsd:string
+    
+    SubClassOf: 
+        influencedBy some GroundHydraulicConductivity,
+        decreases some GroundOrganicMatterContent,
+        influencedBy some GroundVoidRatio,
+        influencedBy some GroundTemperature,
+        hasImpactOn some GroundEh,
+        influencedBy some GroundAirContent,
+        influencedBy some GroundWaterContent,
+        influencedBy some GroundEh,
+        influencedBy some GroundClayContent,
+        influencedBy some GroundParticleSpecificSurfaceArea,
+        influencedBy some GroundDegreeOfSaturation,
+        influencedBy some GroundCationExchangeCapacity,
+        influencedBy some GroundCrackingIntensity,
+        influencedBy some GroundFabric,
+        hasImpactOn some GroundpH,
+        GroundBiologicalProcess,
+        influencedBy some GroundWaterTableDepth,
+        influencedBy some GroundPorosity,
+        influencedBy some GroundpH,
+        influencedBy some GroundOrganicMatterContent,
+        influencedBy some GroundActivity
+    
+    
+Class: GroundProcess
+
+    
+Class: GroundDielectricPermittivity
+
+    Annotations: 
+        rdfs:comment "Permittivity is a measure of how an electric field affects, and is affected by, the ground.
+
+Usual Units: Farads per metre F/m
+
+Knowledge Source: Wikipedia and expert opinion
+
+"^^xsd:string
+    
+    SubClassOf: 
+        influencedBy some GroundGravelContent,
+        influencedBy some GroundConsolidation,
+        influencedBy some GroundParticleMovement,
+        hasImpactOn some GroundElectricalConductivity,
+        influencedBy some GroundClayContent,
+        influencedBy some GroundOrganicMatterContent,
+        influencedBy some GroundUnsaturatedWaterFlow,
+        influencedBy some GroundSoluteDiffusion,
+        influencedBy some GroundWaterFlow,
+        GroundElectromagneticProperty,
+        decreasedBy some GroundWaterEvapotranspiration,
+        influencedBy some GroundVeryLargeParticles,
+        decreasedBy some GroundFreezing,
+        influencedBy some GroundSandContent,
+        influencedBy some GroundShrinking,
+        influencedBy some GroundParticleSizeDistribution,
+        influencedBy some GroundAirContent,
+        increasedBy some GroundWaterInfiltration,
+        influencedBy some GroundDegreeOfSaturation,
+        influencedBy some GroundElectricalConductivity,
+        influencedBy some GroundParticleSpecificSurfaceArea,
+        influencedBy some GroundBulkDensity,
+        influencedBy some GroundWaterTableDepth,
+        influencedBy some GroundCavity,
+        influencedBy some GroundSoluteTransport,
+        influencedBy some GroundVoidRatio,
+        influencedBy some GroundMaximumDryDensity,
+        influencedBy some GroundSiltContent,
+        increasedBy some GroundThawing,
+        influencedBy some GroundFabric,
+        influencedBy some GroundCompaction,
+        influencedBy some GroundWaterContent,
+        influencedBy some GroundChemicalReaction,
+        influencedBy some GroundPorosity,
+        influencedBy some GroundPrincipalType,
+        influencedBy some GroundDryDensity,
+        influencedBy some GroundCrackingIntensity,
+        influencedBy some GroundOptimumWaterContent,
+        influencedBy some GroundMineralization,
+        influencedBy some GroundMineralogy,
+        influencedBy some GroundChemicalChange,
+        influencedBy some GroundTemperature,
+        influencedBy some GroundSubsidence,
+        influencedBy some GroundpH
+    
+    
+Class: GroundMineralogy
+
+    Annotations: 
+        rdfs:comment "The mineralogy of the ground. 
+
+Knowledge Source: Expert opinion
+
+"^^xsd:string
+    
+    SubClassOf: 
+        hasImpactOn some GroundpH,
+        hasImpactOn some GroundPlasticity,
+        hasImpactOn some GroundEh,
+        hasImpactOn some GroundActivity,
+        hasImpactOn some GroundWaterRetentionCurve,
+        hasImpactOn some GroundShrinkageLimit,
+        hasImpactOn some GroundDeformation,
+        hasImpactOn some GroundUndrainedShearStrength,
+        influencedBy some GroundClayContent,
+        hasImpactOn some GroundWaterFlow,
+        hasImpactOn some GroundCompaction,
+        hasImpactOn some GroundDegradation,
+        hasImpactOn some GroundInterfaceFriction,
+        hasImpactOn some GroundStiffness,
+        hasImpactOn some GroundHeatTransfer,
+        hasImpactOn some GroundResidualAngle,
+        hasImpactOn some GroundSurfaceSealFormation,
+        influencedBy some GroundSiltContent,
+        hasImpactOn some GroundParticleDensity,
+        GroundDescriptionProperty,
+        hasImpactOn some GroundWaterEvapotranspiration,
+        hasImpactOn some GroundSaturatedWaterFlow,
+        hasImpactOn some GroundSoluteTransport,
+        hasImpactOn some GroundImmobilization,
+        hasImpactOn some GroundMineralization,
+        hasImpactOn some GroundMagneticPermeability,
+        hasImpactOn some GroundChemicalChange,
+        hasImpactOn some GroundConsolidation,
+        influencedBy some GroundParticleSizeDistribution,
+        hasImpactOn some GroundSwelling,
+        hasImpactOn some GroundWaterInfiltration,
+        hasImpactOn some GroundShrinking,
+        hasImpactOn some GroundUnsaturatedWaterFlow,
+        hasImpactOn some GroundAirFlow,
+        influencedBy some GroundSandContent,
+        hasImpactOn some GroundShrinkSwellPotential,
+        hasImpactOn some GroundParticleSpecificSurfaceArea,
+        hasImpactOn some GroundElectricalConductivity,
+        hasImpactOn some GroundPeakAngle,
+        hasImpactOn some GroundThawing,
+        hasImpactOn some GroundDielectricPermittivity,
+        hasImpactOn some GroundCracking,
+        hasImpactOn some GroundHeatCapacity,
+        hasImpactOn some GroundChemicalTransport,
+        influencedBy some GroundGravelContent,
+        hasImpactOn some GroundThermalConductivity,
+        hasImpactOn some GroundFreezing,
+        hasImpactOn some GroundSoluteDiffusion,
+        influencedBy some GroundVeryLargeParticles,
+        influencedBy some GroundChemicalChange,
+        hasImpactOn some GroundChemicalReaction,
+        hasImpactOn some GroundConsistencyLimits,
+        hasImpactOn some GroundHeatAbsorption,
+        hasImpactOn some GroundCationExchangeCapacity
+    
+    
+Class: GroundConsistency
+
+    Annotations: 
+        rdfs:comment "The described consistency of fine engineering soils, relative density of coarse soils or rock strength as defined by BS5930:2015.
+
+Knowledge Source: Expert opinion and BS5930
+
+"^^xsd:string
+    
+    SubClassOf: 
+        influencedBy some GroundUndrainedShearStrength,
+        influencedBy some GroundPeakAngle,
+        increasedBy some GroundCompaction,
+        hasImpactOn some GroundP-WaveVelocity,
+        influencedBy some GroundClayContent,
+        GroundDescriptionProperty,
+        influencedBy some GroundStiffness,
+        influencedBy some GroundAirContent,
+        influencedBy some GroundMaximumDryDensity,
+        influencedBy some GroundOptimumWaterContent,
+        influencedBy some GroundDeformation,
+        hasImpactOn some GroundS-WaveVelocity
+    
+    
+Class: GroundMineralization
+
+    Annotations: 
+        rdfs:comment "In soil science, it is decomposition or oxidation of the chemical compound in organic matter into plant accessible forms. 
+
+Knowledge Source: Wikipedia and expert knowledge
+
+"^^xsd:string
+    
+    SubClassOf: 
+        influencedBy some GroundActivity,
+        influencedBy some GroundpH,
+        GroundBiologicalProcess,
+        influencedBy some GroundClayContent,
+        influencedBy some GroundWaterTableDepth,
+        influencedBy some GroundAirContent,
+        hasImpactOn some GroundDielectricPermittivity,
+        influencedBy some GroundPrincipalType,
+        influencedBy some GroundMineralogy,
+        influencedBy some GroundEh,
+        influencedBy some GroundTemperature,
+        hasImpactOn some GroundConsistencyLimits,
+        hasImpactOn some GroundElectricalConductivity,
+        influencedBy some GroundCrackingIntensity,
+        hasImpactOn some GroundShrinkageLimit,
+        hasImpactOn some GroundPlasticity,
+        hasImpactOn some GroundActivity,
+        hasImpactOn some GroundpH,
+        hasImpactOn some GroundShrinkSwellPotential,
+        influencedBy some GroundDegreeOfSaturation,
+        influencedBy some GroundOrganicMatterContent,
+        hasImpactOn some GroundCationExchangeCapacity,
+        influencedBy some GroundWaterContent,
+        influencedBy some GroundHydraulicConductivity,
+        hasImpactOn some GroundMagneticPermeability,
+        hasImpactOn some GroundEh,
+        influencedBy some GroundCationExchangeCapacity,
+        influencedBy some GroundParticleSpecificSurfaceArea
+    
+    
+Class: GroundpH
+
+    Annotations: 
+        rdfs:comment "It is approximately the negative of the logarithm to base 10 of the molar concentration, measured in units of moles per litre, of hydrogen ions.
+
+Is a numerical scale used as a measure of acidity (less than 7) and basicity (>7) of an aqueous solution.
+
+Knowledge Source: Head 1992
+
+"^^xsd:string
+    
+    SubClassOf: 
+        influencedBy some GroundTemperature,
+        GroundChemicalProperty,
+        hasImpactOn some GroundChemicalReaction,
+        influencedBy some GroundClayContent,
+        hasImpactOn some GroundChemicalChange,
+        hasImpactOn some GroundElectricalConductivity,
+        influencedBy some GroundImmobilization,
+        influencedBy some GroundMineralization,
+        influencedBy some GroundDegreeOfSaturation,
+        hasImpactOn some GroundChemicalTransport,
+        influencedBy some GroundCationExchangeCapacity,
+        hasImpactOn some GroundEh,
+        influencedBy some GroundChemicalReaction,
+        influencedBy some GroundWaterContent,
+        hasImpactOn some GroundImmobilization,
+        hasImpactOn some GroundDielectricPermittivity,
+        hasImpactOn some GroundMineralization,
+        influencedBy some GroundMineralogy,
+        influencedBy some GroundWaterTableDepth,
+        hasImpactOn some GroundCationExchangeCapacity,
+        influencedBy some GroundOrganicMatterContent,
+        influencedBy some GroundParticleMovement,
+        hasImpactOn some GroundMicrobialActivity,
+        influencedBy some GroundChemicalChange,
+        influencedBy some GroundAirContent,
+        influencedBy some GroundMicrobialActivity
+    
+    
+Class: GroundCationExchangeCapacity
+
+    Annotations: 
+        rdfs:comment "Cation exchange capacity (CEC) is the total capacity of the ground to hold exchangeable cations.
+
+Usual Units: milliequivalent of hydrogen per 100 g of dry material meq(+)/100g or centimol per kg cmol(+)/kg
+
+Knowledge Source: www.soilquality.org.au/factsheets/cation-exchange-capacity
+
+"^^xsd:string
+    
+    SubClassOf: 
+        hasImpactOn some GroundMineralization,
+        hasImpactOn some GroundpH,
+        influencedBy some GroundSandContent,
+        GroundChemicalProperty,
+        influencedBy some GroundPlasticity,
+        influencedBy some GroundPorosity,
+        influencedBy some GroundParticleSizeDistribution,
+        hasImpactOn some GroundEh,
+        influencedBy some GroundSoluteDiffusion,
+        influencedBy some GroundChemicalReaction,
+        hasImpactOn some GroundChemicalChange,
+        influencedBy some GroundOrganicMatterContent,
+        hasImpactOn some GroundSwelling,
+        hasImpactOn some GroundShrinking,
+        influencedBy some GroundMineralization,
+        influencedBy some GroundpH,
+        influencedBy some GroundChemicalChange,
+        influencedBy some GroundSiltContent,
+        influencedBy some GroundParticleMovement,
+        influencedBy some GroundClayContent,
+        influencedBy some GroundUnsaturatedWaterFlow,
+        influencedBy some GroundVoidRatio,
+        influencedBy some GroundSoluteTransport,
+        hasImpactOn some GroundChemicalTransport,
+        influencedBy some GroundPrincipalType,
+        hasImpactOn some GroundImmobilization,
+        influencedBy some GroundImmobilization,
+        influencedBy some GroundMineralogy,
+        influencedBy some GroundEh,
+        hasImpactOn some GroundMicrobialActivity,
+        hasImpactOn some GroundChemicalReaction,
+        influencedBy some GroundParticleSpecificSurfaceArea,
+        influencedBy some GroundWaterContent
+    
+    
+Class: GroundPeakAngle
+
+    Annotations: 
+        rdfs:comment "In terms of effective stress - The slope of the line on a graph relating shear strength on a surface at failure to the effective stress.
+
+Usual Units: °
+
+Knowledge Source: environment.uwe.ac.uk/geocal/SoilMech/shear/shear.htm
+
+"^^xsd:string
+    
+    SubClassOf: 
+        influencedBy some GroundPlasticity,
+        hasImpactOn some GroundParticleMovement,
+        influencedBy some GroundParticleSizeDistribution,
+        influencedBy some GroundDeformation,
+        decreasedBy some GroundCracking,
+        decreasedBy some GroundThawing,
+        influencedBy some GroundFabric,
+        hasImpactOn some GroundConsistency,
+        influencedBy some GroundBulkDensity,
+        increasedBy some GroundCompaction,
+        influencedBy some GroundSiltContent,
+        hasImpactOn some GroundCracking,
+        influencedBy some GroundPrincipalType,
+        influencedBy some GroundDryDensity,
+        hasImpactOn some GroundErosion,
+        influencedBy some GroundPorosity,
+        GroundMechanicalProperty,
+        influencedBy some GroundMineralogy,
+        influencedBy some GroundChemicalChange,
+        influencedBy some GroundVeryLargeParticles,
+        influencedBy some GroundGravelContent,
+        increasedBy some GroundSubsidence,
+        influencedBy some GroundParticleMovement,
+        influencedBy some GroundSandContent,
+        decreasedBy some GroundDegradation,
+        influencedBy some GroundVoidRatio,
+        hasImpactOn some GroundDensity,
+        influencedBy some GroundOrganicMatterContent,
+        hasImpactOn some GroundCompaction,
+        decreasedBy some GroundFreezing,
+        influencedBy some GroundMaximumDryDensity,
+        influencedBy some GroundWaterEvapotranspiration,
+        increasedBy some GroundConsolidation,
+        influencedBy some GroundShrinking,
+        decreasedBy some GroundSwelling,
+        decreasedBy some GroundWaterInfiltration,
+        influencedBy some GroundClayContent
+    
+    
+Class: GroundWaterRetentionCurve
+
+    Annotations: 
+        rdfs:comment "The relationship between the water content and the ground water potential (suction).
+
+Knowledge Source: https://s.campbellsci.com/documents/de/technical-papers/soilh20c and expert opinion
+
+"^^xsd:string
+    
+    SubClassOf: 
+        influencedBy some GroundFabric,
+        influencedBy some GroundWaterInfiltration,
+        influencedBy some GroundDegreeOfSaturation,
+        influencedBy some GroundOrganicMatterContent,
+        GroundMechanicalProperty,
+        influencedBy some GroundClayContent,
+        influencedBy some GroundWaterPressure,
+        hasImpactOn some GroundWaterFlow,
+        influencedBy some GroundVoidRatio,
+        hasImpactOn some GroundDegradation,
+        influencedBy some GroundMaximumDryDensity,
+        influencedBy some GroundSiltContent,
+        influencedBy some GroundPorosity,
+        hasImpactOn some GroundSoluteDiffusion,
+        influencedBy some GroundParticleSizeDistribution,
+        hasImpactOn some GroundWaterEvapotranspiration,
+        hasImpactOn some GroundSaturatedWaterFlow,
+        influencedBy some GroundWaterContent,
+        influencedBy some GroundHydraulicConductivity,
+        influencedBy some GroundParticleSpecificSurfaceArea,
+        hasImpactOn some GroundFabric,
+        hasImpactOn some GroundWaterInfiltration,
+        influencedBy some GroundActivity,
+        hasImpactOn some GroundCrackingIntensity,
+        influencedBy some GroundOptimumWaterContent,
+        hasImpactOn some GroundUnsaturatedWaterFlow,
+        influencedBy some GroundWaterFlow,
+        influencedBy some GroundSubsidence,
+        hasImpactOn some GroundWaterPressure,
+        influencedBy some GroundSandContent,
+        influencedBy some GroundAirContent,
+        influencedBy some GroundPrincipalType,
+        influencedBy some GroundWaterEvapotranspiration,
+        hasImpactOn some GroundHeatCapacity,
+        influencedBy some GroundMineralogy,
+        hasImpactOn some GroundWaterContent,
+        hasImpactOn some GroundHydraulicConductivity
+    
+    
+Class: GroundElectromagneticProperty
+
+    Annotations: 
+        rdfs:comment "Ground electromagnetic properties refer to the properties relevant to electrical sensors but are also properties that can influence soil properties which may affect construction and utility materials.
+
+Knowledge Source: Expert knowledge
+
+"^^xsd:string
+    
+    SubClassOf: 
+        GroundProperty
+    
+    
+Class: GroundChemicalProcess
+
+    Annotations: 
+        rdfs:comment "Ground chemical processes refer to processes (other than biological processes) that lead to chemical changes in the ground.
+
+Knowledge Source: Expert knowledge
+
+"^^xsd:string
+    
+    SubClassOf: 
+        GroundProcess
+    
+    
+Class: GroundParticleSpecificSurfaceArea
+
+    Annotations: 
+        rdfs:comment "The total surface area of a material per unit mass best measured with 2-Methoxyethanol (Ethylene glycol monoethyl ether, EGME).
+
+Usual Units: m2/g
+
+Knowledge Source: Expert opinion
+
+"^^xsd:string
+    
+    SubClassOf: 
+        hasImpactOn some GroundShrinkageLimit,
+        hasImpactOn some GroundPlasticity,
+        hasImpactOn some GroundActivity,
+        hasImpactOn some GroundWaterRetentionCurve,
+        hasImpactOn some GroundSoluteTransport,
+        hasImpactOn some GroundWaterFlow,
+        hasImpactOn some GroundSubsidence,
+        hasImpactOn some GroundSwelling,
+        hasImpactOn some GroundParticleMovement,
+        hasImpactOn some GroundCompaction,
+        hasImpactOn some GroundUnsaturatedWaterFlow,
+        influencedBy some GroundOrganicMatterContent,
+        hasImpactOn some GroundSoluteDiffusion,
+        influencedBy some GroundParticleSizeDistribution,
+        hasImpactOn some GroundWaterEvapotranspiration,
+        hasImpactOn some GroundSaturatedWaterFlow,
+        hasImpactOn some GroundImmobilization,
+        hasImpactOn some GroundFreezing,
+        hasImpactOn some GroundMagneticPermeability,
+        hasImpactOn some GroundChemicalChange,
+        hasImpactOn some GroundConsistencyLimits,
+        hasImpactOn some GroundShrinkSwellPotential,
+        hasImpactOn some GroundConsolidation,
+        hasImpactOn some GroundWaterInfiltration,
+        hasImpactOn some GroundShrinking,
+        hasImpactOn some GroundMineralization,
+        influencedBy some GroundClayContent,
+        hasImpactOn some GroundDeformation,
+        hasImpactOn some GroundCracking,
+        hasImpactOn some GroundDielectricPermittivity,
+        hasImpactOn some GroundChemicalTransport,
+        hasImpactOn some GroundThawing,
+        influencedBy some GroundMineralogy,
+        hasImpactOn some GroundMicrobialActivity,
+        hasImpactOn some GroundChemicalReaction,
+        GroundClassificationProperty,
+        hasImpactOn some GroundElectricalConductivity,
+        hasImpactOn some GroundCationExchangeCapacity
+    
+    
+Class: GroundDensity
+
+    Annotations: 
+        rdfs:comment "The described consistency of fine engineering soils, relative density of coarse soils or rock strength as defined by BS5930:2015.
+
+Knowledge Source: Expert opinion and BS5930
+
+"^^xsd:string
+    
+    SubClassOf: 
+        influencedBy some GroundDeformation,
+        influencedBy some GroundOptimumWaterContent,
+        hasImpactOn some GroundS-WaveVelocity,
+        influencedBy some GroundUndrainedShearStrength,
+        influencedBy some GroundMaximumDryDensity,
+        influencedBy some GroundPeakAngle,
+        increasedBy some GroundCompaction,
+        hasImpactOn some GroundP-WaveVelocity,
+        influencedBy some GroundClayContent,
+        influencedBy some GroundStiffness,
+        influencedBy some GroundAirContent,
+        GroundDescriptionProperty
+    
+    
+Class: GroundGravelContent
+
+    Annotations: 
+        rdfs:comment "The percentage of particle, by weight, that pass through a 63 mm sieve but are retained by a 2 mm sieve.
+
+Usual Units: %
+
+Knowledge Source: BS5930: 2015
+
+"^^xsd:string
+    
+    SubClassOf: 
+        hasImpactOn some GroundSoluteDiffusion,
+        hasImpactOn some GroundSwelling,
+        hasImpactOn some GroundPrincipalType,
+        hasImpactOn some GroundDeformation,
+        hasImpactOn some GroundSaturatedWaterFlow,
+        hasImpactOn some GroundParticleMovement,
+        hasImpactOn some GroundSoluteTransport,
+        hasImpactOn some GroundConsolidation,
+        hasImpactOn some GroundWaterInfiltration,
+        hasImpactOn some GroundShrinking,
+        hasImpactOn some GroundAirFlow,
+        hasImpactOn some GroundHydraulicConductivity,
+        hasImpactOn some GroundVoidRatio,
+        influencedBy some GroundParticleMovement,
+        hasImpactOn some GroundElectricalConductivity,
+        influencedBy some GroundParticleSizeDistribution,
+        hasImpactOn some GroundCracking,
+        hasImpactOn some GroundDielectricPermittivity,
+        hasImpactOn some GroundPorosity,
+        hasImpactOn some GroundMaximumDryDensity,
+        hasImpactOn some GroundParticleSizeDistribution,
+        hasImpactOn some GroundP-WaveVelocity,
+        hasImpactOn some GroundHeatCapacity,
+        hasImpactOn some GroundDegradation,
+        hasImpactOn some GroundBulkDensity,
+        hasImpactOn some GroundCompaction,
+        GroundClassificationProperty,
+        hasImpactOn some GroundDryDensity,
+        hasImpactOn some GroundStiffness,
+        hasImpactOn some GroundInterfaceFriction,
+        hasImpactOn some GroundErosion,
+        decreasedBy some GroundErosion,
+        hasImpactOn some GroundOptimumWaterContent,
+        hasImpactOn some GroundThermalConductivity,
+        hasImpactOn some GroundMineralogy,
+        hasImpactOn some GroundS-WaveVelocity,
+        hasImpactOn some GroundWaterFlow,
+        hasImpactOn some GroundPeakAngle,
+        hasImpactOn some GroundMagneticPermeability,
+        hasImpactOn some GroundUnsaturatedWaterFlow
+    
+    
+Class: GroundMechanicalProcess
+
+    Annotations: 
+        rdfs:comment "Ground mechanical processes refer to processes that lead to volume changes, including erosion and changes in loading.
+
+Knowledge Source: Expert knowledge
+
+"^^xsd:string
+    
+    SubClassOf: 
+        GroundProcess
+    
+    
+Class: GroundS-WaveVelocity
+
+    Annotations: 
+        rdfs:comment "The velocity of a Secondary (S) (transvers)-wave in the ground between two points.
+
+Usual Units: km/s or m/s
+
+Knowledge Source: Expert opinion
+
+"^^xsd:string
+    
+    SubClassOf: 
+        influencedBy some GroundDensity,
+        influencedBy some GroundClayContent,
+        increasedBy some GroundCompaction,
+        influencedBy some GroundBulkDensity,
+        influencedBy some GroundStiffness,
+        influencedBy some GroundPrincipalType,
+        influencedBy some GroundDryDensity,
+        increasedBy some GroundSubsidence,
+        influencedBy some GroundFreezing,
+        influencedBy some GroundVeryLargeParticles,
+        influencedBy some GroundChemicalChange,
+        influencedBy some GroundParticleMovement,
+        influencedBy some GroundGravelContent,
+        influencedBy some GroundFabric,
+        influencedBy some GroundDegreeOfSaturation,
+        decreasedBy some GroundDegradation,
+        hasImpactOn some GroundDeformation,
+        influencedBy some GroundWaterPressure,
+        influencedBy some GroundCrackingIntensity,
+        influencedBy some GroundConsistency,
+        increasedBy some GroundWaterEvapotranspiration,
+        GroundSeismicProperty,
+        influencedBy some GroundDeformation,
+        influencedBy some GroundOrganicMatterContent,
+        influencedBy some GroundMaximumDryDensity,
+        influencedBy some GroundAirContent,
+        influencedBy some GroundParticleSizeDistribution,
+        influencedBy some GroundCavity,
+        increasedBy some GroundConsolidation,
+        influencedBy some GroundWaterContent,
+        influencedBy some GroundChemicalReaction,
+        influencedBy some GroundSandContent,
+        influencedBy some GroundSiltContent,
+        increasedBy some GroundShrinking,
+        influencedBy some GroundOptimumWaterContent,
+        decreasedBy some GroundCracking
+    
+    
+Class: GroundImmobilization
+
+    Annotations: 
+        rdfs:comment "It is the conversion of inorganic compounds to organic compounds by micro-organisms or plants, by which it is prevented from being accessible to plants. An soil science term.
+
+Knowledge Source: Wikipedia and expert knowledge
+
+"^^xsd:string
+    
+    SubClassOf: 
+        hasImpactOn some GroundConsistencyLimits,
+        influencedBy some GroundActivity,
+        hasImpactOn some GroundShrinkageLimit,
+        influencedBy some GroundWaterContent,
+        hasImpactOn some GroundPlasticity,
+        hasImpactOn some GroundShrinkSwellPotential,
+        GroundBiologicalProcess,
+        influencedBy some GroundParticleSpecificSurfaceArea,
+        hasImpactOn some GroundCationExchangeCapacity,
+        hasImpactOn some GroundActivity,
+        influencedBy some GroundOrganicMatterContent,
+        influencedBy some GroundHydraulicConductivity,
+        influencedBy some GroundCationExchangeCapacity,
+        influencedBy some GroundTemperature,
+        hasImpactOn some GroundpH,
+        influencedBy some GroundDegreeOfSaturation,
+        hasImpactOn some GroundEh,
+        influencedBy some GroundMineralogy,
+        influencedBy some GroundEh,
+        influencedBy some GroundpH,
+        influencedBy some GroundClayContent
+    
+    
+Class: GroundShrinkSwellPotential
+
+    Annotations: 
+        rdfs:comment "The extent to which the ground shrinks or swells with a change in water content.
+
+Knowledge Source: Expert opinion
+
+"^^xsd:string
+    
+    SubClassOf: 
+        influencedBy some GroundPlasticity,
+        hasImpactOn some GroundCracking,
+        influencedBy some GroundOptimumWaterContent,
+        GroundClassificationProperty,
+        hasImpactOn some GroundSubsidence,
+        influencedBy some GroundActivity,
+        influencedBy some GroundAirContent,
+        influencedBy some GroundParticleSpecificSurfaceArea,
+        influencedBy some GroundClayContent,
+        influencedBy some GroundShrinkageLimit,
+        hasImpactOn some GroundShrinkageLimit,
+        hasImpactOn some GroundSwelling,
+        influencedBy some GroundChemicalReaction,
+        influencedBy some GroundMineralization,
+        hasImpactOn some GroundShrinking,
+        influencedBy some GroundMaximumDryDensity,
+        influencedBy some GroundOrganicMatterContent,
+        hasImpactOn some GroundCrackingIntensity,
+        hasImpactOn some GroundDeformation,
+        influencedBy some GroundChemicalChange,
+        hasImpactOn some GroundDegradation,
+        influencedBy some GroundMineralogy,
+        influencedBy some GroundConsistencyLimits,
+        influencedBy some GroundImmobilization
+    
+    
+Class: GroundResidualAngle
+
+    Annotations: 
+        rdfs:comment "The shear resistance which the ground can maintain after large shear displacements after peak strength has been mobilised.
+
+Usual Units: °
+
+Knowledge Source: home.iitk.ac.in/~priyog/Shear%20Strength%20Lecture.pdf
+
+"^^xsd:string
+    
+    SubClassOf: 
+        influencedBy some GroundMineralogy,
+        influencedBy some GroundClayContent,
+        GroundMechanicalProperty,
+        influencedBy some GroundPrincipalType,
+        influencedBy some GroundPlasticity,
+        influencedBy some GroundFabric,
+        influencedBy some GroundSiltContent,
+        influencedBy some GroundChemicalChange,
+        influencedBy some GroundConsistencyLimits,
+        influencedBy some GroundParticleMovement,
+        influencedBy some GroundSandContent,
+        influencedBy some GroundParticleSizeDistribution,
+        decreasedBy some GroundFreezing,
+        decreasedBy some GroundThawing
+    
+    
+Class: GroundPrincipalType
+
+    Annotations: 
+        rdfs:comment "The principal described lithology as from BS5930:2015.
+
+Knowledge Source: Expert opinion and BS5930
+
+"^^xsd:string
+    
+    SubClassOf: 
+        hasImpactOn some GroundConsolidation,
+        hasImpactOn some GroundWaterRetentionCurve,
+        hasImpactOn some GroundOptimumWaterContent,
+        hasImpactOn some GroundMineralization,
+        hasImpactOn some GroundUndrainedShearStrength,
+        influencedBy some GroundParticleSizeDistribution,
+        hasImpactOn some GroundWaterFlow,
+        hasImpactOn some GroundSubsidence,
+        hasImpactOn some GroundP-WaveVelocity,
+        hasImpactOn some GroundDegradation,
+        hasImpactOn some GroundParticleMovement,
+        hasImpactOn some GroundCompaction,
+        hasImpactOn some GroundSoluteTransport,
+        hasImpactOn some GroundSoluteDiffusion,
+        influencedBy some GroundSiltContent,
+        hasImpactOn some GroundStiffness,
+        GroundDescriptionProperty,
+        hasImpactOn some GroundBulkDensity,
+        hasImpactOn some GroundDryDensity,
+        hasImpactOn some GroundSaturatedWaterFlow,
+        hasImpactOn some GroundMaximumDryDensity,
+        hasImpactOn some GroundVoidRatio,
+        hasImpactOn some GroundFreezing,
+        hasImpactOn some GroundMagneticPermeability,
+        hasImpactOn some GroundS-WaveVelocity,
+        hasImpactOn some GroundSwelling,
+        hasImpactOn some GroundErosion,
+        hasImpactOn some GroundHeatCapacity,
+        hasImpactOn some GroundShrinking,
+        hasImpactOn some GroundWaterInfiltration,
+        hasImpactOn some GroundAirFlow,
+        hasImpactOn some GroundHeatAbsorption,
+        hasImpactOn some GroundPeakAngle,
+        hasImpactOn some GroundChemicalTransport,
+        hasImpactOn some GroundDielectricPermittivity,
+        influencedBy some GroundGravelContent,
+        influencedBy some GroundClayContent,
+        hasImpactOn some GroundChemicalReaction,
+        hasImpactOn some GroundHeatTransfer,
+        hasImpactOn some GroundUnsaturatedWaterFlow,
+        hasImpactOn some GroundCracking,
+        hasImpactOn some GroundDeformation,
+        hasImpactOn some GroundPorosity,
+        hasImpactOn some GroundThawing,
+        hasImpactOn some GroundThermalConductivity,
+        hasImpactOn some GroundChemicalChange,
+        influencedBy some GroundSandContent,
+        influencedBy some GroundVeryLargeParticles,
+        hasImpactOn some GroundHydraulicConductivity,
+        hasImpactOn some GroundResidualAngle,
+        hasImpactOn some GroundInterfaceFriction,
+        hasImpactOn some GroundElectricalConductivity,
+        hasImpactOn some GroundCationExchangeCapacity
+    
+    
+Class: GroundThawing
+
+    Annotations: 
+        rdfs:comment "The melting of ice within the pores of the ground.
+
+Knowledge Source: Expert knowledge
+
+"^^xsd:string
+    
+    SubClassOf: 
+        influencedBy some GroundThermalConductivity,
+        influencedBy some GroundParticleSizeDistribution,
+        decreases some GroundHydraulicConductivity,
+        influencedBy some GroundVoidRatio,
+        decreases some GroundCohesion,
+        influencedBy some GroundAirContent,
+        influencedBy some GroundWaterContent,
+        influencedBy some GroundMineralogy,
+        influencedBy some GroundOrganicMatterContent,
+        influencedBy some GroundTemperature,
+        decreases some GroundInterfaceFriction,
+        influencedBy some GroundPrincipalType,
+        decreases some GroundUndrainedShearStrength,
+        influencedBy some GroundParticleSpecificSurfaceArea,
+        influencedBy some GroundDegreeOfSaturation,
+        influencedBy some GroundPorosity,
+        influencedBy some GroundDryDensity,
+        influencedBy some GroundHeatCapacity,
+        decreases some GroundStiffness,
+        increases some GroundWaterContent,
+        increases some GroundDielectricPermittivity,
+        influencedBy some GroundWaterTableDepth,
+        increases some GroundElectricalConductivity,
+        decreases some GroundResidualAngle,
+        GroundThermalProcess,
+        influencedBy some GroundPlasticity,
+        decreases some GroundPeakAngle
+    
+    
+Class: GroundActivity
+
+    Annotations: 
+        rdfs:comment "The activity of the ground calculated from the clay content and plasticity index. 
+
+Knowledge Source: Expert opinion
+
+"^^xsd:string
+    
+    SubClassOf: 
+        influencedBy some GroundParticleSpecificSurfaceArea,
+        hasImpactOn some GroundChemicalTransport,
+        hasImpactOn some GroundMicrobialActivity,
+        hasImpactOn some GroundChemicalReaction,
+        hasImpactOn some GroundSoluteDiffusion,
+        hasImpactOn some GroundWaterRetentionCurve,
+        hasImpactOn some GroundShrinkSwellPotential,
+        hasImpactOn some GroundShrinkageLimit,
+        influencedBy some GroundChemicalReaction,
+        hasImpactOn some GroundMineralization,
+        influencedBy some GroundMineralogy,
+        influencedBy some GroundConsistencyLimits,
+        influencedBy some GroundImmobilization,
+        influencedBy some GroundPlasticity,
+        GroundClassificationProperty,
+        hasImpactOn some GroundSoluteTransport,
+        influencedBy some GroundChemicalChange,
+        influencedBy some GroundClayContent,
+        hasImpactOn some GroundChemicalChange,
+        hasImpactOn some GroundImmobilization,
+        hasImpactOn some GroundPlasticity,
+        influencedBy some GroundOrganicMatterContent,
+        influencedBy some GroundMineralization
+    
+    
+Class: GroundStiffness
+
+    Annotations: 
+        rdfs:comment "The relationship between the changes in stress and the resulting changes in strain and is strain dependant. Usually expressed in terms of the shear modulus (modulus of rigidity).
+
+Usual Units: MPa or GPa
+
+Knowledge Source: www.brad.ac.uk/staff/vtoropov/tmp/week4.pdf and expert opinion
+
+"^^xsd:string
+    
+    SubClassOf: 
+        influencedBy some GroundGravelContent,
+        increasedBy some GroundSubsidence,
+        decreasedBy some GroundDegradation,
+        hasImpactOn some GroundConsistency,
+        influencedBy some GroundSandContent,
+        influencedBy some GroundWaterTableDepth,
+        increasedBy some GroundCompaction,
+        influencedBy some GroundParticleMovement,
+        influencedBy some GroundDegreeOfSaturation,
+        hasImpactOn some GroundDeformation,
+        influencedBy some GroundWaterPressure,
+        hasImpactOn some GroundDensity,
+        hasImpactOn some GroundP-WaveVelocity,
+        hasImpactOn some GroundConsolidation,
+        influencedBy some GroundVeryLargeParticles,
+        decreasedBy some GroundCracking,
+        influencedBy some GroundVoidRatio,
+        influencedBy some GroundOrganicMatterContent,
+        influencedBy some GroundMineralogy,
+        influencedBy some GroundFabric,
+        increasedBy some GroundConsolidation,
+        decreasedBy some GroundSwelling,
+        decreasedBy some GroundWaterInfiltration,
+        hasImpactOn some GroundS-WaveVelocity,
+        influencedBy some GroundParticleSizeDistribution,
+        hasImpactOn some GroundSubsidence,
+        influencedBy some GroundBulkDensity,
+        hasImpactOn some GroundCompaction,
+        influencedBy some GroundWaterContent,
+        influencedBy some GroundPrincipalType,
+        influencedBy some GroundDeformation,
+        influencedBy some GroundPorosity,
+        influencedBy some GroundMaximumDryDensity,
+        influencedBy some GroundSiltContent,
+        decreasedBy some GroundThawing,
+        influencedBy some GroundAirContent,
+        increasedBy some GroundWaterEvapotranspiration,
+        decreasedBy some GroundShrinking,
+        influencedBy some GroundConsistencyLimits,
+        influencedBy some GroundClayContent,
+        influencedBy some GroundDryDensity,
+        GroundMechanicalProperty,
+        influencedBy some GroundChemicalChange,
+        decreasedBy some GroundFreezing
+    
+    
+Class: GroundSubsidence
+
+    Annotations: 
+        rdfs:comment "The process of excessive, usually partly permanent, downwards movement of the ground due to drying (shrinkage - climatic or drainage) or by failure of the ground, for instance above karstic features or movement of the ground into karstic features or into man-made structures such as mines.  
+
+Knowledge Source: Expert knowledge
+
+"^^xsd:string
+    
+    SubClassOf: 
+        increases some GroundStiffness,
+        influencedBy some GroundStiffness,
+        increases some GroundS-WaveVelocity,
+        influencedBy some GroundDryDensity,
+        hasImpactOn some GroundWaterRetentionCurve,
+        influencedBy some GroundPorosity,
+        increases some GroundDryDensity,
+        increases some GroundThermalConductivity,
+        increases some GroundInterfaceFriction,
+        influencedBy some GroundVoidRatio,
+        increases some GroundPeakAngle,
+        influencedBy some GroundOrganicMatterContent,
+        influencedBy some GroundBulkDensity,
+        increases some GroundP-WaveVelocity,
+        decreases some GroundHydraulicConductivity,
+        increases some GroundHeatCapacity,
+        increases some GroundBulkDensity,
+        hasImpactOn some GroundDielectricPermittivity,
+        influencedBy some GroundShrinkSwellPotential,
+        influencedBy some GroundWaterContent,
+        hasImpactOn some GroundElectricalConductivity,
+        increases some GroundUndrainedShearStrength,
+        GroundTemporalProcess,
+        influencedBy some GroundPrincipalType,
+        hasImpactOn some GroundCohesion,
+        influencedBy some GroundParticleSpecificSurfaceArea
+    
+    
+Class: GroundChemicalChange
+
+    Annotations: 
+        rdfs:comment "The change in chemistry of the ground due the movement of ions or organic chemicals into or out a volume of ground or due to the precipitation of ions with in a volume of ground. 
+
+Knowledge Source: Expert knowledge
+
+"^^xsd:string
+    
+    SubClassOf: 
+        hasImpactOn some GroundCohesion,
+        influencedBy some GroundWaterContent,
+        influencedBy some GroundHydraulicConductivity,
+        hasImpactOn some GroundpH,
+        hasImpactOn some GroundInterfaceFriction,
+        hasImpactOn some GroundShrinkSwellPotential,
+        hasImpactOn some GroundS-WaveVelocity,
+        influencedBy some GroundElectricalConductivity,
+        influencedBy some GroundCationExchangeCapacity,
+        influencedBy some GroundParticleSpecificSurfaceArea,
+        influencedBy some GroundPlasticity,
+        GroundChemicalProcess,
+        influencedBy some GroundActivity,
+        hasImpactOn some GroundEh,
+        hasImpactOn some GroundP-WaveVelocity,
+        hasImpactOn some GroundCationExchangeCapacity,
+        influencedBy some GroundAirContent,
+        hasImpactOn some GroundColour,
+        hasImpactOn some GroundDielectricPermittivity,
+        hasImpactOn some GroundOrganicMatterContent,
+        influencedBy some GroundPrincipalType,
+        hasImpactOn some GroundThermalConductivity,
+        hasImpactOn some GroundHeatCapacity,
+        influencedBy some GroundEh,
+        influencedBy some GroundMineralogy,
+        decreases some GroundDryDensity,
+        influencedBy some GroundTemperature,
+        hasImpactOn some GroundMagneticPermeability,
+        hasImpactOn some GroundUndrainedShearStrength,
+        influencedBy some GroundClayContent,
+        hasImpactOn some GroundHydraulicConductivity,
+        hasImpactOn some GroundElectricalConductivity,
+        influencedBy some GroundDegreeOfSaturation,
+        influencedBy some GroundWaterTableDepth,
+        hasImpactOn some GroundPlasticity,
+        hasImpactOn some GroundActivity,
+        hasImpactOn some GroundOptimumWaterContent,
+        hasImpactOn some GroundMineralogy,
+        hasImpactOn some GroundShrinkageLimit,
+        decreases some GroundBulkDensity,
+        hasImpactOn some GroundConsistencyLimits,
+        hasImpactOn some GroundPeakAngle,
+        influencedBy some GroundOrganicMatterContent,
+        hasImpactOn some GroundResidualAngle,
+        hasImpactOn some GroundStiffness,
+        influencedBy some GroundpH
+    
+    
+Class: GroundStateVariable
+
+    Annotations: 
+        rdfs:comment "Ground state variables refer to the current state of the ground which help predict its future behaviour when subject to external or internal processes.
+
+Knowledge Source: Expert knowledge
+
+"^^xsd:string
+    
+    SubClassOf: 
+        GroundProperty
+    
+    
+Class: GroundWaterInfiltration
+
+    Annotations: 
+        rdfs:comment "The process by which water on the ground surface enters the ground.
+
+Knowledge Source: USGS (water.usgs.gov/edu/watercycleinfiltration.html)
+
+"^^xsd:string
+    
+    SubClassOf: 
+        influencedBy some GroundWaterRetentionCurve,
+        hasImpactOn some GroundVoidRatio,
+        increases some GroundWaterPressure,
+        influencedBy some GroundSiltContent,
+        influencedBy some GroundCavity,
+        influencedBy some GroundPrincipalType,
+        influencedBy some GroundOrganicMatterContent,
+        decreases some GroundUndrainedShearStrength,
+        influencedBy some GroundClayContent,
+        influencedBy some GroundPlasticity,
+        increases some GroundDielectricPermittivity,
+        decreases some GroundPeakAngle,
+        increases some GroundThermalConductivity,
+        decreases some GroundAirContent,
+        hasImpactOn some GroundPorosity,
+        increases some GroundHeatCapacity,
+        influencedBy some GroundDryDensity,
+        increases some GroundHydraulicConductivity,
+        influencedBy some GroundMineralogy,
+        decreases some GroundCohesion,
+        influencedBy some GroundCrackingIntensity,
+        increases some GroundElectricalConductivity,
+        influencedBy some GroundGravelContent,
+        influencedBy some GroundFabric,
+        influencedBy some GroundParticleSizeDistribution,
+        influencedBy some GroundDegreeOfSaturation,
+        influencedBy some GroundWaterTableDepth,
+        influencedBy some GroundParticleSpecificSurfaceArea,
+        influencedBy some GroundVoidRatio,
+        GroundFluidProcess,
+        increases some GroundWaterContent,
+        influencedBy some GroundHydraulicConductivity,
+        influencedBy some GroundPorosity,
+        influencedBy some GroundSandContent,
+        increases some GroundBulkDensity,
+        influencedBy some GroundWaterContent,
+        increases some GroundMagneticPermeability,
+        hasImpactOn some GroundWaterRetentionCurve,
+        decreases some GroundStiffness,
+        influencedBy some GroundAirContent,
+        hasImpactOn some GroundTemperature,
+        increases some GroundDegreeOfSaturation,
+        increases some GroundWaterTableDepth
+    
+    
+Class: GroundCavity
+
+    Annotations: 
+        rdfs:comment "A large void in the ground, larger than would normally occur under normal conditions.
+
+Knowledge Source: Expert opinion
+
+"^^xsd:string
+    
+    SubClassOf: 
+        hasImpactOn some GroundDielectricPermittivity,
+        hasImpactOn some GroundVoidRatio,
+        hasImpactOn some GroundHydraulicConductivity,
+        hasImpactOn some GroundP-WaveVelocity,
+        hasImpactOn some GroundAirContent,
+        hasImpactOn some GroundUndrainedShearStrength,
+        hasImpactOn some GroundWaterFlow,
+        hasImpactOn some GroundMaximumDryDensity,
+        hasImpactOn some GroundWaterInfiltration,
+        hasImpactOn some GroundBulkDensity,
+        hasImpactOn some GroundS-WaveVelocity,
+        hasImpactOn some GroundPorosity,
+        hasImpactOn some GroundDryDensity,
+        GroundDescriptionProperty,
+        increasedBy some GroundErosion,
+        hasImpactOn some GroundElectricalConductivity
+    
+    
+Class: GroundConsolidation
+
+    Annotations: 
+        rdfs:comment "The process that leads to the decrease in volume by the reduction in voids including by the addition of stress or removal or pore water.  Primary consolidation occurs by the expulsion of excess water pressure after the addition of a stress or the removal of pore water, reducing pore pressure, and secondary consolidation is long-term adjustment of the internal structure (and chemistry) of the ground after the changes in effective stress.
+
+Knowledge Source: Wikipedia and expert knowledge
+
+"^^xsd:string
+    
+    SubClassOf: 
+        influencedBy some GroundPorosity,
+        influencedBy some GroundStiffness,
+        influencedBy some GroundWaterContent,
+        decreases some GroundFabric,
+        influencedBy some GroundParticleSizeDistribution,
+        decreases some GroundThermalConductivity,
+        influencedBy some GroundHydraulicConductivity,
+        influencedBy some GroundParticleSpecificSurfaceArea,
+        influencedBy some GroundDegreeOfSaturation,
+        decreases some GroundHydraulicConductivity,
+        increases some GroundDegreeOfSaturation,
+        influencedBy some GroundPlasticity,
+        increases some GroundS-WaveVelocity,
+        influencedBy some GroundVoidRatio,
+        influencedBy some GroundPrincipalType,
+        increases some GroundBulkDensity,
+        influencedBy some GroundSiltContent,
+        decreases some GroundPorosity,
+        influencedBy some GroundAirContent,
+        GroundTemporalProcess,
+        influencedBy some GroundConsistencyLimits,
+        increases some GroundPeakAngle,
+        decreases some GroundAirContent,
+        influencedBy some GroundBulkDensity,
+        influencedBy some GroundDryDensity,
+        influencedBy some GroundCohesion,
+        influencedBy some GroundCrackingIntensity,
+        increases some GroundHeatCapacity,
+        increases some GroundDryDensity,
+        influencedBy some GroundMineralogy,
+        increases some GroundInterfaceFriction,
+        influencedBy some GroundGravelContent,
+        influencedBy some GroundFabric,
+        hasImpactOn some GroundElectricalConductivity,
+        influencedBy some GroundSandContent,
+        influencedBy some GroundOrganicMatterContent,
+        decreases some GroundWaterContent,
+        increases some GroundUndrainedShearStrength,
+        decreases some GroundCrackingIntensity,
+        increases some GroundP-WaveVelocity,
+        influencedBy some GroundWaterPressure,
+        decreases some GroundVoidRatio,
+        influencedBy some GroundClayContent,
+        hasImpactOn some GroundDielectricPermittivity,
+        increases some GroundStiffness
+    
+    
+Class: GroundFabric
+
+    Annotations: 
+        rdfs:comment "The main orientation of the particles of the ground including bedding, cleavage or foliation.
+
+Knowledge Source: Expert opinion and BS5930
+
+"^^xsd:string
+    
+    SubClassOf: 
+        decreasedBy some GroundCompaction,
+        hasImpactOn some GroundSwelling,
+        hasImpactOn some GroundCracking,
+        hasImpactOn some GroundDeformation,
+        hasImpactOn some GroundChemicalTransport,
+        hasImpactOn some GroundParticleMovement,
+        hasImpactOn some GroundMicrobialActivity,
+        hasImpactOn some GroundCohesion,
+        hasImpactOn some GroundInterfaceFriction,
+        influencedBy some GroundErosion,
+        hasImpactOn some GroundHydraulicConductivity,
+        increasedBy some GroundSwelling,
+        hasImpactOn some GroundWaterEvapotranspiration,
+        increasedBy some GroundCracking,
+        hasImpactOn some GroundWaterRetentionCurve,
+        hasImpactOn some GroundSoluteTransport,
+        hasImpactOn some GroundUndrainedShearStrength,
+        hasImpactOn some GroundWaterFlow,
+        hasImpactOn some GroundP-WaveVelocity,
+        hasImpactOn some GroundDegradation,
+        hasImpactOn some GroundPeakAngle,
+        increasedBy some GroundFreezing,
+        influencedBy some GroundDeformation,
+        hasImpactOn some GroundSoluteDiffusion,
+        hasImpactOn some GroundStiffness,
+        GroundDescriptionProperty,
+        hasImpactOn some GroundResidualAngle,
+        decreasedBy some GroundConsolidation,
+        hasImpactOn some GroundSaturatedWaterFlow,
+        increasedBy some GroundShrinking,
+        hasImpactOn some GroundShrinking,
+        hasImpactOn some GroundMagneticPermeability,
+        hasImpactOn some GroundS-WaveVelocity,
+        hasImpactOn some GroundPorosity,
+        hasImpactOn some GroundConsolidation,
+        hasImpactOn some GroundErosion,
+        influencedBy some GroundWaterRetentionCurve,
+        hasImpactOn some GroundWaterInfiltration,
+        hasImpactOn some GroundUnsaturatedWaterFlow,
+        hasImpactOn some GroundElectricalConductivity,
+        hasImpactOn some GroundVoidRatio,
+        hasImpactOn some GroundDielectricPermittivity,
+        influencedBy some GroundParticleMovement,
+        increasedBy some GroundDegradation
+    
+    
+Class: GroundWaterEvapotranspiration
+
+    Annotations: 
+        rdfs:comment "The process by which water is transferred from the land to the atmosphere by evaporation from the soil and other surfaces and by transpiration from plants.
+
+Knowledge Source: USGS (water.usgs.gov/edu/watercycleevapotranspiration.html)
+
+"^^xsd:string
+    
+    SubClassOf: 
+        influencedBy some GroundAirContent,
+        influencedBy some GroundDegreeOfSaturation,
+        influencedBy some GroundVoidRatio,
+        influencedBy some GroundCrackingIntensity,
+        influencedBy some GroundDryDensity,
+        influencedBy some GroundParticleSpecificSurfaceArea,
+        influencedBy some GroundClayContent,
+        decreases some GroundBulkDensity,
+        influencedBy some GroundOrganicMatterContent,
+        influencedBy some GroundFabric,
+        decreases some GroundMagneticPermeability,
+        influencedBy some GroundSandContent,
+        increases some GroundUndrainedShearStrength,
+        influencedBy some GroundHydraulicConductivity,
+        decreases some GroundDegreeOfSaturation,
+        increases some GroundP-WaveVelocity,
+        decreases some GroundElectricalConductivity,
+        GroundFluidProcess,
+        increases some GroundAirContent,
+        hasImpactOn some GroundPeakAngle,
+        decreases some GroundWaterPressure,
+        influencedBy some GroundMineralogy,
+        increases some GroundStiffness,
+        decreases some GroundWaterTableDepth,
+        increases some GroundCohesion,
+        decreases some GroundDielectricPermittivity,
+        hasImpactOn some GroundWaterRetentionCurve,
+        influencedBy some GroundWaterContent,
+        increases some GroundS-WaveVelocity,
+        decreases some GroundWaterContent,
+        increases some GroundCrackingIntensity,
+        influencedBy some GroundPlasticity,
+        influencedBy some GroundWaterRetentionCurve,
+        decreases some GroundThermalConductivity,
+        influencedBy some GroundPorosity
+    
+    
+Class: GroundP-WaveVelocity
+
+    Annotations: 
+        rdfs:comment "The velocity of a Primary (P) (sound, compressional-wave) in the ground between two points.
+
+Usual Units: km/s
+
+Knowledge Source: Expert opinion
+
+"^^xsd:string
+    
+    SubClassOf: 
+        influencedBy some GroundChemicalReaction,
+        influencedBy some GroundStiffness,
+        influencedBy some GroundSiltContent,
+        increasedBy some GroundShrinking,
+        influencedBy some GroundOptimumWaterContent,
+        decreasedBy some GroundCracking,
+        influencedBy some GroundParticleMovement,
+        influencedBy some GroundDegreeOfSaturation,
+        increasedBy some GroundCompaction,
+        influencedBy some GroundVeryLargeParticles,
+        influencedBy some GroundDensity,
+        hasImpactOn some GroundDeformation,
+        influencedBy some GroundBulkDensity,
+        influencedBy some GroundDryDensity,
+        influencedBy some GroundSandContent,
+        increasedBy some GroundWaterEvapotranspiration,
+        influencedBy some GroundFreezing,
+        influencedBy some GroundPrincipalType,
+        influencedBy some GroundChemicalChange,
+        influencedBy some GroundFabric,
+        influencedBy some GroundGravelContent,
+        increasedBy some GroundSubsidence,
+        influencedBy some GroundCrackingIntensity,
+        influencedBy some GroundAirContent,
+        influencedBy some GroundWaterPressure,
+        influencedBy some GroundClayContent,
+        influencedBy some GroundConsistency,
+        increasedBy some GroundConsolidation,
+        influencedBy some GroundDeformation,
+        influencedBy some GroundOrganicMatterContent,
+        influencedBy some GroundMaximumDryDensity,
+        GroundSeismicProperty,
+        influencedBy some GroundParticleSizeDistribution,
+        influencedBy some GroundCavity,
+        decreasedBy some GroundDegradation,
+        influencedBy some GroundWaterContent
+    
+    
+Class: GroundThermalProcess
+
+    Annotations: 
+        rdfs:comment "Ground thermal processes refer to processes that cause ground movement due to temperature changes.
+
+Knowledge Source: Expert knowledge
+
+"^^xsd:string
+    
+    SubClassOf: 
+        GroundProcess
+    
+    
+Class: GroundDeformation
+
+    Annotations: 
+        rdfs:comment "The process by which the ground changes in shape because of an applied force (tensile, compressional, shear, bending or torsional forces). These maybe man-made or natural.
+
+Knowledge Source: Wikipedia and expert knowledge
+
+"^^xsd:string
+    
+    SubClassOf: 
+        hasImpactOn some GroundCrackingIntensity,
+        influencedBy some GroundPorosity,
+        hasImpactOn some GroundVoidRatio,
+        influencedBy some GroundSiltContent,
+        influencedBy some GroundP-WaveVelocity,
+        influencedBy some GroundAirContent,
+        GroundMechanicalProcess,
+        influencedBy some GroundClayContent,
+        hasImpactOn some GroundHeatCapacity,
+        hasImpactOn some GroundPorosity,
+        influencedBy some GroundShrinkSwellPotential,
+        influencedBy some GroundStiffness,
+        influencedBy some GroundPrincipalType,
+        hasImpactOn some GroundThermalConductivity,
+        influencedBy some GroundPlasticity,
+        influencedBy some GroundMineralogy,
+        influencedBy some GroundS-WaveVelocity,
+        influencedBy some GroundGravelContent,
+        influencedBy some GroundFabric,
+        hasImpactOn some GroundElectricalConductivity,
+        influencedBy some GroundDegreeOfSaturation,
+        hasImpactOn some GroundConsistency,
+        influencedBy some GroundVoidRatio,
+        hasImpactOn some GroundUndrainedShearStrength,
+        hasImpactOn some GroundMaximumDryDensity,
+        hasImpactOn some GroundWaterContent,
+        hasImpactOn some GroundDensity,
+        hasImpactOn some GroundP-WaveVelocity,
+        hasImpactOn some GroundPeakAngle,
+        influencedBy some GroundVeryLargeParticles,
+        hasImpactOn some GroundAirContent,
+        influencedBy some GroundSandContent,
+        influencedBy some GroundOrganicMatterContent,
+        influencedBy some GroundParticleSizeDistribution,
+        hasImpactOn some GroundStiffness,
+        influencedBy some GroundUndrainedShearStrength,
+        hasImpactOn some GroundBulkDensity,
+        hasImpactOn some GroundDryDensity,
+        hasImpactOn some GroundCohesion,
+        influencedBy some GroundHydraulicConductivity,
+        influencedBy some GroundBulkDensity,
+        influencedBy some GroundWaterPressure,
+        hasImpactOn some GroundS-WaveVelocity,
+        influencedBy some GroundCrackingIntensity,
+        influencedBy some GroundWaterContent,
+        influencedBy some GroundDryDensity,
+        hasImpactOn some GroundFabric,
+        influencedBy some GroundParticleSpecificSurfaceArea
+    
+    
+Class: GroundAirContent
+
+    Annotations: 
+        rdfs:comment "The air content of the ground, those voids that are not water filled. Related to saturation ratio.
+
+Knowledge Source: Expert opinion
+
+"^^xsd:string
+    
+    SubClassOf: 
+        hasImpactOn some GroundAirFlow,
+        hasImpactOn some GroundVoidRatio,
+        influencedBy some GroundWaterFlow,
+        hasImpactOn some GroundCohesion,
+        influencedBy some GroundDeformation,
+        hasImpactOn some GroundConsistency,
+        hasImpactOn some GroundHydraulicConductivity,
+        hasImpactOn some GroundP-WaveVelocity,
+        hasImpactOn some GroundHeatTransfer,
+        decreasedBy some GroundCompaction,
+        hasImpactOn some GroundS-WaveVelocity,
+        decreasedBy some GroundWaterInfiltration,
+        hasImpactOn some GroundDielectricPermittivity,
+        hasImpactOn some GroundPorosity,
+        hasImpactOn some GroundThawing,
+        hasImpactOn some GroundThermalConductivity,
+        hasImpactOn some GroundSoluteDiffusion,
+        hasImpactOn some GroundHeatCapacity,
+        hasImpactOn some GroundShrinking,
+        hasImpactOn some GroundCompaction,
+        hasImpactOn some GroundWaterContent,
+        hasImpactOn some GroundMicrobialActivity,
+        hasImpactOn some GroundChemicalReaction,
+        hasImpactOn some GroundHeatAbsorption,
+        influencedBy some GroundDegreeOfSaturation,
+        influencedBy some GroundUnsaturatedWaterFlow,
+        hasImpactOn some GroundConsolidation,
+        hasImpactOn some GroundWaterRetentionCurve,
+        hasImpactOn some GroundSoluteTransport,
+        hasImpactOn some GroundpH,
+        hasImpactOn some GroundWaterFlow,
+        hasImpactOn some GroundDensity,
+        hasImpactOn some GroundEh,
+        increasedBy some GroundWaterEvapotranspiration,
+        hasImpactOn some GroundElectricalConductivity,
+        GroundConstuctionProperty,
+        hasImpactOn some GroundShrinkSwellPotential,
+        hasImpactOn some GroundUndrainedShearStrength,
+        hasImpactOn some GroundStiffness,
+        hasImpactOn some GroundDegreeOfSaturation,
+        influencedBy some GroundParticleSizeDistribution,
+        influencedBy some GroundCavity,
+        increasedBy some GroundSwelling,
+        hasImpactOn some GroundBulkDensity,
+        hasImpactOn some GroundDryDensity,
+        hasImpactOn some GroundSaturatedWaterFlow,
+        influencedBy some GroundWaterContent,
+        decreasedBy some GroundShrinking,
+        hasImpactOn some GroundMineralization,
+        hasImpactOn some GroundMagneticPermeability,
+        hasImpactOn some GroundChemicalChange,
+        decreasedBy some GroundConsolidation,
+        hasImpactOn some GroundWaterEvapotranspiration,
+        hasImpactOn some GroundFreezing,
+        hasImpactOn some GroundSwelling,
+        hasImpactOn some GroundWaterInfiltration,
+        hasImpactOn some GroundDeformation,
+        hasImpactOn some GroundUnsaturatedWaterFlow
+    
+    
+Class: GroundSandContent
+
+    Annotations: 
+        rdfs:comment "The percentage of particle, by weight, that pass through a 2 mm sieve but are retained by a 0.063 mm sieve.
+
+Usual Units: %
+
+Knowledge Source: BS1377-2 (1990)
+
+"^^xsd:string
+    
+    SubClassOf: 
+        hasImpactOn some GroundBulkDensity,
+        influencedBy some GroundParticleMovement,
+        hasImpactOn some GroundCracking,
+        hasImpactOn some GroundDeformation,
+        hasImpactOn some GroundPorosity,
+        hasImpactOn some GroundMaximumDryDensity,
+        hasImpactOn some GroundThermalConductivity,
+        hasImpactOn some GroundParticleSizeDistribution,
+        hasImpactOn some GroundHeatCapacity,
+        hasImpactOn some GroundWaterEvapotranspiration,
+        hasImpactOn some GroundWaterInfiltration,
+        hasImpactOn some GroundHydraulicConductivity,
+        hasImpactOn some GroundResidualAngle,
+        hasImpactOn some GroundInterfaceFriction,
+        GroundClassificationProperty,
+        hasImpactOn some GroundElectricalConductivity,
+        hasImpactOn some GroundCationExchangeCapacity,
+        hasImpactOn some GroundConsolidation,
+        hasImpactOn some GroundMagneticPermeability,
+        decreasedBy some GroundErosion,
+        hasImpactOn some GroundErosion,
+        hasImpactOn some GroundOptimumWaterContent,
+        hasImpactOn some GroundSoluteTransport,
+        hasImpactOn some GroundUndrainedShearStrength,
+        hasImpactOn some GroundWaterFlow,
+        hasImpactOn some GroundWaterRetentionCurve,
+        hasImpactOn some GroundP-WaveVelocity,
+        hasImpactOn some GroundDegradation,
+        hasImpactOn some GroundPeakAngle,
+        hasImpactOn some GroundCompaction,
+        hasImpactOn some GroundUnsaturatedWaterFlow,
+        hasImpactOn some GroundSoluteDiffusion,
+        hasImpactOn some GroundDielectricPermittivity,
+        influencedBy some GroundParticleSizeDistribution,
+        hasImpactOn some GroundPrincipalType,
+        hasImpactOn some GroundDryDensity,
+        hasImpactOn some GroundSaturatedWaterFlow,
+        hasImpactOn some GroundMineralogy,
+        hasImpactOn some GroundS-WaveVelocity,
+        hasImpactOn some GroundStiffness,
+        hasImpactOn some GroundSwelling,
+        hasImpactOn some GroundParticleMovement,
+        hasImpactOn some GroundShrinking,
+        hasImpactOn some GroundVoidRatio
+    
+    
+Class: GroundMaximumDryDensity
+
+    Annotations: 
+        rdfs:comment "The peak dry density of a sample of the ground at a given compactive effort at the optimum water content.
+
+Usual Units: Mg/m3
+
+Knowledge Source: Head 1992
+
+"^^xsd:string
+    
+    SubClassOf: 
+        hasImpactOn some GroundDielectricPermittivity,
+        hasImpactOn some GroundPorosity,
+        influencedBy some GroundWaterContent,
+        hasImpactOn some GroundThermalConductivity,
+        hasImpactOn some GroundHeatCapacity,
+        influencedBy some GroundPlasticity,
+        influencedBy some GroundPrincipalType,
+        hasImpactOn some GroundHydraulicConductivity,
+        influencedBy some GroundGravelContent,
+        influencedBy some GroundParticleMovement,
+        hasImpactOn some GroundElectricalConductivity,
+        influencedBy some GroundSandContent,
+        hasImpactOn some GroundUndrainedShearStrength,
+        hasImpactOn some GroundDensity,
+        hasImpactOn some GroundP-WaveVelocity,
+        hasImpactOn some GroundPeakAngle,
+        influencedBy some GroundVeryLargeParticles,
+        GroundConstuctionProperty,
+        influencedBy some GroundOrganicMatterContent,
+        hasImpactOn some GroundStiffness,
+        influencedBy some GroundDegreeOfSaturation,
+        hasImpactOn some GroundBulkDensity,
+        hasImpactOn some GroundDryDensity,
+        influencedBy some GroundSiltContent,
+        hasImpactOn some GroundShrinkSwellPotential,
+        hasImpactOn some GroundS-WaveVelocity,
+        hasImpactOn some GroundInterfaceFriction,
+        hasImpactOn some GroundCompaction,
+        hasImpactOn some GroundWaterRetentionCurve,
+        influencedBy some GroundDeformation,
+        hasImpactOn some GroundVoidRatio,
+        influencedBy some GroundParticleSizeDistribution,
+        influencedBy some GroundCavity,
+        hasImpactOn some GroundConsistency,
+        influencedBy some GroundClayContent,
+        increasedBy some GroundCompaction,
+        hasImpactOn some GroundMagneticPermeability
+    
+    
+Class: GroundTemporalProcess
+
+    Annotations: 
+        rdfs:comment "Ground temporal processes refer to processes that lead to ground movement and ground deterioration over a period of time.
+
+Knowledge Source: Expert knowledge
+
+"^^xsd:string
+    
+    SubClassOf: 
+        GroundProcess
+    
+    
+Class: GroundHeatTransfer
+
+    Annotations: 
+        rdfs:comment "Ground heat transfer is the exchange of thermal energy between the air and the ground surface, or different parts of the ground, or from man-made structures within or on the ground into the ground. 
+
+Knowledge Source: Wikipedia and expert knowledge
+
+"^^xsd:string
+    
+    SubClassOf: 
+        influencedBy some GroundAirContent,
+        influencedBy some GroundVoidRatio,
+        GroundThermalProcess,
+        influencedBy some GroundPorosity,
+        influencedBy some GroundPrincipalType,
+        influencedBy some GroundOrganicMatterContent,
+        influencedBy some GroundTemperature,
+        influencedBy some GroundBulkDensity,
+        influencedBy some GroundThermalConductivity,
+        influencedBy some GroundMineralogy,
+        influencedBy some GroundWaterTableDepth,
+        hasImpactOn some GroundTemperature,
+        influencedBy some GroundDegreeOfSaturation,
+        influencedBy some GroundDryDensity,
+        influencedBy some GroundHeatCapacity,
+        influencedBy some GroundWaterContent
+    
+    
+Class: GroundElectricalConductivity
+
+    Annotations: 
+        rdfs:comment "The ratio of the current density to the electrical field strength.
+
+Electrical conductivity is a measure of how well ground allows the transport of an electrical charge.
+
+Usual Units: Siemens per metre S/m
+
+Knowledge Source: https://users.wpi.edu/~physics/ph1120b11/Images/1120Lec09Current&Resistivity.pdf
+
+"^^xsd:string
+    
+    SubClassOf: 
+        influencedBy some GroundpH,
+        influencedBy some GroundChemicalChange,
+        influencedBy some GroundParticleSizeDistribution,
+        influencedBy some GroundSubsidence,
+        influencedBy some GroundDegreeOfSaturation,
+        influencedBy some GroundGravelContent,
+        influencedBy some GroundFabric,
+        influencedBy some GroundParticleMovement,
+        influencedBy some GroundCrackingIntensity,
+        influencedBy some GroundWaterTableDepth,
+        influencedBy some GroundUnsaturatedWaterFlow,
+        influencedBy some GroundTemperature,
+        influencedBy some GroundBulkDensity,
+        influencedBy some GroundOptimumWaterContent,
+        influencedBy some GroundConsolidation,
+        hasImpactOn some GroundChemicalTransport,
+        influencedBy some GroundVoidRatio,
+        decreasedBy some GroundWaterEvapotranspiration,
+        influencedBy some GroundVeryLargeParticles,
+        influencedBy some GroundDielectricPermittivity,
+        decreasedBy some GroundFreezing,
+        influencedBy some GroundMaximumDryDensity,
+        influencedBy some GroundAirContent,
+        influencedBy some GroundShrinking,
+        influencedBy some GroundClayContent,
+        influencedBy some GroundSoluteTransport,
+        influencedBy some GroundSandContent,
+        hasImpactOn some GroundChemicalReaction,
+        hasImpactOn some GroundChemicalChange,
+        influencedBy some GroundParticleSpecificSurfaceArea,
+        influencedBy some GroundPorosity,
+        increasedBy some GroundWaterInfiltration,
+        influencedBy some GroundDeformation,
+        influencedBy some GroundOrganicMatterContent,
+        influencedBy some GroundCavity,
+        influencedBy some GroundSiltContent,
+        increasedBy some GroundThawing,
+        GroundElectromagneticProperty,
+        influencedBy some GroundWaterFlow,
+        influencedBy some GroundCompaction,
+        influencedBy some GroundWaterContent,
+        influencedBy some GroundChemicalReaction,
+        influencedBy some GroundSoluteDiffusion,
+        hasImpactOn some GroundDielectricPermittivity,
+        influencedBy some GroundPrincipalType,
+        influencedBy some GroundDryDensity,
+        influencedBy some GroundMineralogy,
+        influencedBy some GroundMineralization
+    
+    
+Class: GroundClassificationProperty
+
+    Annotations: 
+        rdfs:comment "Ground classification properties refer to the physical characteristics of ground used in engineering classification schemes.
+
+Knowledge Source: Expert knowledge
+
+"^^xsd:string
+    
+    SubClassOf: 
+        GroundProperty
+    
+    
+Class: GroundParticleMovement
+
+    Annotations: 
+        rdfs:comment "The process by which particles move in the ground, generally from upper layers to lower levels, by water flow or by dissolution or chemical reaction and precipitation often to a zone of accumulation. 
+
+Knowledge Source: The groundwater foundation (www.groundwater.org/get-informed/basics/glossary.html) and expert opinion
+
+"^^xsd:string
+    
+    SubClassOf: 
+        hasImpactOn some GroundOptimumWaterContent,
+        influencedBy some GroundPorosity,
+        hasImpactOn some GroundpH,
+        hasImpactOn some GroundThermalConductivity,
+        hasImpactOn some GroundP-WaveVelocity,
+        hasImpactOn some GroundParticleSizeDistribution,
+        hasImpactOn some GroundPeakAngle,
+        hasImpactOn some GroundClayContent,
+        influencedBy some GroundSandContent,
+        increases some GroundCrackingIntensity,
+        hasImpactOn some GroundMaximumDryDensity,
+        influencedBy some GroundSiltContent,
+        hasImpactOn some GroundStiffness,
+        influencedBy some GroundDryDensity,
+        hasImpactOn some GroundDryDensity,
+        hasImpactOn some GroundCohesion,
+        influencedBy some GroundWaterContent,
+        GroundMechanicalProcess,
+        hasImpactOn some GroundMagneticPermeability,
+        hasImpactOn some GroundS-WaveVelocity,
+        influencedBy some GroundOrganicMatterContent,
+        hasImpactOn some GroundOrganicMatterContent,
+        influencedBy some GroundParticleSpecificSurfaceArea,
+        hasImpactOn some GroundFabric,
+        influencedBy some GroundParticleSizeDistribution,
+        hasImpactOn some GroundSandContent,
+        influencedBy some GroundCohesion,
+        influencedBy some GroundUndrainedShearStrength,
+        hasImpactOn some GroundVoidRatio,
+        hasImpactOn some GroundBulkDensity,
+        influencedBy some GroundDegreeOfSaturation,
+        influencedBy some GroundPeakAngle,
+        influencedBy some GroundClayContent,
+        hasImpactOn some GroundVeryLargeParticles,
+        hasImpactOn some GroundDielectricPermittivity,
+        hasImpactOn some GroundPorosity,
+        influencedBy some GroundPrincipalType,
+        hasImpactOn some GroundGravelContent,
+        hasImpactOn some GroundSiltContent,
+        hasImpactOn some GroundUndrainedShearStrength,
+        hasImpactOn some GroundHeatCapacity,
+        influencedBy some GroundCrackingIntensity,
+        hasImpactOn some GroundEh,
+        hasImpactOn some GroundWaterContent,
+        hasImpactOn some GroundHydraulicConductivity,
+        hasImpactOn some GroundResidualAngle,
+        hasImpactOn some GroundInterfaceFriction,
+        influencedBy some GroundFabric,
+        influencedBy some GroundGravelContent,
+        hasImpactOn some GroundElectricalConductivity,
+        hasImpactOn some GroundCationExchangeCapacity,
+        influencedBy some GroundWaterTableDepth,
+        influencedBy some GroundVoidRatio
+    
+    
+Class: GroundParticleSizeDistribution
+
+    Annotations: 
+        rdfs:comment "The quantitative value by mass of the various sizes of particles present.
+
+Usual Units: %
+
+Knowledge Source: BS1377-2 (1990)
+
+"^^xsd:string
+    
+    SubClassOf: 
+        hasImpactOn some GroundUnsaturatedWaterFlow,
+        hasImpactOn some GroundSoluteDiffusion,
+        hasImpactOn some GroundMaximumDryDensity,
+        influencedBy some GroundSiltContent,
+        hasImpactOn some GroundStiffness,
+        hasImpactOn some GroundPeakAngle,
+        hasImpactOn some GroundPrincipalType,
+        hasImpactOn some GroundDryDensity,
+        hasImpactOn some GroundCohesion,
+        hasImpactOn some GroundFreezing,
+        hasImpactOn some GroundMineralogy,
+        hasImpactOn some GroundS-WaveVelocity,
+        hasImpactOn some GroundGravelContent,
+        hasImpactOn some GroundConsolidation,
+        hasImpactOn some GroundErosion,
+        hasImpactOn some GroundSandContent,
+        hasImpactOn some GroundShrinking,
+        hasImpactOn some GroundAirFlow,
+        hasImpactOn some GroundVoidRatio,
+        influencedBy some GroundSandContent,
+        hasImpactOn some GroundSwelling,
+        hasImpactOn some GroundBulkDensity,
+        influencedBy some GroundParticleMovement,
+        influencedBy some GroundClayContent,
+        hasImpactOn some GroundParticleSpecificSurfaceArea,
+        hasImpactOn some GroundSurfaceSealFormation,
+        hasImpactOn some GroundVeryLargeParticles,
+        hasImpactOn some GroundInterfaceFriction,
+        hasImpactOn some GroundCracking,
+        hasImpactOn some GroundDielectricPermittivity,
+        hasImpactOn some GroundSaturatedWaterFlow,
+        hasImpactOn some GroundThawing,
+        hasImpactOn some GroundThermalConductivity,
+        hasImpactOn some GroundSiltContent,
+        hasImpactOn some GroundPorosity,
+        hasImpactOn some GroundHeatCapacity,
+        hasImpactOn some GroundWaterInfiltration,
+        influencedBy some GroundVeryLargeParticles,
+        hasImpactOn some GroundWaterContent,
+        hasImpactOn some GroundHydraulicConductivity,
+        hasImpactOn some GroundResidualAngle,
+        GroundClassificationProperty,
+        hasImpactOn some GroundClayContent,
+        hasImpactOn some GroundElectricalConductivity,
+        hasImpactOn some GroundCationExchangeCapacity,
+        hasImpactOn some GroundPlasticity,
+        influencedBy some GroundGravelContent,
+        hasImpactOn some GroundWaterRetentionCurve,
+        hasImpactOn some GroundOptimumWaterContent,
+        hasImpactOn some GroundSoluteTransport,
+        hasImpactOn some GroundUndrainedShearStrength,
+        hasImpactOn some GroundMagneticPermeability,
+        hasImpactOn some GroundWaterFlow,
+        hasImpactOn some GroundAirContent,
+        hasImpactOn some GroundP-WaveVelocity,
+        hasImpactOn some GroundDegradation,
+        hasImpactOn some GroundParticleMovement,
+        hasImpactOn some GroundCompaction,
+        hasImpactOn some GroundDeformation
+    
+    
+Class: GroundWaterTableDepth
+
+    Annotations: 
+        rdfs:comment "The surface where the water pressure head is equal to the atmospheric pressure.
+
+Usual Units: m
+
+Knowledge Source: Wikipedia
+
+"^^xsd:string
+    
+    SubClassOf: 
+        hasImpactOn some GroundUnsaturatedWaterFlow,
+        GroundDescriptionProperty,
+        hasImpactOn some GroundWaterPressure,
+        hasImpactOn some GroundSaturatedWaterFlow,
+        hasImpactOn some GroundFreezing,
+        hasImpactOn some GroundEh,
+        hasImpactOn some GroundHeatAbsorption,
+        hasImpactOn some GroundThawing,
+        hasImpactOn some GroundWaterInfiltration,
+        hasImpactOn some GroundBulkDensity,
+        hasImpactOn some GroundMicrobialActivity,
+        hasImpactOn some GroundElectricalConductivity,
+        influencedBy some GroundUnsaturatedWaterFlow,
+        hasImpactOn some GroundHeatTransfer,
+        hasImpactOn some GroundDielectricPermittivity,
+        hasImpactOn some GroundChemicalTransport,
+        influencedBy some GroundSaturatedWaterFlow,
+        hasImpactOn some GroundMagneticPermeability,
+        decreasedBy some GroundWaterEvapotranspiration,
+        hasImpactOn some GroundWaterContent,
+        hasImpactOn some GroundChemicalReaction,
+        hasImpactOn some GroundStiffness,
+        increasedBy some GroundWaterInfiltration,
+        hasImpactOn some GroundMineralization,
+        hasImpactOn some GroundpH,
+        hasImpactOn some GroundChemicalChange,
+        hasImpactOn some GroundWaterFlow,
+        influencedBy some GroundWaterFlow,
+        hasImpactOn some GroundParticleMovement,
+        hasImpactOn some GroundDegreeOfSaturation
+    
+    
+Class: GroundUndrainedShearStrength
+
+    Annotations: 
+        rdfs:comment "The strength of a saturated soil which undergoes shear with no volume change.
+
+Usual Units: kPa
+
+Knowledge Source: Head 1992
+
+"^^xsd:string
+    
+    SubClassOf: 
+        influencedBy some GroundFabric,
+        influencedBy some GroundParticleMovement,
+        hasImpactOn some GroundConsistency,
+        influencedBy some GroundClayContent,
+        influencedBy some GroundSandContent,
+        decreasedBy some GroundDegradation,
+        increasedBy some GroundSubsidence,
+        influencedBy some GroundVoidRatio,
+        decreasedBy some GroundWaterInfiltration,
+        hasImpactOn some GroundCracking,
+        hasImpactOn some GroundDeformation,
+        influencedBy some GroundBulkDensity,
+        hasImpactOn some GroundDensity,
+        increasedBy some GroundWaterEvapotranspiration,
+        hasImpactOn some GroundCompaction,
+        influencedBy some GroundWaterContent,
+        influencedBy some GroundOrganicMatterContent,
+        influencedBy some GroundWaterPressure,
+        decreasedBy some GroundFreezing,
+        increasedBy some GroundConsolidation,
+        decreasedBy some GroundSwelling,
+        hasImpactOn some GroundParticleMovement,
+        influencedBy some GroundPrincipalType,
+        decreasedBy some GroundCracking,
+        hasImpactOn some GroundErosion,
+        influencedBy some GroundDeformation,
+        influencedBy some GroundPorosity,
+        influencedBy some GroundMaximumDryDensity,
+        influencedBy some GroundParticleSizeDistribution,
+        influencedBy some GroundCavity,
+        decreasedBy some GroundThawing,
+        influencedBy some GroundAirContent,
+        influencedBy some GroundConsistencyLimits,
+        influencedBy some GroundDegreeOfSaturation,
+        increasedBy some GroundCompaction,
+        influencedBy some GroundDryDensity,
+        GroundMechanicalProperty,
+        influencedBy some GroundSiltContent,
+        influencedBy some GroundMineralogy,
+        influencedBy some GroundChemicalChange,
+        influencedBy some GroundWaterFlow,
+        decreasedBy some GroundShrinking
+    
+    
+Class: GroundSwelling
+
+    Annotations: 
+        rdfs:comment "The process by the ground rises or heaves due to increase in water content from rainfall or groundwater (increase in pore pressure leading to a decrease in effective stress) or by removal of the ground (decrease in effective stress).
+
+Knowledge Source: Expert knowledge
+
+"^^xsd:string
+    
+    SubClassOf: 
+        influencedBy some GroundVoidRatio,
+        increases some GroundFabric,
+        influencedBy some GroundSandContent,
+        influencedBy some GroundCationExchangeCapacity,
+        influencedBy some GroundShrinkageLimit,
+        increases some GroundVoidRatio,
+        influencedBy some GroundPorosity,
+        influencedBy some GroundSiltContent,
+        decreases some GroundUndrainedShearStrength,
+        influencedBy some GroundCrackingIntensity,
+        influencedBy some GroundAirContent,
+        GroundMechanicalProcess,
+        influencedBy some GroundWaterContent,
+        decreases some GroundHeatCapacity,
+        influencedBy some GroundConsistencyLimits,
+        increases some GroundThermalConductivity,
+        influencedBy some GroundDryDensity,
+        decreases some GroundInterfaceFriction,
+        increases some GroundCrackingIntensity,
+        decreases some GroundStiffness,
+        influencedBy some GroundShrinkSwellPotential,
+        decreases some GroundDryDensity,
+        influencedBy some GroundGravelContent,
+        influencedBy some GroundFabric,
+        increases some GroundHydraulicConductivity,
+        influencedBy some GroundClayContent,
+        increases some GroundPorosity,
+        decreases some GroundPeakAngle,
+        influencedBy some GroundPlasticity,
+        increases some GroundAirContent,
+        influencedBy some GroundBulkDensity,
+        influencedBy some GroundMineralogy,
+        increases some GroundWaterContent,
+        influencedBy some GroundParticleSizeDistribution,
+        decreases some GroundBulkDensity,
+        influencedBy some GroundParticleSpecificSurfaceArea,
+        influencedBy some GroundDegreeOfSaturation,
+        influencedBy some GroundOrganicMatterContent,
+        influencedBy some GroundPrincipalType
+    
+    
+Class: GroundUnsaturatedWaterFlow
+
+    Annotations: 
+        rdfs:comment "The flow of water through and unsaturated zone, which has pores that contains air or gas.
+
+Knowledge Source: USGS (water.usgs.gov/ogw/unsaturated.htm)
+
+"^^xsd:string
+    
+    SubClassOf: 
+        influencedBy some GroundPorosity,
+        influencedBy some GroundSiltContent,
+        influencedBy some GroundClayContent,
+        hasImpactOn some GroundMagneticPermeability,
+        influencedBy some GroundDryDensity,
+        influencedBy some GroundPlasticity,
+        influencedBy some GroundWaterRetentionCurve,
+        influencedBy some GroundParticleSizeDistribution,
+        influencedBy some GroundDegreeOfSaturation,
+        influencedBy some GroundFabric,
+        hasImpactOn some GroundWaterContent,
+        influencedBy some GroundSandContent,
+        influencedBy some GroundWaterTableDepth,
+        hasImpactOn some GroundElectricalConductivity,
+        influencedBy some GroundVoidRatio,
+        hasImpactOn some GroundDielectricPermittivity,
+        influencedBy some GroundGravelContent,
+        influencedBy some GroundWaterPressure,
+        hasImpactOn some GroundCationExchangeCapacity,
+        GroundFluidProcess,
+        influencedBy some GroundMineralogy,
+        hasImpactOn some GroundAirContent,
+        influencedBy some GroundOrganicMatterContent,
+        hasImpactOn some GroundCohesion,
+        influencedBy some GroundHydraulicConductivity,
+        influencedBy some GroundCrackingIntensity,
+        influencedBy some GroundWaterContent,
+        influencedBy some GroundPrincipalType,
+        influencedBy some GroundAirContent,
+        influencedBy some GroundParticleSpecificSurfaceArea,
+        hasImpactOn some GroundWaterTableDepth
+    
+    
+Class: GroundWaterPressure
+
+    Annotations: 
+        rdfs:comment "The (pore) water pressure of the ground at  point. Values are positive below the water table and negative above in the capillary fringe. 
+
+Usual Units: kPa
+
+Knowledge Source: Expert opinion
+
+"^^xsd:string
+    
+    SubClassOf: 
+        hasImpactOn some GroundConsolidation,
+        hasImpactOn some GroundDegreeOfSaturation,
+        influencedBy some GroundWaterTableDepth,
+        hasImpactOn some GroundStiffness,
+        hasImpactOn some GroundWaterContent,
+        GroundStateVariable,
+        hasImpactOn some GroundCrackingIntensity,
+        increasedBy some GroundFreezing,
+        hasImpactOn some GroundWaterFlow,
+        influencedBy some GroundWaterContent,
+        influencedBy some GroundWaterRetentionCurve,
+        hasImpactOn some GroundS-WaveVelocity,
+        hasImpactOn some GroundUnsaturatedWaterFlow,
+        hasImpactOn some GroundHydraulicConductivity,
+        hasImpactOn some GroundP-WaveVelocity,
+        increasedBy some GroundWaterInfiltration,
+        hasImpactOn some GroundCohesion,
+        hasImpactOn some GroundUndrainedShearStrength,
+        hasImpactOn some GroundSoluteDiffusion,
+        hasImpactOn some GroundSoluteTransport,
+        hasImpactOn some GroundSaturatedWaterFlow,
+        hasImpactOn some GroundWaterRetentionCurve,
+        decreasedBy some GroundWaterEvapotranspiration,
+        hasImpactOn some GroundDeformation,
+        hasImpactOn some GroundBulkDensity
+    
+    
+Class: GroundChemicalProperty
+
+    Annotations: 
+        rdfs:comment "Ground chemical properties refer to the Ph and redox potential of the soil, and the organic content of the soil which can be relevant to potential degradation of buried utilities.
+
+Knowledge Source: Expert knowledge
+
+"^^xsd:string
+    
+    SubClassOf: 
+        GroundProperty
+    
+    
+Class: GroundHeatAbsorption
+
+    Annotations: 
+        rdfs:comment "The transfer of heat that occurs from a warmer object to a cooler one by conduction, convection or radiation. Also called thermal absorption.
+
+Knowledge Source: www.edinformatics.com/math_science/how_is_heat_transferred.htm
+
+"^^xsd:string
+    
+    SubClassOf: 
+        influencedBy some GroundWaterTableDepth,
+        influencedBy some GroundDegreeOfSaturation,
+        GroundThermalProcess,
+        influencedBy some GroundPorosity,
+        influencedBy some GroundDryDensity,
+        increases some GroundTemperature,
+        influencedBy some GroundTemperature,
+        influencedBy some GroundMineralogy,
+        influencedBy some GroundAirContent,
+        influencedBy some GroundBulkDensity,
+        influencedBy some GroundHeatCapacity,
+        influencedBy some GroundWaterContent,
+        influencedBy some GroundThermalConductivity,
+        influencedBy some GroundPrincipalType,
+        influencedBy some GroundOrganicMatterContent,
+        influencedBy some GroundVoidRatio
+    
+    

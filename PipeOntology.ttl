@@ -1,0 +1,2402 @@
+@prefix : <http://imash.leeds.ac.uk/ontologies/atu/PipeOntology.owl#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://imash.leeds.ac.uk/ontologies/atu/PipeOntology.owl> .
+
+<http://imash.leeds.ac.uk/ontologies/atu/PipeOntology.owl> rdf:type owl:Ontology ;
+                                                            rdfs:Acknowledgments "This research is supported by EPSRC under grant no.EP/K021699/1 (ASSESSING THE UNDERWORLD - AN INTEGRATED PERFORMANCE MODEL OF CITY INFRASTRUCTURES) which we gratefully acknowledge." ;
+                                                            rdfs:Date "May 2017" ;
+                                                            rdfs:DomainExperts """Prof. Barry Clarke, University of Leeds;
+Dr. Richard Collins, University of Sheffield""" ;
+                                                            rdfs:KnowledgeSource """The main knowledge sources of this ontology include:
+
+- knowledge of domain experts;
+
+- Clair, A. M. S. & Sinha, S. (2014) Development of a Standard Data Structure for Predicting the Remaining Physical Life and Consequence of Failure of Water Pipes. Journal of Performance of Constructed Facilities, 28, 191-203.""" ;
+                                                            rdfs:License "Creative Commons Attribution 4.0 International (CC BY 4.0)" ;
+                                                            rdfs:OntologyCreator "Dr. Heshan Du, University of Leeds, University of Nottingham Ningbo China" ;
+                                                            rdfs:Purpose "To describe properties and processes of buried pipes, as well as their relationships." ;
+                                                            rdfs:Scope "The ontology describes properties and processes of buried pipes, as well as how they affect each other." ;
+                                                            rdfs:comment "Although much care has been taken to provide accurate information, neither the ontology creator, the domain experts, nor the universities involved, nor anyone else associated with this ontology, shall be liable for any loss, damage, or liability directly or indirectly caused or alleged to be caused by this ontology. The material contained herein is not intended to provide specific advice or recommendations for any specific situation." ;
+                                                            owl:versionInfo "Version 1" .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://www.w3.org/2000/01/rdf-schema#Acknowledgments
+rdfs:Acknowledgments rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2000/01/rdf-schema#Date
+rdfs:Date rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2000/01/rdf-schema#DomainExperts
+rdfs:DomainExperts rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2000/01/rdf-schema#KnowledgeSource
+rdfs:KnowledgeSource rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2000/01/rdf-schema#License
+rdfs:License rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2000/01/rdf-schema#OntologyCreator
+rdfs:OntologyCreator rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2000/01/rdf-schema#Purpose
+rdfs:Purpose rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2000/01/rdf-schema#Scope
+rdfs:Scope rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2000/01/rdf-schema#comment
+rdfs:comment rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2002/07/owl#versionInfo
+owl:versionInfo rdf:type owl:AnnotationProperty .
+
+
+#################################################################
+#    Datatypes
+#################################################################
+
+###  http://www.w3.org/2001/XMLSchema#string
+xsd:string rdf:type rdfs:Datatype .
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://imash.leeds.ac.uk/ontologies/atu/PipeOntology.owl#decreasedBy
+:decreasedBy rdf:type owl:ObjectProperty ;
+             rdfs:subPropertyOf :influencedBy ;
+             owl:inverseOf :decreases ;
+             rdf:type owl:TransitiveProperty .
+
+
+###  http://imash.leeds.ac.uk/ontologies/atu/PipeOntology.owl#decreases
+:decreases rdf:type owl:ObjectProperty ;
+           rdfs:subPropertyOf :hasImpactOn ;
+           rdf:type owl:TransitiveProperty .
+
+
+###  http://imash.leeds.ac.uk/ontologies/atu/PipeOntology.owl#hasImpactOn
+:hasImpactOn rdf:type owl:ObjectProperty ;
+             owl:inverseOf :influencedBy ;
+             rdf:type owl:TransitiveProperty .
+
+
+###  http://imash.leeds.ac.uk/ontologies/atu/PipeOntology.owl#increasedBy
+:increasedBy rdf:type owl:ObjectProperty ;
+             rdfs:subPropertyOf :influencedBy ;
+             owl:inverseOf :increases ;
+             rdf:type owl:TransitiveProperty .
+
+
+###  http://imash.leeds.ac.uk/ontologies/atu/PipeOntology.owl#increases
+:increases rdf:type owl:ObjectProperty ;
+           rdfs:subPropertyOf :hasImpactOn ;
+           rdf:type owl:TransitiveProperty .
+
+
+###  http://imash.leeds.ac.uk/ontologies/atu/PipeOntology.owl#influencedBy
+:influencedBy rdf:type owl:ObjectProperty ,
+                       owl:TransitiveProperty .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://imash.leeds.ac.uk/ontologies/atu/PipeOntology.owl#PipeAge
+:PipeAge rdf:type owl:Class ;
+         rdfs:subClassOf :PipeGeometryProperty ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :hasImpactOn ;
+                           owl:someValuesFrom :PipeCorrosion
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :hasImpactOn ;
+                           owl:someValuesFrom :PipeCracking
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :hasImpactOn ;
+                           owl:someValuesFrom :PipeDiscoloredWater
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :hasImpactOn ;
+                           owl:someValuesFrom :PipeJointFatigue
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :hasImpactOn ;
+                           owl:someValuesFrom :PipeLeakageRate
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :hasImpactOn ;
+                           owl:someValuesFrom :PipeMaterial
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :hasImpactOn ;
+                           owl:someValuesFrom :PipeTrenchBackfill
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :hasImpactOn ;
+                           owl:someValuesFrom :PipeTrenchWidth
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :hasImpactOn ;
+                           owl:someValuesFrom :PipeTuberculation
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :hasImpactOn ;
+                           owl:someValuesFrom :PipeValveLeaking
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :hasImpactOn ;
+                           owl:someValuesFrom :PipeWallRoughness
+                         ] ;
+         rdfs:comment "Knowledge Source: from a domain expert"^^xsd:string ,
+                      """The age of the pipe, since first burial
+
+"""^^xsd:string ,
+                      """The length of time (year) that a pipe has existed since its placement
+
+"""^^xsd:string .
+
+
+###  http://imash.leeds.ac.uk/ontologies/atu/PipeOntology.owl#PipeAssessmentCost
+:PipeAssessmentCost rdf:type owl:Class ;
+                    rdfs:subClassOf :PipeFinancialProperty ,
+                                    [ rdf:type owl:Restriction ;
+                                      owl:onProperty :hasImpactOn ;
+                                      owl:someValuesFrom :PipeOperationPractice
+                                    ] ,
+                                    [ rdf:type owl:Restriction ;
+                                      owl:onProperty :influencedBy ;
+                                      owl:someValuesFrom :PipeCrackingDensity
+                                    ] ,
+                                    [ rdf:type owl:Restriction ;
+                                      owl:onProperty :influencedBy ;
+                                      owl:someValuesFrom :PipeCrackingPhysicalProperty
+                                    ] ,
+                                    [ rdf:type owl:Restriction ;
+                                      owl:onProperty :influencedBy ;
+                                      owl:someValuesFrom :PipeDepth
+                                    ] ,
+                                    [ rdf:type owl:Restriction ;
+                                      owl:onProperty :influencedBy ;
+                                      owl:someValuesFrom :PipeInstallationCost
+                                    ] ,
+                                    [ rdf:type owl:Restriction ;
+                                      owl:onProperty :influencedBy ;
+                                      owl:someValuesFrom :PipeMaterial
+                                    ] ,
+                                    [ rdf:type owl:Restriction ;
+                                      owl:onProperty :influencedBy ;
+                                      owl:someValuesFrom :PipeTrenchBackfill
+                                    ] ,
+                                    [ rdf:type owl:Restriction ;
+                                      owl:onProperty :influencedBy ;
+                                      owl:someValuesFrom :PipeTrenchWidth
+                                    ] ;
+                    rdfs:comment """Cost associated with condition assessment of a pipe
+
+"""^^xsd:string ,
+                                 "Knowledge Source: from a domain expert"^^xsd:string ,
+                                 """The cost to undertake an assessment on this pipe
+
+"""^^xsd:string .
+
+
+###  http://imash.leeds.ac.uk/ontologies/atu/PipeOntology.owl#PipeCathodicProtection
+:PipeCathodicProtection rdf:type owl:Class ;
+                        rdfs:subClassOf :PipeMaterialProperty ,
+                                        [ rdf:type owl:Restriction ;
+                                          owl:onProperty :hasImpactOn ;
+                                          owl:someValuesFrom :PipeCorrosion
+                                        ] ,
+                                        [ rdf:type owl:Restriction ;
+                                          owl:onProperty :hasImpactOn ;
+                                          owl:someValuesFrom :PipeCracking
+                                        ] ,
+                                        [ rdf:type owl:Restriction ;
+                                          owl:onProperty :hasImpactOn ;
+                                          owl:someValuesFrom :PipeCrackingDensity
+                                        ] ,
+                                        [ rdf:type owl:Restriction ;
+                                          owl:onProperty :hasImpactOn ;
+                                          owl:someValuesFrom :PipeCrackingPhysicalProperty
+                                        ] ,
+                                        [ rdf:type owl:Restriction ;
+                                          owl:onProperty :hasImpactOn ;
+                                          owl:someValuesFrom :PipeInstallationCost
+                                        ] ,
+                                        [ rdf:type owl:Restriction ;
+                                          owl:onProperty :hasImpactOn ;
+                                          owl:someValuesFrom :PipeMaintenanceCost
+                                        ] ,
+                                        [ rdf:type owl:Restriction ;
+                                          owl:onProperty :hasImpactOn ;
+                                          owl:someValuesFrom :PipeReplacementCost
+                                        ] ;
+                        rdfs:comment """A electrochemical means of increasing the corrosion resistance of pipes
+
+"""^^xsd:string ,
+                                     """Does the pipe have cathodic protection (y/n)
+
+"""^^xsd:string ,
+                                     "Knowledge Source: from a domain expert"^^xsd:string .
+
+
+###  http://imash.leeds.ac.uk/ontologies/atu/PipeOntology.owl#PipeConditionProperty
+:PipeConditionProperty rdf:type owl:Class ;
+                       rdfs:subClassOf :PipeProperty ;
+                       rdfs:comment "Knowledge Source: from a domain expert"^^xsd:string ,
+                                    """This covers the condition of the pipe including any indirect indicators.
+
+"""^^xsd:string .
+
+
+###  http://imash.leeds.ac.uk/ontologies/atu/PipeOntology.owl#PipeConnectionDensity
+:PipeConnectionDensity rdf:type owl:Class ;
+                       rdfs:subClassOf :PipeNetworkProperty ,
+                                       [ rdf:type owl:Restriction ;
+                                         owl:onProperty :hasImpactOn ;
+                                         owl:someValuesFrom :PipeInstallationCost
+                                       ] ,
+                                       [ rdf:type owl:Restriction ;
+                                         owl:onProperty :hasImpactOn ;
+                                         owl:someValuesFrom :PipeJointFatigue
+                                       ] ,
+                                       [ rdf:type owl:Restriction ;
+                                         owl:onProperty :hasImpactOn ;
+                                         owl:someValuesFrom :PipeLength
+                                       ] ,
+                                       [ rdf:type owl:Restriction ;
+                                         owl:onProperty :hasImpactOn ;
+                                         owl:someValuesFrom :PipeReplacementCost
+                                       ] ,
+                                       [ rdf:type owl:Restriction ;
+                                         owl:onProperty :influencedBy ;
+                                         owl:someValuesFrom :PipeLength
+                                       ] ;
+                       rdfs:comment "Knowledge Source: from a domain expert"^^xsd:string ,
+                                    """Number of pipe connections in a given area
+
+"""^^xsd:string ,
+                                    """The number of service connections per unit length of pipe
+
+"""^^xsd:string .
+
+
+###  http://imash.leeds.ac.uk/ontologies/atu/PipeOntology.owl#PipeCorrosion
+:PipeCorrosion rdf:type owl:Class ;
+               rdfs:subClassOf :PipeProcess ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty :hasImpactOn ;
+                                 owl:someValuesFrom :PipeCrackingDensity
+                               ] ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty :hasImpactOn ;
+                                 owl:someValuesFrom :PipeCrackingPhysicalProperty
+                               ] ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty :hasImpactOn ;
+                                 owl:someValuesFrom :PipeDiscoloredWater
+                               ] ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty :hasImpactOn ;
+                                 owl:someValuesFrom :PipeFailureRecord
+                               ] ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty :hasImpactOn ;
+                                 owl:someValuesFrom :PipeLeakageRate
+                               ] ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty :hasImpactOn ;
+                                 owl:someValuesFrom :PipeMaintenanceCost
+                               ] ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty :hasImpactOn ;
+                                 owl:someValuesFrom :PipeMaintenancePractice
+                               ] ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty :hasImpactOn ;
+                                 owl:someValuesFrom :PipeOperationPractice
+                               ] ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty :hasImpactOn ;
+                                 owl:someValuesFrom :PipeOperationalPressure
+                               ] ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty :hasImpactOn ;
+                                 owl:someValuesFrom :PipeTuberculation
+                               ] ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty :hasImpactOn ;
+                                 owl:someValuesFrom :PipeWallRoughness
+                               ] ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty :hasImpactOn ;
+                                 owl:someValuesFrom :PipeWaterCorrosivity
+                               ] ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty :hasImpactOn ;
+                                 owl:someValuesFrom :PipeWaterDissolvedOxygenContent
+                               ] ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty :hasImpactOn ;
+                                 owl:someValuesFrom :PipeWaterFlowVelocity
+                               ] ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty :hasImpactOn ;
+                                 owl:someValuesFrom :PipeWaterPH
+                               ] ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty :hasImpactOn ;
+                                 owl:someValuesFrom :PipeWaterQualityViolation
+                               ] ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty :influencedBy ;
+                                 owl:someValuesFrom :PipeAge
+                               ] ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty :influencedBy ;
+                                 owl:someValuesFrom :PipeCathodicProtection
+                               ] ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty :influencedBy ;
+                                 owl:someValuesFrom :PipeExternalCoating
+                               ] ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty :influencedBy ;
+                                 owl:someValuesFrom :PipeFluid
+                               ] ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty :influencedBy ;
+                                 owl:someValuesFrom :PipeLining
+                               ] ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty :influencedBy ;
+                                 owl:someValuesFrom :PipeMaintenancePractice
+                               ] ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty :influencedBy ;
+                                 owl:someValuesFrom :PipeMaterial
+                               ] ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty :influencedBy ;
+                                 owl:someValuesFrom :PipeOperationPractice
+                               ] ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty :influencedBy ;
+                                 owl:someValuesFrom :PipeTrenchBackfill
+                               ] ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty :influencedBy ;
+                                 owl:someValuesFrom :PipeWallRoughness
+                               ] ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty :influencedBy ;
+                                 owl:someValuesFrom :PipeWaterCorrosivity
+                               ] ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty :influencedBy ;
+                                 owl:someValuesFrom :PipeWaterDissolvedOxygenContent
+                               ] ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty :influencedBy ;
+                                 owl:someValuesFrom :PipeWaterPH
+                               ] ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty :influencedBy ;
+                                 owl:someValuesFrom :PipeWaterTemperature
+                               ] ;
+               rdfs:comment """Corrosion of a pipe wall, the type of corrosion and the extent of the corrosion
+
+"""^^xsd:string ,
+                            "Knowledge Source: from a domain expert"^^xsd:string ,
+                            """The chemical action of decreasing the structural material available for containing the fluid
+
+"""^^xsd:string .
+
+
+###  http://imash.leeds.ac.uk/ontologies/atu/PipeOntology.owl#PipeCracking
+:PipeCracking rdf:type owl:Class ;
+              rdfs:subClassOf :PipeProcess ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty :hasImpactOn ;
+                                owl:someValuesFrom :PipeCrackingDensity
+                              ] ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty :hasImpactOn ;
+                                owl:someValuesFrom :PipeCrackingPhysicalProperty
+                              ] ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty :hasImpactOn ;
+                                owl:someValuesFrom :PipeFailureRecord
+                              ] ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty :hasImpactOn ;
+                                owl:someValuesFrom :PipeLeakageRate
+                              ] ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty :hasImpactOn ;
+                                owl:someValuesFrom :PipeMaintenanceCost
+                              ] ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty :hasImpactOn ;
+                                owl:someValuesFrom :PipeMaintenancePractice
+                              ] ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty :hasImpactOn ;
+                                owl:someValuesFrom :PipeOperationPractice
+                              ] ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty :hasImpactOn ;
+                                owl:someValuesFrom :PipeOperationalPressure
+                              ] ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty :hasImpactOn ;
+                                owl:someValuesFrom :PipeWaterFlowVelocity
+                              ] ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty :hasImpactOn ;
+                                owl:someValuesFrom :PipeWaterQualityViolation
+                              ] ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty :influencedBy ;
+                                owl:someValuesFrom :PipeAge
+                              ] ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty :influencedBy ;
+                                owl:someValuesFrom :PipeCathodicProtection
+                              ] ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty :influencedBy ;
+                                owl:someValuesFrom :PipeCrackingDensity
+                              ] ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty :influencedBy ;
+                                owl:someValuesFrom :PipeExternalCoating
+                              ] ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty :influencedBy ;
+                                owl:someValuesFrom :PipeExternalDiameter
+                              ] ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty :influencedBy ;
+                                owl:someValuesFrom :PipeInternalDiameter
+                              ] ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty :influencedBy ;
+                                owl:someValuesFrom :PipeLining
+                              ] ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty :influencedBy ;
+                                owl:someValuesFrom :PipeMaintenancePractice
+                              ] ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty :influencedBy ;
+                                owl:someValuesFrom :PipeMaterial
+                              ] ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty :influencedBy ;
+                                owl:someValuesFrom :PipeOperationPractice
+                              ] ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty :influencedBy ;
+                                owl:someValuesFrom :PipeTrenchBackfill
+                              ] ;
+              rdfs:comment """Formation of cracks in a pipe wall and the reasons for those cracks (e.g. excess pressure, corrosion)
+
+"""^^xsd:string ,
+                           "Knowledge Source: from a domain expert"^^xsd:string ,
+                           """The action of a pathway appearing in a pipe allowing water from inside the pipe to outside
+
+"""^^xsd:string .
+
+
+###  http://imash.leeds.ac.uk/ontologies/atu/PipeOntology.owl#PipeCrackingDensity
+:PipeCrackingDensity rdf:type owl:Class ;
+                     rdfs:subClassOf :PipeConditionProperty ,
+                                     [ rdf:type owl:Restriction ;
+                                       owl:onProperty :hasImpactOn ;
+                                       owl:someValuesFrom :PipeAssessmentCost
+                                     ] ,
+                                     [ rdf:type owl:Restriction ;
+                                       owl:onProperty :hasImpactOn ;
+                                       owl:someValuesFrom :PipeCracking
+                                     ] ,
+                                     [ rdf:type owl:Restriction ;
+                                       owl:onProperty :hasImpactOn ;
+                                       owl:someValuesFrom :PipeFailureRecord
+                                     ] ,
+                                     [ rdf:type owl:Restriction ;
+                                       owl:onProperty :hasImpactOn ;
+                                       owl:someValuesFrom :PipeInspectionRecord
+                                     ] ,
+                                     [ rdf:type owl:Restriction ;
+                                       owl:onProperty :hasImpactOn ;
+                                       owl:someValuesFrom :PipeLeakageRate
+                                     ] ,
+                                     [ rdf:type owl:Restriction ;
+                                       owl:onProperty :hasImpactOn ;
+                                       owl:someValuesFrom :PipeMaintenanceBacklog
+                                     ] ,
+                                     [ rdf:type owl:Restriction ;
+                                       owl:onProperty :hasImpactOn ;
+                                       owl:someValuesFrom :PipeMaintenanceCost
+                                     ] ,
+                                     [ rdf:type owl:Restriction ;
+                                       owl:onProperty :hasImpactOn ;
+                                       owl:someValuesFrom :PipeMaintenancePractice
+                                     ] ,
+                                     [ rdf:type owl:Restriction ;
+                                       owl:onProperty :influencedBy ;
+                                       owl:someValuesFrom :PipeCathodicProtection
+                                     ] ,
+                                     [ rdf:type owl:Restriction ;
+                                       owl:onProperty :influencedBy ;
+                                       owl:someValuesFrom :PipeCorrosion
+                                     ] ,
+                                     [ rdf:type owl:Restriction ;
+                                       owl:onProperty :influencedBy ;
+                                       owl:someValuesFrom :PipeCracking
+                                     ] ,
+                                     [ rdf:type owl:Restriction ;
+                                       owl:onProperty :influencedBy ;
+                                       owl:someValuesFrom :PipeMaterial
+                                     ] ,
+                                     [ rdf:type owl:Restriction ;
+                                       owl:onProperty :influencedBy ;
+                                       owl:someValuesFrom :PipeOperationalPressure
+                                     ] ,
+                                     [ rdf:type owl:Restriction ;
+                                       owl:onProperty :influencedBy ;
+                                       owl:someValuesFrom :PipeWaterCorrosivity
+                                     ] ;
+                     rdfs:comment "Knowledge Source: from a domain expert"^^xsd:string ,
+                                  """The number of cracks in a length of pipe
+
+"""^^xsd:string ,
+                                  """The number of cracks in the pipe per unit length
+
+"""^^xsd:string .
+
+
+###  http://imash.leeds.ac.uk/ontologies/atu/PipeOntology.owl#PipeCrackingPhysicalProperty
+:PipeCrackingPhysicalProperty rdf:type owl:Class ;
+                              rdfs:subClassOf :PipeConditionProperty ,
+                                              [ rdf:type owl:Restriction ;
+                                                owl:onProperty :hasImpactOn ;
+                                                owl:someValuesFrom :PipeAssessmentCost
+                                              ] ,
+                                              [ rdf:type owl:Restriction ;
+                                                owl:onProperty :hasImpactOn ;
+                                                owl:someValuesFrom :PipeFailureRecord
+                                              ] ,
+                                              [ rdf:type owl:Restriction ;
+                                                owl:onProperty :hasImpactOn ;
+                                                owl:someValuesFrom :PipeInspectionRecord
+                                              ] ,
+                                              [ rdf:type owl:Restriction ;
+                                                owl:onProperty :hasImpactOn ;
+                                                owl:someValuesFrom :PipeLeakageRate
+                                              ] ,
+                                              [ rdf:type owl:Restriction ;
+                                                owl:onProperty :hasImpactOn ;
+                                                owl:someValuesFrom :PipeMaintenanceBacklog
+                                              ] ,
+                                              [ rdf:type owl:Restriction ;
+                                                owl:onProperty :hasImpactOn ;
+                                                owl:someValuesFrom :PipeMaintenanceCost
+                                              ] ,
+                                              [ rdf:type owl:Restriction ;
+                                                owl:onProperty :hasImpactOn ;
+                                                owl:someValuesFrom :PipeMaintenancePractice
+                                              ] ,
+                                              [ rdf:type owl:Restriction ;
+                                                owl:onProperty :influencedBy ;
+                                                owl:someValuesFrom :PipeCathodicProtection
+                                              ] ,
+                                              [ rdf:type owl:Restriction ;
+                                                owl:onProperty :influencedBy ;
+                                                owl:someValuesFrom :PipeCorrosion
+                                              ] ,
+                                              [ rdf:type owl:Restriction ;
+                                                owl:onProperty :influencedBy ;
+                                                owl:someValuesFrom :PipeCracking
+                                              ] ,
+                                              [ rdf:type owl:Restriction ;
+                                                owl:onProperty :influencedBy ;
+                                                owl:someValuesFrom :PipeMaterial
+                                              ] ,
+                                              [ rdf:type owl:Restriction ;
+                                                owl:onProperty :influencedBy ;
+                                                owl:someValuesFrom :PipeOperationalPressure
+                                              ] ,
+                                              [ rdf:type owl:Restriction ;
+                                                owl:onProperty :influencedBy ;
+                                                owl:someValuesFrom :PipeWaterCorrosivity
+                                              ] ;
+                              rdfs:comment "Knowledge Source: from a domain expert"^^xsd:string ,
+                                           """The width and length of crack
+
+"""^^xsd:string .
+
+
+###  http://imash.leeds.ac.uk/ontologies/atu/PipeOntology.owl#PipeDepth
+:PipeDepth rdf:type owl:Class ;
+           rdfs:subClassOf :PipeGeometryProperty ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty :hasImpactOn ;
+                             owl:someValuesFrom :PipeAssessmentCost
+                           ] ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty :hasImpactOn ;
+                             owl:someValuesFrom :PipeInstallationCost
+                           ] ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty :hasImpactOn ;
+                             owl:someValuesFrom :PipeMaintenanceCost
+                           ] ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty :hasImpactOn ;
+                             owl:someValuesFrom :PipeReplacementCost
+                           ] ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty :hasImpactOn ;
+                             owl:someValuesFrom :PipeTrenchBackfill
+                           ] ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty :influencedBy ;
+                             owl:someValuesFrom :PipeLocation
+                           ] ;
+           rdfs:comment "Knowledge Source: from a domain expert"^^xsd:string ,
+                        """The depth below the ground surface to the base elevation of the pipe
+
+"""^^xsd:string ,
+                        """The installed depth of the pipe below ground level
+
+"""^^xsd:string .
+
+
+###  http://imash.leeds.ac.uk/ontologies/atu/PipeOntology.owl#PipeDiscoloredWater
+:PipeDiscoloredWater rdf:type owl:Class ;
+                     rdfs:subClassOf :PipeConditionProperty ,
+                                     [ rdf:type owl:Restriction ;
+                                       owl:onProperty :influencedBy ;
+                                       owl:someValuesFrom :PipeAge
+                                     ] ,
+                                     [ rdf:type owl:Restriction ;
+                                       owl:onProperty :influencedBy ;
+                                       owl:someValuesFrom :PipeCorrosion
+                                     ] ;
+                     rdfs:comment """Has there been a discoloured water complaint reported in this area (y/n)
+
+"""^^xsd:string ,
+                                  "Knowledge Source: from a domain expert"^^xsd:string .
+
+
+###  http://imash.leeds.ac.uk/ontologies/atu/PipeOntology.owl#PipeElevation
+:PipeElevation rdf:type owl:Class ;
+               rdfs:subClassOf :PipeGeometryProperty ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty :influencedBy ;
+                                 owl:someValuesFrom :PipeLocation
+                               ] ;
+               rdfs:comment "Knowledge Source: from a domain expert"^^xsd:string ,
+                            """The elevation of the base of the pipe
+
+"""^^xsd:string ,
+                            """The elevation of the pipe above a standardised datum (i.e. mean sea level)
+
+"""^^xsd:string .
+
+
+###  http://imash.leeds.ac.uk/ontologies/atu/PipeOntology.owl#PipeExternalCoating
+:PipeExternalCoating rdf:type owl:Class ;
+                     rdfs:subClassOf :PipeMaterialProperty ,
+                                     [ rdf:type owl:Restriction ;
+                                       owl:onProperty :hasImpactOn ;
+                                       owl:someValuesFrom :PipeCorrosion
+                                     ] ,
+                                     [ rdf:type owl:Restriction ;
+                                       owl:onProperty :hasImpactOn ;
+                                       owl:someValuesFrom :PipeCracking
+                                     ] ,
+                                     [ rdf:type owl:Restriction ;
+                                       owl:onProperty :hasImpactOn ;
+                                       owl:someValuesFrom :PipeInstallationCost
+                                     ] ,
+                                     [ rdf:type owl:Restriction ;
+                                       owl:onProperty :hasImpactOn ;
+                                       owl:someValuesFrom :PipeMaintenanceCost
+                                     ] ,
+                                     [ rdf:type owl:Restriction ;
+                                       owl:onProperty :hasImpactOn ;
+                                       owl:someValuesFrom :PipeReplacementCost
+                                     ] ;
+                     rdfs:comment """An external coating applied to a pipe to protect it from corrosion (typically fusion-bond epoxy powder coating)
+
+"""^^xsd:string ,
+                                  "Knowledge Source: from a domain expert"^^xsd:string ,
+                                  """Type of external coating (or None)
+
+"""^^xsd:string .
+
+
+###  http://imash.leeds.ac.uk/ontologies/atu/PipeOntology.owl#PipeExternalDiameter
+:PipeExternalDiameter rdf:type owl:Class ;
+                      rdfs:subClassOf :PipeGeometryProperty ,
+                                      [ rdf:type owl:Restriction ;
+                                        owl:onProperty :hasImpactOn ;
+                                        owl:someValuesFrom :PipeCracking
+                                      ] ,
+                                      [ rdf:type owl:Restriction ;
+                                        owl:onProperty :hasImpactOn ;
+                                        owl:someValuesFrom :PipeJointFatigue
+                                      ] ,
+                                      [ rdf:type owl:Restriction ;
+                                        owl:onProperty :hasImpactOn ;
+                                        owl:someValuesFrom :PipeReplacementCost
+                                      ] ;
+                      rdfs:comment "Knowledge Source: from a domain expert"^^xsd:string ,
+                                   """The external diameter of the pipe
+
+"""^^xsd:string ,
+                                   """The external diameter of the pipe.
+
+"""^^xsd:string .
+
+
+###  http://imash.leeds.ac.uk/ontologies/atu/PipeOntology.owl#PipeFailureRecord
+:PipeFailureRecord rdf:type owl:Class ;
+                   rdfs:subClassOf :PipeRecord ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty :hasImpactOn ;
+                                     owl:someValuesFrom :PipeInspectionRecord
+                                   ] ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty :hasImpactOn ;
+                                     owl:someValuesFrom :PipeMaintenanceBacklog
+                                   ] ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty :hasImpactOn ;
+                                     owl:someValuesFrom :PipeMaintenancePractice
+                                   ] ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty :hasImpactOn ;
+                                     owl:someValuesFrom :PipeReplacementCost
+                                   ] ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty :influencedBy ;
+                                     owl:someValuesFrom :PipeCorrosion
+                                   ] ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty :influencedBy ;
+                                     owl:someValuesFrom :PipeCracking
+                                   ] ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty :influencedBy ;
+                                     owl:someValuesFrom :PipeCrackingDensity
+                                   ] ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty :influencedBy ;
+                                     owl:someValuesFrom :PipeCrackingPhysicalProperty
+                                   ] ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty :influencedBy ;
+                                     owl:someValuesFrom :PipeInspectionRecord
+                                   ] ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty :influencedBy ;
+                                     owl:someValuesFrom :PipeJointFatigue
+                                   ] ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty :influencedBy ;
+                                     owl:someValuesFrom :PipeLeakageRate
+                                   ] ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty :influencedBy ;
+                                     owl:someValuesFrom :PipeMaintenanceBacklog
+                                   ] ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty :influencedBy ;
+                                     owl:someValuesFrom :PipeMaintenancePractice
+                                   ] ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty :influencedBy ;
+                                     owl:someValuesFrom :PipeValveLeaking
+                                   ] ;
+                   rdfs:comment "Knowledge Source: from a domain expert"^^xsd:string ,
+                                """The number and type of failures of a pipe
+
+"""^^xsd:string ,
+                                """The number of times that this pipe has failed in the past expressed as failures / year
+
+"""^^xsd:string .
+
+
+###  http://imash.leeds.ac.uk/ontologies/atu/PipeOntology.owl#PipeFinancialProperty
+:PipeFinancialProperty rdf:type owl:Class ;
+                       rdfs:subClassOf :PipeProperty ;
+                       rdfs:comment "Knowledge Source: from a domain expert"^^xsd:string ,
+                                    """This covers the cost of installing, maintaing and replacing the pipe.
+
+"""^^xsd:string .
+
+
+###  http://imash.leeds.ac.uk/ontologies/atu/PipeOntology.owl#PipeFluid
+:PipeFluid rdf:type owl:Class ;
+           rdfs:subClassOf :PipeFluidProperty ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty :hasImpactOn ;
+                             owl:someValuesFrom :PipeCorrosion
+                           ] ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty :hasImpactOn ;
+                             owl:someValuesFrom :PipeWaterCorrosivity
+                           ] ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty :hasImpactOn ;
+                             owl:someValuesFrom :PipeWaterDissolvedOxygenContent
+                           ] ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty :hasImpactOn ;
+                             owl:someValuesFrom :PipeWaterFlowVelocity
+                           ] ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty :hasImpactOn ;
+                             owl:someValuesFrom :PipeWaterPH
+                           ] ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty :hasImpactOn ;
+                             owl:someValuesFrom :PipeWaterQualityViolation
+                           ] ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty :hasImpactOn ;
+                             owl:someValuesFrom :PipeWaterTemperature
+                           ] ;
+           rdfs:comment "Knowledge Source: from a domain expert"^^xsd:string ,
+                        """The fluid being transported inside a pipe (potable, water, sewage, gas, oil, hot water/steam, etc.)
+
+"""^^xsd:string ,
+                        """Type of fluid carried by the pipe
+
+"""^^xsd:string .
+
+
+###  http://imash.leeds.ac.uk/ontologies/atu/PipeOntology.owl#PipeFluidProperty
+:PipeFluidProperty rdf:type owl:Class ;
+                   rdfs:subClassOf :PipeProperty ;
+                   rdfs:comment "Knowledge Source: from a domain expert"^^xsd:string ,
+                                """This covers the properites of the fluid.
+
+"""^^xsd:string .
+
+
+###  http://imash.leeds.ac.uk/ontologies/atu/PipeOntology.owl#PipeGeometryProperty
+:PipeGeometryProperty rdf:type owl:Class ;
+                      rdfs:subClassOf :PipeProperty ;
+                      rdfs:comment "Knowledge Source: from a domain expert"^^xsd:string ,
+                                   """This covers the length between connections and length of pipe sections; depth and elevation; and pipe cross section.
+
+"""^^xsd:string .
+
+
+###  http://imash.leeds.ac.uk/ontologies/atu/PipeOntology.owl#PipeInspectionRecord
+:PipeInspectionRecord rdf:type owl:Class ;
+                      rdfs:subClassOf :PipeRecord ,
+                                      [ rdf:type owl:Restriction ;
+                                        owl:onProperty :hasImpactOn ;
+                                        owl:someValuesFrom :PipeFailureRecord
+                                      ] ,
+                                      [ rdf:type owl:Restriction ;
+                                        owl:onProperty :hasImpactOn ;
+                                        owl:someValuesFrom :PipeMaintenanceBacklog
+                                      ] ,
+                                      [ rdf:type owl:Restriction ;
+                                        owl:onProperty :hasImpactOn ;
+                                        owl:someValuesFrom :PipeMaintenanceCost
+                                      ] ,
+                                      [ rdf:type owl:Restriction ;
+                                        owl:onProperty :hasImpactOn ;
+                                        owl:someValuesFrom :PipeMaintenancePractice
+                                      ] ,
+                                      [ rdf:type owl:Restriction ;
+                                        owl:onProperty :hasImpactOn ;
+                                        owl:someValuesFrom :PipeOperationPractice
+                                      ] ,
+                                      [ rdf:type owl:Restriction ;
+                                        owl:onProperty :influencedBy ;
+                                        owl:someValuesFrom :PipeCrackingDensity
+                                      ] ,
+                                      [ rdf:type owl:Restriction ;
+                                        owl:onProperty :influencedBy ;
+                                        owl:someValuesFrom :PipeCrackingPhysicalProperty
+                                      ] ,
+                                      [ rdf:type owl:Restriction ;
+                                        owl:onProperty :influencedBy ;
+                                        owl:someValuesFrom :PipeFailureRecord
+                                      ] ,
+                                      [ rdf:type owl:Restriction ;
+                                        owl:onProperty :influencedBy ;
+                                        owl:someValuesFrom :PipeLeakageRate
+                                      ] ,
+                                      [ rdf:type owl:Restriction ;
+                                        owl:onProperty :influencedBy ;
+                                        owl:someValuesFrom :PipeMaintenanceBacklog
+                                      ] ,
+                                      [ rdf:type owl:Restriction ;
+                                        owl:onProperty :influencedBy ;
+                                        owl:someValuesFrom :PipeMaintenancePractice
+                                      ] ,
+                                      [ rdf:type owl:Restriction ;
+                                        owl:onProperty :influencedBy ;
+                                        owl:someValuesFrom :PipeOperationPractice
+                                      ] ;
+                      rdfs:comment """A record of the times that this pipe has been examined, for any reason
+
+"""^^xsd:string ,
+                                   "Knowledge Source: from a domain expert"^^xsd:string ,
+                                   """The number and type of inspections of pipe
+
+"""^^xsd:string .
+
+
+###  http://imash.leeds.ac.uk/ontologies/atu/PipeOntology.owl#PipeInstallationCost
+:PipeInstallationCost rdf:type owl:Class ;
+                      rdfs:subClassOf :PipeFinancialProperty ,
+                                      [ rdf:type owl:Restriction ;
+                                        owl:onProperty :hasImpactOn ;
+                                        owl:someValuesFrom :PipeAssessmentCost
+                                      ] ,
+                                      [ rdf:type owl:Restriction ;
+                                        owl:onProperty :hasImpactOn ;
+                                        owl:someValuesFrom :PipeMaintenanceCost
+                                      ] ,
+                                      [ rdf:type owl:Restriction ;
+                                        owl:onProperty :influencedBy ;
+                                        owl:someValuesFrom :PipeCathodicProtection
+                                      ] ,
+                                      [ rdf:type owl:Restriction ;
+                                        owl:onProperty :influencedBy ;
+                                        owl:someValuesFrom :PipeConnectionDensity
+                                      ] ,
+                                      [ rdf:type owl:Restriction ;
+                                        owl:onProperty :influencedBy ;
+                                        owl:someValuesFrom :PipeDepth
+                                      ] ,
+                                      [ rdf:type owl:Restriction ;
+                                        owl:onProperty :influencedBy ;
+                                        owl:someValuesFrom :PipeExternalCoating
+                                      ] ,
+                                      [ rdf:type owl:Restriction ;
+                                        owl:onProperty :influencedBy ;
+                                        owl:someValuesFrom :PipeJointType
+                                      ] ,
+                                      [ rdf:type owl:Restriction ;
+                                        owl:onProperty :influencedBy ;
+                                        owl:someValuesFrom :PipeLength
+                                      ] ,
+                                      [ rdf:type owl:Restriction ;
+                                        owl:onProperty :influencedBy ;
+                                        owl:someValuesFrom :PipeLining
+                                      ] ,
+                                      [ rdf:type owl:Restriction ;
+                                        owl:onProperty :influencedBy ;
+                                        owl:someValuesFrom :PipeMaterial
+                                      ] ,
+                                      [ rdf:type owl:Restriction ;
+                                        owl:onProperty :influencedBy ;
+                                        owl:someValuesFrom :PipeTrenchBackfill
+                                      ] ,
+                                      [ rdf:type owl:Restriction ;
+                                        owl:onProperty :influencedBy ;
+                                        owl:someValuesFrom :PipeTrenchWidth
+                                      ] ,
+                                      [ rdf:type owl:Restriction ;
+                                        owl:onProperty :influencedBy ;
+                                        owl:someValuesFrom :PipeValveType
+                                      ] ;
+                      rdfs:comment """Cost of the combination of all technical and associated administrative actions to install a pipe
+
+"""^^xsd:string ,
+                                   "Knowledge Source: from a domain expert"^^xsd:string ,
+                                   """The cost to install the pipe in the first place
+
+"""^^xsd:string .
+
+
+###  http://imash.leeds.ac.uk/ontologies/atu/PipeOntology.owl#PipeInternalDiameter
+:PipeInternalDiameter rdf:type owl:Class ;
+                      rdfs:subClassOf :PipeGeometryProperty ,
+                                      [ rdf:type owl:Restriction ;
+                                        owl:onProperty :hasImpactOn ;
+                                        owl:someValuesFrom :PipeCracking
+                                      ] ,
+                                      [ rdf:type owl:Restriction ;
+                                        owl:onProperty :hasImpactOn ;
+                                        owl:someValuesFrom :PipeJointFatigue
+                                      ] ;
+                      rdfs:comment "Knowledge Source: from a domain expert"^^xsd:string ,
+                                   """The internal diameter of the pipe
+
+"""^^xsd:string .
+
+
+###  http://imash.leeds.ac.uk/ontologies/atu/PipeOntology.owl#PipeJointFatigue
+:PipeJointFatigue rdf:type owl:Class ;
+                  rdfs:subClassOf :PipeProcess ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty :hasImpactOn ;
+                                    owl:someValuesFrom :PipeFailureRecord
+                                  ] ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty :hasImpactOn ;
+                                    owl:someValuesFrom :PipeLeakageRate
+                                  ] ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty :hasImpactOn ;
+                                    owl:someValuesFrom :PipeMaintenanceCost
+                                  ] ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty :hasImpactOn ;
+                                    owl:someValuesFrom :PipeMaintenancePractice
+                                  ] ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty :hasImpactOn ;
+                                    owl:someValuesFrom :PipeOperationPractice
+                                  ] ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty :hasImpactOn ;
+                                    owl:someValuesFrom :PipeOperationalPressure
+                                  ] ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty :influencedBy ;
+                                    owl:someValuesFrom :PipeAge
+                                  ] ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty :influencedBy ;
+                                    owl:someValuesFrom :PipeConnectionDensity
+                                  ] ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty :influencedBy ;
+                                    owl:someValuesFrom :PipeExternalDiameter
+                                  ] ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty :influencedBy ;
+                                    owl:someValuesFrom :PipeInternalDiameter
+                                  ] ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty :influencedBy ;
+                                    owl:someValuesFrom :PipeJointType
+                                  ] ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty :influencedBy ;
+                                    owl:someValuesFrom :PipeMaintenancePractice
+                                  ] ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty :influencedBy ;
+                                    owl:someValuesFrom :PipeMaterial
+                                  ] ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty :influencedBy ;
+                                    owl:someValuesFrom :PipeOperationPractice
+                                  ] ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty :influencedBy ;
+                                    owl:someValuesFrom :PipeOperationalPressure
+                                  ] ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty :influencedBy ;
+                                    owl:someValuesFrom :PipeTrenchBackfill
+                                  ] ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty :influencedBy ;
+                                    owl:someValuesFrom :PipeWaterFlowVelocity
+                                  ] ;
+                  rdfs:comment "Knowledge Source: from a domain expert"^^xsd:string ,
+                               """The action of stressing a joint which if repeated could cause a joint to fail
+
+"""^^xsd:string .
+
+
+###  http://imash.leeds.ac.uk/ontologies/atu/PipeOntology.owl#PipeJointType
+:PipeJointType rdf:type owl:Class ;
+               rdfs:subClassOf :PipeMaterialProperty ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty :hasImpactOn ;
+                                 owl:someValuesFrom :PipeInstallationCost
+                               ] ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty :hasImpactOn ;
+                                 owl:someValuesFrom :PipeJointFatigue
+                               ] ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty :hasImpactOn ;
+                                 owl:someValuesFrom :PipeMaintenanceCost
+                               ] ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty :hasImpactOn ;
+                                 owl:someValuesFrom :PipeReplacementCost
+                               ] ;
+               rdfs:comment "Knowledge Source: from a domain expert"^^xsd:string ,
+                            """Means of connecting two lengths of pipe together; can include welded, flanged, threaded, and bell-and-spigot joints
+
+"""^^xsd:string ,
+                            """Type of joining technique used to connect sections of pipes
+
+"""^^xsd:string .
+
+
+###  http://imash.leeds.ac.uk/ontologies/atu/PipeOntology.owl#PipeLeakageRate
+:PipeLeakageRate rdf:type owl:Class ;
+                 rdfs:subClassOf :PipeConditionProperty ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty :hasImpactOn ;
+                                   owl:someValuesFrom :PipeFailureRecord
+                                 ] ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty :hasImpactOn ;
+                                   owl:someValuesFrom :PipeInspectionRecord
+                                 ] ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty :hasImpactOn ;
+                                   owl:someValuesFrom :PipeMaintenanceBacklog
+                                 ] ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty :hasImpactOn ;
+                                   owl:someValuesFrom :PipeMaintenancePractice
+                                 ] ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty :influencedBy ;
+                                   owl:someValuesFrom :PipeAge
+                                 ] ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty :influencedBy ;
+                                   owl:someValuesFrom :PipeCorrosion
+                                 ] ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty :influencedBy ;
+                                   owl:someValuesFrom :PipeCracking
+                                 ] ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty :influencedBy ;
+                                   owl:someValuesFrom :PipeCrackingDensity
+                                 ] ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty :influencedBy ;
+                                   owl:someValuesFrom :PipeCrackingPhysicalProperty
+                                 ] ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty :influencedBy ;
+                                   owl:someValuesFrom :PipeJointFatigue
+                                 ] ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty :influencedBy ;
+                                   owl:someValuesFrom :PipeLining
+                                 ] ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty :influencedBy ;
+                                   owl:someValuesFrom :PipeMaterial
+                                 ] ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty :influencedBy ;
+                                   owl:someValuesFrom :PipeOperationalPressure
+                                 ] ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty :influencedBy ;
+                                   owl:someValuesFrom :PipeValveLeaking
+                                 ] ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty :influencedBy ;
+                                   owl:someValuesFrom :PipeWaterFlowVelocity
+                                 ] ;
+                 rdfs:comment "Knowledge Source: from a domain expert"^^xsd:string ,
+                              """The assumed leakage rate for this pipe 
+
+"""^^xsd:string ,
+                              """The rate of loss of fluid from a pipe
+
+"""^^xsd:string .
+
+
+###  http://imash.leeds.ac.uk/ontologies/atu/PipeOntology.owl#PipeLength
+:PipeLength rdf:type owl:Class ;
+            rdfs:subClassOf :PipeGeometryProperty ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty :hasImpactOn ;
+                              owl:someValuesFrom :PipeConnectionDensity
+                            ] ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty :hasImpactOn ;
+                              owl:someValuesFrom :PipeInstallationCost
+                            ] ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty :hasImpactOn ;
+                              owl:someValuesFrom :PipeMaintenanceCost
+                            ] ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty :hasImpactOn ;
+                              owl:someValuesFrom :PipeReplacementCost
+                            ] ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty :influencedBy ;
+                              owl:someValuesFrom :PipeConnectionDensity
+                            ] ;
+            rdfs:comment "Knowledge Source: from a domain expert"^^xsd:string ,
+                         """The length of pipe between joints
+
+"""^^xsd:string ,
+                         """The length of the section of pipe
+
+"""^^xsd:string .
+
+
+###  http://imash.leeds.ac.uk/ontologies/atu/PipeOntology.owl#PipeLining
+:PipeLining rdf:type owl:Class ;
+            rdfs:subClassOf :PipeMaterialProperty ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty :hasImpactOn ;
+                              owl:someValuesFrom :PipeCorrosion
+                            ] ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty :hasImpactOn ;
+                              owl:someValuesFrom :PipeCracking
+                            ] ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty :hasImpactOn ;
+                              owl:someValuesFrom :PipeInstallationCost
+                            ] ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty :hasImpactOn ;
+                              owl:someValuesFrom :PipeLeakageRate
+                            ] ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty :hasImpactOn ;
+                              owl:someValuesFrom :PipeMaintenanceCost
+                            ] ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty :hasImpactOn ;
+                              owl:someValuesFrom :PipeReplacementCost
+                            ] ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty :hasImpactOn ;
+                              owl:someValuesFrom :PipeTuberculation
+                            ] ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty :hasImpactOn ;
+                              owl:someValuesFrom :PipeWallRoughness
+                            ] ;
+            rdfs:comment "Knowledge Source: from a domain expert"^^xsd:string ,
+                         """Lining inside a pipe to repair a pipe including sliplining, thermoformed pipe, shotcrete, gunite, cured-in-place pipe (CIPP), grout-in-place pipe  
+
+"""^^xsd:string ,
+                         """Type of internal coating/lining used (or None)
+
+"""^^xsd:string .
+
+
+###  http://imash.leeds.ac.uk/ontologies/atu/PipeOntology.owl#PipeLocation
+:PipeLocation rdf:type owl:Class ;
+              rdfs:subClassOf :PipeProperty ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty :hasImpactOn ;
+                                owl:someValuesFrom :PipeDepth
+                              ] ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty :hasImpactOn ;
+                                owl:someValuesFrom :PipeElevation
+                              ] ;
+              rdfs:comment "Knowledge Source: from a domain expert"^^xsd:string ,
+                           """Road location (e.g. grid references, place)
+
+"""^^xsd:string ,
+                           """The position of the pipe
+
+"""^^xsd:string .
+
+
+###  http://imash.leeds.ac.uk/ontologies/atu/PipeOntology.owl#PipeMaintenanceBacklog
+:PipeMaintenanceBacklog rdf:type owl:Class ;
+                        rdfs:subClassOf :PipeRecord ,
+                                        [ rdf:type owl:Restriction ;
+                                          owl:onProperty :hasImpactOn ;
+                                          owl:someValuesFrom :PipeFailureRecord
+                                        ] ,
+                                        [ rdf:type owl:Restriction ;
+                                          owl:onProperty :hasImpactOn ;
+                                          owl:someValuesFrom :PipeInspectionRecord
+                                        ] ,
+                                        [ rdf:type owl:Restriction ;
+                                          owl:onProperty :hasImpactOn ;
+                                          owl:someValuesFrom :PipeMaintenanceCost
+                                        ] ,
+                                        [ rdf:type owl:Restriction ;
+                                          owl:onProperty :hasImpactOn ;
+                                          owl:someValuesFrom :PipeMaintenancePractice
+                                        ] ,
+                                        [ rdf:type owl:Restriction ;
+                                          owl:onProperty :influencedBy ;
+                                          owl:someValuesFrom :PipeCrackingDensity
+                                        ] ,
+                                        [ rdf:type owl:Restriction ;
+                                          owl:onProperty :influencedBy ;
+                                          owl:someValuesFrom :PipeCrackingPhysicalProperty
+                                        ] ,
+                                        [ rdf:type owl:Restriction ;
+                                          owl:onProperty :influencedBy ;
+                                          owl:someValuesFrom :PipeFailureRecord
+                                        ] ,
+                                        [ rdf:type owl:Restriction ;
+                                          owl:onProperty :influencedBy ;
+                                          owl:someValuesFrom :PipeInspectionRecord
+                                        ] ,
+                                        [ rdf:type owl:Restriction ;
+                                          owl:onProperty :influencedBy ;
+                                          owl:someValuesFrom :PipeLeakageRate
+                                        ] ,
+                                        [ rdf:type owl:Restriction ;
+                                          owl:onProperty :influencedBy ;
+                                          owl:someValuesFrom :PipeMaintenancePractice
+                                        ] ;
+                        rdfs:comment """A record of the times that this pipe has been maintained, for any reason
+
+"""^^xsd:string ,
+                                     "Knowledge Source: from a domain expert"^^xsd:string ,
+                                     """The number and type of actions needed to maintain a pipe
+
+"""^^xsd:string .
+
+
+###  http://imash.leeds.ac.uk/ontologies/atu/PipeOntology.owl#PipeMaintenanceCost
+:PipeMaintenanceCost rdf:type owl:Class ;
+                     rdfs:subClassOf :PipeFinancialProperty ,
+                                     [ rdf:type owl:Restriction ;
+                                       owl:onProperty :hasImpactOn ;
+                                       owl:someValuesFrom :PipeMaintenancePractice
+                                     ] ,
+                                     [ rdf:type owl:Restriction ;
+                                       owl:onProperty :hasImpactOn ;
+                                       owl:someValuesFrom :PipeOperationPractice
+                                     ] ,
+                                     [ rdf:type owl:Restriction ;
+                                       owl:onProperty :influencedBy ;
+                                       owl:someValuesFrom :PipeCathodicProtection
+                                     ] ,
+                                     [ rdf:type owl:Restriction ;
+                                       owl:onProperty :influencedBy ;
+                                       owl:someValuesFrom :PipeCorrosion
+                                     ] ,
+                                     [ rdf:type owl:Restriction ;
+                                       owl:onProperty :influencedBy ;
+                                       owl:someValuesFrom :PipeCracking
+                                     ] ,
+                                     [ rdf:type owl:Restriction ;
+                                       owl:onProperty :influencedBy ;
+                                       owl:someValuesFrom :PipeCrackingDensity
+                                     ] ,
+                                     [ rdf:type owl:Restriction ;
+                                       owl:onProperty :influencedBy ;
+                                       owl:someValuesFrom :PipeCrackingPhysicalProperty
+                                     ] ,
+                                     [ rdf:type owl:Restriction ;
+                                       owl:onProperty :influencedBy ;
+                                       owl:someValuesFrom :PipeDepth
+                                     ] ,
+                                     [ rdf:type owl:Restriction ;
+                                       owl:onProperty :influencedBy ;
+                                       owl:someValuesFrom :PipeExternalCoating
+                                     ] ,
+                                     [ rdf:type owl:Restriction ;
+                                       owl:onProperty :influencedBy ;
+                                       owl:someValuesFrom :PipeInspectionRecord
+                                     ] ,
+                                     [ rdf:type owl:Restriction ;
+                                       owl:onProperty :influencedBy ;
+                                       owl:someValuesFrom :PipeInstallationCost
+                                     ] ,
+                                     [ rdf:type owl:Restriction ;
+                                       owl:onProperty :influencedBy ;
+                                       owl:someValuesFrom :PipeJointFatigue
+                                     ] ,
+                                     [ rdf:type owl:Restriction ;
+                                       owl:onProperty :influencedBy ;
+                                       owl:someValuesFrom :PipeJointType
+                                     ] ,
+                                     [ rdf:type owl:Restriction ;
+                                       owl:onProperty :influencedBy ;
+                                       owl:someValuesFrom :PipeLength
+                                     ] ,
+                                     [ rdf:type owl:Restriction ;
+                                       owl:onProperty :influencedBy ;
+                                       owl:someValuesFrom :PipeLining
+                                     ] ,
+                                     [ rdf:type owl:Restriction ;
+                                       owl:onProperty :influencedBy ;
+                                       owl:someValuesFrom :PipeMaintenanceBacklog
+                                     ] ,
+                                     [ rdf:type owl:Restriction ;
+                                       owl:onProperty :influencedBy ;
+                                       owl:someValuesFrom :PipeMaintenancePractice
+                                     ] ,
+                                     [ rdf:type owl:Restriction ;
+                                       owl:onProperty :influencedBy ;
+                                       owl:someValuesFrom :PipeMaterial
+                                     ] ,
+                                     [ rdf:type owl:Restriction ;
+                                       owl:onProperty :influencedBy ;
+                                       owl:someValuesFrom :PipeSectionLength
+                                     ] ,
+                                     [ rdf:type owl:Restriction ;
+                                       owl:onProperty :influencedBy ;
+                                       owl:someValuesFrom :PipeTrenchBackfill
+                                     ] ,
+                                     [ rdf:type owl:Restriction ;
+                                       owl:onProperty :influencedBy ;
+                                       owl:someValuesFrom :PipeTrenchWidth
+                                     ] ,
+                                     [ rdf:type owl:Restriction ;
+                                       owl:onProperty :influencedBy ;
+                                       owl:someValuesFrom :PipeValveLeaking
+                                     ] ,
+                                     [ rdf:type owl:Restriction ;
+                                       owl:onProperty :influencedBy ;
+                                       owl:someValuesFrom :PipeValveType
+                                     ] ;
+                     rdfs:comment """Cost of the combination of all technical and associated administrative actions during pipe's service life (design life) with the aim of retaining it in a state in which it can perform its required functions 
+
+"""^^xsd:string ,
+                                  "Knowledge Source: from a domain expert"^^xsd:string ,
+                                  """The cost to undertake maintainence on this pipe
+
+"""^^xsd:string .
+
+
+###  http://imash.leeds.ac.uk/ontologies/atu/PipeOntology.owl#PipeMaintenancePractice
+:PipeMaintenancePractice rdf:type owl:Class ;
+                         rdfs:subClassOf :PipeRecord ,
+                                         [ rdf:type owl:Restriction ;
+                                           owl:onProperty :hasImpactOn ;
+                                           owl:someValuesFrom :PipeCorrosion
+                                         ] ,
+                                         [ rdf:type owl:Restriction ;
+                                           owl:onProperty :hasImpactOn ;
+                                           owl:someValuesFrom :PipeCracking
+                                         ] ,
+                                         [ rdf:type owl:Restriction ;
+                                           owl:onProperty :hasImpactOn ;
+                                           owl:someValuesFrom :PipeFailureRecord
+                                         ] ,
+                                         [ rdf:type owl:Restriction ;
+                                           owl:onProperty :hasImpactOn ;
+                                           owl:someValuesFrom :PipeInspectionRecord
+                                         ] ,
+                                         [ rdf:type owl:Restriction ;
+                                           owl:onProperty :hasImpactOn ;
+                                           owl:someValuesFrom :PipeJointFatigue
+                                         ] ,
+                                         [ rdf:type owl:Restriction ;
+                                           owl:onProperty :hasImpactOn ;
+                                           owl:someValuesFrom :PipeMaintenanceBacklog
+                                         ] ,
+                                         [ rdf:type owl:Restriction ;
+                                           owl:onProperty :hasImpactOn ;
+                                           owl:someValuesFrom :PipeMaintenanceCost
+                                         ] ,
+                                         [ rdf:type owl:Restriction ;
+                                           owl:onProperty :hasImpactOn ;
+                                           owl:someValuesFrom :PipeValveLeaking
+                                         ] ,
+                                         [ rdf:type owl:Restriction ;
+                                           owl:onProperty :influencedBy ;
+                                           owl:someValuesFrom :PipeCorrosion
+                                         ] ,
+                                         [ rdf:type owl:Restriction ;
+                                           owl:onProperty :influencedBy ;
+                                           owl:someValuesFrom :PipeCracking
+                                         ] ,
+                                         [ rdf:type owl:Restriction ;
+                                           owl:onProperty :influencedBy ;
+                                           owl:someValuesFrom :PipeCrackingDensity
+                                         ] ,
+                                         [ rdf:type owl:Restriction ;
+                                           owl:onProperty :influencedBy ;
+                                           owl:someValuesFrom :PipeCrackingPhysicalProperty
+                                         ] ,
+                                         [ rdf:type owl:Restriction ;
+                                           owl:onProperty :influencedBy ;
+                                           owl:someValuesFrom :PipeFailureRecord
+                                         ] ,
+                                         [ rdf:type owl:Restriction ;
+                                           owl:onProperty :influencedBy ;
+                                           owl:someValuesFrom :PipeInspectionRecord
+                                         ] ,
+                                         [ rdf:type owl:Restriction ;
+                                           owl:onProperty :influencedBy ;
+                                           owl:someValuesFrom :PipeJointFatigue
+                                         ] ,
+                                         [ rdf:type owl:Restriction ;
+                                           owl:onProperty :influencedBy ;
+                                           owl:someValuesFrom :PipeLeakageRate
+                                         ] ,
+                                         [ rdf:type owl:Restriction ;
+                                           owl:onProperty :influencedBy ;
+                                           owl:someValuesFrom :PipeMaintenanceBacklog
+                                         ] ,
+                                         [ rdf:type owl:Restriction ;
+                                           owl:onProperty :influencedBy ;
+                                           owl:someValuesFrom :PipeMaintenanceCost
+                                         ] ,
+                                         [ rdf:type owl:Restriction ;
+                                           owl:onProperty :influencedBy ;
+                                           owl:someValuesFrom :PipeOwner
+                                         ] ,
+                                         [ rdf:type owl:Restriction ;
+                                           owl:onProperty :influencedBy ;
+                                           owl:someValuesFrom :PipeReplacementCost
+                                         ] ,
+                                         [ rdf:type owl:Restriction ;
+                                           owl:onProperty :influencedBy ;
+                                           owl:someValuesFrom :PipeValveLeaking
+                                         ] ;
+                         rdfs:comment """Any records of standard techniques used to maintain this pipe
+
+"""^^xsd:string ,
+                                      "Knowledge Source: from a domain expert"^^xsd:string .
+
+
+###  http://imash.leeds.ac.uk/ontologies/atu/PipeOntology.owl#PipeMaterial
+:PipeMaterial rdf:type owl:Class ;
+              rdfs:subClassOf :PipeMaterialProperty ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty :hasImpactOn ;
+                                owl:someValuesFrom :PipeAssessmentCost
+                              ] ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty :hasImpactOn ;
+                                owl:someValuesFrom :PipeCorrosion
+                              ] ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty :hasImpactOn ;
+                                owl:someValuesFrom :PipeCracking
+                              ] ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty :hasImpactOn ;
+                                owl:someValuesFrom :PipeCrackingDensity
+                              ] ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty :hasImpactOn ;
+                                owl:someValuesFrom :PipeCrackingPhysicalProperty
+                              ] ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty :hasImpactOn ;
+                                owl:someValuesFrom :PipeInstallationCost
+                              ] ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty :hasImpactOn ;
+                                owl:someValuesFrom :PipeJointFatigue
+                              ] ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty :hasImpactOn ;
+                                owl:someValuesFrom :PipeLeakageRate
+                              ] ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty :hasImpactOn ;
+                                owl:someValuesFrom :PipeMaintenanceCost
+                              ] ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty :hasImpactOn ;
+                                owl:someValuesFrom :PipeReplacementCost
+                              ] ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty :hasImpactOn ;
+                                owl:someValuesFrom :PipeTuberculation
+                              ] ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty :hasImpactOn ;
+                                owl:someValuesFrom :PipeWallRoughness
+                              ] ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty :influencedBy ;
+                                owl:someValuesFrom :PipeAge
+                              ] ;
+              rdfs:comment "Knowledge Source: from a domain expert"^^xsd:string ,
+                           """Material used to form a pipe; usually cast iron, steel, concrete and plastic
+
+"""^^xsd:string ,
+                           """Pipe construction material
+
+"""^^xsd:string .
+
+
+###  http://imash.leeds.ac.uk/ontologies/atu/PipeOntology.owl#PipeMaterialProperty
+:PipeMaterialProperty rdf:type owl:Class ;
+                      rdfs:subClassOf :PipeProperty ;
+                      rdfs:comment "Knowledge Source: from a domain expert"^^xsd:string ,
+                                   """This covers the material, joint and valves.
+
+"""^^xsd:string .
+
+
+###  http://imash.leeds.ac.uk/ontologies/atu/PipeOntology.owl#PipeNetworkProperty
+:PipeNetworkProperty rdf:type owl:Class ;
+                     rdfs:subClassOf :PipeProperty ;
+                     rdfs:comment "Knowledge Source: from a domain expert"^^xsd:string ,
+                                  """The number of connections in a network
+
+"""^^xsd:string .
+
+
+###  http://imash.leeds.ac.uk/ontologies/atu/PipeOntology.owl#PipeOperationPractice
+:PipeOperationPractice rdf:type owl:Class ;
+                       rdfs:subClassOf :PipeRecord ,
+                                       [ rdf:type owl:Restriction ;
+                                         owl:onProperty :hasImpactOn ;
+                                         owl:someValuesFrom :PipeCorrosion
+                                       ] ,
+                                       [ rdf:type owl:Restriction ;
+                                         owl:onProperty :hasImpactOn ;
+                                         owl:someValuesFrom :PipeCracking
+                                       ] ,
+                                       [ rdf:type owl:Restriction ;
+                                         owl:onProperty :hasImpactOn ;
+                                         owl:someValuesFrom :PipeInspectionRecord
+                                       ] ,
+                                       [ rdf:type owl:Restriction ;
+                                         owl:onProperty :hasImpactOn ;
+                                         owl:someValuesFrom :PipeJointFatigue
+                                       ] ,
+                                       [ rdf:type owl:Restriction ;
+                                         owl:onProperty :hasImpactOn ;
+                                         owl:someValuesFrom :PipeValveLeaking
+                                       ] ,
+                                       [ rdf:type owl:Restriction ;
+                                         owl:onProperty :influencedBy ;
+                                         owl:someValuesFrom :PipeAssessmentCost
+                                       ] ,
+                                       [ rdf:type owl:Restriction ;
+                                         owl:onProperty :influencedBy ;
+                                         owl:someValuesFrom :PipeCorrosion
+                                       ] ,
+                                       [ rdf:type owl:Restriction ;
+                                         owl:onProperty :influencedBy ;
+                                         owl:someValuesFrom :PipeCracking
+                                       ] ,
+                                       [ rdf:type owl:Restriction ;
+                                         owl:onProperty :influencedBy ;
+                                         owl:someValuesFrom :PipeInspectionRecord
+                                       ] ,
+                                       [ rdf:type owl:Restriction ;
+                                         owl:onProperty :influencedBy ;
+                                         owl:someValuesFrom :PipeJointFatigue
+                                       ] ,
+                                       [ rdf:type owl:Restriction ;
+                                         owl:onProperty :influencedBy ;
+                                         owl:someValuesFrom :PipeMaintenanceCost
+                                       ] ,
+                                       [ rdf:type owl:Restriction ;
+                                         owl:onProperty :influencedBy ;
+                                         owl:someValuesFrom :PipeOperationalPressure
+                                       ] ,
+                                       [ rdf:type owl:Restriction ;
+                                         owl:onProperty :influencedBy ;
+                                         owl:someValuesFrom :PipeOwner
+                                       ] ,
+                                       [ rdf:type owl:Restriction ;
+                                         owl:onProperty :influencedBy ;
+                                         owl:someValuesFrom :PipeReplacementCost
+                                       ] ,
+                                       [ rdf:type owl:Restriction ;
+                                         owl:onProperty :influencedBy ;
+                                         owl:someValuesFrom :PipeValveLeaking
+                                       ] ,
+                                       [ rdf:type owl:Restriction ;
+                                         owl:onProperty :influencedBy ;
+                                         owl:someValuesFrom :PipeWaterFlowVelocity
+                                       ] ;
+                       rdfs:comment """Any records of standard techniques used in operating the pipe
+
+"""^^xsd:string ,
+                                    "Knowledge Source: from a domain expert"^^xsd:string .
+
+
+###  http://imash.leeds.ac.uk/ontologies/atu/PipeOntology.owl#PipeOperationalPressure
+:PipeOperationalPressure rdf:type owl:Class ;
+                         rdfs:subClassOf :PipeFluidProperty ,
+                                         [ rdf:type owl:Restriction ;
+                                           owl:onProperty :hasImpactOn ;
+                                           owl:someValuesFrom :PipeCrackingDensity
+                                         ] ,
+                                         [ rdf:type owl:Restriction ;
+                                           owl:onProperty :hasImpactOn ;
+                                           owl:someValuesFrom :PipeCrackingPhysicalProperty
+                                         ] ,
+                                         [ rdf:type owl:Restriction ;
+                                           owl:onProperty :hasImpactOn ;
+                                           owl:someValuesFrom :PipeJointFatigue
+                                         ] ,
+                                         [ rdf:type owl:Restriction ;
+                                           owl:onProperty :hasImpactOn ;
+                                           owl:someValuesFrom :PipeLeakageRate
+                                         ] ,
+                                         [ rdf:type owl:Restriction ;
+                                           owl:onProperty :hasImpactOn ;
+                                           owl:someValuesFrom :PipeOperationPractice
+                                         ] ,
+                                         [ rdf:type owl:Restriction ;
+                                           owl:onProperty :hasImpactOn ;
+                                           owl:someValuesFrom :PipeValveLeaking
+                                         ] ,
+                                         [ rdf:type owl:Restriction ;
+                                           owl:onProperty :hasImpactOn ;
+                                           owl:someValuesFrom :PipeWaterDissolvedOxygenContent
+                                         ] ,
+                                         [ rdf:type owl:Restriction ;
+                                           owl:onProperty :hasImpactOn ;
+                                           owl:someValuesFrom :PipeWaterFlowVelocity
+                                         ] ,
+                                         [ rdf:type owl:Restriction ;
+                                           owl:onProperty :influencedBy ;
+                                           owl:someValuesFrom :PipeCorrosion
+                                         ] ,
+                                         [ rdf:type owl:Restriction ;
+                                           owl:onProperty :influencedBy ;
+                                           owl:someValuesFrom :PipeCracking
+                                         ] ,
+                                         [ rdf:type owl:Restriction ;
+                                           owl:onProperty :influencedBy ;
+                                           owl:someValuesFrom :PipeJointFatigue
+                                         ] ,
+                                         [ rdf:type owl:Restriction ;
+                                           owl:onProperty :influencedBy ;
+                                           owl:someValuesFrom :PipeValveLeaking
+                                         ] ,
+                                         [ rdf:type owl:Restriction ;
+                                           owl:onProperty :influencedBy ;
+                                           owl:someValuesFrom :PipeWallRoughness
+                                         ] ;
+                         rdfs:comment "Knowledge Source: from a domain expert"^^xsd:string ,
+                                      """Pressure of the fluid in the pipe
+
+"""^^xsd:string ,
+                                      """The typical fluid pressure inside the pipe
+
+"""^^xsd:string .
+
+
+###  http://imash.leeds.ac.uk/ontologies/atu/PipeOntology.owl#PipeOrientation
+:PipeOrientation rdf:type owl:Class ;
+                 rdfs:subClassOf :PipeGeometryProperty ;
+                 rdfs:comment "Knowledge Source: from a domain expert"^^xsd:string ,
+                              """The azimuth and inclination of the pipe
+
+"""^^xsd:string ,
+                              """The orientation of the section of pipe, typically expressed as ordinal points
+
+"""^^xsd:string .
+
+
+###  http://imash.leeds.ac.uk/ontologies/atu/PipeOntology.owl#PipeOwner
+:PipeOwner rdf:type owl:Class ;
+           rdfs:subClassOf :PipeProperty ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty :hasImpactOn ;
+                             owl:someValuesFrom :PipeMaintenancePractice
+                           ] ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty :hasImpactOn ;
+                             owl:someValuesFrom :PipeOperationPractice
+                           ] ;
+           rdfs:comment """Company or organisation that owns the asset
+
+"""^^xsd:string ,
+                        "Knowledge Source: from a domain expert"^^xsd:string ,
+                        """The owner of the pipe
+
+"""^^xsd:string .
+
+
+###  http://imash.leeds.ac.uk/ontologies/atu/PipeOntology.owl#PipeProcess
+:PipeProcess rdf:type owl:Class .
+
+
+###  http://imash.leeds.ac.uk/ontologies/atu/PipeOntology.owl#PipeProperty
+:PipeProperty rdf:type owl:Class .
+
+
+###  http://imash.leeds.ac.uk/ontologies/atu/PipeOntology.owl#PipeRecord
+:PipeRecord rdf:type owl:Class ;
+            rdfs:subClassOf :PipeProperty ;
+            rdfs:comment "Knowledge Source: from a domain expert"^^xsd:string ,
+                         """This covers the records of the pipe performance and any changes to the pipe.
+
+"""^^xsd:string .
+
+
+###  http://imash.leeds.ac.uk/ontologies/atu/PipeOntology.owl#PipeReplacementCost
+:PipeReplacementCost rdf:type owl:Class ;
+                     rdfs:subClassOf :PipeFinancialProperty ,
+                                     [ rdf:type owl:Restriction ;
+                                       owl:onProperty :hasImpactOn ;
+                                       owl:someValuesFrom :PipeMaintenancePractice
+                                     ] ,
+                                     [ rdf:type owl:Restriction ;
+                                       owl:onProperty :hasImpactOn ;
+                                       owl:someValuesFrom :PipeOperationPractice
+                                     ] ,
+                                     [ rdf:type owl:Restriction ;
+                                       owl:onProperty :influencedBy ;
+                                       owl:someValuesFrom :PipeCathodicProtection
+                                     ] ,
+                                     [ rdf:type owl:Restriction ;
+                                       owl:onProperty :influencedBy ;
+                                       owl:someValuesFrom :PipeConnectionDensity
+                                     ] ,
+                                     [ rdf:type owl:Restriction ;
+                                       owl:onProperty :influencedBy ;
+                                       owl:someValuesFrom :PipeDepth
+                                     ] ,
+                                     [ rdf:type owl:Restriction ;
+                                       owl:onProperty :influencedBy ;
+                                       owl:someValuesFrom :PipeExternalCoating
+                                     ] ,
+                                     [ rdf:type owl:Restriction ;
+                                       owl:onProperty :influencedBy ;
+                                       owl:someValuesFrom :PipeExternalDiameter
+                                     ] ,
+                                     [ rdf:type owl:Restriction ;
+                                       owl:onProperty :influencedBy ;
+                                       owl:someValuesFrom :PipeFailureRecord
+                                     ] ,
+                                     [ rdf:type owl:Restriction ;
+                                       owl:onProperty :influencedBy ;
+                                       owl:someValuesFrom :PipeJointType
+                                     ] ,
+                                     [ rdf:type owl:Restriction ;
+                                       owl:onProperty :influencedBy ;
+                                       owl:someValuesFrom :PipeLength
+                                     ] ,
+                                     [ rdf:type owl:Restriction ;
+                                       owl:onProperty :influencedBy ;
+                                       owl:someValuesFrom :PipeLining
+                                     ] ,
+                                     [ rdf:type owl:Restriction ;
+                                       owl:onProperty :influencedBy ;
+                                       owl:someValuesFrom :PipeMaterial
+                                     ] ,
+                                     [ rdf:type owl:Restriction ;
+                                       owl:onProperty :influencedBy ;
+                                       owl:someValuesFrom :PipeSectionLength
+                                     ] ,
+                                     [ rdf:type owl:Restriction ;
+                                       owl:onProperty :influencedBy ;
+                                       owl:someValuesFrom :PipeTrenchBackfill
+                                     ] ,
+                                     [ rdf:type owl:Restriction ;
+                                       owl:onProperty :influencedBy ;
+                                       owl:someValuesFrom :PipeTrenchWidth
+                                     ] ,
+                                     [ rdf:type owl:Restriction ;
+                                       owl:onProperty :influencedBy ;
+                                       owl:someValuesFrom :PipeValveType
+                                     ] ;
+                     rdfs:comment """Cost associated with replacement of a pipe (or a section of it)
+
+"""^^xsd:string ,
+                                  "Knowledge Source: from a domain expert"^^xsd:string ,
+                                  """The cost to replace the pipe
+
+"""^^xsd:string .
+
+
+###  http://imash.leeds.ac.uk/ontologies/atu/PipeOntology.owl#PipeSectionLength
+:PipeSectionLength rdf:type owl:Class ;
+                   rdfs:subClassOf :PipeGeometryProperty ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty :hasImpactOn ;
+                                     owl:someValuesFrom :PipeMaintenanceCost
+                                   ] ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty :hasImpactOn ;
+                                     owl:someValuesFrom :PipeReplacementCost
+                                   ] ;
+                   rdfs:comment "Knowledge Source: from a domain expert"^^xsd:string ,
+                                """The length of the pipe between valves or other connections
+
+"""^^xsd:string ,
+                                """The length of the section of pipe
+
+"""^^xsd:string .
+
+
+###  http://imash.leeds.ac.uk/ontologies/atu/PipeOntology.owl#PipeTrenchBackfill
+:PipeTrenchBackfill rdf:type owl:Class ;
+                    rdfs:subClassOf :PipeTrenchDimension ,
+                                    [ rdf:type owl:Restriction ;
+                                      owl:onProperty :hasImpactOn ;
+                                      owl:someValuesFrom :PipeAssessmentCost
+                                    ] ,
+                                    [ rdf:type owl:Restriction ;
+                                      owl:onProperty :hasImpactOn ;
+                                      owl:someValuesFrom :PipeCorrosion
+                                    ] ,
+                                    [ rdf:type owl:Restriction ;
+                                      owl:onProperty :hasImpactOn ;
+                                      owl:someValuesFrom :PipeCracking
+                                    ] ,
+                                    [ rdf:type owl:Restriction ;
+                                      owl:onProperty :hasImpactOn ;
+                                      owl:someValuesFrom :PipeInstallationCost
+                                    ] ,
+                                    [ rdf:type owl:Restriction ;
+                                      owl:onProperty :hasImpactOn ;
+                                      owl:someValuesFrom :PipeJointFatigue
+                                    ] ,
+                                    [ rdf:type owl:Restriction ;
+                                      owl:onProperty :hasImpactOn ;
+                                      owl:someValuesFrom :PipeMaintenanceCost
+                                    ] ,
+                                    [ rdf:type owl:Restriction ;
+                                      owl:onProperty :hasImpactOn ;
+                                      owl:someValuesFrom :PipeReplacementCost
+                                    ] ,
+                                    [ rdf:type owl:Restriction ;
+                                      owl:onProperty :hasImpactOn ;
+                                      owl:someValuesFrom :PipeValveLeaking
+                                    ] ,
+                                    [ rdf:type owl:Restriction ;
+                                      owl:onProperty :influencedBy ;
+                                      owl:someValuesFrom :PipeAge
+                                    ] ,
+                                    [ rdf:type owl:Restriction ;
+                                      owl:onProperty :influencedBy ;
+                                      owl:someValuesFrom :PipeDepth
+                                    ] ;
+                    rdfs:comment "Knowledge Source: from a domain expert"^^xsd:string ,
+                                 """Material used to backfill a trench; usually granular fill, selected unbound fill or bound fill
+
+"""^^xsd:string ,
+                                 """The type of material used to back fill the pipe after burial
+
+"""^^xsd:string .
+
+
+###  http://imash.leeds.ac.uk/ontologies/atu/PipeOntology.owl#PipeTrenchDimension
+:PipeTrenchDimension rdf:type owl:Class ;
+                     rdfs:subClassOf :PipeProperty ;
+                     rdfs:comment "Knowledge Source: from a domain expert"^^xsd:string ,
+                                  """Properties about installation of pipe in a trench
+
+"""^^xsd:string .
+
+
+###  http://imash.leeds.ac.uk/ontologies/atu/PipeOntology.owl#PipeTrenchWidth
+:PipeTrenchWidth rdf:type owl:Class ;
+                 rdfs:subClassOf :PipeTrenchDimension ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty :hasImpactOn ;
+                                   owl:someValuesFrom :PipeAssessmentCost
+                                 ] ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty :hasImpactOn ;
+                                   owl:someValuesFrom :PipeInstallationCost
+                                 ] ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty :hasImpactOn ;
+                                   owl:someValuesFrom :PipeMaintenanceCost
+                                 ] ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty :hasImpactOn ;
+                                   owl:someValuesFrom :PipeReplacementCost
+                                 ] ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty :influencedBy ;
+                                   owl:someValuesFrom :PipeAge
+                                 ] ;
+                 rdfs:comment "Knowledge Source: from a domain expert"^^xsd:string ,
+                              """The width of a trench
+
+"""^^xsd:string ,
+                              """The width of the trench dug to bury the pipe
+
+"""^^xsd:string .
+
+
+###  http://imash.leeds.ac.uk/ontologies/atu/PipeOntology.owl#PipeTuberculation
+:PipeTuberculation rdf:type owl:Class ;
+                   rdfs:subClassOf :PipeConditionProperty ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty :hasImpactOn ;
+                                     owl:someValuesFrom :PipeWallRoughness
+                                   ] ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty :influencedBy ;
+                                     owl:someValuesFrom :PipeAge
+                                   ] ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty :influencedBy ;
+                                     owl:someValuesFrom :PipeCorrosion
+                                   ] ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty :influencedBy ;
+                                     owl:someValuesFrom :PipeLining
+                                   ] ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty :influencedBy ;
+                                     owl:someValuesFrom :PipeMaterial
+                                   ] ;
+                   rdfs:comment "Knowledge Source: from a domain expert"^^xsd:string ,
+                                """The build up of metal based materials on the inside of the pipe
+
+"""^^xsd:string ,
+                                """The density of corrosion spots within a pipe
+
+"""^^xsd:string .
+
+
+###  http://imash.leeds.ac.uk/ontologies/atu/PipeOntology.owl#PipeValveLeaking
+:PipeValveLeaking rdf:type owl:Class ;
+                  rdfs:subClassOf :PipeProcess ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty :hasImpactOn ;
+                                    owl:someValuesFrom :PipeFailureRecord
+                                  ] ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty :hasImpactOn ;
+                                    owl:someValuesFrom :PipeLeakageRate
+                                  ] ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty :hasImpactOn ;
+                                    owl:someValuesFrom :PipeMaintenanceCost
+                                  ] ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty :hasImpactOn ;
+                                    owl:someValuesFrom :PipeMaintenancePractice
+                                  ] ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty :hasImpactOn ;
+                                    owl:someValuesFrom :PipeOperationPractice
+                                  ] ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty :hasImpactOn ;
+                                    owl:someValuesFrom :PipeOperationalPressure
+                                  ] ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty :hasImpactOn ;
+                                    owl:someValuesFrom :PipeWaterFlowVelocity
+                                  ] ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty :hasImpactOn ;
+                                    owl:someValuesFrom :PipeWaterQualityViolation
+                                  ] ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty :influencedBy ;
+                                    owl:someValuesFrom :PipeAge
+                                  ] ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty :influencedBy ;
+                                    owl:someValuesFrom :PipeMaintenancePractice
+                                  ] ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty :influencedBy ;
+                                    owl:someValuesFrom :PipeOperationPractice
+                                  ] ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty :influencedBy ;
+                                    owl:someValuesFrom :PipeOperationalPressure
+                                  ] ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty :influencedBy ;
+                                    owl:someValuesFrom :PipeTrenchBackfill
+                                  ] ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty :influencedBy ;
+                                    owl:someValuesFrom :PipeValveType
+                                  ] ;
+                  rdfs:comment "Knowledge Source: from a domain expert"^^xsd:string ,
+                               """Leakage from a pipe valve
+
+"""^^xsd:string ,
+                               """The action of water coming out of the pipe due to a pathway through a valve
+
+"""^^xsd:string .
+
+
+###  http://imash.leeds.ac.uk/ontologies/atu/PipeOntology.owl#PipeValveType
+:PipeValveType rdf:type owl:Class ;
+               rdfs:subClassOf :PipeMaterialProperty ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty :hasImpactOn ;
+                                 owl:someValuesFrom :PipeInstallationCost
+                               ] ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty :hasImpactOn ;
+                                 owl:someValuesFrom :PipeMaintenanceCost
+                               ] ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty :hasImpactOn ;
+                                 owl:someValuesFrom :PipeReplacementCost
+                               ] ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty :hasImpactOn ;
+                                 owl:someValuesFrom :PipeValveLeaking
+                               ] ;
+               rdfs:comment "Knowledge Source: from a domain expert"^^xsd:string ,
+                            """Type of valve used on the section of pipe (or None)
+
+"""^^xsd:string ,
+                            """Valves include ball valve, butterfly valve, ceramic disc valve, clapper valve, check valve or non-return valve, choke valve, diaphragm valve, gate valve, globe valve, knife valve, needle valve, pinch valve, piston valve, plug valve, spool valve, pressure reducing valve, sampling valves and safety valve
+
+"""^^xsd:string .
+
+
+###  http://imash.leeds.ac.uk/ontologies/atu/PipeOntology.owl#PipeWallRoughness
+:PipeWallRoughness rdf:type owl:Class ;
+                   rdfs:subClassOf :PipeConditionProperty ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty :hasImpactOn ;
+                                     owl:someValuesFrom :PipeCorrosion
+                                   ] ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty :hasImpactOn ;
+                                     owl:someValuesFrom :PipeOperationalPressure
+                                   ] ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty :influencedBy ;
+                                     owl:someValuesFrom :PipeAge
+                                   ] ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty :influencedBy ;
+                                     owl:someValuesFrom :PipeCorrosion
+                                   ] ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty :influencedBy ;
+                                     owl:someValuesFrom :PipeLining
+                                   ] ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty :influencedBy ;
+                                     owl:someValuesFrom :PipeMaterial
+                                   ] ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty :influencedBy ;
+                                     owl:someValuesFrom :PipeTuberculation
+                                   ] ;
+                   rdfs:comment """A measure of the roughness of the internal surface of the pipe as it interacts with water
+
+"""^^xsd:string ,
+                                "Knowledge Source: from a domain expert"^^xsd:string ,
+                                """The roughness of the internal wall of a pipe
+
+"""^^xsd:string .
+
+
+###  http://imash.leeds.ac.uk/ontologies/atu/PipeOntology.owl#PipeWaterCorrosivity
+:PipeWaterCorrosivity rdf:type owl:Class ;
+                      rdfs:subClassOf :PipeFluidProperty ,
+                                      [ rdf:type owl:Restriction ;
+                                        owl:onProperty :hasImpactOn ;
+                                        owl:someValuesFrom :PipeCorrosion
+                                      ] ,
+                                      [ rdf:type owl:Restriction ;
+                                        owl:onProperty :hasImpactOn ;
+                                        owl:someValuesFrom :PipeCrackingDensity
+                                      ] ,
+                                      [ rdf:type owl:Restriction ;
+                                        owl:onProperty :hasImpactOn ;
+                                        owl:someValuesFrom :PipeCrackingPhysicalProperty
+                                      ] ,
+                                      [ rdf:type owl:Restriction ;
+                                        owl:onProperty :influencedBy ;
+                                        owl:someValuesFrom :PipeCorrosion
+                                      ] ,
+                                      [ rdf:type owl:Restriction ;
+                                        owl:onProperty :influencedBy ;
+                                        owl:someValuesFrom :PipeFluid
+                                      ] ,
+                                      [ rdf:type owl:Restriction ;
+                                        owl:onProperty :influencedBy ;
+                                        owl:someValuesFrom :PipeWaterPH
+                                      ] ,
+                                      [ rdf:type owl:Restriction ;
+                                        owl:onProperty :influencedBy ;
+                                        owl:someValuesFrom :PipeWaterTemperature
+                                      ] ;
+                      rdfs:comment """A metric of how corrosive the fluid is due to its chemistry
+
+"""^^xsd:string ,
+                                   "Knowledge Source: from a domain expert"^^xsd:string ,
+                                   """Potential corrosive action of the water
+
+"""^^xsd:string .
+
+
+###  http://imash.leeds.ac.uk/ontologies/atu/PipeOntology.owl#PipeWaterDissolvedOxygenContent
+:PipeWaterDissolvedOxygenContent rdf:type owl:Class ;
+                                 rdfs:subClassOf :PipeFluidProperty ,
+                                                 [ rdf:type owl:Restriction ;
+                                                   owl:onProperty :hasImpactOn ;
+                                                   owl:someValuesFrom :PipeCorrosion
+                                                 ] ,
+                                                 [ rdf:type owl:Restriction ;
+                                                   owl:onProperty :influencedBy ;
+                                                   owl:someValuesFrom :PipeCorrosion
+                                                 ] ,
+                                                 [ rdf:type owl:Restriction ;
+                                                   owl:onProperty :influencedBy ;
+                                                   owl:someValuesFrom :PipeFluid
+                                                 ] ,
+                                                 [ rdf:type owl:Restriction ;
+                                                   owl:onProperty :influencedBy ;
+                                                   owl:someValuesFrom :PipeOperationalPressure
+                                                 ] ;
+                                 rdfs:comment "Knowledge Source: from a domain expert"^^xsd:string ,
+                                              """The dissolved oxygen in water; a measure of its quality
+
+"""^^xsd:string ,
+                                              """The volume of dissolved oxygen content in the fluid typically expressed as a concentration
+
+"""^^xsd:string .
+
+
+###  http://imash.leeds.ac.uk/ontologies/atu/PipeOntology.owl#PipeWaterFlowVelocity
+:PipeWaterFlowVelocity rdf:type owl:Class ;
+                       rdfs:subClassOf :PipeFluidProperty ,
+                                       [ rdf:type owl:Restriction ;
+                                         owl:onProperty :hasImpactOn ;
+                                         owl:someValuesFrom :PipeJointFatigue
+                                       ] ,
+                                       [ rdf:type owl:Restriction ;
+                                         owl:onProperty :hasImpactOn ;
+                                         owl:someValuesFrom :PipeLeakageRate
+                                       ] ,
+                                       [ rdf:type owl:Restriction ;
+                                         owl:onProperty :hasImpactOn ;
+                                         owl:someValuesFrom :PipeOperationPractice
+                                       ] ,
+                                       [ rdf:type owl:Restriction ;
+                                         owl:onProperty :influencedBy ;
+                                         owl:someValuesFrom :PipeCorrosion
+                                       ] ,
+                                       [ rdf:type owl:Restriction ;
+                                         owl:onProperty :influencedBy ;
+                                         owl:someValuesFrom :PipeCracking
+                                       ] ,
+                                       [ rdf:type owl:Restriction ;
+                                         owl:onProperty :influencedBy ;
+                                         owl:someValuesFrom :PipeFluid
+                                       ] ,
+                                       [ rdf:type owl:Restriction ;
+                                         owl:onProperty :influencedBy ;
+                                         owl:someValuesFrom :PipeOperationalPressure
+                                       ] ,
+                                       [ rdf:type owl:Restriction ;
+                                         owl:onProperty :influencedBy ;
+                                         owl:someValuesFrom :PipeValveLeaking
+                                       ] ;
+                       rdfs:comment "Knowledge Source: from a domain expert"^^xsd:string ,
+                                    """The speed of flow of water through a pipe
+
+"""^^xsd:string ,
+                                    """The typical fluid velocity inside the pipe
+
+"""^^xsd:string .
+
+
+###  http://imash.leeds.ac.uk/ontologies/atu/PipeOntology.owl#PipeWaterPH
+:PipeWaterPH rdf:type owl:Class ;
+             rdfs:subClassOf :PipeFluidProperty ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty :hasImpactOn ;
+                               owl:someValuesFrom :PipeCorrosion
+                             ] ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty :hasImpactOn ;
+                               owl:someValuesFrom :PipeWaterCorrosivity
+                             ] ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty :influencedBy ;
+                               owl:someValuesFrom :PipeCorrosion
+                             ] ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty :influencedBy ;
+                               owl:someValuesFrom :PipeFluid
+                             ] ;
+             rdfs:comment """A measure of the acidity of the fluid
+
+"""^^xsd:string ,
+                          """A numeric scale used to specify the acidity or basicity of the fluid within a pipe
+
+"""^^xsd:string ,
+                          "Knowledge Source: from a domain expert"^^xsd:string .
+
+
+###  http://imash.leeds.ac.uk/ontologies/atu/PipeOntology.owl#PipeWaterQualityViolation
+:PipeWaterQualityViolation rdf:type owl:Class ;
+                           rdfs:subClassOf :PipeFluidProperty ,
+                                           [ rdf:type owl:Restriction ;
+                                             owl:onProperty :influencedBy ;
+                                             owl:someValuesFrom :PipeCorrosion
+                                           ] ,
+                                           [ rdf:type owl:Restriction ;
+                                             owl:onProperty :influencedBy ;
+                                             owl:someValuesFrom :PipeCracking
+                                           ] ,
+                                           [ rdf:type owl:Restriction ;
+                                             owl:onProperty :influencedBy ;
+                                             owl:someValuesFrom :PipeFluid
+                                           ] ,
+                                           [ rdf:type owl:Restriction ;
+                                             owl:onProperty :influencedBy ;
+                                             owl:someValuesFrom :PipeValveLeaking
+                                           ] ;
+                           rdfs:comment """Has there been a water quality violation reported in this area (y/n)
+
+"""^^xsd:string ,
+                                        "Knowledge Source: from a domain expert"^^xsd:string ,
+                                        """The number and type of failures to meet regulatory safety requirements
+
+"""^^xsd:string .
+
+
+###  http://imash.leeds.ac.uk/ontologies/atu/PipeOntology.owl#PipeWaterTemperature
+:PipeWaterTemperature rdf:type owl:Class ;
+                      rdfs:subClassOf :PipeFluidProperty ,
+                                      [ rdf:type owl:Restriction ;
+                                        owl:onProperty :hasImpactOn ;
+                                        owl:someValuesFrom :PipeCorrosion
+                                      ] ,
+                                      [ rdf:type owl:Restriction ;
+                                        owl:onProperty :hasImpactOn ;
+                                        owl:someValuesFrom :PipeWaterCorrosivity
+                                      ] ,
+                                      [ rdf:type owl:Restriction ;
+                                        owl:onProperty :influencedBy ;
+                                        owl:someValuesFrom :PipeFluid
+                                      ] ;
+                      rdfs:comment "Knowledge Source: from a domain expert"^^xsd:string ,
+                                   """The temperature of the fluid in the pipe
+
+"""^^xsd:string ,
+                                   """Typical temperature of the fluid inside the pipe
+
+"""^^xsd:string .
+
+
+###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi

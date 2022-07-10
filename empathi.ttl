@@ -1,0 +1,1994 @@
+@prefix : <https://w3id.org/empathi/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <https://w3id.org/empathi/> .
+
+<https://w3id.org/empathi/> rdf:type owl:Ontology ;
+                             owl:versionIRI <https://w3id.org/empathi/1.0/> ;
+                             owl:imports <http://knoesis.org/library/ontologies/socs/disasterModel.owl> ,
+                                         <http://linkedevents.org/ontology/> ,
+                                         <http://ontology.eil.utoronto.ca/icontact.owl> ,
+                                         <http://purl.org/dc/elements/1.1/> ,
+                                         <http://rdfs.org/sioc/ns#> ,
+                                         <http://www.geonames.org/ontology> ,
+                                         <http://www.geonames.org/ontology/mappings> ,
+                                         <http://www.w3.org/ns/ma-ont> ,
+                                         <http://xmlns.com/foaf/0.1/> ;
+                             <http://purl.org/dc/terms/creator> "Manas Gaur" ,
+                                                                "Saeedah Shekharpour" ;
+                             <http://purl.org/dc/terms/publisher> "Kno.e.sis" .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://purl.org/dc/terms/creator
+<http://purl.org/dc/terms/creator> <http://purl.org/dc/terms/creator> "manas gaur" ,
+                                                                      "saeedeh Shekarpour" .
+
+
+###  http://purl.org/dc/terms/publisher
+<http://purl.org/dc/terms/publisher> rdf:type owl:AnnotationProperty ;
+                                     <http://purl.org/dc/terms/creator> "kno.e.sis center" .
+
+
+###  http://www.w3.org/2004/02/skos/core#definition
+<http://www.w3.org/2004/02/skos/core#definition> rdf:type owl:AnnotationProperty .
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://www.loa-cnr.it/ontologies/DUL.owl#hasLocation
+<http://www.loa-cnr.it/ontologies/DUL.owl#hasLocation> rdf:type owl:ObjectProperty ;
+                                                       rdfs:domain <http://purl.org/dc/dcmitype/Event> ,
+                                                                   :Service ;
+                                                       rdfs:range <http://www.loa-cnr.it/ontologies/DUL.owl#Place> .
+
+
+###  http://www.loa-cnr.it/ontologies/DUL.owl#isObservableAt
+<http://www.loa-cnr.it/ontologies/DUL.owl#isObservableAt> rdf:type owl:ObjectProperty ;
+                                                          rdfs:domain <http://purl.org/dc/dcmitype/Event> ,
+                                                                      :HazardPhase ,
+                                                                      :Report ,
+                                                                      :Service .
+
+
+###  http://www.semanticweb.org/ontologies/2012/2/Ontology1332984013898.owl#hasEarthquakeIndicator
+<http://www.semanticweb.org/ontologies/2012/2/Ontology1332984013898.owl#hasEarthquakeIndicator> rdf:type owl:ObjectProperty ;
+                                                                                                rdfs:domain :Earthquake .
+
+
+###  http://www.semanticweb.org/ontologies/2012/2/Ontology1332984013898.owl#hasFloodIndicator
+<http://www.semanticweb.org/ontologies/2012/2/Ontology1332984013898.owl#hasFloodIndicator> rdf:type owl:ObjectProperty ;
+                                                                                           rdfs:domain :Flood .
+
+
+###  http://www.semanticweb.org/ontologies/2012/2/Ontology1332984013898.owl#has_need
+<http://www.semanticweb.org/ontologies/2012/2/Ontology1332984013898.owl#has_need> rdf:type owl:ObjectProperty ;
+                                                                                  rdfs:domain :Hazard_Type .
+
+
+###  https://w3id.org/empathi/ageRange
+:ageRange rdf:type owl:ObjectProperty ;
+          rdfs:domain :AffectedPopulation ;
+          rdfs:range :Age_Group .
+
+
+###  https://w3id.org/empathi/causedBy
+:causedBy rdf:type owl:ObjectProperty ;
+          rdfs:domain :Hazard_Type ;
+          rdfs:range :Hazard_Type ;
+          rdfs:label "cause"^^rdfs:Literal ,
+                     "caused"^^rdfs:Literal ,
+                     "causedBy"^^rdfs:Literal ,
+                     "occur together"^^rdfs:Literal .
+
+
+###  https://w3id.org/empathi/currentStatus
+:currentStatus rdf:type owl:ObjectProperty ;
+               rdfs:domain :Facility ;
+               rdfs:range :Status .
+
+
+###  https://w3id.org/empathi/involvedEvent
+:involvedEvent rdf:type owl:ObjectProperty ;
+               rdfs:subPropertyOf :ageRange ;
+               rdfs:domain :Hazard_Type ;
+               rdfs:range <http://purl.org/dc/dcmitype/Event> .
+
+
+###  https://w3id.org/empathi/phase
+:phase rdf:type owl:ObjectProperty ;
+       rdfs:domain <http://purl.org/dc/dcmitype/Event> ;
+       rdfs:range :HazardPhase .
+
+
+###  https://w3id.org/empathi/source
+:source rdf:type owl:ObjectProperty ;
+        rdfs:domain :Report ;
+        rdfs:range :Modality_of_data ;
+        rdfs:label "provenance"^^rdfs:Literal ,
+                   "source"^^rdfs:Literal .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  https://w3id.org/empathi/number
+:number rdf:type owl:DatatypeProperty ;
+        rdfs:domain :AffectedPopulation ;
+        rdfs:range rdfs:Literal ,
+                   xsd:integer ;
+        rdfs:label "" .
+
+
+###  https://w3id.org/empathi/title
+:title rdf:type owl:DatatypeProperty ;
+       rdfs:domain :Organization ;
+       rdfs:range rdfs:Literal ;
+       rdfs:comment "" .
+
+
+###  https://w3id.org/empathi/type
+:type rdf:type owl:DatatypeProperty .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://purl.org/dc/dcmitype/Event
+<http://purl.org/dc/dcmitype/Event> rdf:type owl:Class ;
+                                    rdfs:comment """An event consists of some temporal and spatial boundaries subjectively
+imposed on the flux of reality or imagination, that we wish to treat
+as an entity for the purposes of making statements about it. In
+particular, we may wish to make statements that relate people, places,
+or things to an event."""@en ,
+                                                 """Note that, unlike some defintions of \"event,\" this definition does not
+specify that an event involves a change of state, nor does it attempt
+to distinguish events from processes or states."""@en ;
+                                    rdfs:isDefinedBy <http://linkedevents.org/ontology/> ;
+                                    rdfs:label "disaster event"^^rdfs:Literal ,
+                                               "earthquake hit"^^rdfs:Literal ,
+                                               "event"@en ,
+                                               "events"^^rdfs:Literal ,
+                                               "flood hit"^^rdfs:Literal ,
+                                               "hurricane hit"^^rdfs:Literal ,
+                                               "investigation"^^rdfs:Literal ;
+                                    <http://www.w3.org/2004/02/skos/core#definition> """\"Something that happened,\" as might be reported in a news article or
+explained by a historian."""@en .
+
+
+###  http://rdfs.org/sioc/ns#Post
+<http://rdfs.org/sioc/ns#Post> owl:equivalentClass :Communication .
+
+
+###  http://www.loa-cnr.it/ontologies/DUL.owl#Place
+<http://www.loa-cnr.it/ontologies/DUL.owl#Place> rdf:type owl:Class ;
+                                                 rdfs:label "*cross tornado"^^rdfs:Literal ,
+                                                            "affected areas"^^rdfs:Literal ,
+                                                            "path hurricane"^^rdfs:Literal ,
+                                                            "place"^^rdfs:Literal ;
+                                                 <http://www.w3.org/2004/02/skos/core#definition> "a particular position or point in space.a building or area used for a specified purpose or activity. a person's home"^^xsd:string .
+
+
+###  http://www.semanticweb.org/ontologies/2012/2/Ontology1332984013898.owl#earthquake_i
+<http://www.semanticweb.org/ontologies/2012/2/Ontology1332984013898.owl#earthquake_i> rdf:type owl:Class .
+
+
+###  https://w3id.org/empathi/AffectedPopulation
+:AffectedPopulation rdf:type owl:Class ;
+                    rdfs:subClassOf :Impact ;
+                    rdfs:label "*dead injured"^^rdfs:Literal ,
+                               "*dead missing"^^rdfs:Literal ,
+                               "affected"^^rdfs:Literal ,
+                               "affected hurricane"^^rdfs:Literal ,
+                               "affected population"^^rdfs:Literal ,
+                               "bombing victims"^^rdfs:Literal ,
+                               "casualties"^^rdfs:Literal ,
+                               "communities damaged"^^rdfs:Literal ,
+                               "deepens death"^^rdfs:Literal ,
+                               "died explosions"^^rdfs:Literal ,
+                               "displaced people and evacuations"^^rdfs:Literal ,
+                               "flood affected"^^rdfs:Literal ,
+                               "flood homeowners"^^rdfs:Literal ,
+                               "flood victims"^^rdfs:Literal ,
+                               "girl died"^^rdfs:Literal ,
+                               "injured or dead people"^^rdfs:Literal ,
+                               "injured people"^^rdfs:Literal ,
+                               "killed injured"^^rdfs:Literal ,
+                               "missing, found or trapped people"^^rdfs:Literal ,
+                               "missing, trapped or found people"^^rdfs:Literal ,
+                               "people dead"^^rdfs:Literal ,
+                               "teenager floods"^^rdfs:Literal ,
+                               "tornado victims"^^rdfs:Literal ,
+                               "total affected"^^rdfs:Literal ,
+                               "unknown soldier"^^rdfs:Literal ,
+                               "victims"^^rdfs:Literal ,
+                               "victims explosion"^^rdfs:Literal ,
+                               "victims waters"^^rdfs:Literal ;
+                    <http://www.w3.org/2004/02/skos/core#definition> "Affected population is a group of disaster affected people in need of humanitarian support."^^xsd:string .
+
+
+###  https://w3id.org/empathi/Age_Group
+:Age_Group rdf:type owl:Class ;
+           rdfs:label "age group"^^rdfs:Literal ;
+           <http://www.w3.org/2004/02/skos/core#definition> "a number of people or things classed together as being of similar age."^^xsd:string .
+
+
+###  https://w3id.org/empathi/Airburst
+:Airburst rdf:type owl:Class ;
+          rdfs:subClassOf :Hazard_Type ;
+          rdfs:label "extraterrestrial hazard"^^rdfs:Literal ,
+                     "meteorological disasters"^^rdfs:Literal ,
+                     "shockwave"^^rdfs:Literal ;
+          <http://www.w3.org/2004/02/skos/core#definition> "Explosion created by comet or meteroid in Earth atmosphere without striking the earth surface."^^xsd:string .
+
+
+###  https://w3id.org/empathi/Ambulances
+:Ambulances rdf:type owl:Class ;
+            rdfs:subClassOf :Transportation ;
+            rdfs:label "ambulance"^^rdfs:Literal ;
+            <http://www.w3.org/2004/02/skos/core#definition> "Ambulance is a vehicle specially equipped for taking sick or injured people to and from the hospital, especially in emergencies."^^xsd:string .
+
+
+###  https://w3id.org/empathi/Animal_Loss
+:Animal_Loss rdf:type owl:Class ;
+             rdfs:subClassOf :Impact ;
+             rdfs:label "animal management. pets and animals, living, missing, displaced, or injured/dead."^^rdfs:Literal ,
+                        "animal_loss"^^rdfs:Literal ;
+             <http://www.w3.org/2004/02/skos/core#definition> "Animal loss refers to death of an animal because of an epidemic caused by the disaster."^^xsd:string .
+
+
+###  https://w3id.org/empathi/Area
+:Area rdf:type owl:Class ;
+      rdfs:subClassOf :Location ;
+      rdfs:label "district"^^rdfs:Literal ,
+                 "locality"^^rdfs:Literal ,
+                 "neighborhood"^^rdfs:Literal ,
+                 "parish"^^rdfs:Literal ,
+                 "precinct"^^rdfs:Literal ,
+                 "sector"^^rdfs:Literal ,
+                 "street"^^rdfs:Literal ,
+                 "zone"^^rdfs:Literal ;
+      <http://www.w3.org/2004/02/skos/core#definition> "a region or part of a town, a country, or the world. the extent or measurement of a surface or piece of land. a sunken enclosure giving access to the basement of a building."^^xsd:string .
+
+
+###  https://w3id.org/empathi/Armed_Forces
+:Armed_Forces rdf:type owl:Class ;
+              rdfs:subClassOf :Organization ;
+              rdfs:label "*fire fighters"^^rdfs:Literal ,
+                         "*firefighters"^^rdfs:Literal ,
+                         "firefighters police"^^rdfs:Literal ,
+                         "military"^^rdfs:Literal ,
+                         "police officer"^^rdfs:Literal ,
+                         "police people"^^rdfs:Literal ,
+                         "rescuers"^^rdfs:Literal ,
+                         "soldier"^^rdfs:Literal ,
+                         "troops"^^rdfs:Literal ,
+                         "troops lend"^^rdfs:Literal ;
+              <http://www.w3.org/2004/02/skos/core#definition> "When disaster strikes, US military assets often key to relief efforts. Disaster relief has become a key mission for the United States and a way to exercise the softer side of its military influence overseas."^^xsd:string .
+
+
+###  https://w3id.org/empathi/Audio
+:Audio rdf:type owl:Class ;
+       rdfs:subClassOf :Modality_of_data ;
+       rdfs:label "aac"^^rdfs:Literal ,
+                  "audio"^^rdfs:Literal ,
+                  "mp3"^^rdfs:Literal ,
+                  "recording"^^rdfs:Literal ,
+                  "sound recording"^^rdfs:Literal ,
+                  "wav"^^rdfs:Literal ,
+                  "wma"^^rdfs:Literal ;
+       <http://www.w3.org/2004/02/skos/core#definition> "audio is defined as sound, especially when recorded, transmitted, or reproduced."^^xsd:string .
+
+
+###  https://w3id.org/empathi/Available
+:Available rdf:type owl:Class ;
+           rdfs:subClassOf :Status ;
+           rdfs:label "access"^^rdfs:Literal ,
+                      "attainable"^^rdfs:Literal ,
+                      "available"^^rdfs:Literal ,
+                      "free"^^rdfs:Literal ,
+                      "make use of"^^rdfs:Literal ,
+                      "obtain"^^rdfs:Literal ,
+                      "obtainable"^^rdfs:Literal ,
+                      "possible"^^rdfs:Literal ,
+                      "provide"^^rdfs:Literal ,
+                      "reachable"^^rdfs:Literal ,
+                      "unoccupied"^^rdfs:Literal ,
+                      "untaken"^^rdfs:Literal ,
+                      "unused"^^rdfs:Literal ;
+           <http://www.w3.org/2004/02/skos/core#definition> "Avaiability is a characteristic of a resource that is committable, operable, or usable upon demand to perform its designated or required function. It is the aggregate of the resource's accessibility, reliability, maintainability, serviceability, and securability."^^xsd:string .
+
+
+###  https://w3id.org/empathi/BlockedRoad
+:BlockedRoad rdf:type owl:Class ;
+             rdfs:subClassOf :Infrastructure_Damage ;
+             rdfs:label "closed"^^rdfs:Literal ,
+                        "highway closed"^^rdfs:Literal ,
+                        "road blocked"^^rdfs:Literal ,
+                        "roadway damage"^^rdfs:Literal ,
+                        "washed away"^^rdfs:Literal ;
+             <http://www.w3.org/2004/02/skos/core#definition> "Roadway damage is generally caused by ground failure, or faulting. Ground failure includes events such as landslides, as well as less extreme events such as differential settling and loss of soil strength. Roads depend on the strength of the soil below them for support. If the soil below them loses strength or is ripped apart, the roads will follow suit. Faulting occurs when surface faults coincide with the roadway surface, causing it to shift, and potentially buckle. Thus blocking the traffic."^^xsd:string .
+
+
+###  https://w3id.org/empathi/Broken_Bridge
+:Broken_Bridge rdf:type owl:Class ;
+               rdfs:subClassOf :Infrastructure_Damage ;
+               rdfs:label "bridge_damage"^^rdfs:Literal ;
+               <http://www.w3.org/2004/02/skos/core#definition> "When water velocities in existing rivers increase, the soil surrounding bridge supports can be washed downstream, a process known as scouring. This weakens the bridge foundation, which can ultimately lead to falling of the bridge. In addition, debris washed down the river can damage bridge structures as well. Example, the incident of I-35 collapse by Hurricane Katrina in 2007."^^xsd:string .
+
+
+###  https://w3id.org/empathi/CARE
+:CARE rdf:type owl:Class ;
+      rdfs:subClassOf :Non-Government ;
+      rdfs:label "CARE"^^rdfs:Literal ,
+                 "care"^^rdfs:Literal ;
+      <http://www.w3.org/2004/02/skos/core#definition> "CARE is a humanitarian organisation fighting global poverty. Women are at the heart of CARE's community-based efforts to improve basic education, prevent the spread of HIV, increase access to clean water and sanitation, expand economic opportunity and protect natural resources. CARE also delivers emergency aid to survivors of war and natural disasters, and helps people rebuild their lives. CARE works alongside poor women because, equipped with the proper resources, women have the power to help whole families and entire communities escape poverty."^^xsd:string .
+
+
+###  https://w3id.org/empathi/Chronic_Care_Need
+:Chronic_Care_Need rdf:type owl:Class ;
+                   rdfs:subClassOf :Healthcare_Service ;
+                   rdfs:label "chronic_care_need"^^rdfs:Literal ;
+                   <http://www.w3.org/2004/02/skos/core#definition> "Chronic Care Needs refers to the requirement of medical care which addresses preexisting or long term illness."^^xsd:string .
+
+
+###  https://w3id.org/empathi/Climate_Change
+:Climate_Change rdf:type owl:Class ;
+                rdfs:subClassOf <http://purl.org/dc/dcmitype/Event> ;
+                rdfs:label "climate change"^^rdfs:Literal ,
+                           "climatological hazard"^^rdfs:Literal ,
+                           "extreme winter conditions"^^rdfs:Literal ,
+                           "heat wave"^^rdfs:Literal ,
+                           "rains severely"^^rdfs:Literal ,
+                           "torrential"^^rdfs:Literal ,
+                           "torrential rains"^^rdfs:Literal ,
+                           "weather conditions"^^rdfs:Literal ;
+                <http://www.w3.org/2004/02/skos/core#definition> """a long-term change in the earth's climate, especially a change due to an increase in the average atmospheric temperature:
+Melting glaciers imply that life in the Arctic is affected by climate change.
+Irregular rain fall or downpour due to shifting of cloud cause by hurricane."""^^xsd:string .
+
+
+###  https://w3id.org/empathi/Clothes
+:Clothes rdf:type owl:Class ;
+         rdfs:subClassOf :Supply ;
+         rdfs:label "clothes needed"^^rdfs:Literal ,
+                    "need clothes"^^rdfs:Literal ,
+                    "old clothes"^^rdfs:Literal ;
+         <http://www.w3.org/2004/02/skos/core#definition> "Resource needs of type clothes, blankets, or clothing related materials"^^xsd:string .
+
+
+###  https://w3id.org/empathi/Coastal_Erosion
+:Coastal_Erosion rdf:type owl:Class ;
+                 rdfs:subClassOf :Hazard_Type ;
+                 <http://www.w3.org/2004/02/skos/core#definition> "temporary or permanent loss of sediments or landmass in coastal margins due to the action of waves, winds, tides, or anthropogenic activities."^^xsd:string .
+
+
+###  https://w3id.org/empathi/Communication
+:Communication rdf:type owl:Class ;
+               rdfs:subClassOf :Facility ;
+               rdfs:label "communication"^^rdfs:Literal ,
+                          "give online"^^rdfs:Literal ,
+                          "telecommunication, mobile and landline networks, internet"^^rdfs:Literal ;
+               <http://www.w3.org/2004/02/skos/core#definition> "It is important for public safety agencies (such as law enforcement, emergency medical services, and fire services) to be able to provide and maintain communications before, during, and after a disaster or emergency."^^xsd:string .
+
+
+###  https://w3id.org/empathi/Communication_lines_failure
+:Communication_lines_failure rdf:type owl:Class ;
+                             rdfs:subClassOf :Infrastructure_Damage ;
+                             rdfs:label "communication_lines_failure"^^rdfs:Literal ,
+                                        "radio disturbance"^^rdfs:Literal ;
+                             <http://www.w3.org/2004/02/skos/core#definition> "CommunicationLinesDown indicates that a mobile or a landline phone in ceratain area will not work because of the problem in the communication wired poles."^^xsd:string .
+
+
+###  https://w3id.org/empathi/Contamination
+:Contamination rdf:type owl:Class ;
+               rdfs:subClassOf :Impact ;
+               rdfs:label "contaminated water"^^rdfs:Literal ,
+                          "insect infestation"^^rdfs:Literal ,
+                          "poisoning"^^rdfs:Literal ,
+                          "release toxins"^^rdfs:Literal ,
+                          "toxins"^^rdfs:Literal ,
+                          "toxins flood"^^rdfs:Literal ;
+               <http://www.w3.org/2004/02/skos/core#definition> "water that is unhealthy for drinking for animals and humans. contaminated water is the source for the outbreak of water borne diseases."^^xsd:string .
+
+
+###  https://w3id.org/empathi/Criminal
+:Criminal rdf:type owl:Class ;
+          rdfs:subClassOf :People ;
+          rdfs:label "bomber"^^rdfs:Literal ,
+                     "bombing suspect"^^rdfs:Literal ,
+                     "breaking arrest"^^rdfs:Literal ,
+                     "breaking suspect"^^rdfs:Literal ,
+                     "criminals"^^rdfs:Literal ,
+                     "identified suspect"^^rdfs:Literal ,
+                     "police suspect"^^rdfs:Literal ,
+                     "someone captured"^^rdfs:Literal ,
+                     "suspect killed"^^rdfs:Literal ,
+                     "suspect pinned"^^rdfs:Literal ,
+                     "suspect run"^^rdfs:Literal .
+
+
+###  https://w3id.org/empathi/Criminal_Activity
+:Criminal_Activity rdf:type owl:Class ;
+                   rdfs:subClassOf <http://purl.org/dc/dcmitype/Event> ;
+                   rdfs:label "criminal activity"^^rdfs:Literal ,
+                              "tragic events"^^rdfs:Literal ;
+                   <http://www.w3.org/2004/02/skos/core#definition> "An act committed in violation of law where the consequence of conviction by a court is punishment, especially where the punishment is a serious one such as imprisonment."^^xsd:string ,
+                                                                    "serious offense"^^xsd:string ,
+                                                                    "unlawful activity"^^xsd:string .
+
+
+###  https://w3id.org/empathi/Death_and_Toll
+:Death_and_Toll rdf:type owl:Class ;
+                rdfs:subClassOf :AffectedPopulation ;
+                rdfs:label "*dead torrential"^^rdfs:Literal ,
+                           "buried"^^rdfs:Literal ,
+                           "confirmed dead"^^rdfs:Literal ,
+                           "cost deaths"^^rdfs:Literal ,
+                           "dead"^^rdfs:Literal ,
+                           "dead hundreds"^^rdfs:Literal ,
+                           "deade people"^^rdfs:Literal ,
+                           "deadths confirmed"^^rdfs:Literal ,
+                           "death"^^rdfs:Literal ,
+                           "death toll"^^rdfs:Literal ,
+                           "fatalities"^^rdfs:Literal ,
+                           "flood death"^^rdfs:Literal ,
+                           "hundreds injured"^^rdfs:Literal ,
+                           "killed people"^^rdfs:Literal ,
+                           "kills forces"^^rdfs:Literal ,
+                           "loss life"^^rdfs:Literal ,
+                           "lost lives"^^rdfs:Literal ,
+                           "peaks deaths"^^rdfs:Literal ,
+                           "people killed"^^rdfs:Literal ,
+                           "reported dead"^^rdfs:Literal ,
+                           "reportedly dead"^^rdfs:Literal ,
+                           "responders killed"^^rdfs:Literal ,
+                           "total death"^^rdfs:Literal ,
+                           "unaccounted"^^rdfs:Literal ;
+                <http://www.w3.org/2004/02/skos/core#definition> "the number of deaths resulting from a particular cause, especially an accident, battle, or natural disaster."^^xsd:string .
+
+
+###  https://w3id.org/empathi/Diseases
+:Diseases rdf:type owl:Class ;
+          rdfs:subClassOf :Physical_health ;
+          rdfs:label "fungal disease"^^rdfs:Literal ,
+                     "parasitic disease"^^rdfs:Literal ,
+                     "prion disease"^^rdfs:Literal .
+
+
+###  https://w3id.org/empathi/Drought
+:Drought rdf:type owl:Class ;
+         rdfs:subClassOf :Hazard_Type ;
+         rdfs:label "aridity"^^rdfs:Literal ,
+                    "complex disasters"^^rdfs:Literal ,
+                    "dearth"^^rdfs:Literal ,
+                    "scarcity"^^rdfs:Literal ;
+         <http://www.w3.org/2004/02/skos/core#definition> "drought is defined a prolonged period of abnormally low rainfall; a shortage of water resulting from this."^^xsd:string .
+
+
+###  https://w3id.org/empathi/During_Hazard
+:During_Hazard rdf:type owl:Class ;
+               rdfs:subClassOf :HazardPhase ;
+               rdfs:label "*flood emergency"^^rdfs:Literal ,
+                          "during disaster"^^rdfs:Literal ,
+                          "during hazard"^^rdfs:Literal ,
+                          "explosions running"^^rdfs:Literal ,
+                          "facing flood"^^rdfs:Literal ,
+                          "house flood"^^rdfs:Literal ,
+                          "in hazard"^^rdfs:Literal ,
+                          "live hurricane"^^rdfs:Literal .
+
+
+###  https://w3id.org/empathi/Early_Warning
+:Early_Warning rdf:type owl:Class ;
+               rdfs:subClassOf <http://purl.org/dc/dcmitype/Event> ;
+               rdfs:label "*flood emergency"^^rdfs:Literal ,
+                          "caution, advice, warnings issued or lifted"^^rdfs:Literal ,
+                          "crisis found"^^rdfs:Literal ,
+                          "early warning"^^rdfs:Literal ,
+                          "emergency"^^rdfs:Literal ,
+                          "flood alerts"^^rdfs:Literal ,
+                          "flood situation"^^rdfs:Literal ,
+                          "flood threat"^^rdfs:Literal ,
+                          "flood warning"^^rdfs:Literal ,
+                          "floods kill"^^rdfs:Literal ,
+                          "hurricane coming"^^rdfs:Literal ,
+                          "imminent"^^rdfs:Literal ,
+                          "warning"^^rdfs:Literal ,
+                          "watch hurricane"^^rdfs:Literal ;
+               <http://www.w3.org/2004/02/skos/core#definition> "The extent of the damage caused by a hazard is related not just to its severity, but also to the capacity of people living in disaster-prone areas to prepare for and resist it. Efforts to reduce disaster risk have therefore focused, in part, on developing early warning systems to provide timely and effective information that enables people and communities to respond when a disaster hits. Early warning systems are combinations of tools and processes embedded within institutional structures, coordinated by international — and sometimes national — agencies. Whether they focus on one particular hazard or many, these systems are composed of four elements: knowledge of the risk, a technical monitoring and warning service, dissemination of meaningful warnings to at-risk people, and public awareness and preparedness to act."^^xsd:string .
+
+
+###  https://w3id.org/empathi/Earthquake
+:Earthquake rdf:type owl:Class ;
+            rdfs:subClassOf :Hazard_Type ;
+            rdfs:label "collapse"^^rdfs:Literal ,
+                       "earthquake"^^rdfs:Literal ,
+                       "earthquake disaster"^^rdfs:Literal ,
+                       "glacial lake outburst"^^rdfs:Literal ,
+                       "ground shaking"^^rdfs:Literal ,
+                       "seismic"^^rdfs:Literal ,
+                       "seismic waves"^^rdfs:Literal ;
+            <http://www.w3.org/2004/02/skos/core#definition> "earthquake is defined as the sudden and violent movement of earth crust (tectonic plates) causing great destruction or volcanic action."^^xsd:string .
+
+
+###  https://w3id.org/empathi/Education_Material
+:Education_Material rdf:type owl:Class ;
+                    rdfs:subClassOf :Supply ;
+                    rdfs:label "study material"^^rdfs:Literal ;
+                    <http://www.w3.org/2004/02/skos/core#definition> "old books, pen, pencils or reading material provided by children welfare organization to the children of the affected families"^^xsd:string .
+
+
+###  https://w3id.org/empathi/El-Nino
+:El-Nino rdf:type owl:Class ;
+         rdfs:subClassOf :Climate_Change ;
+         <http://www.w3.org/2004/02/skos/core#definition> "el-nino is characterized by anormalous warming of ocean water resulting from the oscillation of current in the South Pacific, usually accompanied by heavy rainfall in the coastal region of Peru and Chile, and reduction of rainfall in equatorial Africa and Australia."^^xsd:string .
+
+
+###  https://w3id.org/empathi/Electricity
+:Electricity rdf:type owl:Class ;
+             rdfs:subClassOf :Facility ;
+             rdfs:label "*homeowners reconnect"^^rdfs:Literal ,
+                        "electricity"^^rdfs:Literal ,
+                        "power supplies"^^rdfs:Literal ;
+             <http://www.w3.org/2004/02/skos/core#definition> "supply (a device) with mechanical or electrical energy."^^xsd:string .
+
+
+###  https://w3id.org/empathi/Emergency_Excercises
+:Emergency_Excercises rdf:type owl:Class ;
+                      rdfs:subClassOf <http://purl.org/dc/dcmitype/Event> ;
+                      rdfs:label "caution and advice"^^rdfs:Literal ,
+                                 "emergency excercise"^^rdfs:Literal ,
+                                 "emergency training"^^rdfs:Literal ,
+                                 "prepare hurricane"^^rdfs:Literal ,
+                                 "waiting hurricane"^^rdfs:Literal ;
+                      <http://www.w3.org/2004/02/skos/core#definition> "Emergency excercises from FEMA provide tabletop exercises are designed to help an organization test a hypothetical situation, such as a natural or man-made disaster, and evaluate the groups ability to cooperate and work together, as well as test their readiness to respond."^^xsd:string .
+
+
+###  https://w3id.org/empathi/Emotional_Distress
+:Emotional_Distress rdf:type owl:Class ;
+                    rdfs:subClassOf :Mental_health ;
+                    rdfs:label "anger"^^rdfs:Literal ,
+                               "anxiety"^^rdfs:Literal ,
+                               "fear"^^rdfs:Literal ;
+                    <http://www.w3.org/2004/02/skos/core#definition> "conflict in mind"^^xsd:string ,
+                                                                     "emotional trauma causing a victim to lower his/her inner strength"^^xsd:string ,
+                                                                     "last straw"^^xsd:string .
+
+
+###  https://w3id.org/empathi/Evacuation_Plan
+:Evacuation_Plan rdf:type owl:Class ;
+                 rdfs:subClassOf <http://purl.org/dc/dcmitype/Event> ;
+                 rdfs:label "*leave town"^^rdfs:Literal ,
+                            "evacuation_plan"^^rdfs:Literal ,
+                            "response disasters"^^rdfs:Literal ,
+                            "risk running"^^rdfs:Literal ;
+                 <http://www.w3.org/2004/02/skos/core#definition> "An evacuation plan lays out safe exits of the area or building that have been affected by the disaster. This plan is shared with all the trapped people in the disaster area so that they can reach a safe place outside the affected area."^^xsd:string .
+
+
+###  https://w3id.org/empathi/Expert_Report
+:Expert_Report rdf:type owl:Class ;
+               rdfs:subClassOf :Report ;
+               rdfs:label "expert_report"^^rdfs:Literal ;
+               <http://www.w3.org/2004/02/skos/core#definition> "An expert report is an information documented physically or on website that provide detailed vulnerability analysis of the areas that were affected by the disaster."^^xsd:string .
+
+
+###  https://w3id.org/empathi/Explosion
+:Explosion rdf:type owl:Class ;
+           rdfs:subClassOf :Hazard_Type ;
+           rdfs:label "*terror attack"^^rdfs:Literal ,
+                      "another explosion"^^rdfs:Literal ,
+                      "blast"^^rdfs:Literal ,
+                      "bombing"^^rdfs:Literal ,
+                      "explosion"^^rdfs:Literal ,
+                      "fertilizer explosion"^^rdfs:Literal ,
+                      "marathon explosions"^^rdfs:Literal ,
+                      "massive explosion"^^rdfs:Literal ,
+                      "video explosion"^^rdfs:Literal ;
+           <http://www.w3.org/2004/02/skos/core#definition> "explosion a sudden outburst of something such as noise, light, or violent emotion, especially anger."^^xsd:string .
+
+
+###  https://w3id.org/empathi/FAO
+:FAO rdf:type owl:Class ;
+     rdfs:subClassOf :United_Nation ;
+     rdfs:label "Food and Agriculture Organisation"^^rdfs:Literal ;
+     <http://www.w3.org/2004/02/skos/core#definition> "FAO provides early warning of impending food crises, and assesses global food supply problems."^^xsd:string .
+
+
+###  https://w3id.org/empathi/Facility
+:Facility rdf:type owl:Class ;
+          rdfs:label "*relief amenities"^^rdfs:Literal ,
+                     "availability and access to water, sanitation, and hygiene."^^rdfs:Literal ,
+                     "facility"@en ,
+                     "public safety"^^rdfs:Literal ;
+          <http://www.w3.org/2004/02/skos/core#definition> "Facility is defined as an amenity, or piece of equipment provided for a particular purpose"@en .
+
+
+###  https://w3id.org/empathi/Financial_Care
+:Financial_Care rdf:type owl:Class ;
+                rdfs:subClassOf :Service ;
+                rdfs:label "accepting financial"^^rdfs:Literal ,
+                           "aid manipulation"^^rdfs:Literal ,
+                           "donated million"^^rdfs:Literal ,
+                           "donation needs"^^rdfs:Literal ,
+                           "donations assist"^^rdfs:Literal ,
+                           "financial care"^^rdfs:Literal ,
+                           "financial donations"^^rdfs:Literal ,
+                           "flood appeal"^^rdfs:Literal ,
+                           "flood claims"^^rdfs:Literal ,
+                           "insurance"^^rdfs:Literal ,
+                           "insured loss"^^rdfs:Literal ,
+                           "money requested, donated or spent"^^rdfs:Literal ;
+                <http://www.w3.org/2004/02/skos/core#definition> "Financial care refers to services provided by the certain Non Government Organizations or finance industry as a part of recovery packages to the disaster affected communities."^^xsd:string .
+
+
+###  https://w3id.org/empathi/Financial_Crisis
+:Financial_Crisis rdf:type owl:Class ;
+                  rdfs:subClassOf :Impact ;
+                  rdfs:label "economic crisis"^^rdfs:Literal ,
+                             "economic slowdown"^^rdfs:Literal ,
+                             "financial crisis"^^rdfs:Literal ,
+                             "poor economic condition"^^rdfs:Literal ;
+                  <http://www.w3.org/2004/02/skos/core#definition> "A financial crisis can be a result of natural disasters, poor economic stability, or other events that result in a massive shock to the economic system."^^xsd:string .
+
+
+###  https://w3id.org/empathi/Fire
+:Fire rdf:type owl:Class ;
+      rdfs:subClassOf :Hazard_Type ;
+      rdfs:label "*fire flood"^^rdfs:Literal ,
+                 "bushfire"^^rdfs:Literal ,
+                 "fire"^^rdfs:Literal ,
+                 "fire explosion"^^rdfs:Literal ,
+                 "forest fire"^^rdfs:Literal ,
+                 "lurches fire"^^rdfs:Literal ,
+                 "scrub fire"^^rdfs:Literal ,
+                 "urban fire"^^rdfs:Literal ,
+                 "wildfire"^^rdfs:Literal ;
+      <http://www.w3.org/2004/02/skos/core#definition> "forest fire is an uncontrolled fire occuring in nature that could cause massive destruction."^^xsd:string .
+
+
+###  https://w3id.org/empathi/Flood
+:Flood rdf:type owl:Class ;
+       rdfs:subClassOf :Hazard_Type ;
+       rdfs:label "*fire flood"^^rdfs:Literal ,
+                  "braces river"^^rdfs:Literal ,
+                  "brought hurricane"^^rdfs:Literal ,
+                  "coastal flood"^^rdfs:Literal ,
+                  "flash flood"^^rdfs:Literal ,
+                  "flood"^^rdfs:Literal ,
+                  "flood disaster"^^rdfs:Literal ,
+                  "flood water"^^rdfs:Literal ,
+                  "flooding"^^rdfs:Literal ,
+                  "floodwaters"^^rdfs:Literal ,
+                  "high river"^^rdfs:Literal ,
+                  "hydrological hazard"^^rdfs:Literal ,
+                  "inundate"^^rdfs:Literal ,
+                  "inundated"^^rdfs:Literal ,
+                  "river peaks"^^rdfs:Literal ,
+                  "seiche"^^rdfs:Literal ,
+                  "showers"^^rdfs:Literal ,
+                  "thunder showers"^^rdfs:Literal ,
+                  "water rises"^^rdfs:Literal ;
+       <http://www.w3.org/2004/02/skos/core#definition> "flood is defined as the covering of land by water not normally covered by water."^^xsd:string .
+
+
+###  https://w3id.org/empathi/Food
+:Food rdf:type owl:Class ;
+      rdfs:subClassOf :Supply ;
+      rdfs:label "Needs food, or able to provide food"^^rdfs:Literal ,
+                 "food distribution point"^^rdfs:Literal ;
+      <http://www.w3.org/2004/02/skos/core#definition> "Food Distribution Point is a pre-identified location for distributing or transporting food or drink to the affected communities."^^xsd:string .
+
+
+###  https://w3id.org/empathi/Food_Shortage
+:Food_Shortage rdf:type owl:Class ;
+               rdfs:subClassOf :Impact ;
+               rdfs:label "famine"^^rdfs:Literal ,
+                          "food shortage"^^rdfs:Literal ,
+                          "hunger"^^rdfs:Literal ,
+                          "impoverishment"^^rdfs:Literal ,
+                          "neediness"^^rdfs:Literal ,
+                          "penury"^^rdfs:Literal ,
+                          "poverty"^^rdfs:Literal ,
+                          "starvation"^^rdfs:Literal ;
+               <http://www.w3.org/2004/02/skos/core#definition> "FoodShortage is a widespread scarcity of food that is caused by natural disasters."^^xsd:string .
+
+
+###  https://w3id.org/empathi/Funeral_Service
+:Funeral_Service rdf:type owl:Class ;
+                 rdfs:subClassOf :prayer ;
+                 rdfs:label "buried alive"^^rdfs:Literal ,
+                            "funeral service"^^rdfs:Literal ;
+                 <http://www.w3.org/2004/02/skos/core#definition> "A Funeral Service is a service held to memorialize a deceased person with their body present."^^rdfs:Literal .
+
+
+###  https://w3id.org/empathi/Gas
+:Gas rdf:type owl:Class ;
+     rdfs:subClassOf :Facility ;
+     rdfs:label "fuel facility"^^rdfs:Literal ,
+                "fumes"^^rdfs:Literal ,
+                "gas"^^rdfs:Literal ,
+                "miasma"^^rdfs:Literal ,
+                "poisonous gas"^^rdfs:Literal ,
+                "smoke"^^rdfs:Literal ,
+                "stream"^^rdfs:Literal ,
+                "vapor"^^rdfs:Literal ,
+                "volatile substance"^^rdfs:Literal ;
+     <http://www.w3.org/2004/02/skos/core#definition> "kill or harm by exposure to poisonous gas."^^xsd:string .
+
+
+###  https://w3id.org/empathi/HVO
+:HVO rdf:type owl:Class ;
+     rdfs:subClassOf :Non-Government ;
+     rdfs:label "Health Volunteers Overseas"^^rdfs:Literal ,
+                "health volunteers overseas"^^rdfs:Literal ;
+     <http://www.w3.org/2004/02/skos/core#definition> "Health Volunteers Overseas (HVO) is a network of health care professionals, organisations, corporations and donors united in a common commitment to improving global health through education"^^xsd:string .
+
+
+###  https://w3id.org/empathi/HazardPhase
+:HazardPhase rdf:type owl:Class ;
+             rdfs:label "hazard phase"^^rdfs:Literal .
+
+
+###  https://w3id.org/empathi/Hazard_Type
+:Hazard_Type rdf:type owl:Class ;
+             rdfs:label "*flood tornado"^^rdfs:Literal ,
+                        "disaster"^^rdfs:Literal ,
+                        "geophysical hazard"^^rdfs:Literal ,
+                        "hazard"^^rdfs:Literal ,
+                        "hazard type"^^rdfs:Literal ,
+                        "massive manhunt"^^rdfs:Literal ;
+             <http://www.w3.org/2004/02/skos/core#definition> "Different types of hazard that can affect human community."^^xsd:string .
+
+
+###  https://w3id.org/empathi/Health_Issues
+:Health_Issues rdf:type owl:Class ;
+               rdfs:subClassOf :Impact ;
+               rdfs:label "disability"^^rdfs:Literal ,
+                          "disease"^^rdfs:Literal ,
+                          "disorder"^^rdfs:Literal ,
+                          "disturbance"^^rdfs:Literal ,
+                          "epidemic"^^rdfs:Literal ,
+                          "flu"^^rdfs:Literal ,
+                          "health issues"^^rdfs:Literal ,
+                          "ill health"^^rdfs:Literal ,
+                          "illness"^^rdfs:Literal ,
+                          "injuries"^^rdfs:Literal ,
+                          "malady"^^rdfs:Literal ,
+                          "relapse"^^rdfs:Literal ,
+                          "seizure"^^rdfs:Literal ,
+                          "sickness"^^rdfs:Literal ,
+                          "virus"^^rdfs:Literal ;
+               <http://www.w3.org/2004/02/skos/core#definition> "Health issues are created as a result of a natural disaster. This involves mental, physical and overall health related issues."^^xsd:string .
+
+
+###  https://w3id.org/empathi/Health_report
+:Health_report rdf:type owl:Class ;
+               rdfs:subClassOf :Human_Sensing_Report ;
+               <http://www.w3.org/2004/02/skos/core#definition> "this report is essential for UN, hospitals and other healthcare associated organization to document variation in the health problem in different phases of the hazard, emergence of new health issues and plausible remedy to combat its re-occurrence."^^xsd:string .
+
+
+###  https://w3id.org/empathi/Healthcare_Service
+:Healthcare_Service rdf:type owl:Class ;
+                    rdfs:subClassOf :Service ;
+                    rdfs:label "*donate cross"^^rdfs:Literal ,
+                               "disaster behavioral health"^^rdfs:Literal ,
+                               "disaster healthcare"^^rdfs:Literal ,
+                               "disaster medicine"^^rdfs:Literal ,
+                               "healthcare service"^^rdfs:Literal ,
+                               "medical foundation"^^rdfs:Literal ,
+                               "mental, physical, emotional well being and health"^^rdfs:Literal ,
+                               "nursing"^^rdfs:Literal ,
+                               "redcross"^^rdfs:Literal ,
+                               "redcross donate"^^rdfs:Literal ,
+                               "redcross give"^^rdfs:Literal ;
+                    <http://www.w3.org/2004/02/skos/core#definition> "Health care services means the furnishing of medicine, medical or surgical treatment, nursing, hospital service"^^xsd:string .
+
+
+###  https://w3id.org/empathi/Helicopter
+:Helicopter rdf:type owl:Class ;
+            rdfs:subClassOf :Transportation ;
+            rdfs:label "air_transportation"^^rdfs:Literal ;
+            <http://www.w3.org/2004/02/skos/core#definition> "When disaster strikes, air transport is often the only feasible mode of transportation for first responders and urgently needed relief supplies. Following an earthquake, tsunami or hurricane, most roads, rail tracks and even ports become unusable, as they are blocked for days by debris. Airports, on the other hand, are remarkably sustainable and, within hours, usually become operational again."^^xsd:string .
+
+
+###  https://w3id.org/empathi/Helpline
+:Helpline rdf:type owl:Class ;
+          rdfs:subClassOf :Service ;
+          rdfs:label "*unknown number"^^rdfs:Literal ,
+                     "free hotline"^^rdfs:Literal ,
+                     "helpline"^^rdfs:Literal ,
+                     "hotline help"^^rdfs:Literal ;
+          <http://www.w3.org/2004/02/skos/core#definition> "helpline is a telephone service providing help with problems."^^xsd:string .
+
+
+###  https://w3id.org/empathi/High
+:High rdf:type owl:Class ;
+      rdfs:subClassOf :Severity ;
+      rdfs:label "*run massive"^^rdfs:Literal ,
+                 "crisis worsens"^^rdfs:Literal ,
+                 "dead floods"^^rdfs:Literal ,
+                 "deadly"^^rdfs:Literal ,
+                 "deadly explosion"^^rdfs:Literal ,
+                 "deadly tornado"^^rdfs:Literal ,
+                 "devastating"^^rdfs:Literal ,
+                 "devastating tornado"^^rdfs:Literal ,
+                 "dying hurricane"^^rdfs:Literal ,
+                 "flood deepens"^^rdfs:Literal ,
+                 "flood peaks"^^rdfs:Literal ,
+                 "flood worsens"^^rdfs:Literal ,
+                 "high damage"^^rdfs:Literal ,
+                 "huge explosion"^^rdfs:Literal ,
+                 "large explosion"^^rdfs:Literal ,
+                 "major explosion"^^rdfs:Literal ,
+                 "massive explosion"^^rdfs:Literal ,
+                 "powerful storm"^^rdfs:Literal ,
+                 "powerful storms"^^rdfs:Literal ,
+                 "severe flooding"^^rdfs:Literal ,
+                 "terrible explosion"^^rdfs:Literal ,
+                 "terrified hurricane"^^rdfs:Literal ,
+                 "terrifying"^^rdfs:Literal .
+
+
+###  https://w3id.org/empathi/Home
+:Home rdf:type owl:Class ;
+      rdfs:subClassOf :Infrastructure_Damage ;
+      rdfs:label "home"^^rdfs:Literal ,
+                 "homes inundated"^^rdfs:Literal ,
+                 "hundreds home"^^rdfs:Literal ,
+                 "liquefaction"^^rdfs:Literal ,
+                 "thousands homes"^^rdfs:Literal .
+
+
+###  https://w3id.org/empathi/Human_Remains_Management
+:Human_Remains_Management rdf:type owl:Class ;
+                          rdfs:subClassOf :Service ;
+                          rdfs:label "bodies recovered"^^rdfs:Literal ,
+                                     "human remain management"^^rdfs:Literal ;
+                          <http://www.w3.org/2004/02/skos/core#definition> "Human remains management is an abstract term used to define morgues or other locations where dead bodies can be properly managed."^^xsd:string .
+
+
+###  https://w3id.org/empathi/Human_Sensing_Report
+:Human_Sensing_Report rdf:type owl:Class ;
+                      rdfs:subClassOf :Report ;
+                      rdfs:label "human sensing report"^^rdfs:Literal ,
+                                 "witnesses accounts"^^rdfs:Literal .
+
+
+###  https://w3id.org/empathi/Humanitarian_Event
+:Humanitarian_Event rdf:type owl:Class ;
+                    rdfs:subClassOf <http://purl.org/dc/dcmitype/Event> ;
+                    rdfs:label "personal updates, updates about loved ones, sympathy"^^rdfs:Literal ,
+                               "residents"^^rdfs:Literal ;
+                    <http://www.w3.org/2004/02/skos/core#definition> "concerned with or seeking to promote human welfare."^^xsd:string .
+
+
+###  https://w3id.org/empathi/Hurricane
+:Hurricane rdf:type owl:Class ;
+           rdfs:subClassOf :Hazard_Type ;
+           rdfs:label "coast hurricane"^^rdfs:Literal ,
+                      "cyclone"^^rdfs:Literal ,
+                      "extra-tropical storm"^^rdfs:Literal ,
+                      "hurricane"^^rdfs:Literal ,
+                      "storm surge"^^rdfs:Literal ,
+                      "typhoon"^^rdfs:Literal ;
+           <http://www.w3.org/2004/02/skos/core#definition> "a high velocity circular winds that is accompanied by rain, thunder and lightning. They are often referred as cyclones."^^xsd:string .
+
+
+###  https://w3id.org/empathi/IFRC
+:IFRC rdf:type owl:Class ;
+      rdfs:subClassOf :Organization ;
+      rdfs:label "International Federation of Red Cross"^^rdfs:Literal ,
+                 "International Federation of Red Cross and Red Crescent Societies"^^rdfs:Literal ;
+      <http://www.w3.org/2004/02/skos/core#definition> "The International Federation of Red Cross and Red Crescent Societies is the world’s largest humanitarian organization made up of 186 member Red Cross and Red Crescent Societies. The IFRC coordinates and directs international assistance to victims of natural and technological disasters, to refugees and in health emergencies. It combines its relief activities with development work to strengthen the capacities of National Societies and through them the capacity of individual people. The IFRC acts as the official representative of its member societies in the international field. It promotes cooperation between National Societies, and works to strengthen their capacity to carry out effective disaster preparedness, health and social programmes."^^xsd:string .
+
+
+###  https://w3id.org/empathi/IOM
+:IOM rdf:type owl:Class ;
+     rdfs:subClassOf :United_Nation ;
+     rdfs:label "International Organisation for Migration (IOM)"^^rdfs:Literal ;
+     <http://www.w3.org/2004/02/skos/core#definition> "International Organisation for Migration (IOM) is an intergovernmental agency which helps transfer refugees, internally displaced persons and others in need of internal or international migration services."^^xsd:string .
+
+
+###  https://w3id.org/empathi/IRC
+:IRC rdf:type owl:Class ;
+     rdfs:subClassOf :Non-Government ;
+     rdfs:label "International Rescue Committee"^^rdfs:Literal ,
+                "international rescue committee"^^rdfs:Literal ;
+     <http://www.w3.org/2004/02/skos/core#definition> "International Rescue Committee (IRC) offers lifesaving care and life-changing assistance to refugees forced to flee from war or disaster and provides emergency response by experienced personnel for short-term assignments."^^xsd:string .
+
+
+###  https://w3id.org/empathi/Impact
+:Impact rdf:type owl:Class ;
+        rdfs:label "*crisis deepens"^^rdfs:Literal ,
+                   "aftermath"^^rdfs:Literal ,
+                   "city tornado"^^rdfs:Literal ,
+                   "crisis"^^rdfs:Literal ,
+                   "damage hurricane"^^rdfs:Literal ,
+                   "displaced"^^rdfs:Literal ,
+                   "effect"^^rdfs:Literal ,
+                   "effected hurricane"^^rdfs:Literal ,
+                   "estimated damage"^^rdfs:Literal ,
+                   "explosion ripped"^^rdfs:Literal ,
+                   "flood crisis"^^rdfs:Literal ,
+                   "flood damage"^^rdfs:Literal ,
+                   "flood levy"^^rdfs:Literal ,
+                   "flood ravaged"^^rdfs:Literal ,
+                   "harsh"^^rdfs:Literal ,
+                   "impact"^^rdfs:Literal ,
+                   "impact of the crisis"^^rdfs:Literal ,
+                   "impacted"^^rdfs:Literal ,
+                   "ravaged"^^rdfs:Literal ,
+                   "risk"^^rdfs:Literal ,
+                   "tornado damage"^^rdfs:Literal ,
+                   "tragedy"^^rdfs:Literal ,
+                   "tragic"^^rdfs:Literal ,
+                   "tragic events"^^rdfs:Literal ;
+        <http://www.w3.org/2004/02/skos/core#definition> "a forceful negative affect on someone or something in an unprecedented manner."^^xsd:string .
+
+
+###  https://w3id.org/empathi/Infant
+:Infant rdf:type owl:Class ;
+        rdfs:subClassOf :Age_Group ;
+        rdfs:comment "An infant is a child younger than one year of age"@en ;
+        rdfs:label "baby"@en ,
+                   "infant"@en .
+
+
+###  https://w3id.org/empathi/Infrastructure_Damage
+:Infrastructure_Damage rdf:type owl:Class ;
+                       rdfs:subClassOf :Impact ;
+                       rdfs:label "*alive rubble"^^rdfs:Literal ,
+                                  "destroyed"^^rdfs:Literal ,
+                                  "destruction"^^rdfs:Literal ,
+                                  "infrastructure and utilities damage"^^rdfs:Literal ,
+                                  "infrastructure damage"^^rdfs:Literal ,
+                                  "infrastructure, buildings, or roads damaged or operational; utilities/services interrupted or restored"^^rdfs:Literal ,
+                                  "rubble"^^rdfs:Literal ;
+                       <http://www.w3.org/2004/02/skos/core#definition> "InfrastureDamage is about the damage of physically existing basic facilities, services, and installations needed for the functioning of a community or society."^^xsd:string ,
+                                                                        "damage"^^rdfs:Literal .
+
+
+###  https://w3id.org/empathi/Internet
+:Internet rdf:type owl:Class ;
+          rdfs:subClassOf :Communication .
+
+
+###  https://w3id.org/empathi/Involved
+:Involved rdf:type owl:Class ;
+          rdfs:label "associated"^^rdfs:Literal ,
+                     "influence"^^rdfs:Literal ,
+                     "link"^^rdfs:Literal ;
+          <http://www.w3.org/2004/02/skos/core#definition> "People or Organization that are associated with any catastrophic event."^^xsd:string .
+
+
+###  https://w3id.org/empathi/Landslide
+:Landslide rdf:type owl:Class ;
+           rdfs:subClassOf :Hazard_Type ;
+           rdfs:label "avalanche"^^rdfs:Literal ,
+                      "expansive soil"^^rdfs:Literal ,
+                      "landfall"^^rdfs:Literal ,
+                      "landslide"^^rdfs:Literal ,
+                      "mass movement"^^rdfs:Literal ,
+                      "mudslide"^^rdfs:Literal ,
+                      "sinkhole"^^rdfs:Literal ,
+                      "subsidence"^^rdfs:Literal ;
+           <http://www.w3.org/2004/02/skos/core#definition> "A landslide also termed as landslip or Mudslide, is a form of mass wasting that includes a wide range of ground movements, such as rockfalls, deep failure of slopes, and shallow debris flows, particularly in hilly regions."^^xsd:string .
+
+
+###  https://w3id.org/empathi/Latitude
+:Latitude rdf:type owl:Class ;
+          rdfs:subClassOf :Location ;
+          rdfs:label "celestial latitude"^^rdfs:Literal ,
+                     "parallel"^^rdfs:Literal ;
+          <http://www.w3.org/2004/02/skos/core#definition> "the angular distance of a place north or south of the earth's equator, or of a celestial object north or south of the celestial equator, usually expressed in degrees and minutes."^^xsd:string .
+
+
+###  https://w3id.org/empathi/Location
+:Location rdf:type owl:Class ;
+          rdfs:subClassOf <http://www.loa-cnr.it/ontologies/DUL.owl#Place> ;
+          rdfs:label "environment"^^rdfs:Literal ,
+                     "locale"^^rdfs:Literal ,
+                     "position"^^rdfs:Literal ,
+                     "scene"^^rdfs:Literal ,
+                     "site"^^rdfs:Literal ,
+                     "situation"^^rdfs:Literal ,
+                     "spot"^^rdfs:Literal ,
+                     "whereabouts"^^rdfs:Literal ;
+          <http://www.w3.org/2004/02/skos/core#definition> "the action or process of placing someone or something in a particular position. a particular place or position."^^xsd:string .
+
+
+###  https://w3id.org/empathi/Longitude
+:Longitude rdf:type owl:Class ;
+           rdfs:subClassOf :Location ;
+           rdfs:label "angular distance"^^rdfs:Literal ,
+                      "longitude"^^rdfs:Literal ;
+           <http://www.w3.org/2004/02/skos/core#definition> "the angular distance between a point on any meridian and the prime meridian at Greenwich"^^xsd:string .
+
+
+###  https://w3id.org/empathi/Looting
+:Looting rdf:type owl:Class ;
+         rdfs:subClassOf :Criminal_Activity ;
+         rdfs:label "looting"^^rdfs:Literal ;
+         <http://www.w3.org/2004/02/skos/core#definition> "looting is an activity wherein people steal other people's stuff."^^xsd:string .
+
+
+###  https://w3id.org/empathi/Low
+:Low rdf:type owl:Class ;
+     rdfs:subClassOf :Severity ;
+     rdfs:label "low intensity disaster"^^rdfs:Literal ,
+                "safe hurricane"^^rdfs:Literal .
+
+
+###  https://w3id.org/empathi/Low_Energy
+:Low_Energy rdf:type owl:Class ;
+            rdfs:subClassOf :Physical_health ;
+            rdfs:label "cold shivering"^^rdfs:Literal ,
+                       "cramps"^^rdfs:Literal ,
+                       "dizziness"^^rdfs:Literal ,
+                       "lethargy"^^rdfs:Literal ,
+                       "weakness"^^rdfs:Literal ;
+            <http://www.w3.org/2004/02/skos/core#definition> "lower of vitals of the body as a result of starvation, thirst and infection"^^xsd:string .
+
+
+###  https://w3id.org/empathi/Media_Report
+:Media_Report rdf:type owl:Class ;
+              rdfs:subClassOf :Report ;
+              rdfs:label "live coverage"^^rdfs:Literal ,
+                         "media report"^^rdfs:Literal ,
+                         "saying hurricane"^^rdfs:Literal ;
+              <http://www.w3.org/2004/02/skos/core#definition> """Media is the most important source of information on hazards and disasters for people. Media play an important role in awareness raising and providing
+information to the masses. This role becomes crucial when it comes to reporting during disasters."""^^xsd:string .
+
+
+###  https://w3id.org/empathi/Medical_Equipment_Supply
+:Medical_Equipment_Supply rdf:type owl:Class ;
+                          rdfs:subClassOf :Supply ;
+                          rdfs:label "blood pressure check"^^rdfs:Literal ,
+                                     "blood test"^^rdfs:Literal ,
+                                     "diabetes check"^^rdfs:Literal ,
+                                     "urine test"^^rdfs:Literal ;
+                          <http://www.w3.org/2004/02/skos/core#definition> "Medical equipment (also known as armamentarium) is designed to aid in the diagnosis, monitoring or treatment of medical conditions."^^xsd:string .
+
+
+###  https://w3id.org/empathi/Memorial_Service
+:Memorial_Service rdf:type owl:Class ;
+                  rdfs:subClassOf :prayer ;
+                  rdfs:label "memorial service"^^rdfs:Literal ,
+                             "remember lives"^^rdfs:Literal ;
+                  <http://www.w3.org/2004/02/skos/core#definition> "A Memorial Service is a service held to memorialize a deceased person with their body not present. If a person has been cremated and a service is held with the cremated human remains present it is considered a Memorial Service. If a burial occurs prior to the service for a loved one, the service is considered a Memorial Service."^^xsd:string .
+
+
+###  https://w3id.org/empathi/Mental_Stress
+:Mental_Stress rdf:type owl:Class ;
+               rdfs:subClassOf :Health_Issues ;
+               rdfs:label "mental_stress"^^rdfs:Literal ,
+                          "saddened"^^rdfs:Literal ;
+               <http://www.w3.org/2004/02/skos/core#definition> "mental stress is defined by emotional trauma rising in the people as an impact of natural disaster. mental stress develop suicidal thoughts  and affects nervous system of disaster affected individuals."^^xsd:string .
+
+
+###  https://w3id.org/empathi/Mental_health
+:Mental_health rdf:type owl:Class ;
+               rdfs:subClassOf :Mental_Stress ;
+               <http://www.w3.org/2004/02/skos/core#definition> "a state of human being that is affected by psychological and emotional surrounding."^^xsd:string .
+
+
+###  https://w3id.org/empathi/Miscellaneous
+:Miscellaneous rdf:type owl:Class ;
+               rdfs:label "miscellaneous accident"^^rdfs:Literal ;
+               <http://www.w3.org/2004/02/skos/core#definition> "Hazard type term to describe technological accidents of a non-industrial or transport nature."^^xsd:string .
+
+
+###  https://w3id.org/empathi/Modality_of_data
+:Modality_of_data rdf:type owl:Class ;
+                  rdfs:label "information"^^rdfs:Literal ;
+                  <http://www.w3.org/2004/02/skos/core#definition> "what is conveyed or represented by a particular arrangement or sequence of  text, audio, video or photos."^^xsd:string .
+
+
+###  https://w3id.org/empathi/Moderate
+:Moderate rdf:type owl:Class ;
+          rdfs:subClassOf :Severity ;
+          rdfs:label "medium damage"^^rdfs:Literal ,
+                     "medium floods"^^rdfs:Literal ,
+                     "moderate explosion"^^rdfs:Literal ,
+                     "moderate impact"^^rdfs:Literal .
+
+
+###  https://w3id.org/empathi/NGO_Report
+:NGO_Report rdf:type owl:Class ;
+            rdfs:subClassOf :Expert_Report ;
+            rdfs:label "NGO_report"^^rdfs:Literal ;
+            <http://www.w3.org/2004/02/skos/core#definition> "Ushahidi, SAMSHA are some of the prominent NGOs deseminating situation awareness through blogs, social media about the natural hazard recently occurred.  Since, the report are generated by domain expert, these piece of evidence are categorized under expert report."^^xsd:string .
+
+
+###  https://w3id.org/empathi/News_Agencies_Report
+:News_Agencies_Report rdf:type owl:Class ;
+                      rdfs:subClassOf :Media_Report ;
+                      rdfs:label "breaking news"^^rdfs:Literal ,
+                                 "news"^^rdfs:Literal ,
+                                 "news flood"^^rdfs:Literal ;
+                      <http://www.w3.org/2004/02/skos/core#definition> "news is an information provided by jourmalist and their crew about the event about which general people have little or no information."^^xsd:string .
+
+
+###  https://w3id.org/empathi/Non-Government
+:Non-Government rdf:type owl:Class ;
+                rdfs:subClassOf :Organization ;
+                rdfs:label "non-governmental agencies"^^rdfs:Literal ;
+                <http://www.w3.org/2004/02/skos/core#definition> "Leading international non-governmental agencies work through volunteers to fight poverty in developing countries. Their strong role in development works side by side with the recovery from a disaster and prevention and preparedness for any future disasters"^^xsd:string .
+
+
+###  https://w3id.org/empathi/OCHA
+:OCHA rdf:type owl:Class ;
+      rdfs:subClassOf :United_Nation ;
+      rdfs:label "Office for the Coordination of Humanitarian Affairs"^^rdfs:Literal ;
+      <http://www.w3.org/2004/02/skos/core#definition> "OCHA in collaboration with the Inter-Agency Standing Committee (IASC) is the arm of the United Nations responsible for bringing together national and international humanitarian providers to ensure a coherent response to emergencies. OCHA also ensures that a framework is in place within which each provider can contribute to the overall response effort. It also advocates for people in need, promotes preparedness and prevention and facilitates sustainable solutions."^^xsd:string .
+
+
+###  https://w3id.org/empathi/OHCHR
+:OHCHR rdf:type owl:Class ;
+       rdfs:subClassOf :United_Nation ;
+       rdfs:label "Office of United Nations High Commissioner for Human Rights"^^rdfs:Literal ;
+       <http://www.w3.org/2004/02/skos/core#definition> "The Office of United Nations High Commissioner for Human Rights (OHCHR) provides assistance and advice to governments and other actors on human rights issues, sets standards and monitors rights violations."^^xsd:string .
+
+
+###  https://w3id.org/empathi/Offered
+:Offered rdf:type owl:Class ;
+         rdfs:subClassOf :Status ;
+         rdfs:label "assistance"^^rdfs:Literal ,
+                    "convenience"^^rdfs:Literal ,
+                    "help affected"^^rdfs:Literal ,
+                    "offer services"^^rdfs:Literal ,
+                    "offered"^^rdfs:Literal ,
+                    "service benefit"^^rdfs:Literal ;
+         <http://www.w3.org/2004/02/skos/core#definition> "It is defined as an act, attempt, endeavor or instance of offering, the condition of being offered or something offered."^^xsd:string .
+
+
+###  https://w3id.org/empathi/Organization
+:Organization rdf:type owl:Class ;
+              rdfs:subClassOf :Involved ;
+              rdfs:label "authorities"^^rdfs:Literal ,
+                         "enforcement"^^rdfs:Literal ,
+                         "enforcement official"^^rdfs:Literal ,
+                         "involved organization"^^rdfs:Literal ,
+                         "response agencies, present at the crisis location"^^rdfs:Literal ;
+              <http://www.w3.org/2004/02/skos/core#definition> "Disaster management is a complex process involving international, national and local organisations each with a distinct role to play. To respond to disaster situations a coordinated effort is required."^^xsd:string .
+
+
+###  https://w3id.org/empathi/People
+:People rdf:type owl:Class ;
+        rdfs:subClassOf :Involved ;
+        rdfs:label "bombing witnesses"^^rdfs:Literal ,
+                   "entire crowd"^^rdfs:Literal ,
+                   "people"^^rdfs:Literal ;
+        <http://www.w3.org/2004/02/skos/core#definition> "People is defined as persons, whether men, women, or children, considered as numerable individuals forming a group"^^xsd:string .
+
+
+###  https://w3id.org/empathi/Phone
+:Phone rdf:type owl:Class ;
+       rdfs:subClassOf :Communication .
+
+
+###  https://w3id.org/empathi/Photo
+:Photo rdf:type owl:Class ;
+       rdfs:subClassOf :Modality_of_data ;
+       rdfs:label "Photo"^^rdfs:Literal ,
+                  "Photo finish"^^rdfs:Literal ,
+                  "gif"^^rdfs:Literal ,
+                  "image"^^rdfs:Literal ,
+                  "jpeg"^^rdfs:Literal ,
+                  "jpg"^^rdfs:Literal ,
+                  "photograph"^^rdfs:Literal ,
+                  "picture"^^rdfs:Literal ,
+                  "png"^^rdfs:Literal ;
+       <http://www.w3.org/2004/02/skos/core#definition> "A photograph"^^xsd:string .
+
+
+###  https://w3id.org/empathi/Physical_Stress
+:Physical_Stress rdf:type owl:Class ;
+                 rdfs:subClassOf :Health_Issues ;
+                 rdfs:label "*dealing hurricane"^^rdfs:Literal ,
+                            "physical_stress"^^rdfs:Literal ;
+                 <http://www.w3.org/2004/02/skos/core#definition> "Natural disasters are associated with various adverse physical health efffects ranging from moderate to severe and chronic conditions."^^xsd:string .
+
+
+###  https://w3id.org/empathi/Physical_health
+:Physical_health rdf:type owl:Class ;
+                 rdfs:subClassOf :Physical_Stress ;
+                 rdfs:label "lost legs"^^rdfs:Literal ,
+                            "physical disability"^^rdfs:Literal ,
+                            "physical health"^^rdfs:Literal .
+
+
+###  https://w3id.org/empathi/Post_Hazard
+:Post_Hazard rdf:type owl:Class ;
+             rdfs:subClassOf :HazardPhase ;
+             rdfs:label "*recede hazard"^^rdfs:Literal ,
+                        "post-hazard"^^rdfs:Literal ,
+                        "water recede"^^rdfs:Literal ;
+             <http://www.w3.org/2004/02/skos/core#definition> "Post hazard or post disaster phase comprises of activities like evacuation plans, that are created by federal emergency management agency for saving the lives of disaster victims and restoration of the infrastructure in disaster hit areas."^^xsd:string .
+
+
+###  https://w3id.org/empathi/PowerOutage
+:PowerOutage rdf:type owl:Class ;
+             rdfs:subClassOf :Infrastructure_Damage ;
+             rdfs:label "power_outage"^^rdfs:Literal ;
+             <http://www.w3.org/2004/02/skos/core#definition> "Power Outage is a term which refers to electrical power failure, which means a short- or long-term loss of the electric power to an area."^^xsd:string .
+
+
+###  https://w3id.org/empathi/Pre_Hazard
+:Pre_Hazard rdf:type owl:Class ;
+            rdfs:subClassOf :HazardPhase ;
+            rdfs:label "predisaster"^^rdfs:Literal ,
+                       "prehazard"^^rdfs:Literal ;
+            <http://www.w3.org/2004/02/skos/core#definition> "pre-hazard phase is defined by prevention, mitigation and preparedness activities directed to reducing human and property loss that are caused by the natural hazard. this phase of disaster managment also  involves planning process and resource organization, assessment of risks, development of mitigation strategy and adoption of the plan."^^xsd:string .
+
+
+###  https://w3id.org/empathi/Primary_Care_Hospital
+:Primary_Care_Hospital rdf:type owl:Class ;
+                       rdfs:subClassOf :Healthcare_Service ;
+                       rdfs:label "children's well being"^^rdfs:Literal ,
+                                  "medical examiner"^^rdfs:Literal ,
+                                  "medical office"^^rdfs:Literal ,
+                                  "pediatric expert"^^rdfs:Literal ,
+                                  "primary care hospital"^^rdfs:Literal .
+
+
+###  https://w3id.org/empathi/RI
+:RI rdf:type owl:Class ;
+    rdfs:subClassOf :Non-Government ;
+    rdfs:label "Rehabilitation International"^^rdfs:Literal ,
+               "rehabilitation international"^^rdfs:Literal ;
+    <http://www.w3.org/2004/02/skos/core#definition> "Rehabilitation International (RI) is a global network of expert professionals who work to empower people with disabilities and provide sustainable solutions for a more inclusive and accessible society. It advocates for inclusion of people with disabilities in climate change and disaster management planning."^^xsd:string .
+
+
+###  https://w3id.org/empathi/Radio
+:Radio rdf:type owl:Class ;
+       rdfs:subClassOf :Communication .
+
+
+###  https://w3id.org/empathi/Recovery_Plan
+:Recovery_Plan rdf:type owl:Class ;
+               rdfs:subClassOf <http://purl.org/dc/dcmitype/Event> ;
+               rdfs:label "cleanup activities"^^rdfs:Literal ,
+                          "flood recovery"^^rdfs:Literal ,
+                          "help rebuilt"^^rdfs:Literal ,
+                          "rebuild"^^rdfs:Literal ,
+                          "rebuilt"^^rdfs:Literal ,
+                          "rebuilt communities"^^rdfs:Literal ,
+                          "reconnect power"^^rdfs:Literal ,
+                          "recover"^^rdfs:Literal ,
+                          "recovery plan"^^rdfs:Literal ,
+                          "response disasters"^^rdfs:Literal ,
+                          "safety and security, protection of people and property"^^rdfs:Literal ;
+               <http://www.w3.org/2004/02/skos/core#definition> "Recovery plan is a documented process or set of procedures to recover and protect a business IT infrastructure in the event of a disaster. Such a plan, ordinarily documented in written form, specifies procedures an organization is to follow in the event of a disaster. It is \"a comprehensive statement of consistent actions to be taken before, during and after a disaster\". The disaster could be natural, environmental or man-made. Man-made disasters could be intentional (for example, an act of a terrorist) or unintentional (that is, accidental, such as the breakage of a man-made dam)."^^xsd:string .
+
+
+###  https://w3id.org/empathi/Report
+:Report rdf:type owl:Class ;
+        rdfs:label "*footage"^^rdfs:Literal ,
+                   "*injuries reported"^^rdfs:Literal ,
+                   "*photos flood"^^rdfs:Literal ,
+                   "*releases photos"^^rdfs:Literal ,
+                   "bombing reports"^^rdfs:Literal ,
+                   "explosion registered"^^rdfs:Literal ,
+                   "explosion reported"^^rdfs:Literal ,
+                   "explosion video"^^rdfs:Literal ,
+                   "following explosion"^^rdfs:Literal ,
+                   "reels surging"^^rdfs:Literal ,
+                   "release images"^^rdfs:Literal ,
+                   "report"^^rdfs:Literal ,
+                   "reported explosion"^^rdfs:Literal ,
+                   "shocking video"^^rdfs:Literal ,
+                   "surging floods"^^rdfs:Literal ;
+        <http://www.w3.org/2004/02/skos/core#definition> "A report is documented evidence of the destruction caused by the natural disaster. All the activities carried out by various governmental and non-governmental organizations (NGOs) are stated in the report. The report is not a submissiable document but rather a way to keep people vigilant."^^xsd:string ,
+                                                         "explosion video"^^xsd:string .
+
+
+###  https://w3id.org/empathi/Requested
+:Requested rdf:type owl:Class ;
+           rdfs:subClassOf :Status ;
+           rdfs:label "appeal requested"^^rdfs:Literal ,
+                      "incident service request"^^rdfs:Literal ,
+                      "outsourcing"^^rdfs:Literal ,
+                      "request form"^^rdfs:Literal ,
+                      "request service"^^rdfs:Literal ,
+                      "requested"^^rdfs:Literal ,
+                      "urging need"^^rdfs:Literal ;
+           <http://www.w3.org/2004/02/skos/core#definition> "request is defined as a formal means of expressing the need or desire or inquire for services that are proposed to be delivered to the victims of the natural hazard as enlisted in the pre-hazard phase."^^xsd:string .
+
+
+###  https://w3id.org/empathi/Rescue_Operation
+:Rescue_Operation rdf:type owl:Class ;
+                  rdfs:subClassOf <http://purl.org/dc/dcmitype/Event> ;
+                  rdfs:label "*please stay"^^rdfs:Literal ,
+                             "*tornado relief"^^rdfs:Literal ,
+                             "amazing rescue"^^rdfs:Literal ,
+                             "daring rescue"^^rdfs:Literal ,
+                             "evacuations"^^rdfs:Literal ,
+                             "first responders"^^rdfs:Literal ,
+                             "help" ,
+                             "rescue"@en ,
+                             "rescue teenager"^^rdfs:Literal ,
+                             "rescue woman"^^rdfs:Literal ,
+                             "rescuers help"^^rdfs:Literal ,
+                             "surviving"^^rdfs:Literal ,
+                             "survivor finds"^^rdfs:Literal ;
+                  <http://www.w3.org/2004/02/skos/core#definition> "rescue is an event that is planned to deliver (a place under siege) by armed forceto deliver (a place under siege) by armed force."^^xsd:string .
+
+
+###  https://w3id.org/empathi/Resource_or_Information_Center
+:Resource_or_Information_Center rdf:type owl:Class ;
+                                rdfs:subClassOf :Service ;
+                                rdfs:label "disaster resource center"^^rdfs:Literal ,
+                                           "text redcross"^^rdfs:Literal ;
+                                <http://www.w3.org/2004/02/skos/core#definition> "Disaster Resource Center is a  government established places providing information about specific disaster and emergencies, how to prepare, recover and help build long-term resilience, as well information about assistance during disaster events."^^xsd:string .
+
+
+###  https://w3id.org/empathi/Sandstorm
+:Sandstorm rdf:type owl:Class ;
+           rdfs:subClassOf :Hazard_Type ;
+           rdfs:label "dust storm"^^rdfs:Literal ,
+                      "sand storm"^^rdfs:Literal ;
+           <http://www.w3.org/2004/02/skos/core#definition> "A sandstorm/dust storm typically occurs in arid or semi-arid regions if high wind speeds cause the transportation of small particles like sand or fine clastic sediment by saltation and/or suspension. e.g. in deserts."^^xsd:string .
+
+
+###  https://w3id.org/empathi/Service
+:Service rdf:type owl:Class ;
+         rdfs:label "*gets donated"^^rdfs:Literal ,
+                    "Service"^^rdfs:Literal ,
+                    "disaster relief"^^rdfs:Literal ,
+                    "donate"^^rdfs:Literal ,
+                    "education"^^rdfs:Literal ,
+                    "flood relief"^^rdfs:Literal ,
+                    "help victims"^^rdfs:Literal ,
+                    "offers"^^rdfs:Literal ,
+                    "public safety"^^rdfs:Literal ,
+                    "relief"^^rdfs:Literal ,
+                    "relief efforts"^^rdfs:Literal ,
+                    "relief fund"^^rdfs:Literal ,
+                    "safety"^^rdfs:Literal ,
+                    "support"^^rdfs:Literal ,
+                    "volunteering services"^^rdfs:Literal .
+
+
+###  https://w3id.org/empathi/Service_feedback
+:Service_feedback rdf:type owl:Class ;
+                  rdfs:subClassOf :Human_Sensing_Report ;
+                  <http://www.w3.org/2004/02/skos/core#definition> "public surveys recieved from the affected individuals regarding the services, facilities and logistics provided by the government and NGOs of the disaster influenced area."^^xsd:string .
+
+
+###  https://w3id.org/empathi/Severity
+:Severity rdf:type owl:Class ;
+          rdfs:subClassOf :Impact ;
+          rdfs:label "*counts flood"^^rdfs:Literal ,
+                     "*flood cost"^^rdfs:Literal ,
+                     "*flood toll"^^rdfs:Literal ,
+                     "*hurricane category"^^rdfs:Literal ,
+                     "*major flood"^^rdfs:Literal ,
+                     "crisis rises"^^xsd:string ,
+                     "dead explosion"^^rdfs:Literal ,
+                     "estimated damage"^^rdfs:Literal ,
+                     "flood peak"^^xsd:string ,
+                     "flood powerful"^^rdfs:Literal ,
+                     "flood years"^^rdfs:Literal ,
+                     "floods force"^^rdfs:Literal ,
+                     "hoisted flood"^^rdfs:Literal ,
+                     "magnitude"^^rdfs:Literal ,
+                     "massive"^^rdfs:Literal ,
+                     "registered magnitude"^^rdfs:Literal ,
+                     "richter scale"^^rdfs:Literal ,
+                     "risk evaluation"^^rdfs:Literal ,
+                     "severity"^^rdfs:Literal ,
+                     "storms amazing"^^rdfs:Literal ,
+                     "vulnerability"^^rdfs:Literal ;
+          <http://www.w3.org/2004/02/skos/core#definition> "severity is measure of impact of disaster on human, property and economy of the country. It includes fatalities, injuries, missing people, social damage, property, economy, GDP per capita, Region of Impact and decrease in population density"^^xsd:string .
+
+
+###  https://w3id.org/empathi/Shelter
+:Shelter rdf:type owl:Class ;
+         rdfs:subClassOf :Supply ;
+         rdfs:label "Need of shelters, including Need of shelters, including location and condition of shelters and camps"^^rdfs:Literal ,
+                    "Need of shelters. including location and conditions of shelters and camps"^^rdfs:Literal ,
+                    "shelter distribution"^^rdfs:Literal ;
+         <http://www.w3.org/2004/02/skos/core#definition> "shelter is a humanitarian relief provided in the form of tents, tarps etc. Various NGOs', private and government agencies provide shelter assistances as apart of relief distribution.  Internally Displaced person (IDP) camps are another initiative by various agencies as a mode of relief for disaster affected individuals."^^xsd:string .
+
+
+###  https://w3id.org/empathi/Social_Media_Report
+:Social_Media_Report rdf:type owl:Class ;
+                     rdfs:subClassOf :Media_Report ;
+                     rdfs:label "disasters texting"^^rdfs:Literal ,
+                                "social media"^^rdfs:Literal ;
+                     <http://www.w3.org/2004/02/skos/core#definition> "Social media is the collective of online communications channels dedicated to community-based input, interaction, content-sharing and collaboration. Websites and applications dedicated to forums, microblogging, social networking, social bookmarking, social curation, and wikis are among the different types of social media."^^xsd:string .
+
+
+###  https://w3id.org/empathi/Specialist_Report
+:Specialist_Report rdf:type owl:Class ;
+                   rdfs:subClassOf :Expert_Report ;
+                   rdfs:label "specialist_report"^^rdfs:Literal ;
+                   <http://www.w3.org/2004/02/skos/core#definition> "Report or information provided organization comprising of people who plans and direct program and procedures for responding to natural disaster (example earthquakes, floods)."^^xsd:string .
+
+
+###  https://w3id.org/empathi/Speciality_Hospital_operating
+:Speciality_Hospital_operating rdf:type owl:Class ;
+                               rdfs:subClassOf :Healthcare_Service ;
+                               <http://www.w3.org/2004/02/skos/core#definition> "these are specialized centers or camps created to provide immediate care to a person required speciality care or transport to speciality hospital after first aid. For example X-Ray scan, MRI, EEG/ECG, kidney infection, heart attack etc."^^xsd:string .
+
+
+###  https://w3id.org/empathi/State_mitigation_plan
+:State_mitigation_plan rdf:type owl:Class ;
+                       rdfs:subClassOf <http://purl.org/dc/dcmitype/Event> ;
+                       rdfs:label "mitigation_plan"^^rdfs:Literal ,
+                                  "response disasters"^^rdfs:Literal ;
+                       <http://www.w3.org/2004/02/skos/core#definition> "Mitigation plan is the effort to reduce loss of life and property by lessening the impact of disasters. In order for mitigation to be effective we need to take action now—before the next disaster—to reduce human and financial consequences later (analyzing risk, reducing risk, and insuring against risk). It is important to know that disasters can happen at any time and any place and if we are not prepared, consequences can be fatal."^^xsd:string .
+
+
+###  https://w3id.org/empathi/Status
+:Status rdf:type owl:Class ;
+        rdfs:label "status"^^rdfs:Literal ;
+        <http://www.w3.org/2004/02/skos/core#definition> "Status is the defined as the current position of services that are being planned during the pre-post-during hazard phase."^^xsd:string .
+
+
+###  https://w3id.org/empathi/Storm
+:Storm rdf:type owl:Class ;
+       rdfs:subClassOf :Hazard_Type ;
+       rdfs:label "convective storm"^^rdfs:Literal ,
+                  "extra-tropical storm"^^rdfs:Literal ,
+                  "lightening"^^rdfs:Literal ,
+                  "storm"^^rdfs:Literal ,
+                  "strong winds"^^rdfs:Literal ,
+                  "tropical storm"^^rdfs:Literal ;
+       <http://www.w3.org/2004/02/skos/core#definition> "a violent disturbance of the atmosphere with strong winds and usually rain, thunder, lightening, or snow."^^xsd:string ,
+                                                        "orographic storm"^^xsd:string .
+
+
+###  https://w3id.org/empathi/Suicidal_Throughts
+:Suicidal_Throughts rdf:type owl:Class ;
+                    rdfs:subClassOf :Mental_health ;
+                    rdfs:label "depressed"^^rdfs:Literal ,
+                               "liable to kill oneself"^^rdfs:Literal ,
+                               "suicidal ideation"^^rdfs:Literal ;
+                    <http://www.w3.org/2004/02/skos/core#definition> "negative thoughts arising from severe loss in the minds of human causing one to attempt killing one self."^^xsd:string .
+
+
+###  https://w3id.org/empathi/Supply
+:Supply rdf:type owl:Class ;
+        rdfs:subClassOf :Service ;
+        rdfs:label "contribute"^^rdfs:Literal ,
+                   "first aid"^^rdfs:Literal ,
+                   "food distribution"^^rdfs:Literal ,
+                   "food serving"^^rdfs:Literal ,
+                   "generic supplies"^^rdfs:Literal ,
+                   "produce"^^rdfs:Literal ,
+                   "rations"^^rdfs:Literal ,
+                   "stocks"^^rdfs:Literal ,
+                   "supplies"^^rdfs:Literal ,
+                   "victims donate"^^rdfs:Literal ;
+        <http://www.w3.org/2004/02/skos/core#definition> "make (something needed or wanted) available to someone; provide, provide (someone) with something needed or wanted. a stock of a resource from which a person or place can be provided with the necessary amount of that resource."^^xsd:string .
+
+
+###  https://w3id.org/empathi/Surveillance_Information
+:Surveillance_Information rdf:type owl:Class ;
+                          rdfs:label "air surveillance"^^rdfs:Literal ,
+                                     "close watch"^^rdfs:Literal ,
+                                     "drone"^^rdfs:Literal ,
+                                     "inspection"^^rdfs:Literal ,
+                                     "observation"^^rdfs:Literal ,
+                                     "road surveillance"^^rdfs:Literal ,
+                                     "supervision"^^rdfs:Literal ,
+                                     "surveillance"^^rdfs:Literal ,
+                                     "view"^^rdfs:Literal ,
+                                     "visiting flood"^^rdfs:Literal ,
+                                     "watch"^^rdfs:Literal ;
+                          <http://www.w3.org/2004/02/skos/core#definition> "surveillance is defined as the systematic ongoing collection, collation, and analysis of data and the timely dissemination of information to those who need to know so that action can be taken. surveillance in the setting of natural disasters can help to identify the resulting health-related needs which in turn, will lead to the more rational and effective deployment of resources to affected populations."^^xsd:string .
+
+
+###  https://w3id.org/empathi/Text
+:Text rdf:type owl:Class ;
+      rdfs:subClassOf :Modality_of_data ;
+      rdfs:label "Text"^^rdfs:Literal ,
+                 "book"^^rdfs:Literal ,
+                 "doc"^^rdfs:Literal ,
+                 "docx"^^rdfs:Literal ,
+                 "pdf"^^rdfs:Literal ,
+                 "reports"^^rdfs:Literal ,
+                 "scripts"^^rdfs:Literal ,
+                 "txt"^^rdfs:Literal ;
+      <http://www.w3.org/2004/02/skos/core#definition> "text is defined as the original words of an author or speaker, as opposed to a translation, paraphrase, commentary, or the like"^^xsd:string .
+
+
+###  https://w3id.org/empathi/Theft_of_aid
+:Theft_of_aid rdf:type owl:Class ;
+              rdfs:subClassOf :Looting ;
+              rdfs:label "theft of aid"^^rdfs:Literal ;
+              <http://www.w3.org/2004/02/skos/core#definition> "Theft of aid is an activity involving stealing disaster aid from government agency (example: Federal Emergency Management Agency) regulating disaster relief funds"^^xsd:string .
+
+
+###  https://w3id.org/empathi/Tornado
+:Tornado rdf:type owl:Class ;
+         rdfs:subClassOf :Hazard_Type ;
+         rdfs:label "affected tornado"^^rdfs:Literal ,
+                    "derecho"^^rdfs:Literal ,
+                    "massive tornado"^^rdfs:Literal ,
+                    "tornado"^^rdfs:Literal ,
+                    "tornado disaster"^^rdfs:Literal ,
+                    "twister"^^rdfs:Literal ;
+         <http://www.w3.org/2004/02/skos/core#definition> "a mobile, destructive vortex of violently rotating winds having the appearance of a funnel-shaped cloud and advancing beneath a large storm system."^^xsd:string .
+
+
+###  https://w3id.org/empathi/Toxic_Radioactive
+:Toxic_Radioactive rdf:type owl:Class ;
+                   rdfs:subClassOf :Hazard_Type ;
+                   rdfs:label "chemical spill"^^rdfs:Literal ,
+                              "energetic particles"^^rdfs:Literal ,
+                              "industrial accident"^^rdfs:Literal ,
+                              "radioactive"^^rdfs:Literal ,
+                              "toxic"^^rdfs:Literal .
+
+
+###  https://w3id.org/empathi/Transportation
+:Transportation rdf:type owl:Class ;
+                rdfs:subClassOf :Service ;
+                rdfs:label "NGO van"^^rdfs:Literal ,
+                           "ambulance"^^rdfs:Literal ,
+                           "army plane"^^rdfs:Literal ,
+                           "helicopter"^^rdfs:Literal ,
+                           "logistics and transportation"^^rdfs:Literal ,
+                           "transportation operation"^^rdfs:Literal ,
+                           "van"^^rdfs:Literal ;
+                <http://www.w3.org/2004/02/skos/core#definition> "transportation is the action of transporting someone or something or the process of being transported. Transportation is there at the incident scene, in the Transportation Management Center, and at the Emergency Operations Center. They are prepared - trained and equipped, and able to communicate. Transportation services during a natural disaster are focussed toward personnel safety, assets protection, regulation of supplies and protective equipment (example : pre-planned alternate routes across all major roads and choke points)."^^xsd:string .
+
+
+###  https://w3id.org/empathi/Tsunami
+:Tsunami rdf:type owl:Class ;
+         rdfs:subClassOf :Hazard_Type ;
+         rdfs:label "hydrological hazard"^^rdfs:Literal ,
+                    "most like rogue wave"^^rdfs:Literal ,
+                    "tsunami"^^rdfs:Literal ;
+         <http://www.w3.org/2004/02/skos/core#definition> "Tsunami is a long high sea wave caused by an earthquake, submarine landslide, or other disturbance."^^xsd:string .
+
+
+###  https://w3id.org/empathi/UNDP
+:UNDP rdf:type owl:Class ;
+      rdfs:subClassOf :United_Nation ;
+      rdfs:label "United Nations Development Programme"^^rdfs:Literal ;
+      <http://www.w3.org/2004/02/skos/core#definition> "The United Nations Development Programme (UNDP) assists disaster-prone countries in contingency planning and with disaster mitigation, prevention and preparedness measures."^^xsd:string .
+
+
+###  https://w3id.org/empathi/UNHCR
+:UNHCR rdf:type owl:Class ;
+       rdfs:subClassOf :United_Nation ;
+       rdfs:label "United Nations High Commission for Refugees"^^rdfs:Literal ;
+       <http://www.w3.org/2004/02/skos/core#definition> "The United Nations High Commission for Refugees (UNHCR) provides international protection and assistance for refugees, stateless persons and internally displaced persons, particularly in conflict-related emergencies."^^xsd:string .
+
+
+###  https://w3id.org/empathi/UNICEF
+:UNICEF rdf:type owl:Class ;
+        rdfs:subClassOf :United_Nation ;
+        rdfs:label "United Nations Children’s Emergency Fund"^^rdfs:Literal ;
+        <http://www.w3.org/2004/02/skos/core#definition> "The United Nations Children’s Emergency Fund (UNICEF) works to uphold children’s rights, survival, development and protection by intervening in health, education, water, sanitation, hygiene and protection."^^xsd:string .
+
+
+###  https://w3id.org/empathi/Unavailable
+:Unavailable rdf:type owl:Class ;
+             rdfs:subClassOf :Status ;
+             rdfs:label "inaccessible"^^rdfs:Literal ,
+                        "inapproachable"^^rdfs:Literal ,
+                        "inconvenience"^^rdfs:Literal ,
+                        "inconvenient"^^rdfs:Literal ,
+                        "not possible"^^rdfs:Literal ,
+                        "unapproachable"^^rdfs:Literal ,
+                        "unattainable"^^rdfs:Literal ,
+                        "unavailable"^^rdfs:Literal ,
+                        "unobtainable"^^rdfs:Literal ,
+                        "unreachable"^^rdfs:Literal ;
+             <http://www.w3.org/2004/02/skos/core#definition> "not available or accessible or at hand"^^xsd:string .
+
+
+###  https://w3id.org/empathi/United_Nation
+:United_Nation rdf:type owl:Class ;
+               rdfs:subClassOf :Organization ;
+               rdfs:label "united nations"^^rdfs:Literal ;
+               <http://www.w3.org/2004/02/skos/core#definition> "United Nations is an international organization, with headquarters in New York City, formed to promote international peace, security, and cooperation under the terms of the charter signed by 51 founding countries in San Francisco in 1945"^^xsd:string .
+
+
+###  https://w3id.org/empathi/Victim
+:Victim rdf:type owl:Class ;
+        rdfs:subClassOf :People ;
+        rdfs:label "homeless"^^rdfs:Literal ,
+                   "victim"^^rdfs:Literal .
+
+
+###  https://w3id.org/empathi/Video
+:Video rdf:type owl:Class ;
+       rdfs:subClassOf :Modality_of_data ;
+       rdfs:label "Video"^^rdfs:Literal ,
+                  "avi"^^rdfs:Literal ,
+                  "flv"^^rdfs:Literal ,
+                  "mov"^^rdfs:Literal ,
+                  "mp4"^^rdfs:Literal ,
+                  "television"^^rdfs:Literal ,
+                  "video capturing"^^rdfs:Literal ,
+                  "video recording"^^rdfs:Literal ,
+                  "wmv"^^rdfs:Literal ;
+       <http://www.w3.org/2004/02/skos/core#definition> "Video is pertaining to or employed in the transmission or reception of television pictures."^^xsd:string .
+
+
+###  https://w3id.org/empathi/Volcano
+:Volcano rdf:type owl:Class ;
+         rdfs:subClassOf :Hazard_Type ;
+         rdfs:label "ash fall"^^rdfs:Literal ,
+                    "lahar"^^rdfs:Literal ,
+                    "lava flow"^^rdfs:Literal ,
+                    "pyroclastic flow"^^rdfs:Literal ,
+                    "volcanic activity"^^rdfs:Literal ,
+                    "volcano"^^rdfs:Literal ,
+                    "volcano disaster"^^rdfs:Literal ;
+         <http://www.w3.org/2004/02/skos/core#definition> "a mountain or hill, typically conical, having a crater or vent through which lava, rock fragments, hot vapor, and gas are being or have been erupted from the earth's crust."^^xsd:string .
+
+
+###  https://w3id.org/empathi/Volunteer
+:Volunteer rdf:type owl:Class ;
+           rdfs:subClassOf :People ;
+           rdfs:label "caregiver"^^rdfs:Literal ,
+                      "guide"^^rdfs:Literal ,
+                      "helper"^^rdfs:Literal ,
+                      "participant"^^rdfs:Literal ,
+                      "subject"^^rdfs:Literal ,
+                      "supporter"^^rdfs:Literal ;
+           <http://www.w3.org/2004/02/skos/core#definition> "a volunteer is a person who stand for providing help to community affected by a catastrophic incident without an intention of financial gain."^^xsd:string .
+
+
+###  https://w3id.org/empathi/Volunteer_Support
+:Volunteer_Support rdf:type owl:Class ;
+                   rdfs:subClassOf <http://purl.org/dc/dcmitype/Event> ;
+                   rdfs:label "*rescuers"^^rdfs:Literal ,
+                              "assist people"^^rdfs:Literal ,
+                              "donation help"^^rdfs:Literal ,
+                              "help flood"^^rdfs:Literal ,
+                              "help text"^^rdfs:Literal ,
+                              "help tornado"^^rdfs:Literal ,
+                              "help victims"^^rdfs:Literal ,
+                              "make donation"^^rdfs:Literal ,
+                              "please join"^^rdfs:Literal ,
+                              "responders"^^rdfs:Literal ,
+                              "volunteer or professional services needed or offered"^^rdfs:Literal ,
+                              "volunteer support"^^rdfs:Literal ,
+                              "volunteers"^^rdfs:Literal ,
+                              "want help"^^rdfs:Literal ;
+                   <http://www.w3.org/2004/02/skos/core#definition> "In a disaster such as Hurricane Sandy, the efforts of volunteers are critical to the recovery. While the volunteer efforts that extend across the state may appear unrelated, in reality, they are all part of a collaborative mission, participating in a massive team effort to assist survivors of disaster (e.g. Hurricane Sandy) in their transition to long term recovery."^^xsd:string .
+
+
+###  https://w3id.org/empathi/WFP
+:WFP rdf:type owl:Class ;
+     rdfs:subClassOf :United_Nation ;
+     rdfs:label "World Food Programme"^^rdfs:Literal ;
+     <http://www.w3.org/2004/02/skos/core#definition> "The World Food Programme (WFP) is the principle supplier of relief food aid."^^xsd:string .
+
+
+###  https://w3id.org/empathi/WHO
+:WHO rdf:type owl:Class ;
+     rdfs:subClassOf :United_Nation ;
+     rdfs:label "World Health Organization"^^rdfs:Literal ;
+     <http://www.w3.org/2004/02/skos/core#definition> "The World Health Organization (WHO) provides global public health leadership by setting standards, monitoring health trends, and providing direction on emergency health issues. WHO’s role is to reduce avoidable loss of life and the burden of disease and disability."^^xsd:string .
+
+
+###  https://w3id.org/empathi/Water
+:Water rdf:type owl:Class ;
+       rdfs:subClassOf :Facility ;
+       rdfs:label "supplies water"^^rdfs:Literal ,
+                  "water"^^rdfs:Literal ;
+       <http://www.w3.org/2004/02/skos/core#definition> "Safe water for drinking, cooking, and personal hygiene includes bottled, boiled, or treated water. Your state, local, or tribal health department can make specific recommendations for boiling or treating water in your area."^^xsd:string .
+
+
+###  https://w3id.org/empathi/Weather_changes
+:Weather_changes rdf:type owl:Class ;
+                 rdfs:subClassOf :Human_Sensing_Report ;
+                 <http://www.w3.org/2004/02/skos/core#definition> "variation in the weather condition of a place caused by the low-pressure or high-pressure region created by the rapid movement of the clouds leading sudden change in the climate and affect human health. For example heat wave, cold wave, flurry, chill winds"^^xsd:string .
+
+
+###  https://w3id.org/empathi/Winterstorm
+:Winterstorm rdf:type owl:Class ;
+             rdfs:subClassOf :Hazard_Type ;
+             rdfs:label "blizzard"^^rdfs:Literal ,
+                        "cold wave"^^rdfs:Literal ,
+                        "freeze"^^rdfs:Literal ,
+                        "frost"^^rdfs:Literal ,
+                        "hail storm"^^rdfs:Literal ,
+                        "heavy snow"^^rdfs:Literal ,
+                        "ice jam flood"^^rdfs:Literal ;
+             <http://www.w3.org/2004/02/skos/core#definition> "A period of abnormally cold weather. Typically a cold wave lasts two or more days and may be aggravated by high winds. The exact temperature criteria for what constitutes a cold wave vary by location."^^xsd:string .
+
+
+###  https://w3id.org/empathi/Woman_Speciality_Care
+:Woman_Speciality_Care rdf:type owl:Class ;
+                       rdfs:subClassOf :Healthcare_Service ;
+                       <http://www.w3.org/2004/02/skos/core#definition> "speciality care centers, hospitals or clinics created in ad-hoc or pre-established providing critical health related support to women in the community of affected individuals. Services like pregnancy infection check, heart beat check, nervous system regulation, mental issues and HIV related issues."^^xsd:string .
+
+
+###  https://w3id.org/empathi/adolescent
+:adolescent rdf:type owl:Class ;
+            rdfs:subClassOf :Age_Group ;
+            rdfs:comment "An adolescent is a person aged 10 to 19 years inclusive"@en ;
+            rdfs:label "adolescent"@en .
+
+
+###  https://w3id.org/empathi/adult
+:adult rdf:type owl:Class ;
+       rdfs:subClassOf :Age_Group ;
+       rdfs:comment "An adult is a person older than 19 years of age unless national law defines a person as being an adult at an earlier age"@en ;
+       rdfs:label "adult"@en .
+
+
+###  https://w3id.org/empathi/benefit_fraud
+:benefit_fraud rdf:type owl:Class ;
+               rdfs:subClassOf :Criminal_Activity ;
+               rdfs:label "*toll"^^rdfs:Literal ,
+                          "benefit fraud"^^rdfs:Literal ,
+                          "levy"^^rdfs:Literal ,
+                          "toll rises"^^rdfs:Literal ;
+               <http://www.w3.org/2004/02/skos/core#definition> "Fraud also goes up in the wake of disasters — especially instances where people who are not entitled to help apply for and obtain benefits intended for disaster survivors. There is no universal protocol for the distribution of such benefits, so some nonprofit groups and public agencies may be more affected by fraudulent claims than others."^^xsd:string .
+
+
+###  https://w3id.org/empathi/burglary
+:burglary rdf:type owl:Class ;
+          rdfs:subClassOf :Criminal_Activity ;
+          rdfs:label "burglary"^^rdfs:Literal ;
+          <http://www.w3.org/2004/02/skos/core#definition> "“Burglaries” tend to be defined in fairly standard ways, allowing for comparisons across disasters and between routine periods and times of disaster. When burglary statistics are used as a proxy, researchers find that prior socioeconomic conditions are associated with burglary rates in the immediate wake of the disaster."^^xsd:string .
+
+
+###  https://w3id.org/empathi/cb_radio
+:cb_radio rdf:type owl:Class ;
+          rdfs:subClassOf :Radio ;
+          rdfs:label "C.B. Radio"^^rdfs:Literal ;
+          <http://www.w3.org/2004/02/skos/core#definition> "During a localized disaster, you should be able to make contact within a 20 – 30 mile radius. This makes the CB Radio a great way to coordinate with friends and family during localized disasters."^^xsd:string .
+
+
+###  https://w3id.org/empathi/cellphone
+:cellphone rdf:type owl:Class ;
+           rdfs:subClassOf :Phone ;
+           rdfs:label "cellphone"^^rdfs:Literal ;
+           <http://www.w3.org/2004/02/skos/core#definition> "cellphone is the most common way of communicating during the disaster because every individual has a cellphone."^^xsd:string .
+
+
+###  https://w3id.org/empathi/child
+:child rdf:type owl:Class ;
+       rdfs:subClassOf :Age_Group ;
+       rdfs:comment "A child is a person 19 years or younger unless national law defines a person to be an adult at an earlier age"@en ;
+       rdfs:label "child"@en .
+
+
+###  https://w3id.org/empathi/email
+:email rdf:type owl:Class ;
+       rdfs:subClassOf :Internet .
+
+
+###  https://w3id.org/empathi/gender_violence
+:gender_violence rdf:type owl:Class ;
+                 rdfs:subClassOf :Criminal_Activity ;
+                 rdfs:label "gender violence"^^rdfs:Literal ;
+                 <http://www.w3.org/2004/02/skos/core#definition> "gendered violence is defined by rape and sexual assaults following disasters."^^xsd:string .
+
+
+###  https://w3id.org/empathi/ham_radio
+:ham_radio rdf:type owl:Class ;
+           rdfs:subClassOf :Radio ;
+           rdfs:label "ham_radio"^^rdfs:Literal ;
+           <http://www.w3.org/2004/02/skos/core#definition> "The HAM radio has played an integral role in every disaster this nation has faced for over 100 years. HAM will remain functional even when modern communication devices become worthless. The seemingly old-fashioned devices are extremely reliable and allow users to connect with the outside world when Internet access, cell towers, and phone land lines are no longer functional."^^xsd:string .
+
+
+###  https://w3id.org/empathi/logistic
+:logistic rdf:type owl:Class ;
+          rdfs:subClassOf :Humanitarian_Event ;
+          rdfs:label "humanitarian logistics"^^rdfs:Literal ;
+          <http://www.w3.org/2004/02/skos/core#definition> "Humanitarian logistics is a branch of logistics which specializes in organizing the delivery and warehousing of supplies during natural disasters or complex emergencies to the affected area and people."^^xsd:string .
+
+
+###  https://w3id.org/empathi/missing_people
+:missing_people rdf:type owl:Class ;
+                rdfs:subClassOf :AffectedPopulation ;
+                rdfs:label "missing people"^^rdfs:Literal ,
+                           "suspect dead"^^rdfs:Literal ,
+                           "victims lost"^^rdfs:Literal ;
+                <http://www.w3.org/2004/02/skos/core#definition> "a missing person is someone not in contact with his or her family and friends due to a natural disaster."^^xsd:string ,
+                                                                 "missing"^^xsd:string .
+
+
+###  https://w3id.org/empathi/phonebooth
+:phonebooth rdf:type owl:Class ;
+            rdfs:subClassOf :Phone ;
+            rdfs:label "phonebooth"^^rdfs:Literal ;
+            <http://www.w3.org/2004/02/skos/core#definition> "A phone booth is a place in a station, hotel, or other public building where there is a public telephone."^^xsd:string .
+
+
+###  https://w3id.org/empathi/prayer
+:prayer rdf:type owl:Class ;
+        rdfs:subClassOf :Humanitarian_Event ;
+        rdfs:label "*send prayers"^^rdfs:Literal ,
+                   "heart prayers"^^rdfs:Literal ,
+                   "heart praying"^^rdfs:Literal ,
+                   "join praying"^^rdfs:Literal ,
+                   "love prayers"^^rdfs:Literal ,
+                   "prayers"^^rdfs:Literal ,
+                   "prayers affected"^^rdfs:Literal ,
+                   "prayers city"^^rdfs:Literal ,
+                   "prayers families"^^rdfs:Literal ,
+                   "prayers involved"^^rdfs:Literal ,
+                   "prayers people"^^rdfs:Literal ,
+                   "prayers tonight"^^rdfs:Literal ,
+                   "prayers victims"^^rdfs:Literal ,
+                   "praying"^^rdfs:Literal ,
+                   "praying affected"^^rdfs:Literal ,
+                   "praying community"^^rdfs:Literal ,
+                   "praying families"^^rdfs:Literal ,
+                   "praying victims"^^rdfs:Literal ,
+                   "saddened loss"^^rdfs:Literal ,
+                   "spritual"^^rdfs:Literal ,
+                   "stay strong"^^rdfs:Literal ,
+                   "thoughts prayers"^^rdfs:Literal ,
+                   "thoughts victims"^^rdfs:Literal ;
+        <http://www.w3.org/2004/02/skos/core#definition> "sprituality is defined as the quality of being concerned with the human spirit or soul as opposed to material or physical things."^^xsd:string .
+
+
+###  https://w3id.org/empathi/price_gouging
+:price_gouging rdf:type owl:Class ;
+               rdfs:subClassOf :benefit_fraud ;
+               rdfs:label "price_gouging"^^rdfs:Literal ;
+               <http://www.w3.org/2004/02/skos/core#definition> "Price Gouging is a pejorative term referring to a situation in which a seller prices goods or commodities much higher than is considered reasonable or fair."^^xsd:string .
+
+
+###  https://w3id.org/empathi/satellite_phone
+:satellite_phone rdf:type owl:Class ;
+                 rdfs:subClassOf :Phone ;
+                 rdfs:label "satellite_phone"^^rdfs:Literal ;
+                 <http://www.w3.org/2004/02/skos/core#definition> "Satellite phones offer a couple of advantages during a disaster. First, they don’t rely on local cell networks, so they’re less likely to be affected by an increase in call volume. Second, even if the entire local cell network goes down, your satellite phone is still going to be operational."^^xsd:string .
+
+
+###  https://w3id.org/empathi/social_media
+:social_media rdf:type owl:Class ;
+              rdfs:subClassOf :Internet ;
+              rdfs:label "social_media"^^rdfs:Literal ;
+              <http://www.w3.org/2004/02/skos/core#definition> "The use of social media like FaceBook, Twitter, and web-based connections as a method of real-time disaster communication has skyrocketed. When these systems are up and available to both victims and responders, the ability to communicate assistance, needs, resources, emergency instructions, and “real-time” situational ground reports is superior to nearly all forms of information gathering"^^xsd:string .
+
+
+###  https://w3id.org/empathi/survivor
+:survivor rdf:type owl:Class ;
+          rdfs:subClassOf :AffectedPopulation ;
+          rdfs:label "displaced, relocated, and evacuated people"^^rdfs:Literal ,
+                     "evacuees"^^rdfs:Literal ,
+                     "explosion injured"^^rdfs:Literal ,
+                     "explosion victims"^^rdfs:Literal ,
+                     "homeless"^^rdfs:Literal ,
+                     "injured"^^rdfs:Literal ,
+                     "injured explosion"^^rdfs:Literal ,
+                     "people injured"^^rdfs:Literal ,
+                     "return home"^^rdfs:Literal ,
+                     "survivor"^^rdfs:Literal ,
+                     "tornado survivor"^^rdfs:Literal ;
+          <http://www.w3.org/2004/02/skos/core#definition> "survivor is a person or group of people who survives, especially a person remaining alive after an event in which others have died."^^xsd:string .
+
+
+###  https://w3id.org/empathi/trapped_people
+:trapped_people rdf:type owl:Class ;
+                rdfs:subClassOf :AffectedPopulation ;
+                rdfs:label "explosion caught"^^rdfs:Literal ,
+                           "injured people"^^rdfs:Literal ,
+                           "people trapped"^^rdfs:Literal ,
+                           "suspect dead"^^rdfs:Literal ,
+                           "trapped people"^^rdfs:Literal ;
+                <http://www.w3.org/2004/02/skos/core#definition> "Rescuers look for \"voids\", or pockets where people may be trapped when walls collapse or where survivors may have hidden, such as under desks, in bath tubs or stairwells."^^xsd:string .
+
+
+###  https://w3id.org/empathi/#Airport_Damage
+<https://w3id.org/empathi/#Airport_Damage> rdf:type owl:Class ;
+                                           rdfs:subClassOf :Infrastructure_Damage ;
+                                           rdfs:comment "airport road closed"^^rdfs:Literal ,
+                                                        "runway blocked"^^rdfs:Literal ,
+                                                        "runway out of service"^^rdfs:Literal ,
+                                                        "runway peel off"^^rdfs:Literal ;
+                                           <http://www.w3.org/2004/02/skos/core#definition> "Closing of airport and cancellation of flight due to damage of the runway."^^xsd:string .
+
+
+###  https://w3id.org/empathi/#Education_Resource
+<https://w3id.org/empathi/#Education_Resource> rdf:type owl:Class ;
+                                               rdfs:subClassOf :Facility ;
+                                               rdfs:label "children education"^^rdfs:Literal ,
+                                                          "educate a child"^^rdfs:Literal ,
+                                                          "education facility"^^rdfs:Literal ,
+                                                          "school"^^rdfs:Literal ,
+                                                          "university"^^rdfs:Literal ;
+                                               <http://www.w3.org/2004/02/skos/core#definition> "A place created with ad-hoc or fixed infrastructure that serve as day care center, primary school, or university with a capacity to enroll students."^^xsd:string .
+
+
+###  https://w3id.org/empathi/#Forward_Message
+<https://w3id.org/empathi/#Forward_Message> rdf:type owl:Class ;
+                                            rdfs:subClassOf :Communication ;
+                                            rdfs:label "asking to forward a message"^^rdfs:Literal ,
+                                                       "asking to forward dis message"^^rdfs:Literal ;
+                                            <http://www.w3.org/2004/02/skos/core#definition> "Asking someone to foward a message to a person, family or nearby relatives when the sender has been severely affected by a disaster."^^xsd:string .
+
+
+###  https://w3id.org/empathi/#Prayer_Place
+<https://w3id.org/empathi/#Prayer_Place> rdf:type owl:Class ;
+                                         rdfs:subClassOf :Service ;
+                                         rdfs:label "Temple"^^rdfs:Literal .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  https://w3id.org/empathi/Thunderstorm
+:Thunderstorm rdf:type owl:NamedIndividual ,
+                       :Flood .
+
+
+###  https://w3id.org/empathi/crack
+:crack rdf:type owl:NamedIndividual .
+
+
+###  https://w3id.org/empathi/cracked
+:cracked rdf:type owl:NamedIndividual .
+
+
+###  https://w3id.org/empathi/cracking
+:cracking rdf:type owl:NamedIndividual .
+
+
+###  https://w3id.org/empathi/cracks
+:cracks rdf:type owl:NamedIndividual .
+
+
+###  https://w3id.org/empathi/earthquake
+:earthquake rdf:type owl:NamedIndividual .
+
+
+###  https://w3id.org/empathi/earthquakes
+:earthquakes rdf:type owl:NamedIndividual .
+
+
+###  https://w3id.org/empathi/epicenter
+:epicenter rdf:type owl:NamedIndividual ,
+                    <http://www.semanticweb.org/ontologies/2012/2/Ontology1332984013898.owl#earthquake_i> .
+
+
+###  https://w3id.org/empathi/fissure
+:fissure rdf:type owl:NamedIndividual .
+
+
+###  https://w3id.org/empathi/fissured
+:fissured rdf:type owl:NamedIndividual ;
+          rdfs:label "contaminated"^^rdfs:Literal ,
+                     "diathermanous"^^rdfs:Literal ,
+                     "emissive"^^rdfs:Literal ,
+                     "irradiated"^^rdfs:Literal ,
+                     "poisonous"^^rdfs:Literal ,
+                     "radiating"^^rdfs:Literal ,
+                     "radiation"^^rdfs:Literal ,
+                     "radio-active"^^rdfs:Literal ,
+                     "radioactive"^^rdfs:Literal ,
+                     "toxic"^^rdfs:Literal ;
+          <http://www.w3.org/2004/02/skos/core#definition> "toxic radioactive is a substance whose exposure to the human body can lead to radiation poisoning, radiation sickness, radiation toxicity causing cellular degradation."^^rdfs:Literal .
+
+
+#################################################################
+#    Annotations
+#################################################################
+
+<http://knoesis.org/hazardonto#Protection_plans> rdfs:label "emergency_excercises"^^rdfs:Literal ;
+                                                 <http://www.w3.org/2004/02/skos/core#definition> "Emergency excercise from FEMA provide tabletop exercises are designed to help an organization test a hypothetical situation, such as a natural or man-made disaster, and evaluate the groups ability to cooperate and work together, as well as test their readiness to respond."^^xsd:string .
+
+
+<http://www.w3.org/2006/time#TemporalEntity> rdfs:label "time"^^rdfs:Literal ,
+                                                        "time hurricane"^^rdfs:Literal .
+
+
+###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi

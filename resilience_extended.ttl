@@ -1,0 +1,279 @@
+@prefix : <https://cs.vu.nl/resilience/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix resil: <https://cs.vu.nl/resilience/> .
+@base <https://cs.vu.nl/resilience> .
+
+<https://cs.vu.nl/resilience> rdf:type owl:Ontology .
+
+#################################################################
+#    Classes
+#################################################################
+
+###  https://cs.vu.nl/resilience/Anthrax_attack
+resil:Anthrax_attack rdf:type owl:Class ;
+                     rdfs:subClassOf resil:Terrorist_attack .
+
+
+###  https://cs.vu.nl/resilience/Anthropic_event
+resil:Anthropic_event rdf:type owl:Class ;
+                      rdfs:subClassOf resil:Event .
+
+
+###  https://cs.vu.nl/resilience/Antibiotic_resistance
+resil:Antibiotic_resistance rdf:type owl:Class ;
+                            rdfs:subClassOf resil:Natural_event .
+
+
+###  https://cs.vu.nl/resilience/Arm_or_munition
+resil:Arm_or_munition rdf:type owl:Class ;
+                      rdfs:subClassOf resil:Event_damage_detail .
+
+
+###  https://cs.vu.nl/resilience/Bombing
+resil:Bombing rdf:type owl:Class ;
+              rdfs:subClassOf resil:Terrorist_attack .
+
+
+###  https://cs.vu.nl/resilience/Building_fire
+resil:Building_fire rdf:type owl:Class ;
+                    rdfs:subClassOf resil:Fire .
+
+
+###  https://cs.vu.nl/resilience/Clash
+resil:Clash rdf:type owl:Class ;
+            rdfs:subClassOf resil:Anthropic_event .
+
+
+###  https://cs.vu.nl/resilience/Collision
+resil:Collision rdf:type owl:Class ;
+                rdfs:subClassOf resil:Anthropic_event .
+
+
+###  https://cs.vu.nl/resilience/Cyclone
+resil:Cyclone rdf:type owl:Class ;
+              rdfs:subClassOf resil:Weather_event .
+
+
+###  https://cs.vu.nl/resilience/Debris_flow
+resil:Debris_flow rdf:type owl:Class ;
+                  rdfs:subClassOf resil:Natural_event .
+
+
+###  https://cs.vu.nl/resilience/Decomissioning
+resil:Decomissioning rdf:type owl:Class ;
+                     rdfs:subClassOf resil:Anthropic_event .
+
+
+###  https://cs.vu.nl/resilience/Drought
+resil:Drought rdf:type owl:Class ;
+              rdfs:subClassOf resil:Weather_event .
+
+
+###  https://cs.vu.nl/resilience/Dust_storm
+resil:Dust_storm rdf:type owl:Class ;
+                 rdfs:subClassOf resil:Natural_event .
+
+
+###  https://cs.vu.nl/resilience/Epidemic_disease
+resil:Epidemic_disease rdf:type owl:Class ;
+                       rdfs:subClassOf resil:Natural_event .
+
+
+###  https://cs.vu.nl/resilience/Event
+resil:Event rdf:type owl:Class .
+
+
+###  https://cs.vu.nl/resilience/Event_damage_detail
+resil:Event_damage_detail rdf:type owl:Class .
+
+
+###  https://cs.vu.nl/resilience/Explosion_in_chemical_factory
+resil:Explosion_in_chemical_factory rdf:type owl:Class ;
+                                    rdfs:subClassOf resil:Technical_fault .
+
+
+###  https://cs.vu.nl/resilience/Fire
+resil:Fire rdf:type owl:Class ;
+           rdfs:subClassOf resil:Anthropic_event .
+
+
+###  https://cs.vu.nl/resilience/Forest_fire_anthropic
+resil:Forest_fire_anthropic rdf:type owl:Class ;
+                            rdfs:subClassOf resil:Fire .
+
+
+###  https://cs.vu.nl/resilience/Forest_fire_natural
+resil:Forest_fire_natural rdf:type owl:Class ;
+                          rdfs:subClassOf resil:Natural_event .
+
+
+###  https://cs.vu.nl/resilience/Gas_distribution_interruption
+resil:Gas_distribution_interruption rdf:type owl:Class ;
+                                    rdfs:subClassOf resil:Technical_fault .
+
+
+###  https://cs.vu.nl/resilience/Geological_event
+resil:Geological_event rdf:type owl:Class ;
+                       rdfs:subClassOf resil:Natural_event .
+
+
+###  https://cs.vu.nl/resilience/Heat_wave
+resil:Heat_wave rdf:type owl:Class ;
+                rdfs:subClassOf resil:Weather_event .
+
+
+###  https://cs.vu.nl/resilience/Hurricane
+resil:Hurricane rdf:type owl:Class ;
+                rdfs:subClassOf resil:Weather_event .
+
+
+###  https://cs.vu.nl/resilience/Infrastructure_fire
+resil:Infrastructure_fire rdf:type owl:Class ;
+                          rdfs:subClassOf resil:Fire .
+
+
+###  https://cs.vu.nl/resilience/Interruption_of_electric_power_supply
+resil:Interruption_of_electric_power_supply rdf:type owl:Class ;
+                                            rdfs:subClassOf resil:Technical_fault .
+
+
+###  https://cs.vu.nl/resilience/Media_link
+resil:Media_link rdf:type owl:Class ;
+                 rdfs:subClassOf resil:Source_of_eveidence .
+
+
+###  https://cs.vu.nl/resilience/Media_url
+resil:Media_url rdf:type owl:Class ;
+                rdfs:subClassOf resil:Source_of_eveidence .
+
+
+###  https://cs.vu.nl/resilience/Natural_event
+resil:Natural_event rdf:type owl:Class ;
+                    rdfs:subClassOf resil:Event .
+
+
+###  https://cs.vu.nl/resilience/Newspaper
+resil:Newspaper rdf:type owl:Class ;
+                rdfs:subClassOf resil:Source_of_eveidence .
+
+
+###  https://cs.vu.nl/resilience/Nuclear_disaster
+resil:Nuclear_disaster rdf:type owl:Class ;
+                       rdfs:subClassOf resil:Technical_fault .
+
+
+###  https://cs.vu.nl/resilience/Online_report
+resil:Online_report rdf:type owl:Class ;
+                    rdfs:subClassOf resil:Source_of_eveidence .
+
+
+###  https://cs.vu.nl/resilience/Pharmaceuticals_in_wastewater
+resil:Pharmaceuticals_in_wastewater rdf:type owl:Class ;
+                                    rdfs:subClassOf resil:Pollution .
+
+
+###  https://cs.vu.nl/resilience/Pollution
+resil:Pollution rdf:type owl:Class ;
+                rdfs:subClassOf resil:Anthropic_event .
+
+
+###  https://cs.vu.nl/resilience/Rain_storm
+resil:Rain_storm rdf:type owl:Class ;
+                 rdfs:subClassOf resil:Weather_event .
+
+
+###  https://cs.vu.nl/resilience/Sarin_gas_attack
+resil:Sarin_gas_attack rdf:type owl:Class ;
+                       rdfs:subClassOf resil:Terrorist_attack .
+
+
+###  https://cs.vu.nl/resilience/Snow_storm
+resil:Snow_storm rdf:type owl:Class ;
+                 rdfs:subClassOf resil:Weather_event .
+
+
+###  https://cs.vu.nl/resilience/Source_of_eveidence
+resil:Source_of_eveidence rdf:type owl:Class ;
+                          rdfs:subClassOf resil:Event_damage_detail .
+
+
+###  https://cs.vu.nl/resilience/Stormwater_pollutant_event
+resil:Stormwater_pollutant_event rdf:type owl:Class ;
+                                 rdfs:subClassOf resil:Weather_event .
+
+
+###  https://cs.vu.nl/resilience/Technical_fault
+resil:Technical_fault rdf:type owl:Class ;
+                      rdfs:subClassOf resil:Anthropic_event .
+
+
+###  https://cs.vu.nl/resilience/Telecommunications_black_out
+resil:Telecommunications_black_out rdf:type owl:Class ;
+                                   rdfs:subClassOf resil:Technical_fault .
+
+
+###  https://cs.vu.nl/resilience/Terrorist_attack
+resil:Terrorist_attack rdf:type owl:Class ;
+                       rdfs:subClassOf resil:Anthropic_event .
+
+
+###  https://cs.vu.nl/resilience/Tornado
+resil:Tornado rdf:type owl:Class ;
+              rdfs:subClassOf resil:Weather_event .
+
+
+###  https://cs.vu.nl/resilience/Toxic_dust
+resil:Toxic_dust rdf:type owl:Class ;
+                 rdfs:subClassOf resil:Natural_event .
+
+
+###  https://cs.vu.nl/resilience/Tropical_storm
+resil:Tropical_storm rdf:type owl:Class ;
+                     rdfs:subClassOf resil:Weather_event .
+
+
+###  https://cs.vu.nl/resilience/Vandalism
+resil:Vandalism rdf:type owl:Class ;
+                rdfs:subClassOf resil:Anthropic_event .
+
+
+###  https://cs.vu.nl/resilience/Vehicle_bomb
+resil:Vehicle_bomb rdf:type owl:Class ;
+                   rdfs:subClassOf resil:Bombing .
+
+
+###  https://cs.vu.nl/resilience/Violence_level
+resil:Violence_level rdf:type owl:Class ;
+                     rdfs:subClassOf resil:Event_damage_detail .
+
+
+###  https://cs.vu.nl/resilience/Water_distribution_interruption
+resil:Water_distribution_interruption rdf:type owl:Class ;
+                                      rdfs:subClassOf resil:Technical_fault .
+
+
+###  https://cs.vu.nl/resilience/Water_event
+resil:Water_event rdf:type owl:Class ;
+                  rdfs:subClassOf resil:Natural_event .
+
+
+###  https://cs.vu.nl/resilience/Water_pollution
+resil:Water_pollution rdf:type owl:Class ;
+                      rdfs:subClassOf resil:Pollution .
+
+
+###  https://cs.vu.nl/resilience/Weather_event
+resil:Weather_event rdf:type owl:Class ;
+                    rdfs:subClassOf resil:Natural_event .
+
+
+###  https://cs.vu.nl/resilience/Workers_strike
+resil:Workers_strike rdf:type owl:Class ;
+                     rdfs:subClassOf resil:Anthropic_event .
+
+
+###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi

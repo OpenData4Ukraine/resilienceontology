@@ -1,0 +1,1873 @@
+@prefix void: <http://rdfs.org/ns/void#> .
+@prefix voidx: <http://rdfpro.fbk.eu/ontologies/voidx#> .
+
+<stats:Dataset> a void:Dataset ;
+	voidx:label "<stats:Dataset> (4589, 52922)" ;
+	void:entities "4589"^^<http://www.w3.org/2001/XMLSchema#long> ;
+	void:triples "52922"^^<http://www.w3.org/2001/XMLSchema#long> ;
+	voidx:tboxTriples "41754"^^<http://www.w3.org/2001/XMLSchema#long> ;
+	voidx:aboxTriples "11168"^^<http://www.w3.org/2001/XMLSchema#long> ;
+	voidx:typeTriples "96"^^<http://www.w3.org/2001/XMLSchema#long> ;
+	voidx:sameAsTriples "1"^^<http://www.w3.org/2001/XMLSchema#long> .
+
+<http://www.w3.org/2002/07/owl#Ontology> voidx:label "owl:Ontology (10)" ;
+	voidx:example """<https://saref.etsi.org/saref4bldg/>
+    dct:creator <http://purl.org/net/mpoveda>;
+    dct:creator <http://www.garcia-castro.com/foaf.rdf#me>;
+    dct:description \"This ontology extends the SAREF ontology for the building domain by defining building devices and how they are located in a building. This extension is based on the ISO 16739:2013 Industry Foundation Classes (IFC) standard for data sharing in the construction and facility management industries. The descriptions of the classes and properties extracted from IFC have been taken from the IFC documentation.\"@en;
+    dct:issued \"2020-04-13\";
+    dct:license <hhttps://forge.etsi.org/etsi-software-license>;
+    dct:modified \"2020-04-13\";
+    dct:publisher <https://www.etsi.org>;
+    dct:source <https://forge.etsi.org/rep/SAREF/saref4bldg>;
+    dct:title \"SAREF extension for building devices\"@en;
+    owl:versionIRI <https://saref.etsi.org/saref4bldg/v1.1.2/>;
+    owl:versionInfo \"v1.1.2\";
+    rdf:type owl:Ontology;
+    rdfs:comment \"Information about changes compared to version 1.1.1: \\n - Updated namespaces for compatibility with SAREF v3.\"@en;
+    vann:preferredNamespacePrefix \"s4bldg\";
+    vann:preferredNamespaceUri \"https://saref.etsi.org/saref4bldg/\".""" ;
+	voidx:globalStats <stats:Ontology> .
+
+<stats:Dataset> void:classPartition <stats:Ontology> .
+
+<stats:Ontology> a void:Dataset ;
+	voidx:label "<stats:Ontology> (10, C)" ;
+	void:class <http://www.w3.org/2002/07/owl#Ontology> ;
+	void:entities "10"^^<http://www.w3.org/2001/XMLSchema#long> ;
+	void:triples "115"^^<http://www.w3.org/2001/XMLSchema#long> ;
+	voidx:tboxTriples "24"^^<http://www.w3.org/2001/XMLSchema#long> ;
+	voidx:aboxTriples "91"^^<http://www.w3.org/2001/XMLSchema#long> ;
+	voidx:averageProperties 9.0E0 .
+
+<http://www.w3.org/2002/07/owl#ObjectProperty> voidx:label "owl:ObjectProperty (1075)" ;
+	voidx:example """rdf:type
+    rdf:type owl:ObjectProperty;
+    rdfs:comment \"Il soggetto è istanza di una classe.\"@it;
+    rdfs:comment \"The subject is an instance of a class.\"@en;
+    rdfs:domain rdfs:Resource;
+    rdfs:label \"Tipo\"@it;
+    rdfs:label \"Type\"@en;
+    rdfs:range rdfs:Class.""" ;
+	voidx:globalStats <stats:ObjectProperty> .
+
+<stats:Dataset> void:classPartition <stats:ObjectProperty> .
+
+<stats:ObjectProperty> a void:Dataset ;
+	voidx:label "<stats:ObjectProperty> (1075, C)" ;
+	void:class <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+	void:entities "1075"^^<http://www.w3.org/2001/XMLSchema#long> ;
+	void:triples "5795"^^<http://www.w3.org/2001/XMLSchema#long> ;
+	voidx:tboxTriples "2713"^^<http://www.w3.org/2001/XMLSchema#long> ;
+	voidx:aboxTriples "3082"^^<http://www.w3.org/2001/XMLSchema#long> ;
+	voidx:averageProperties 4.855813953488372E0 .
+
+<http://www.w3.org/2002/07/owl#AnnotationProperty> voidx:label "owl:AnnotationProperty (48)" ;
+	voidx:example """dc:creator
+    rdf:type owl:AnnotationProperty.""" ;
+	voidx:globalStats <stats:AnnotationProperty> .
+
+<stats:Dataset> void:classPartition <stats:AnnotationProperty> .
+
+<stats:AnnotationProperty> a void:Dataset ;
+	voidx:label "<stats:AnnotationProperty> (48, C)" ;
+	void:class <http://www.w3.org/2002/07/owl#AnnotationProperty> ;
+	void:entities "48"^^<http://www.w3.org/2001/XMLSchema#long> ;
+	void:triples "70"^^<http://www.w3.org/2001/XMLSchema#long> ;
+	voidx:tboxTriples "57"^^<http://www.w3.org/2001/XMLSchema#long> ;
+	voidx:aboxTriples "13"^^<http://www.w3.org/2001/XMLSchema#long> ;
+	voidx:averageProperties 1.3125E0 .
+
+<http://www.w3.org/2002/07/owl#DatatypeProperty> voidx:label "owl:DatatypeProperty (667)" ;
+	voidx:example """schema:description
+    rdf:type owl:DatatypeProperty;
+    rdfs:comment \"A short description of the item.\"@en;
+    rdfs:domain schema:Thing;
+    rdfs:isDefinedBy schema:Thing;
+    rdfs:label \"Description\"@en;
+    rdfs:range xs:string.""" ;
+	voidx:globalStats <stats:DatatypeProperty> .
+
+<stats:Dataset> void:classPartition <stats:DatatypeProperty> .
+
+<stats:DatatypeProperty> a void:Dataset ;
+	voidx:label "<stats:DatatypeProperty> (667, C)" ;
+	void:class <http://www.w3.org/2002/07/owl#DatatypeProperty> ;
+	void:entities "667"^^<http://www.w3.org/2001/XMLSchema#long> ;
+	void:triples "3242"^^<http://www.w3.org/2001/XMLSchema#long> ;
+	voidx:tboxTriples "1567"^^<http://www.w3.org/2001/XMLSchema#long> ;
+	voidx:aboxTriples "1675"^^<http://www.w3.org/2001/XMLSchema#long> ;
+	voidx:averageProperties 3.856071964017991E0 .
+
+<http://www.w3.org/2002/07/owl#Class> voidx:label "owl:Class (2747)" ;
+	voidx:example """dctype:Event
+    rdf:type owl:Class;
+    rdfs:comment \"An event consists of some temporal and spatial boundaries subjectively\\nimposed on the flux of reality or imagination, that we wish to treat\\nas an entity for the purposes of making statements about it. In\\nparticular, we may wish to make statements that relate people, places,\\nor things to an event.\"@en;
+    rdfs:comment \"Note that, unlike some defintions of \\\"event,\\\" this definition does not\\nspecify that an event involves a change of state, nor does it attempt\\nto distinguish events from processes or states.\"@en;
+    rdfs:isDefinedBy lode:;
+    rdfs:label \"disaster event\"^^rdfs:Literal;
+    rdfs:label \"earthquake hit\"^^rdfs:Literal;
+    rdfs:label \"event\"@en;
+    rdfs:label \"events\"^^rdfs:Literal;
+    rdfs:label \"flood hit\"^^rdfs:Literal;
+    rdfs:label \"hurricane hit\"^^rdfs:Literal;
+    rdfs:label \"investigation\"^^rdfs:Literal;
+    skos:definition \"\\\"Something that happened,\\\" as might be reported in a news article or\\nexplained by a historian.\"@en.""" ;
+	voidx:globalStats <stats:Class> .
+
+<stats:Dataset> void:classPartition <stats:Class> .
+
+<stats:Class> a void:Dataset ;
+	voidx:label "<stats:Class> (2747, C)" ;
+	void:class <http://www.w3.org/2002/07/owl#Class> ;
+	void:entities "2747"^^<http://www.w3.org/2001/XMLSchema#long> ;
+	void:triples "19735"^^<http://www.w3.org/2001/XMLSchema#long> ;
+	voidx:tboxTriples "13533"^^<http://www.w3.org/2001/XMLSchema#long> ;
+	voidx:aboxTriples "6202"^^<http://www.w3.org/2001/XMLSchema#long> ;
+	voidx:averageProperties 3.5668001456133966E0 .
+
+<http://www.w3.org/2000/01/rdf-schema#Datatype> voidx:label "rdfs:Datatype (3)" ;
+	voidx:example """xs:string
+    rdf:type rdfs:Datatype.""" ;
+	voidx:globalStats <stats:Datatype> .
+
+<stats:Dataset> void:classPartition <stats:Datatype> .
+
+<stats:Datatype> a void:Dataset ;
+	voidx:label "<stats:Datatype> (3, C)" ;
+	void:class <http://www.w3.org/2000/01/rdf-schema#Datatype> ;
+	void:entities "3"^^<http://www.w3.org/2001/XMLSchema#long> ;
+	void:triples "3"^^<http://www.w3.org/2001/XMLSchema#long> ;
+	voidx:tboxTriples "3"^^<http://www.w3.org/2001/XMLSchema#long> ;
+	voidx:averageProperties 1.0E0 .
+
+<http://www.w3.org/2002/07/owl#NamedIndividual> voidx:label "owl:NamedIndividual (48)" ;
+	voidx:example """<http://www.semanticweb.org/nicolas/ontologies/2014/9/Smart_CityLocal_Wiki>
+    rdf:type <http://www.co-ode.org/ontologies/ont.owl#Application>;
+    rdf:type owl:NamedIndividual;
+    rdfs:comment \"http://icos.urenio.org/applications/localwiki/\\n\\nA grassroots effort to collect, share and open the local knowledge. Anyone can contribute and learn about local government, the neighbourhood, streets, social movements, social services, schools, and other facets of the community life.\"^^xs:anyURI.""" ;
+	voidx:globalStats <stats:NamedIndividual> .
+
+<stats:Dataset> void:classPartition <stats:NamedIndividual> .
+
+<stats:NamedIndividual> a void:Dataset ;
+	voidx:label "<stats:NamedIndividual> (48, C)" ;
+	void:class <http://www.w3.org/2002/07/owl#NamedIndividual> ;
+	void:entities "48"^^<http://www.w3.org/2001/XMLSchema#long> ;
+	void:triples "128"^^<http://www.w3.org/2001/XMLSchema#long> ;
+	voidx:aboxTriples "128"^^<http://www.w3.org/2001/XMLSchema#long> ;
+	voidx:typeTriples "91"^^<http://www.w3.org/2001/XMLSchema#long> ;
+	voidx:sameAsTriples "1"^^<http://www.w3.org/2001/XMLSchema#long> ;
+	voidx:averageProperties 1.5833333333333333E0 .
+
+<http://www.co-ode.org/ontologies/ont.owl#Application> voidx:label "<http://www.co-ode.org/ontologies/ont.owl#Application> (24)" ;
+	voidx:example """<http://www.semanticweb.org/nicolas/ontologies/2014/9/Smart_CityLocal_Wiki>
+    rdf:type <http://www.co-ode.org/ontologies/ont.owl#Application>;
+    rdf:type owl:NamedIndividual;
+    rdfs:comment \"http://icos.urenio.org/applications/localwiki/\\n\\nA grassroots effort to collect, share and open the local knowledge. Anyone can contribute and learn about local government, the neighbourhood, streets, social movements, social services, schools, and other facets of the community life.\"^^xs:anyURI.""" ;
+	voidx:globalStats <stats:Application> .
+
+<stats:Dataset> void:classPartition <stats:Application> .
+
+<stats:Application> a void:Dataset ;
+	voidx:label "<stats:Application> (24, C)" ;
+	void:class <http://www.co-ode.org/ontologies/ont.owl#Application> ;
+	void:entities "24"^^<http://www.w3.org/2001/XMLSchema#long> ;
+	void:triples "73"^^<http://www.w3.org/2001/XMLSchema#long> ;
+	voidx:aboxTriples "73"^^<http://www.w3.org/2001/XMLSchema#long> ;
+	voidx:typeTriples "49"^^<http://www.w3.org/2001/XMLSchema#long> ;
+	voidx:averageProperties 2.0E0 .
+
+<http://www.semanticweb.org/nicolas/ontologies/2014/9/Smart_CityTransportation> voidx:label "<http://www.semanticweb.org/nicolas/ontologies/2014/9/Smart_CityTransportation> (1)" ;
+	voidx:example """<http://www.semanticweb.org/nicolas/ontologies/2014/9/Smart_CityOpen_Trip_Planner>
+    rdf:type <http://www.co-ode.org/ontologies/ont.owl#Application>;
+    rdf:type <http://www.semanticweb.org/nicolas/ontologies/2014/9/Smart_CityTransportation>;
+    rdfs:comment \"http://www.opentripplanner.org/\\n\\nA multi-modal trip planner allows transit schedule, travel, and map information. OTP gives detailed step-by-step directions alongside an interactive map showing the route, what services the rider will use, and where they will make transfers. Riders can click on stations on the map to learn more or zoom in to see where they are going.\"^^xs:anyURI.""" ;
+	voidx:globalStats <stats:Smart_CityTransportation> .
+
+<stats:Dataset> void:classPartition <stats:Smart_CityTransportation> .
+
+<stats:Smart_CityTransportation> a void:Dataset ;
+	voidx:label "<stats:Smart_CityTransportation> (1, C)" ;
+	void:class <http://www.semanticweb.org/nicolas/ontologies/2014/9/Smart_CityTransportation> ;
+	void:entities "1"^^<http://www.w3.org/2001/XMLSchema#long> ;
+	void:triples "4"^^<http://www.w3.org/2001/XMLSchema#long> ;
+	voidx:aboxTriples "4"^^<http://www.w3.org/2001/XMLSchema#long> ;
+	voidx:typeTriples "3"^^<http://www.w3.org/2001/XMLSchema#long> ;
+	voidx:averageProperties 2.0E0 .
+
+<http://www.w3.org/2002/07/owl#FunctionalProperty> voidx:label "owl:FunctionalProperty (29)" ;
+	voidx:example """<http://www.semanticweb.org/nicolas/ontologies/2014/9/Smart_Citycontains>
+    rdf:type owl:AsymmetricProperty;
+    rdf:type owl:FunctionalProperty;
+    rdfs:domain <http://www.co-ode.org/ontologies/ont.owl#Ecosystem>;
+    rdfs:domain <http://www.co-ode.org/ontologies/ont.owl#Subsystem>;
+    rdfs:range <http://www.semanticweb.org/nicolas/ontologies/2014/9/Smart_CityData>.""" ;
+	voidx:globalStats <stats:FunctionalProperty> .
+
+<stats:Dataset> void:classPartition <stats:FunctionalProperty> .
+
+<stats:FunctionalProperty> a void:Dataset ;
+	voidx:label "<stats:FunctionalProperty> (29, C)" ;
+	void:class <http://www.w3.org/2002/07/owl#FunctionalProperty> ;
+	void:entities "29"^^<http://www.w3.org/2001/XMLSchema#long> ;
+	void:triples "165"^^<http://www.w3.org/2001/XMLSchema#long> ;
+	voidx:tboxTriples "162"^^<http://www.w3.org/2001/XMLSchema#long> ;
+	voidx:aboxTriples "3"^^<http://www.w3.org/2001/XMLSchema#long> ;
+	voidx:averageProperties 3.103448275862069E0 .
+
+<http://www.w3.org/2002/07/owl#AsymmetricProperty> voidx:label "owl:AsymmetricProperty (21)" ;
+	voidx:example """<http://www.semanticweb.org/nicolas/ontologies/2014/9/Smart_Citycontains>
+    rdf:type owl:AsymmetricProperty;
+    rdf:type owl:FunctionalProperty;
+    rdfs:domain <http://www.co-ode.org/ontologies/ont.owl#Ecosystem>;
+    rdfs:domain <http://www.co-ode.org/ontologies/ont.owl#Subsystem>;
+    rdfs:range <http://www.semanticweb.org/nicolas/ontologies/2014/9/Smart_CityData>.""" ;
+	voidx:globalStats <stats:AsymmetricProperty> .
+
+<stats:Dataset> void:classPartition <stats:AsymmetricProperty> .
+
+<stats:AsymmetricProperty> a void:Dataset ;
+	voidx:label "<stats:AsymmetricProperty> (21, C)" ;
+	void:class <http://www.w3.org/2002/07/owl#AsymmetricProperty> ;
+	void:entities "21"^^<http://www.w3.org/2001/XMLSchema#long> ;
+	void:triples "125"^^<http://www.w3.org/2001/XMLSchema#long> ;
+	voidx:tboxTriples "125"^^<http://www.w3.org/2001/XMLSchema#long> ;
+	voidx:averageProperties 3.0476190476190474E0 .
+
+<http://www.semanticweb.org/ontologies/2012/2/Ontology1332984013898.owl#earthquake_i> voidx:label "<http://www.semanticweb.org/ontologies/2012/2/Ontology1332984013898.owl#earthquake_i> (1)" ;
+	voidx:example """<https://w3id.org/empathi/epicenter>
+    rdf:type <http://www.semanticweb.org/ontologies/2012/2/Ontology1332984013898.owl#earthquake_i>.""" ;
+	voidx:globalStats <stats:earthquake_i> .
+
+<stats:Dataset> void:classPartition <stats:earthquake_i> .
+
+<stats:earthquake_i> a void:Dataset ;
+	voidx:label "<stats:earthquake_i> (1, C)" ;
+	void:class <http://www.semanticweb.org/ontologies/2012/2/Ontology1332984013898.owl#earthquake_i> ;
+	void:entities "1"^^<http://www.w3.org/2001/XMLSchema#long> ;
+	void:triples "2"^^<http://www.w3.org/2001/XMLSchema#long> ;
+	voidx:aboxTriples "2"^^<http://www.w3.org/2001/XMLSchema#long> ;
+	voidx:typeTriples "2"^^<http://www.w3.org/2001/XMLSchema#long> ;
+	voidx:averageProperties 1.0E0 .
+
+<http://www.w3.org/2002/07/owl#TransitiveProperty> voidx:label "owl:TransitiveProperty (22)" ;
+	voidx:example """<https://saref.etsi.org/saref4bldg/contains>
+    owl:inverseOf <https://saref.etsi.org/saref4bldg/isContainedIn>;
+    rdf:type owl:TransitiveProperty;
+    rdfs:comment \"A relation between a physical space and the objects located in such space.\"@en;
+    rdfs:label \"contains\"@en.""" ;
+	voidx:globalStats <stats:TransitiveProperty> .
+
+<stats:Dataset> void:classPartition <stats:TransitiveProperty> .
+
+<stats:TransitiveProperty> a void:Dataset ;
+	voidx:label "<stats:TransitiveProperty> (22, C)" ;
+	void:class <http://www.w3.org/2002/07/owl#TransitiveProperty> ;
+	void:entities "22"^^<http://www.w3.org/2001/XMLSchema#long> ;
+	void:triples "75"^^<http://www.w3.org/2001/XMLSchema#long> ;
+	voidx:tboxTriples "67"^^<http://www.w3.org/2001/XMLSchema#long> ;
+	voidx:aboxTriples "8"^^<http://www.w3.org/2001/XMLSchema#long> ;
+	voidx:averageProperties 2.409090909090909E0 .
+
+<http://www.w3.org/2002/07/owl#SymmetricProperty> voidx:label "owl:SymmetricProperty (6)" ;
+	voidx:example """<http://www.semanticweb.org/nicolas/ontologies/2014/9/Smart_Citydefines>
+    rdf:type owl:SymmetricProperty;
+    rdfs:domain <http://www.semanticweb.org/nicolas/ontologies/2014/9/Smart_CityeServiceInnovation>;
+    rdfs:range <http://www.semanticweb.org/nicolas/ontologies/2014/9/Smart_CityFunction>.""" ;
+	voidx:globalStats <stats:SymmetricProperty> .
+
+<stats:Dataset> void:classPartition <stats:SymmetricProperty> .
+
+<stats:SymmetricProperty> a void:Dataset ;
+	voidx:label "<stats:SymmetricProperty> (6, C)" ;
+	void:class <http://www.w3.org/2002/07/owl#SymmetricProperty> ;
+	void:entities "6"^^<http://www.w3.org/2001/XMLSchema#long> ;
+	void:triples "30"^^<http://www.w3.org/2001/XMLSchema#long> ;
+	voidx:tboxTriples "30"^^<http://www.w3.org/2001/XMLSchema#long> ;
+	voidx:averageProperties 3.0E0 .
+
+<http://www.co-ode.org/ontologies/ont.owl#UrbanOperatingSystem> voidx:label "<http://www.co-ode.org/ontologies/ont.owl#UrbanOperatingSystem> (1)" ;
+	voidx:example """<http://www.semanticweb.org/nicolas/ontologies/2014/9/Smart_CityPlanIT_OS>
+    rdf:type <http://www.co-ode.org/ontologies/ont.owl#UrbanOperatingSystem>;
+    rdfs:comment \"http://living-planit.com/UOS_overview.htm\\n\\nThe PlanIT Operating System™ or PlanIT OS™ is a standards based middleware product that provides real time sensing, control, spatial analytics, data integration, security, support and provisioning of ubiquitous context relevant applications for the Internet of Things. The PlanIT OS™ provides the infrastructure for solutions across a broad range of vertical markets from manufacturing through mining exploration.\"^^xs:anyURI.""" ;
+	voidx:globalStats <stats:UrbanOperatingSystem> .
+
+<stats:Dataset> void:classPartition <stats:UrbanOperatingSystem> .
+
+<stats:UrbanOperatingSystem> a void:Dataset ;
+	voidx:label "<stats:UrbanOperatingSystem> (1, C)" ;
+	void:class <http://www.co-ode.org/ontologies/ont.owl#UrbanOperatingSystem> ;
+	void:entities "1"^^<http://www.w3.org/2001/XMLSchema#long> ;
+	void:triples "3"^^<http://www.w3.org/2001/XMLSchema#long> ;
+	voidx:aboxTriples "3"^^<http://www.w3.org/2001/XMLSchema#long> ;
+	voidx:typeTriples "2"^^<http://www.w3.org/2001/XMLSchema#long> ;
+	voidx:averageProperties 2.0E0 .
+
+<http://www.semanticweb.org/nicolas/ontologies/2014/9/Smart_CityCMS> voidx:label "<http://www.semanticweb.org/nicolas/ontologies/2014/9/Smart_CityCMS> (2)" ;
+	voidx:example """<http://www.semanticweb.org/nicolas/ontologies/2014/9/Smart_CityJoomla>
+    owl:sameAs <http://www.semanticweb.org/nicolas/ontologies/2014/9/Smart_CityWordPress>;
+    rdf:type <http://www.semanticweb.org/nicolas/ontologies/2014/9/Smart_CityCMS>;
+    rdf:type <http://www.semanticweb.org/nicolas/ontologies/2014/9/Smart_CityPlatform>.""" ;
+	voidx:globalStats <stats:Smart_CityCMS> .
+
+<stats:Dataset> void:classPartition <stats:Smart_CityCMS> .
+
+<stats:Smart_CityCMS> a void:Dataset ;
+	voidx:label "<stats:Smart_CityCMS> (2, C)" ;
+	void:class <http://www.semanticweb.org/nicolas/ontologies/2014/9/Smart_CityCMS> ;
+	void:entities "2"^^<http://www.w3.org/2001/XMLSchema#long> ;
+	void:triples "7"^^<http://www.w3.org/2001/XMLSchema#long> ;
+	voidx:aboxTriples "7"^^<http://www.w3.org/2001/XMLSchema#long> ;
+	voidx:typeTriples "6"^^<http://www.w3.org/2001/XMLSchema#long> ;
+	voidx:sameAsTriples "1"^^<http://www.w3.org/2001/XMLSchema#long> ;
+	voidx:averageProperties 1.5E0 .
+
+<http://www.semanticweb.org/nicolas/ontologies/2014/9/Smart_CityPlatform> voidx:label "<http://www.semanticweb.org/nicolas/ontologies/2014/9/Smart_CityPlatform> (2)" ;
+	voidx:example """<http://www.semanticweb.org/nicolas/ontologies/2014/9/Smart_CityJoomla>
+    owl:sameAs <http://www.semanticweb.org/nicolas/ontologies/2014/9/Smart_CityWordPress>;
+    rdf:type <http://www.semanticweb.org/nicolas/ontologies/2014/9/Smart_CityCMS>;
+    rdf:type <http://www.semanticweb.org/nicolas/ontologies/2014/9/Smart_CityPlatform>.""" ;
+	voidx:globalStats <stats:Smart_CityPlatform> .
+
+<stats:Dataset> void:classPartition <stats:Smart_CityPlatform> .
+
+<stats:Smart_CityPlatform> a void:Dataset ;
+	voidx:label "<stats:Smart_CityPlatform> (2, C)" ;
+	void:class <http://www.semanticweb.org/nicolas/ontologies/2014/9/Smart_CityPlatform> ;
+	void:entities "2"^^<http://www.w3.org/2001/XMLSchema#long> ;
+	void:triples "7"^^<http://www.w3.org/2001/XMLSchema#long> ;
+	voidx:aboxTriples "7"^^<http://www.w3.org/2001/XMLSchema#long> ;
+	voidx:typeTriples "6"^^<http://www.w3.org/2001/XMLSchema#long> ;
+	voidx:sameAsTriples "1"^^<http://www.w3.org/2001/XMLSchema#long> ;
+	voidx:averageProperties 1.5E0 .
+
+<http://www.w3.org/2002/07/owl#Restriction> voidx:label "owl:Restriction (0)" ;
+	voidx:globalStats <stats:Restriction> .
+
+<stats:Dataset> void:classPartition <stats:Restriction> .
+
+<stats:Restriction> a void:Dataset ;
+	voidx:label "<stats:Restriction> (0, C)" ;
+	void:class <http://www.w3.org/2002/07/owl#Restriction> ;
+	void:triples "22733"^^<http://www.w3.org/2001/XMLSchema#long> ;
+	voidx:tboxTriples "22733"^^<http://www.w3.org/2001/XMLSchema#long> .
+
+<http://www.disit.org/km4city/schema#WasteType> voidx:label "<http://www.disit.org/km4city/schema#WasteType> (10)" ;
+	voidx:example """<http://www.disit.org/km4city/schema#anyWaste>
+    rdf:type <http://www.disit.org/km4city/schema#WasteType>.""" ;
+	voidx:globalStats <stats:WasteType> .
+
+<stats:Dataset> void:classPartition <stats:WasteType> .
+
+<stats:WasteType> a void:Dataset ;
+	voidx:label "<stats:WasteType> (10, C)" ;
+	void:class <http://www.disit.org/km4city/schema#WasteType> ;
+	void:entities "10"^^<http://www.w3.org/2001/XMLSchema#long> ;
+	void:triples "20"^^<http://www.w3.org/2001/XMLSchema#long> ;
+	voidx:aboxTriples "20"^^<http://www.w3.org/2001/XMLSchema#long> ;
+	voidx:typeTriples "20"^^<http://www.w3.org/2001/XMLSchema#long> ;
+	voidx:averageProperties 1.0E0 .
+
+<https://saref.etsi.org/saref4bldg/Pump> voidx:label "<https://saref.etsi.org/saref4bldg/Pump> (1)" ;
+	voidx:example """<http://www.disit.org/saref4bldg-ext/pump1>
+    rdf:type <https://saref.etsi.org/saref4bldg/Pump>.""" ;
+	voidx:globalStats <stats:Pump> .
+
+<stats:Dataset> void:classPartition <stats:Pump> .
+
+<stats:Pump> a void:Dataset ;
+	voidx:label "<stats:Pump> (1, C)" ;
+	void:class <https://saref.etsi.org/saref4bldg/Pump> ;
+	void:entities "1"^^<http://www.w3.org/2001/XMLSchema#long> ;
+	void:triples "2"^^<http://www.w3.org/2001/XMLSchema#long> ;
+	voidx:aboxTriples "2"^^<http://www.w3.org/2001/XMLSchema#long> ;
+	voidx:typeTriples "2"^^<http://www.w3.org/2001/XMLSchema#long> ;
+	voidx:averageProperties 1.0E0 .
+
+<http://www.w3.org/1999/02/22-rdf-syntax-ns#List> voidx:label "rdf:List (0)" ;
+	voidx:globalStats <stats:List> .
+
+<stats:Dataset> void:classPartition <stats:List> .
+
+<stats:List> a void:Dataset ;
+	voidx:label "<stats:List> (0, C)" ;
+	void:class <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> ;
+	void:triples "12"^^<http://www.w3.org/2001/XMLSchema#long> ;
+	voidx:tboxTriples "8"^^<http://www.w3.org/2001/XMLSchema#long> ;
+	voidx:aboxTriples "4"^^<http://www.w3.org/2001/XMLSchema#long> ;
+	voidx:typeTriples "4"^^<http://www.w3.org/2001/XMLSchema#long> .
+
+<https://w3id.org/empathi/Flood> voidx:label "<https://w3id.org/empathi/Flood> (1)" ;
+	voidx:example """<https://w3id.org/empathi/Thunderstorm>
+    rdf:type <https://w3id.org/empathi/Flood>.""" ;
+	voidx:globalStats <stats:Flood> .
+
+<stats:Dataset> void:classPartition <stats:Flood> .
+
+<stats:Flood> a void:Dataset ;
+	voidx:label "<stats:Flood> (1, C)" ;
+	void:class <https://w3id.org/empathi/Flood> ;
+	void:entities "1"^^<http://www.w3.org/2001/XMLSchema#long> ;
+	void:triples "2"^^<http://www.w3.org/2001/XMLSchema#long> ;
+	voidx:aboxTriples "2"^^<http://www.w3.org/2001/XMLSchema#long> ;
+	voidx:typeTriples "2"^^<http://www.w3.org/2001/XMLSchema#long> ;
+	voidx:averageProperties 1.0E0 .
+
+<http://www.w3.org/2002/07/owl#AllDifferent> voidx:label "owl:AllDifferent (0)" ;
+	voidx:globalStats <stats:AllDifferent> .
+
+<stats:Dataset> void:classPartition <stats:AllDifferent> .
+
+<stats:AllDifferent> a void:Dataset ;
+	voidx:label "<stats:AllDifferent> (0, C)" ;
+	void:class <http://www.w3.org/2002/07/owl#AllDifferent> ;
+	void:triples "2"^^<http://www.w3.org/2001/XMLSchema#long> ;
+	voidx:aboxTriples "2"^^<http://www.w3.org/2001/XMLSchema#long> ;
+	voidx:typeTriples "1"^^<http://www.w3.org/2001/XMLSchema#long> .
+
+<http://www.w3.org/2002/07/owl#AllDisjointClasses> voidx:label "owl:AllDisjointClasses (0)" ;
+	voidx:globalStats <stats:AllDisjointClasses> .
+
+<stats:Dataset> void:classPartition <stats:AllDisjointClasses> .
+
+<stats:AllDisjointClasses> a void:Dataset ;
+	voidx:label "<stats:AllDisjointClasses> (0, C)" ;
+	void:class <http://www.w3.org/2002/07/owl#AllDisjointClasses> ;
+	void:triples "2"^^<http://www.w3.org/2001/XMLSchema#long> ;
+	voidx:tboxTriples "2"^^<http://www.w3.org/2001/XMLSchema#long> .
+
+<http://www.w3.org/1999/02/22-rdf-syntax-ns#type> voidx:label "rdf:type (12509, P)" ;
+	voidx:example """
+    <https://saref.etsi.org/saref4bldg/> rdf:type owl:Ontology .
+    <https://w3id.org/empathi/> rdf:type owl:Ontology .
+    <http://purl.oclc.org/NET/UNIS/fiware/iot-lite#> rdf:type owl:Ontology .""" ;
+	voidx:globalStats <stats:type> .
+
+<stats:Dataset> void:propertyPartition <stats:type> .
+
+<stats:type> a void:Dataset ;
+	voidx:label "<stats:type> (12509, P)" ;
+	void:property <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> ;
+	void:properties "1"^^<http://www.w3.org/2001/XMLSchema#int> ;
+	void:entities "4586"^^<http://www.w3.org/2001/XMLSchema#long> ;
+	void:triples "12509"^^<http://www.w3.org/2001/XMLSchema#long> ;
+	voidx:aboxTriples "12509"^^<http://www.w3.org/2001/XMLSchema#long> ;
+	voidx:typeTriples "12509"^^<http://www.w3.org/2001/XMLSchema#long> ;
+	void:distinctSubjects "12376"^^<http://www.w3.org/2001/XMLSchema#long> .
+
+<http://www.w3.org/2002/07/owl#versionIRI> voidx:label "owl:versionIRI (2, OFI)" ;
+	voidx:type <http://www.w3.org/2002/07/owl#ObjectProperty> , <http://www.w3.org/2002/07/owl#FunctionalProperty> , <http://www.w3.org/2002/07/owl#InverseFunctionalProperty> ;
+	voidx:example """
+    <https://saref.etsi.org/saref4bldg/> owl:versionIRI <https://saref.etsi.org/saref4bldg/v1.1.2/> .
+    <https://w3id.org/empathi/> owl:versionIRI <https://w3id.org/empathi/1.0/> .""" ;
+	voidx:globalStats <stats:versionIRI> .
+
+<stats:Dataset> void:propertyPartition <stats:versionIRI> .
+
+<stats:versionIRI> a void:Dataset ;
+	voidx:label "<stats:versionIRI> (2, OFI)" ;
+	void:property <http://www.w3.org/2002/07/owl#versionIRI> ;
+	void:properties "1"^^<http://www.w3.org/2001/XMLSchema#int> ;
+	void:entities "2"^^<http://www.w3.org/2001/XMLSchema#long> ;
+	void:triples "2"^^<http://www.w3.org/2001/XMLSchema#long> ;
+	voidx:tboxTriples "2"^^<http://www.w3.org/2001/XMLSchema#long> ;
+	void:distinctSubjects "2"^^<http://www.w3.org/2001/XMLSchema#long> ;
+	void:distinctObjects "2"^^<http://www.w3.org/2001/XMLSchema#long> .
+
+<http://purl.org/dc/terms/creator> voidx:label "dct:creator (9, PI)" ;
+	voidx:type <http://www.w3.org/1999/02/22-rdf-syntax-ns#Property> , <http://www.w3.org/2002/07/owl#InverseFunctionalProperty> ;
+	voidx:example """
+    <https://w3id.org/empathi/> dct:creator \"Manas Gaur\" .
+    <https://saref.etsi.org/saref4bldg/> dct:creator <http://www.garcia-castro.com/foaf.rdf#me> .
+    <https://w3id.org/empathi/> dct:creator \"Saeedah Shekharpour\" .""" ;
+	voidx:globalStats <stats:creator> .
+
+<stats:Dataset> void:propertyPartition <stats:creator> .
+
+<stats:creator> a void:Dataset ;
+	voidx:label "<stats:creator> (9, PI)" ;
+	void:property <http://purl.org/dc/terms/creator> ;
+	void:properties "1"^^<http://www.w3.org/2001/XMLSchema#int> ;
+	void:entities "5"^^<http://www.w3.org/2001/XMLSchema#long> ;
+	void:triples "9"^^<http://www.w3.org/2001/XMLSchema#long> ;
+	voidx:aboxTriples "9"^^<http://www.w3.org/2001/XMLSchema#long> ;
+	void:distinctSubjects "5"^^<http://www.w3.org/2001/XMLSchema#long> ;
+	void:distinctObjects "9"^^<http://www.w3.org/2001/XMLSchema#long> .
+
+<http://purl.org/dc/terms/license> voidx:label "dct:license (3, OFI)" ;
+	voidx:type <http://www.w3.org/2002/07/owl#ObjectProperty> , <http://www.w3.org/2002/07/owl#FunctionalProperty> , <http://www.w3.org/2002/07/owl#InverseFunctionalProperty> ;
+	voidx:example """
+    <https://saref.etsi.org/saref4bldg/> dct:license <hhttps://forge.etsi.org/etsi-software-license> .
+    <http://schema.rdfs.org/all> dct:license <http://schema.org/docs/terms.html> .
+    <http://www.disit.org/km4city/schema> dct:license <https://creativecommons.org/licenses/by-sa/3.0/it/> .""" ;
+	voidx:globalStats <stats:license> .
+
+<stats:Dataset> void:propertyPartition <stats:license> .
+
+<stats:license> a void:Dataset ;
+	voidx:label "<stats:license> (3, OFI)" ;
+	void:property <http://purl.org/dc/terms/license> ;
+	void:properties "1"^^<http://www.w3.org/2001/XMLSchema#int> ;
+	void:entities "3"^^<http://www.w3.org/2001/XMLSchema#long> ;
+	void:triples "3"^^<http://www.w3.org/2001/XMLSchema#long> ;
+	voidx:aboxTriples "3"^^<http://www.w3.org/2001/XMLSchema#long> ;
+	void:distinctSubjects "3"^^<http://www.w3.org/2001/XMLSchema#long> ;
+	void:distinctObjects "3"^^<http://www.w3.org/2001/XMLSchema#long> .
+
+<http://purl.org/vocab/vann/preferredNamespaceUri> voidx:label "vann:preferredNamespaceUri (2, DFI)" ;
+	voidx:type <http://www.w3.org/2002/07/owl#DatatypeProperty> , <http://www.w3.org/2002/07/owl#FunctionalProperty> , <http://www.w3.org/2002/07/owl#InverseFunctionalProperty> ;
+	voidx:example """
+    <https://saref.etsi.org/saref4bldg/> vann:preferredNamespaceUri \"https://saref.etsi.org/saref4bldg/\" .
+    <http://www.disit.org/km4city/schema> vann:preferredNamespaceUri \"http://www.disit.org/km4city/schema\" .""" ;
+	voidx:globalStats <stats:preferredNamespaceUri> .
+
+<stats:Dataset> void:propertyPartition <stats:preferredNamespaceUri> .
+
+<stats:preferredNamespaceUri> a void:Dataset ;
+	voidx:label "<stats:preferredNamespaceUri> (2, DFI)" ;
+	void:property <http://purl.org/vocab/vann/preferredNamespaceUri> ;
+	void:properties "1"^^<http://www.w3.org/2001/XMLSchema#int> ;
+	void:entities "2"^^<http://www.w3.org/2001/XMLSchema#long> ;
+	void:triples "2"^^<http://www.w3.org/2001/XMLSchema#long> ;
+	voidx:aboxTriples "2"^^<http://www.w3.org/2001/XMLSchema#long> ;
+	void:distinctSubjects "2"^^<http://www.w3.org/2001/XMLSchema#long> ;
+	void:distinctObjects "2"^^<http://www.w3.org/2001/XMLSchema#long> .
+
+<http://purl.org/dc/terms/title> voidx:label "dct:title (3, DFI)" ;
+	voidx:type <http://www.w3.org/2002/07/owl#DatatypeProperty> , <http://www.w3.org/2002/07/owl#FunctionalProperty> , <http://www.w3.org/2002/07/owl#InverseFunctionalProperty> ;
+	voidx:example """
+    <https://saref.etsi.org/saref4bldg/> dct:title \"SAREF extension for building devices\"@en .
+    <http://schema.rdfs.org/all> dct:title \"The schema.org terms in RDFS+OWL\"@en .
+    <http://www.disit.org/km4city/schema> dct:title \"km4city, the DISIT Knowledge Model for City and Mobility\"@en .""" ;
+	voidx:globalStats <stats:title> .
+
+<stats:Dataset> void:propertyPartition <stats:title> .
+
+<stats:title> a void:Dataset ;
+	voidx:label "<stats:title> (3, DFI)" ;
+	void:property <http://purl.org/dc/terms/title> ;
+	void:properties "1"^^<http://www.w3.org/2001/XMLSchema#int> ;
+	void:entities "3"^^<http://www.w3.org/2001/XMLSchema#long> ;
+	void:triples "3"^^<http://www.w3.org/2001/XMLSchema#long> ;
+	voidx:aboxTriples "3"^^<http://www.w3.org/2001/XMLSchema#long> ;
+	void:distinctSubjects "3"^^<http://www.w3.org/2001/XMLSchema#long> ;
+	void:distinctObjects "3"^^<http://www.w3.org/2001/XMLSchema#long> .
+
+<http://purl.org/dc/terms/publisher> voidx:label "dct:publisher (3, PFI)" ;
+	voidx:type <http://www.w3.org/1999/02/22-rdf-syntax-ns#Property> , <http://www.w3.org/2002/07/owl#FunctionalProperty> , <http://www.w3.org/2002/07/owl#InverseFunctionalProperty> ;
+	voidx:example """
+    <https://w3id.org/empathi/> dct:publisher \"Kno.e.sis\" .
+    <http://www.disit.org/km4city/schema> dct:publisher \"DISIT Lab, University of Florence,...\" .""" ;
+	voidx:globalStats <stats:publisher> .
+
+<stats:Dataset> void:propertyPartition <stats:publisher> .
+
+<stats:publisher> a void:Dataset ;
+	voidx:label "<stats:publisher> (3, PFI)" ;
+	void:property <http://purl.org/dc/terms/publisher> ;
+	void:properties "1"^^<http://www.w3.org/2001/XMLSchema#int> ;
+	void:entities "3"^^<http://www.w3.org/2001/XMLSchema#long> ;
+	void:triples "3"^^<http://www.w3.org/2001/XMLSchema#long> ;
+	voidx:aboxTriples "3"^^<http://www.w3.org/2001/XMLSchema#long> ;
+	void:distinctSubjects "3"^^<http://www.w3.org/2001/XMLSchema#long> ;
+	void:distinctObjects "3"^^<http://www.w3.org/2001/XMLSchema#long> .
+
+<http://purl.org/dc/terms/modified> voidx:label "dct:modified (1, DFI)" ;
+	voidx:type <http://www.w3.org/2002/07/owl#DatatypeProperty> , <http://www.w3.org/2002/07/owl#FunctionalProperty> , <http://www.w3.org/2002/07/owl#InverseFunctionalProperty> ;
+	voidx:example """
+    <https://saref.etsi.org/saref4bldg/> dct:modified \"2020-04-13\" .""" ;
+	voidx:globalStats <stats:modified> .
+
+<stats:Dataset> void:propertyPartition <stats:modified> .
+
+<stats:modified> a void:Dataset ;
+	voidx:label "<stats:modified> (1, DFI)" ;
+	void:property <http://purl.org/dc/terms/modified> ;
+	void:properties "1"^^<http://www.w3.org/2001/XMLSchema#int> ;
+	void:entities "1"^^<http://www.w3.org/2001/XMLSchema#long> ;
+	void:triples "1"^^<http://www.w3.org/2001/XMLSchema#long> ;
+	voidx:aboxTriples "1"^^<http://www.w3.org/2001/XMLSchema#long> ;
+	void:distinctSubjects "1"^^<http://www.w3.org/2001/XMLSchema#long> ;
+	void:distinctObjects "1"^^<http://www.w3.org/2001/XMLSchema#long> .
+
+<http://purl.org/dc/terms/issued> voidx:label "dct:issued (1, DFI)" ;
+	voidx:type <http://www.w3.org/2002/07/owl#DatatypeProperty> , <http://www.w3.org/2002/07/owl#FunctionalProperty> , <http://www.w3.org/2002/07/owl#InverseFunctionalProperty> ;
+	voidx:example """
+    <https://saref.etsi.org/saref4bldg/> dct:issued \"2020-04-13\" .""" ;
+	voidx:globalStats <stats:issued> .
+
+<stats:Dataset> void:propertyPartition <stats:issued> .
+
+<stats:issued> a void:Dataset ;
+	voidx:label "<stats:issued> (1, DFI)" ;
+	void:property <http://purl.org/dc/terms/issued> ;
+	void:properties "1"^^<http://www.w3.org/2001/XMLSchema#int> ;
+	void:entities "1"^^<http://www.w3.org/2001/XMLSchema#long> ;
+	void:triples "1"^^<http://www.w3.org/2001/XMLSchema#long> ;
+	voidx:aboxTriples "1"^^<http://www.w3.org/2001/XMLSchema#long> ;
+	void:distinctSubjects "1"^^<http://www.w3.org/2001/XMLSchema#long> ;
+	void:distinctObjects "1"^^<http://www.w3.org/2001/XMLSchema#long> .
+
+<http://purl.org/dc/terms/source> voidx:label "dct:source (2, OFI)" ;
+	voidx:type <http://www.w3.org/2002/07/owl#ObjectProperty> , <http://www.w3.org/2002/07/owl#FunctionalProperty> , <http://www.w3.org/2002/07/owl#InverseFunctionalProperty> ;
+	voidx:example """
+    <https://saref.etsi.org/saref4bldg/> dct:source <https://forge.etsi.org/rep/SAREF/saref4bldg> .
+    <http://schema.rdfs.org/all> dct:source schema: .""" ;
+	voidx:globalStats <stats:source> .
+
+<stats:Dataset> void:propertyPartition <stats:source> .
+
+<stats:source> a void:Dataset ;
+	voidx:label "<stats:source> (2, OFI)" ;
+	void:property <http://purl.org/dc/terms/source> ;
+	void:properties "1"^^<http://www.w3.org/2001/XMLSchema#int> ;
+	void:entities "2"^^<http://www.w3.org/2001/XMLSchema#long> ;
+	void:triples "2"^^<http://www.w3.org/2001/XMLSchema#long> ;
+	voidx:aboxTriples "2"^^<http://www.w3.org/2001/XMLSchema#long> ;
+	void:distinctSubjects "2"^^<http://www.w3.org/2001/XMLSchema#long> ;
+	void:distinctObjects "2"^^<http://www.w3.org/2001/XMLSchema#long> .
+
+<http://purl.org/vocab/vann/preferredNamespacePrefix> voidx:label "vann:preferredNamespacePrefix (2, DFI)" ;
+	voidx:type <http://www.w3.org/2002/07/owl#DatatypeProperty> , <http://www.w3.org/2002/07/owl#FunctionalProperty> , <http://www.w3.org/2002/07/owl#InverseFunctionalProperty> ;
+	voidx:example """
+    <https://saref.etsi.org/saref4bldg/> vann:preferredNamespacePrefix \"s4bldg\" .
+    <http://www.disit.org/km4city/schema> vann:preferredNamespacePrefix \"km4c\" .""" ;
+	voidx:globalStats <stats:preferredNamespacePrefix> .
+
+<stats:Dataset> void:propertyPartition <stats:preferredNamespacePrefix> .
+
+<stats:preferredNamespacePrefix> a void:Dataset ;
+	voidx:label "<stats:preferredNamespacePrefix> (2, DFI)" ;
+	void:property <http://purl.org/vocab/vann/preferredNamespacePrefix> ;
+	void:properties "1"^^<http://www.w3.org/2001/XMLSchema#int> ;
+	void:entities "2"^^<http://www.w3.org/2001/XMLSchema#long> ;
+	void:triples "2"^^<http://www.w3.org/2001/XMLSchema#long> ;
+	voidx:aboxTriples "2"^^<http://www.w3.org/2001/XMLSchema#long> ;
+	void:distinctSubjects "2"^^<http://www.w3.org/2001/XMLSchema#long> ;
+	void:distinctObjects "2"^^<http://www.w3.org/2001/XMLSchema#long> .
+
+<http://purl.org/dc/terms/description> voidx:label "dct:description (3, DFI)" ;
+	voidx:type <http://www.w3.org/2002/07/owl#DatatypeProperty> , <http://www.w3.org/2002/07/owl#FunctionalProperty> , <http://www.w3.org/2002/07/owl#InverseFunctionalProperty> ;
+	voidx:example """
+    <https://saref.etsi.org/saref4bldg/> dct:description \"This ontology extends the SAREF ontology for the building domain by defining building devices and how they are located in a building. This extension is based on the ISO 16739:2013 Industry Foundation Classes (IFC) standard for data sharing in the construction and facility management industries. The descriptions of the classes and properties extracted from IFC have been taken from the IFC documentation.\"@en .
+    <http://schema.rdfs.org/all> dct:description \"This is a conversion of the terms defined at schema.org to RDFS and OWL.\"@en .
+    <http://www.disit.org/km4city/schema> dct:description \"A Knowledge Model to describe a smart city, that interconnect data from infomobility service, Open Data and other source\"@en .""" ;
+	voidx:globalStats <stats:description> .
+
+<stats:Dataset> void:propertyPartition <stats:description> .
+
+<stats:description> a void:Dataset ;
+	voidx:label "<stats:description> (3, DFI)" ;
+	void:property <http://purl.org/dc/terms/description> ;
+	void:properties "1"^^<http://www.w3.org/2001/XMLSchema#int> ;
+	void:entities "3"^^<http://www.w3.org/2001/XMLSchema#long> ;
+	void:triples "3"^^<http://www.w3.org/2001/XMLSchema#long> ;
+	voidx:aboxTriples "3"^^<http://www.w3.org/2001/XMLSchema#long> ;
+	void:distinctSubjects "3"^^<http://www.w3.org/2001/XMLSchema#long> ;
+	void:distinctObjects "3"^^<http://www.w3.org/2001/XMLSchema#long> .
+
+<http://www.w3.org/2000/01/rdf-schema#comment> voidx:label "rdfs:comment (4473, D)" ;
+	voidx:type <http://www.w3.org/2002/07/owl#DatatypeProperty> ;
+	voidx:example """
+    <https://saref.etsi.org/saref4bldg/> rdfs:comment \"Information about changes compared to version 1.1.1: \\n - Updated namespaces for compatibility with SAREF v3.\"@en .
+    <http://purl.oclc.org/NET/UNIS/fiware/iot-lite#> rdfs:comment \"The IoT lite Ontology is a lightweight ontology to represent Internet of Things resources, entities and services. The lightweight allow the representation and use of IoT platforms without consuming excessive processing time when querying the ontology. However it is also a meta ontology that can be extended in order to represent IoT concepts in a more detail way in different domains.\"@en .
+    rdf:type rdfs:comment \"Il soggetto è istanza di una classe.\"@it .""" ;
+	voidx:globalStats <stats:comment> .
+
+<stats:Dataset> void:propertyPartition <stats:comment> .
+
+<stats:comment> a void:Dataset ;
+	voidx:label "<stats:comment> (4473, D)" ;
+	void:property <http://www.w3.org/2000/01/rdf-schema#comment> ;
+	void:properties "1"^^<http://www.w3.org/2001/XMLSchema#int> ;
+	void:entities "3133"^^<http://www.w3.org/2001/XMLSchema#long> ;
+	void:triples "4473"^^<http://www.w3.org/2001/XMLSchema#long> ;
+	voidx:aboxTriples "4473"^^<http://www.w3.org/2001/XMLSchema#long> ;
+	void:distinctSubjects "3133"^^<http://www.w3.org/2001/XMLSchema#long> ;
+	void:distinctObjects "3697"^^<http://www.w3.org/2001/XMLSchema#long> .
+
+<http://www.w3.org/2002/07/owl#versionInfo> voidx:label "owl:versionInfo (6, DF)" ;
+	voidx:type <http://www.w3.org/2002/07/owl#DatatypeProperty> , <http://www.w3.org/2002/07/owl#FunctionalProperty> ;
+	voidx:example """
+    <https://saref.etsi.org/saref4bldg/> owl:versionInfo \"v1.1.2\" .
+    <http://purl.oclc.org/NET/UNIS/fiware/iot-lite#> owl:versionInfo \"0.4\"@en .
+    <http://imash.leeds.ac.uk/ontologies/atu/GroundOntology.owl> owl:versionInfo \"Version 1\" .""" ;
+	voidx:globalStats <stats:versionInfo> .
+
+<stats:Dataset> void:propertyPartition <stats:versionInfo> .
+
+<stats:versionInfo> a void:Dataset ;
+	voidx:label "<stats:versionInfo> (6, DF)" ;
+	void:property <http://www.w3.org/2002/07/owl#versionInfo> ;
+	void:properties "1"^^<http://www.w3.org/2001/XMLSchema#int> ;
+	void:entities "6"^^<http://www.w3.org/2001/XMLSchema#long> ;
+	void:triples "6"^^<http://www.w3.org/2001/XMLSchema#long> ;
+	voidx:aboxTriples "6"^^<http://www.w3.org/2001/XMLSchema#long> ;
+	void:distinctSubjects "6"^^<http://www.w3.org/2001/XMLSchema#long> ;
+	void:distinctObjects "4"^^<http://www.w3.org/2001/XMLSchema#long> .
+
+<http://www.w3.org/2002/07/owl#imports> voidx:label "owl:imports (12, OI)" ;
+	voidx:type <http://www.w3.org/2002/07/owl#ObjectProperty> , <http://www.w3.org/2002/07/owl#InverseFunctionalProperty> ;
+	voidx:example """
+    <https://w3id.org/empathi/> owl:imports lode: .
+    <https://w3id.org/empathi/> owl:imports dc: .
+    <https://w3id.org/empathi/> owl:imports sioc: .""" ;
+	voidx:globalStats <stats:imports> .
+
+<stats:Dataset> void:propertyPartition <stats:imports> .
+
+<stats:imports> a void:Dataset ;
+	voidx:label "<stats:imports> (12, OI)" ;
+	void:property <http://www.w3.org/2002/07/owl#imports> ;
+	void:properties "1"^^<http://www.w3.org/2001/XMLSchema#int> ;
+	void:entities "2"^^<http://www.w3.org/2001/XMLSchema#long> ;
+	void:triples "12"^^<http://www.w3.org/2001/XMLSchema#long> ;
+	voidx:tboxTriples "12"^^<http://www.w3.org/2001/XMLSchema#long> ;
+	void:distinctSubjects "2"^^<http://www.w3.org/2001/XMLSchema#long> ;
+	void:distinctObjects "12"^^<http://www.w3.org/2001/XMLSchema#long> .
+
+<http://www.w3.org/2000/01/rdf-schema#domain> voidx:label "rdfs:domain (1096, O)" ;
+	voidx:type <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+	voidx:example """
+    schema:creator rdfs:domain _:node1g7k3h2c3x1608 .
+    schema:title rdfs:domain schema:JobPosting .
+    schema:publisher rdfs:domain schema:CreativeWork .""" ;
+	voidx:globalStats <stats:domain> .
+
+<stats:Dataset> void:propertyPartition <stats:domain> .
+
+<stats:domain> a void:Dataset ;
+	voidx:label "<stats:domain> (1096, O)" ;
+	void:property <http://www.w3.org/2000/01/rdf-schema#domain> ;
+	void:properties "1"^^<http://www.w3.org/2001/XMLSchema#int> ;
+	void:entities "1083"^^<http://www.w3.org/2001/XMLSchema#long> ;
+	void:triples "1096"^^<http://www.w3.org/2001/XMLSchema#long> ;
+	voidx:tboxTriples "1096"^^<http://www.w3.org/2001/XMLSchema#long> ;
+	void:distinctSubjects "1083"^^<http://www.w3.org/2001/XMLSchema#long> ;
+	void:distinctObjects "421"^^<http://www.w3.org/2001/XMLSchema#long> .
+
+<http://www.w3.org/2000/01/rdf-schema#subClassOf> voidx:label "rdfs:subClassOf (10316, O)" ;
+	voidx:type <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+	voidx:example """
+    schema:Event rdfs:subClassOf schema:Thing .
+    schema:Place rdfs:subClassOf schema:Thing .
+    schema:Class rdfs:subClassOf schema:Thing .""" ;
+	voidx:globalStats <stats:subClassOf> .
+
+<stats:Dataset> void:propertyPartition <stats:subClassOf> .
+
+<stats:subClassOf> a void:Dataset ;
+	voidx:label "<stats:subClassOf> (10316, O)" ;
+	void:property <http://www.w3.org/2000/01/rdf-schema#subClassOf> ;
+	void:properties "1"^^<http://www.w3.org/2001/XMLSchema#int> ;
+	void:entities "2662"^^<http://www.w3.org/2001/XMLSchema#long> ;
+	void:triples "10316"^^<http://www.w3.org/2001/XMLSchema#long> ;
+	voidx:tboxTriples "10316"^^<http://www.w3.org/2001/XMLSchema#long> ;
+	void:distinctSubjects "2662"^^<http://www.w3.org/2001/XMLSchema#long> ;
+	void:distinctObjects "8026"^^<http://www.w3.org/2001/XMLSchema#long> .
+
+<http://purl.org/dc/elements/1.1/creator> voidx:label "dc:creator (4, DI)" ;
+	voidx:type <http://www.w3.org/2002/07/owl#DatatypeProperty> , <http://www.w3.org/2002/07/owl#InverseFunctionalProperty> ;
+	voidx:example """
+    <http://purl.oclc.org/NET/UNIS/fiware/iot-lite#> dc:creator \"Kerry Taylor\"@en .
+    <http://purl.oclc.org/NET/UNIS/fiware/iot-lite#> dc:creator \"Maria Bermudez-Edo\"@en .
+    <http://purl.oclc.org/NET/UNIS/fiware/iot-lite#> dc:creator \"Payam Barnaghi\"@en .""" ;
+	voidx:globalStats <stats:creator_1> .
+
+<stats:Dataset> void:propertyPartition <stats:creator_1> .
+
+<stats:creator_1> a void:Dataset ;
+	voidx:label "<stats:creator_1> (4, DI)" ;
+	void:property <http://purl.org/dc/elements/1.1/creator> ;
+	void:properties "1"^^<http://www.w3.org/2001/XMLSchema#int> ;
+	void:entities "1"^^<http://www.w3.org/2001/XMLSchema#long> ;
+	void:triples "4"^^<http://www.w3.org/2001/XMLSchema#long> ;
+	voidx:aboxTriples "4"^^<http://www.w3.org/2001/XMLSchema#long> ;
+	void:distinctSubjects "1"^^<http://www.w3.org/2001/XMLSchema#long> ;
+	void:distinctObjects "4"^^<http://www.w3.org/2001/XMLSchema#long> .
+
+<http://purl.org/dc/elements/1.1/title> voidx:label "dc:title (1, DFI)" ;
+	voidx:type <http://www.w3.org/2002/07/owl#DatatypeProperty> , <http://www.w3.org/2002/07/owl#FunctionalProperty> , <http://www.w3.org/2002/07/owl#InverseFunctionalProperty> ;
+	voidx:example """
+    <http://purl.oclc.org/NET/UNIS/fiware/iot-lite#> dc:title \"IoT-Lite Ontology\"@en .""" ;
+	voidx:globalStats <stats:title_1> .
+
+<stats:Dataset> void:propertyPartition <stats:title_1> .
+
+<stats:title_1> a void:Dataset ;
+	voidx:label "<stats:title_1> (1, DFI)" ;
+	void:property <http://purl.org/dc/elements/1.1/title> ;
+	void:properties "1"^^<http://www.w3.org/2001/XMLSchema#int> ;
+	void:entities "1"^^<http://www.w3.org/2001/XMLSchema#long> ;
+	void:triples "1"^^<http://www.w3.org/2001/XMLSchema#long> ;
+	voidx:aboxTriples "1"^^<http://www.w3.org/2001/XMLSchema#long> ;
+	void:distinctSubjects "1"^^<http://www.w3.org/2001/XMLSchema#long> ;
+	void:distinctObjects "1"^^<http://www.w3.org/2001/XMLSchema#long> .
+
+<http://purl.org/dc/elements/1.1/description> voidx:label "dc:description (1, DFI)" ;
+	voidx:type <http://www.w3.org/2002/07/owl#DatatypeProperty> , <http://www.w3.org/2002/07/owl#FunctionalProperty> , <http://www.w3.org/2002/07/owl#InverseFunctionalProperty> ;
+	voidx:example """
+    <http://purl.oclc.org/NET/UNIS/fiware/iot-lite#> dc:description \"This ontology describes IoT concepts into three classes. Objects, system or resources and services. The devices are also splitted into, although not restricted to, three classes: sensing devices actuating devices and tag devices. The services are described with an availability or access control and a coverage. This coverage represents the area covered by the IoT device. The figure below depicts the concepts of the ontology and the main relationships between them.\\nIoT Lite Ontology is created to be used with a common taxonomy to describe the Units and QuantityKind that IoT devices can meassure. This taxonomy represent individuals in the ontology and is based in well-known taxonomies as: qu and qudt.\"@en .""" ;
+	voidx:globalStats <stats:description_1> .
+
+<stats:Dataset> void:propertyPartition <stats:description_1> .
+
+<stats:description_1> a void:Dataset ;
+	voidx:label "<stats:description_1> (1, DFI)" ;
+	void:property <http://purl.org/dc/elements/1.1/description> ;
+	void:properties "1"^^<http://www.w3.org/2001/XMLSchema#int> ;
+	void:entities "1"^^<http://www.w3.org/2001/XMLSchema#long> ;
+	void:triples "1"^^<http://www.w3.org/2001/XMLSchema#long> ;
+	voidx:aboxTriples "1"^^<http://www.w3.org/2001/XMLSchema#long> ;
+	void:distinctSubjects "1"^^<http://www.w3.org/2001/XMLSchema#long> ;
+	void:distinctObjects "1"^^<http://www.w3.org/2001/XMLSchema#long> .
+
+<http://www.w3.org/2000/01/rdf-schema#label> voidx:label "rdfs:label (4679, D)" ;
+	voidx:type <http://www.w3.org/2002/07/owl#DatatypeProperty> ;
+	voidx:example """
+    <http://purl.oclc.org/NET/UNIS/fiware/iot-lite#> rdfs:label \"Working Draft\" .
+    rdf:type rdfs:label \"Tipo\"@it .
+    rdf:type rdfs:label \"Type\"@en .""" ;
+	voidx:globalStats <stats:label> .
+
+<stats:Dataset> void:propertyPartition <stats:label> .
+
+<stats:label> a void:Dataset ;
+	voidx:label "<stats:label> (4679, D)" ;
+	void:property <http://www.w3.org/2000/01/rdf-schema#label> ;
+	void:properties "1"^^<http://www.w3.org/2001/XMLSchema#int> ;
+	void:entities "2897"^^<http://www.w3.org/2001/XMLSchema#long> ;
+	void:triples "4679"^^<http://www.w3.org/2001/XMLSchema#long> ;
+	voidx:aboxTriples "4679"^^<http://www.w3.org/2001/XMLSchema#long> ;
+	void:distinctSubjects "2897"^^<http://www.w3.org/2001/XMLSchema#long> ;
+	void:distinctObjects "4535"^^<http://www.w3.org/2001/XMLSchema#long> .
+
+<http://purl.org/dc/elements/1.1/rights> voidx:label "dc:rights (1, DFI)" ;
+	voidx:type <http://www.w3.org/2002/07/owl#DatatypeProperty> , <http://www.w3.org/2002/07/owl#FunctionalProperty> , <http://www.w3.org/2002/07/owl#InverseFunctionalProperty> ;
+	voidx:example """
+    <http://purl.oclc.org/NET/UNIS/fiware/iot-lite#> dc:rights \"This ontology is distributed under a Creative Commons Attribution 3.0 Unported License - http://creativecommons.org/licenses/by/3.0/. This copyright applies to the iot-lite ontology specification and RDF.\"@en .""" ;
+	voidx:globalStats <stats:rights> .
+
+<stats:Dataset> void:propertyPartition <stats:rights> .
+
+<stats:rights> a void:Dataset ;
+	voidx:label "<stats:rights> (1, DFI)" ;
+	void:property <http://purl.org/dc/elements/1.1/rights> ;
+	void:properties "1"^^<http://www.w3.org/2001/XMLSchema#int> ;
+	void:entities "1"^^<http://www.w3.org/2001/XMLSchema#long> ;
+	void:triples "1"^^<http://www.w3.org/2001/XMLSchema#long> ;
+	voidx:aboxTriples "1"^^<http://www.w3.org/2001/XMLSchema#long> ;
+	void:distinctSubjects "1"^^<http://www.w3.org/2001/XMLSchema#long> ;
+	void:distinctObjects "1"^^<http://www.w3.org/2001/XMLSchema#long> .
+
+<http://purl.org/dc/elements/1.1/bibliographicCitation> voidx:label "dc:bibliographicCitation (2, DI)" ;
+	voidx:type <http://www.w3.org/2002/07/owl#DatatypeProperty> , <http://www.w3.org/2002/07/owl#InverseFunctionalProperty> ;
+	voidx:example """
+    <http://purl.oclc.org/NET/UNIS/fiware/iot-lite#> dc:bibliographicCitation \"Maria Bermudez-Edo, Tarek Elsaleh, Payam Barnaghi and Kerry Taylor, \\\"IoT-Lite: A Lightweight Semantic Model for the Internet of Things\\\", in Proc. of the IEEE Conferences on Ubiquitous Intelligence & Computing, July 2016, Toulouse, France.\"@en .
+    <http://purl.oclc.org/NET/UNIS/fiware/iot-lite#> dc:bibliographicCitation \"Maria Bermudez-Edo, Tarek Elsaleh, Payam Barnaghi and Kerry Taylor, \\\"IoT-Lite: a lightweight semantic model for the internet of things and its use with dynamic semantics\\\", Personal and Ubiquitous Computing (2017).\"@en .""" ;
+	voidx:globalStats <stats:bibliographicCitation> .
+
+<stats:Dataset> void:propertyPartition <stats:bibliographicCitation> .
+
+<stats:bibliographicCitation> a void:Dataset ;
+	voidx:label "<stats:bibliographicCitation> (2, DI)" ;
+	void:property <http://purl.org/dc/elements/1.1/bibliographicCitation> ;
+	void:properties "1"^^<http://www.w3.org/2001/XMLSchema#int> ;
+	void:entities "1"^^<http://www.w3.org/2001/XMLSchema#long> ;
+	void:triples "2"^^<http://www.w3.org/2001/XMLSchema#long> ;
+	voidx:aboxTriples "2"^^<http://www.w3.org/2001/XMLSchema#long> ;
+	void:distinctSubjects "1"^^<http://www.w3.org/2001/XMLSchema#long> ;
+	void:distinctObjects "2"^^<http://www.w3.org/2001/XMLSchema#long> .
+
+<http://purl.org/dc/elements/1.1/contributor> voidx:label "dc:contributor (1, DFI)" ;
+	voidx:type <http://www.w3.org/2002/07/owl#DatatypeProperty> , <http://www.w3.org/2002/07/owl#FunctionalProperty> , <http://www.w3.org/2002/07/owl#InverseFunctionalProperty> ;
+	voidx:example """
+    <http://purl.oclc.org/NET/UNIS/fiware/iot-lite#> dc:contributor \"This work is part of the EU FP7 FIWARE project and the EU H2020 FIESTA-IoT project at the Institution for Communication Systems University of Surrey.\"@en .""" ;
+	voidx:globalStats <stats:contributor> .
+
+<stats:Dataset> void:propertyPartition <stats:contributor> .
+
+<stats:contributor> a void:Dataset ;
+	voidx:label "<stats:contributor> (1, DFI)" ;
+	void:property <http://purl.org/dc/elements/1.1/contributor> ;
+	void:properties "1"^^<http://www.w3.org/2001/XMLSchema#int> ;
+	void:entities "1"^^<http://www.w3.org/2001/XMLSchema#long> ;
+	void:triples "1"^^<http://www.w3.org/2001/XMLSchema#long> ;
+	voidx:aboxTriples "1"^^<http://www.w3.org/2001/XMLSchema#long> ;
+	void:distinctSubjects "1"^^<http://www.w3.org/2001/XMLSchema#long> ;
+	void:distinctObjects "1"^^<http://www.w3.org/2001/XMLSchema#long> .
+
+<http://purl.org/dc/elements/1.1/date> voidx:label "dc:date (1, DFI)" ;
+	voidx:type <http://www.w3.org/2002/07/owl#DatatypeProperty> , <http://www.w3.org/2002/07/owl#FunctionalProperty> , <http://www.w3.org/2002/07/owl#InverseFunctionalProperty> ;
+	voidx:example """
+    <http://purl.oclc.org/NET/UNIS/fiware/iot-lite#> dc:date \"2017-04-11\"@en .""" ;
+	voidx:globalStats <stats:date> .
+
+<stats:Dataset> void:propertyPartition <stats:date> .
+
+<stats:date> a void:Dataset ;
+	voidx:label "<stats:date> (1, DFI)" ;
+	void:property <http://purl.org/dc/elements/1.1/date> ;
+	void:properties "1"^^<http://www.w3.org/2001/XMLSchema#int> ;
+	void:entities "1"^^<http://www.w3.org/2001/XMLSchema#long> ;
+	void:triples "1"^^<http://www.w3.org/2001/XMLSchema#long> ;
+	voidx:aboxTriples "1"^^<http://www.w3.org/2001/XMLSchema#long> ;
+	void:distinctSubjects "1"^^<http://www.w3.org/2001/XMLSchema#long> ;
+	void:distinctObjects "1"^^<http://www.w3.org/2001/XMLSchema#long> .
+
+<http://www.w3.org/2000/01/rdf-schema#range> voidx:label "rdfs:range (958, O)" ;
+	voidx:type <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+	voidx:example """
+    schema:creator rdfs:range _:node1g7k3h2c3x1612 .
+    schema:publisher rdfs:range schema:Organization .
+    schema:source rdfs:range schema:AnatomicalStructure .""" ;
+	voidx:globalStats <stats:range> .
+
+<stats:Dataset> void:propertyPartition <stats:range> .
+
+<stats:range> a void:Dataset ;
+	voidx:label "<stats:range> (958, O)" ;
+	void:property <http://www.w3.org/2000/01/rdf-schema#range> ;
+	void:properties "1"^^<http://www.w3.org/2001/XMLSchema#int> ;
+	void:entities "939"^^<http://www.w3.org/2001/XMLSchema#long> ;
+	void:triples "958"^^<http://www.w3.org/2001/XMLSchema#long> ;
+	voidx:tboxTriples "958"^^<http://www.w3.org/2001/XMLSchema#long> ;
+	void:distinctSubjects "939"^^<http://www.w3.org/2001/XMLSchema#long> ;
+	void:distinctObjects "290"^^<http://www.w3.org/2001/XMLSchema#long> .
+
+<http://www.w3.org/2000/01/rdf-schema#isDefinedBy> voidx:label "rdfs:isDefinedBy (1492, P)" ;
+	voidx:type <http://www.w3.org/1999/02/22-rdf-syntax-ns#Property> ;
+	voidx:example """
+    <https://saref.etsi.org/core/isMeasuredIn> rdfs:isDefinedBy \"https://saref.etsi.org/core/\" .
+    schema:creator rdfs:isDefinedBy schema:UserComments .
+    schema:title rdfs:isDefinedBy schema:JobPosting .""" ;
+	voidx:globalStats <stats:isDefinedBy> .
+
+<stats:Dataset> void:propertyPartition <stats:isDefinedBy> .
+
+<stats:isDefinedBy> a void:Dataset ;
+	voidx:label "<stats:isDefinedBy> (1492, P)" ;
+	void:property <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> ;
+	void:properties "1"^^<http://www.w3.org/2001/XMLSchema#int> ;
+	void:entities "1271"^^<http://www.w3.org/2001/XMLSchema#long> ;
+	void:triples "1492"^^<http://www.w3.org/2001/XMLSchema#long> ;
+	voidx:aboxTriples "1492"^^<http://www.w3.org/2001/XMLSchema#long> ;
+	void:distinctSubjects "1271"^^<http://www.w3.org/2001/XMLSchema#long> ;
+	void:distinctObjects "552"^^<http://www.w3.org/2001/XMLSchema#long> .
+
+<http://www.w3.org/2004/02/skos/core#definition> voidx:label "skos:definition (153, DI)" ;
+	voidx:type <http://www.w3.org/2002/07/owl#DatatypeProperty> , <http://www.w3.org/2002/07/owl#InverseFunctionalProperty> ;
+	voidx:example """
+    dctype:Event skos:definition \"\\\"Something that happened,\\\" as might be reported in a news article or\\nexplained by a historian.\"@en .
+    dul:Place skos:definition \"a particular position or point in...\" .
+    <https://w3id.org/empathi/benefit_fraud> skos:definition \"Fraud also goes up in the wake of...\" .""" ;
+	voidx:globalStats <stats:definition> .
+
+<stats:Dataset> void:propertyPartition <stats:definition> .
+
+<stats:definition> a void:Dataset ;
+	voidx:label "<stats:definition> (153, DI)" ;
+	void:property <http://www.w3.org/2004/02/skos/core#definition> ;
+	void:properties "1"^^<http://www.w3.org/2001/XMLSchema#int> ;
+	void:entities "145"^^<http://www.w3.org/2001/XMLSchema#long> ;
+	void:triples "153"^^<http://www.w3.org/2001/XMLSchema#long> ;
+	voidx:aboxTriples "153"^^<http://www.w3.org/2001/XMLSchema#long> ;
+	void:distinctSubjects "145"^^<http://www.w3.org/2001/XMLSchema#long> ;
+	void:distinctObjects "153"^^<http://www.w3.org/2001/XMLSchema#long> .
+
+<http://www.w3.org/2003/01/geo/wgs84_pos#alt> voidx:label "geo:alt (1, DFI)" ;
+	voidx:type <http://www.w3.org/2002/07/owl#DatatypeProperty> , <http://www.w3.org/2002/07/owl#FunctionalProperty> , <http://www.w3.org/2002/07/owl#InverseFunctionalProperty> ;
+	voidx:example """
+    geo:Point geo:alt \"\" .""" ;
+	voidx:globalStats <stats:alt> .
+
+<stats:Dataset> void:propertyPartition <stats:alt> .
+
+<stats:alt> a void:Dataset ;
+	voidx:label "<stats:alt> (1, DFI)" ;
+	void:property <http://www.w3.org/2003/01/geo/wgs84_pos#alt> ;
+	void:properties "1"^^<http://www.w3.org/2001/XMLSchema#int> ;
+	void:entities "1"^^<http://www.w3.org/2001/XMLSchema#long> ;
+	void:triples "1"^^<http://www.w3.org/2001/XMLSchema#long> ;
+	voidx:aboxTriples "1"^^<http://www.w3.org/2001/XMLSchema#long> ;
+	void:distinctSubjects "1"^^<http://www.w3.org/2001/XMLSchema#long> ;
+	void:distinctObjects "1"^^<http://www.w3.org/2001/XMLSchema#long> .
+
+<http://www.w3.org/2003/01/geo/wgs84_pos#lat> voidx:label "geo:lat (1, DFI)" ;
+	voidx:type <http://www.w3.org/2002/07/owl#DatatypeProperty> , <http://www.w3.org/2002/07/owl#FunctionalProperty> , <http://www.w3.org/2002/07/owl#InverseFunctionalProperty> ;
+	voidx:example """
+    geo:Point geo:lat \"\" .""" ;
+	voidx:globalStats <stats:lat> .
+
+<stats:Dataset> void:propertyPartition <stats:lat> .
+
+<stats:lat> a void:Dataset ;
+	voidx:label "<stats:lat> (1, DFI)" ;
+	void:property <http://www.w3.org/2003/01/geo/wgs84_pos#lat> ;
+	void:properties "1"^^<http://www.w3.org/2001/XMLSchema#int> ;
+	void:entities "1"^^<http://www.w3.org/2001/XMLSchema#long> ;
+	void:triples "1"^^<http://www.w3.org/2001/XMLSchema#long> ;
+	voidx:aboxTriples "1"^^<http://www.w3.org/2001/XMLSchema#long> ;
+	void:distinctSubjects "1"^^<http://www.w3.org/2001/XMLSchema#long> ;
+	void:distinctObjects "1"^^<http://www.w3.org/2001/XMLSchema#long> .
+
+<http://www.w3.org/2003/01/geo/wgs84_pos#long> voidx:label "geo:long (1, DFI)" ;
+	voidx:type <http://www.w3.org/2002/07/owl#DatatypeProperty> , <http://www.w3.org/2002/07/owl#FunctionalProperty> , <http://www.w3.org/2002/07/owl#InverseFunctionalProperty> ;
+	voidx:example """
+    geo:Point geo:long \"\" .""" ;
+	voidx:globalStats <stats:long> .
+
+<stats:Dataset> void:propertyPartition <stats:long> .
+
+<stats:long> a void:Dataset ;
+	voidx:label "<stats:long> (1, DFI)" ;
+	void:property <http://www.w3.org/2003/01/geo/wgs84_pos#long> ;
+	void:properties "1"^^<http://www.w3.org/2001/XMLSchema#int> ;
+	void:entities "1"^^<http://www.w3.org/2001/XMLSchema#long> ;
+	void:triples "1"^^<http://www.w3.org/2001/XMLSchema#long> ;
+	voidx:aboxTriples "1"^^<http://www.w3.org/2001/XMLSchema#long> ;
+	void:distinctSubjects "1"^^<http://www.w3.org/2001/XMLSchema#long> ;
+	void:distinctObjects "1"^^<http://www.w3.org/2001/XMLSchema#long> .
+
+<http://purl.oclc.org/NET/UNIS/fiware/iot-lite#altRelative> voidx:label "<http://purl.oclc.org/NET/UNIS/fiware/iot-lite#altRelative> (1, DFI)" ;
+	voidx:type <http://www.w3.org/2002/07/owl#DatatypeProperty> , <http://www.w3.org/2002/07/owl#FunctionalProperty> , <http://www.w3.org/2002/07/owl#InverseFunctionalProperty> ;
+	voidx:example """
+    geo:Point <http://purl.oclc.org/NET/UNIS/fiware/iot-lite#altRelative> \"\" .""" ;
+	voidx:globalStats <stats:altRelative> .
+
+<stats:Dataset> void:propertyPartition <stats:altRelative> .
+
+<stats:altRelative> a void:Dataset ;
+	voidx:label "<stats:altRelative> (1, DFI)" ;
+	void:property <http://purl.oclc.org/NET/UNIS/fiware/iot-lite#altRelative> ;
+	void:properties "1"^^<http://www.w3.org/2001/XMLSchema#int> ;
+	void:entities "1"^^<http://www.w3.org/2001/XMLSchema#long> ;
+	void:triples "1"^^<http://www.w3.org/2001/XMLSchema#long> ;
+	voidx:aboxTriples "1"^^<http://www.w3.org/2001/XMLSchema#long> ;
+	void:distinctSubjects "1"^^<http://www.w3.org/2001/XMLSchema#long> ;
+	void:distinctObjects "1"^^<http://www.w3.org/2001/XMLSchema#long> .
+
+<http://purl.oclc.org/NET/UNIS/fiware/iot-lite#relativeLocation> voidx:label "<http://purl.oclc.org/NET/UNIS/fiware/iot-lite#relativeLocation> (1, DFI)" ;
+	voidx:type <http://www.w3.org/2002/07/owl#DatatypeProperty> , <http://www.w3.org/2002/07/owl#FunctionalProperty> , <http://www.w3.org/2002/07/owl#InverseFunctionalProperty> ;
+	voidx:example """
+    geo:Point <http://purl.oclc.org/NET/UNIS/fiware/iot-lite#relativeLocation> \"\" .""" ;
+	voidx:globalStats <stats:relativeLocation> .
+
+<stats:Dataset> void:propertyPartition <stats:relativeLocation> .
+
+<stats:relativeLocation> a void:Dataset ;
+	voidx:label "<stats:relativeLocation> (1, DFI)" ;
+	void:property <http://purl.oclc.org/NET/UNIS/fiware/iot-lite#relativeLocation> ;
+	void:properties "1"^^<http://www.w3.org/2001/XMLSchema#int> ;
+	void:entities "1"^^<http://www.w3.org/2001/XMLSchema#long> ;
+	void:triples "1"^^<http://www.w3.org/2001/XMLSchema#long> ;
+	voidx:aboxTriples "1"^^<http://www.w3.org/2001/XMLSchema#long> ;
+	void:distinctSubjects "1"^^<http://www.w3.org/2001/XMLSchema#long> ;
+	void:distinctObjects "1"^^<http://www.w3.org/2001/XMLSchema#long> .
+
+<http://www.w3.org/2000/01/rdf-schema#Acknowledgments> voidx:label "rdfs:Acknowledgments (3, DF)" ;
+	voidx:type <http://www.w3.org/2002/07/owl#DatatypeProperty> , <http://www.w3.org/2002/07/owl#FunctionalProperty> ;
+	voidx:example """
+    <http://imash.leeds.ac.uk/ontologies/atu/GroundOntology.owl> rdfs:Acknowledgments \"This research is supported by EPSRC...\" .
+    <http://imash.leeds.ac.uk/ontologies/atu/PipeOntology.owl> rdfs:Acknowledgments \"This research is supported by EPSRC...\" .
+    <http://imash.leeds.ac.uk/ontologies/atu/RoadOntology.owl> rdfs:Acknowledgments \"This research is supported by EPSRC...\" .""" ;
+	voidx:globalStats <stats:Acknowledgments> .
+
+<stats:Dataset> void:propertyPartition <stats:Acknowledgments> .
+
+<stats:Acknowledgments> a void:Dataset ;
+	voidx:label "<stats:Acknowledgments> (3, DF)" ;
+	void:property <http://www.w3.org/2000/01/rdf-schema#Acknowledgments> ;
+	void:properties "1"^^<http://www.w3.org/2001/XMLSchema#int> ;
+	void:entities "3"^^<http://www.w3.org/2001/XMLSchema#long> ;
+	void:triples "3"^^<http://www.w3.org/2001/XMLSchema#long> ;
+	voidx:aboxTriples "3"^^<http://www.w3.org/2001/XMLSchema#long> ;
+	void:distinctSubjects "3"^^<http://www.w3.org/2001/XMLSchema#long> ;
+	void:distinctObjects "1"^^<http://www.w3.org/2001/XMLSchema#long> .
+
+<http://www.w3.org/2000/01/rdf-schema#Date> voidx:label "rdfs:Date (3, DF)" ;
+	voidx:type <http://www.w3.org/2002/07/owl#DatatypeProperty> , <http://www.w3.org/2002/07/owl#FunctionalProperty> ;
+	voidx:example """
+    <http://imash.leeds.ac.uk/ontologies/atu/GroundOntology.owl> rdfs:Date \"May 2017\" .
+    <http://imash.leeds.ac.uk/ontologies/atu/PipeOntology.owl> rdfs:Date \"May 2017\" .
+    <http://imash.leeds.ac.uk/ontologies/atu/RoadOntology.owl> rdfs:Date \"May 2017\" .""" ;
+	voidx:globalStats <stats:Date> .
+
+<stats:Dataset> void:propertyPartition <stats:Date> .
+
+<stats:Date> a void:Dataset ;
+	voidx:label "<stats:Date> (3, DF)" ;
+	void:property <http://www.w3.org/2000/01/rdf-schema#Date> ;
+	void:properties "1"^^<http://www.w3.org/2001/XMLSchema#int> ;
+	void:entities "3"^^<http://www.w3.org/2001/XMLSchema#long> ;
+	void:triples "3"^^<http://www.w3.org/2001/XMLSchema#long> ;
+	voidx:aboxTriples "3"^^<http://www.w3.org/2001/XMLSchema#long> ;
+	void:distinctSubjects "3"^^<http://www.w3.org/2001/XMLSchema#long> ;
+	void:distinctObjects "1"^^<http://www.w3.org/2001/XMLSchema#long> .
+
+<http://www.w3.org/2000/01/rdf-schema#DomainExperts> voidx:label "rdfs:DomainExperts (3, DFI)" ;
+	voidx:type <http://www.w3.org/2002/07/owl#DatatypeProperty> , <http://www.w3.org/2002/07/owl#FunctionalProperty> , <http://www.w3.org/2002/07/owl#InverseFunctionalProperty> ;
+	voidx:example """
+    <http://imash.leeds.ac.uk/ontologies/atu/GroundOntology.owl> rdfs:DomainExperts \"Prof. Barry Clarke, University of Leeds;...\" .
+    <http://imash.leeds.ac.uk/ontologies/atu/PipeOntology.owl> rdfs:DomainExperts \"Prof. Barry Clarke, University of Leeds;...\" .
+    <http://imash.leeds.ac.uk/ontologies/atu/RoadOntology.owl> rdfs:DomainExperts \"Prof. Barry Clarke, University of Leeds;...\" .""" ;
+	voidx:globalStats <stats:DomainExperts> .
+
+<stats:Dataset> void:propertyPartition <stats:DomainExperts> .
+
+<stats:DomainExperts> a void:Dataset ;
+	voidx:label "<stats:DomainExperts> (3, DFI)" ;
+	void:property <http://www.w3.org/2000/01/rdf-schema#DomainExperts> ;
+	void:properties "1"^^<http://www.w3.org/2001/XMLSchema#int> ;
+	void:entities "3"^^<http://www.w3.org/2001/XMLSchema#long> ;
+	void:triples "3"^^<http://www.w3.org/2001/XMLSchema#long> ;
+	voidx:aboxTriples "3"^^<http://www.w3.org/2001/XMLSchema#long> ;
+	void:distinctSubjects "3"^^<http://www.w3.org/2001/XMLSchema#long> ;
+	void:distinctObjects "3"^^<http://www.w3.org/2001/XMLSchema#long> .
+
+<http://www.w3.org/2000/01/rdf-schema#KnowledgeSource> voidx:label "rdfs:KnowledgeSource (3, DFI)" ;
+	voidx:type <http://www.w3.org/2002/07/owl#DatatypeProperty> , <http://www.w3.org/2002/07/owl#FunctionalProperty> , <http://www.w3.org/2002/07/owl#InverseFunctionalProperty> ;
+	voidx:example """
+    <http://imash.leeds.ac.uk/ontologies/atu/GroundOntology.owl> rdfs:KnowledgeSource \"The main knowledge sources of this...\" .
+    <http://imash.leeds.ac.uk/ontologies/atu/PipeOntology.owl> rdfs:KnowledgeSource \"The main knowledge sources of this...\" .
+    <http://imash.leeds.ac.uk/ontologies/atu/RoadOntology.owl> rdfs:KnowledgeSource \"The main knowledge sources of this...\" .""" ;
+	voidx:globalStats <stats:KnowledgeSource> .
+
+<stats:Dataset> void:propertyPartition <stats:KnowledgeSource> .
+
+<stats:KnowledgeSource> a void:Dataset ;
+	voidx:label "<stats:KnowledgeSource> (3, DFI)" ;
+	void:property <http://www.w3.org/2000/01/rdf-schema#KnowledgeSource> ;
+	void:properties "1"^^<http://www.w3.org/2001/XMLSchema#int> ;
+	void:entities "3"^^<http://www.w3.org/2001/XMLSchema#long> ;
+	void:triples "3"^^<http://www.w3.org/2001/XMLSchema#long> ;
+	voidx:aboxTriples "3"^^<http://www.w3.org/2001/XMLSchema#long> ;
+	void:distinctSubjects "3"^^<http://www.w3.org/2001/XMLSchema#long> ;
+	void:distinctObjects "3"^^<http://www.w3.org/2001/XMLSchema#long> .
+
+<http://www.w3.org/2000/01/rdf-schema#License> voidx:label "rdfs:License (3, DF)" ;
+	voidx:type <http://www.w3.org/2002/07/owl#DatatypeProperty> , <http://www.w3.org/2002/07/owl#FunctionalProperty> ;
+	voidx:example """
+    <http://imash.leeds.ac.uk/ontologies/atu/GroundOntology.owl> rdfs:License \"Creative Commons Attribution 4.0...\" .
+    <http://imash.leeds.ac.uk/ontologies/atu/PipeOntology.owl> rdfs:License \"Creative Commons Attribution 4.0...\" .
+    <http://imash.leeds.ac.uk/ontologies/atu/RoadOntology.owl> rdfs:License \"Creative Commons Attribution 4.0...\" .""" ;
+	voidx:globalStats <stats:License> .
+
+<stats:Dataset> void:propertyPartition <stats:License> .
+
+<stats:License> a void:Dataset ;
+	voidx:label "<stats:License> (3, DF)" ;
+	void:property <http://www.w3.org/2000/01/rdf-schema#License> ;
+	void:properties "1"^^<http://www.w3.org/2001/XMLSchema#int> ;
+	void:entities "3"^^<http://www.w3.org/2001/XMLSchema#long> ;
+	void:triples "3"^^<http://www.w3.org/2001/XMLSchema#long> ;
+	voidx:aboxTriples "3"^^<http://www.w3.org/2001/XMLSchema#long> ;
+	void:distinctSubjects "3"^^<http://www.w3.org/2001/XMLSchema#long> ;
+	void:distinctObjects "1"^^<http://www.w3.org/2001/XMLSchema#long> .
+
+<http://www.w3.org/2000/01/rdf-schema#OntologyCreator> voidx:label "rdfs:OntologyCreator (3, DF)" ;
+	voidx:type <http://www.w3.org/2002/07/owl#DatatypeProperty> , <http://www.w3.org/2002/07/owl#FunctionalProperty> ;
+	voidx:example """
+    <http://imash.leeds.ac.uk/ontologies/atu/GroundOntology.owl> rdfs:OntologyCreator \"Dr. Heshan Du, University of Leeds,...\" .
+    <http://imash.leeds.ac.uk/ontologies/atu/PipeOntology.owl> rdfs:OntologyCreator \"Dr. Heshan Du, University of Leeds,...\" .
+    <http://imash.leeds.ac.uk/ontologies/atu/RoadOntology.owl> rdfs:OntologyCreator \"Dr. Heshan Du, University of Leeds,...\" .""" ;
+	voidx:globalStats <stats:OntologyCreator> .
+
+<stats:Dataset> void:propertyPartition <stats:OntologyCreator> .
+
+<stats:OntologyCreator> a void:Dataset ;
+	voidx:label "<stats:OntologyCreator> (3, DF)" ;
+	void:property <http://www.w3.org/2000/01/rdf-schema#OntologyCreator> ;
+	void:properties "1"^^<http://www.w3.org/2001/XMLSchema#int> ;
+	void:entities "3"^^<http://www.w3.org/2001/XMLSchema#long> ;
+	void:triples "3"^^<http://www.w3.org/2001/XMLSchema#long> ;
+	voidx:aboxTriples "3"^^<http://www.w3.org/2001/XMLSchema#long> ;
+	void:distinctSubjects "3"^^<http://www.w3.org/2001/XMLSchema#long> ;
+	void:distinctObjects "1"^^<http://www.w3.org/2001/XMLSchema#long> .
+
+<http://www.w3.org/2000/01/rdf-schema#Purpose> voidx:label "rdfs:Purpose (3, DFI)" ;
+	voidx:type <http://www.w3.org/2002/07/owl#DatatypeProperty> , <http://www.w3.org/2002/07/owl#FunctionalProperty> , <http://www.w3.org/2002/07/owl#InverseFunctionalProperty> ;
+	voidx:example """
+    <http://imash.leeds.ac.uk/ontologies/atu/GroundOntology.owl> rdfs:Purpose \"To describe properties and processes of...\" .
+    <http://imash.leeds.ac.uk/ontologies/atu/PipeOntology.owl> rdfs:Purpose \"To describe properties and processes of...\" .
+    <http://imash.leeds.ac.uk/ontologies/atu/RoadOntology.owl> rdfs:Purpose \"To describe road properties and...\" .""" ;
+	voidx:globalStats <stats:Purpose> .
+
+<stats:Dataset> void:propertyPartition <stats:Purpose> .
+
+<stats:Purpose> a void:Dataset ;
+	voidx:label "<stats:Purpose> (3, DFI)" ;
+	void:property <http://www.w3.org/2000/01/rdf-schema#Purpose> ;
+	void:properties "1"^^<http://www.w3.org/2001/XMLSchema#int> ;
+	void:entities "3"^^<http://www.w3.org/2001/XMLSchema#long> ;
+	void:triples "3"^^<http://www.w3.org/2001/XMLSchema#long> ;
+	voidx:aboxTriples "3"^^<http://www.w3.org/2001/XMLSchema#long> ;
+	void:distinctSubjects "3"^^<http://www.w3.org/2001/XMLSchema#long> ;
+	void:distinctObjects "3"^^<http://www.w3.org/2001/XMLSchema#long> .
+
+<http://www.w3.org/2000/01/rdf-schema#Scope> voidx:label "rdfs:Scope (3, DFI)" ;
+	voidx:type <http://www.w3.org/2002/07/owl#DatatypeProperty> , <http://www.w3.org/2002/07/owl#FunctionalProperty> , <http://www.w3.org/2002/07/owl#InverseFunctionalProperty> ;
+	voidx:example """
+    <http://imash.leeds.ac.uk/ontologies/atu/GroundOntology.owl> rdfs:Scope \"The ontology describes properties and...\" .
+    <http://imash.leeds.ac.uk/ontologies/atu/PipeOntology.owl> rdfs:Scope \"The ontology describes properties and...\" .
+    <http://imash.leeds.ac.uk/ontologies/atu/RoadOntology.owl> rdfs:Scope \"The ontology describes road properties...\" .""" ;
+	voidx:globalStats <stats:Scope> .
+
+<stats:Dataset> void:propertyPartition <stats:Scope> .
+
+<stats:Scope> a void:Dataset ;
+	voidx:label "<stats:Scope> (3, DFI)" ;
+	void:property <http://www.w3.org/2000/01/rdf-schema#Scope> ;
+	void:properties "1"^^<http://www.w3.org/2001/XMLSchema#int> ;
+	void:entities "3"^^<http://www.w3.org/2001/XMLSchema#long> ;
+	void:triples "3"^^<http://www.w3.org/2001/XMLSchema#long> ;
+	voidx:aboxTriples "3"^^<http://www.w3.org/2001/XMLSchema#long> ;
+	void:distinctSubjects "3"^^<http://www.w3.org/2001/XMLSchema#long> ;
+	void:distinctObjects "3"^^<http://www.w3.org/2001/XMLSchema#long> .
+
+<http://www.w3.org/2002/07/owl#equivalentClass> voidx:label "owl:equivalentClass (7, OFI)" ;
+	voidx:type <http://www.w3.org/2002/07/owl#ObjectProperty> , <http://www.w3.org/2002/07/owl#FunctionalProperty> , <http://www.w3.org/2002/07/owl#InverseFunctionalProperty> ;
+	voidx:example """
+    sioc:Post owl:equivalentClass <https://w3id.org/empathi/Communication> .
+    <http://www.semanticweb.org/nicolas/ontologies/2014/9/Smart_CityPlanningSmartCitySubsystem> owl:equivalentClass <http://www.semanticweb.org/nicolas/ontologies/2014/9/Smart_CityPlanningSmartEcosystem> .
+    <http://www.co-ode.org/ontologies/ont.owl#ActivityBasedEcosystem> owl:equivalentClass <http://www.semanticweb.org/nicolas/ontologies/2014/9/Smart_CityActivity> .""" ;
+	voidx:globalStats <stats:equivalentClass> .
+
+<stats:Dataset> void:propertyPartition <stats:equivalentClass> .
+
+<stats:equivalentClass> a void:Dataset ;
+	voidx:label "<stats:equivalentClass> (7, OFI)" ;
+	void:property <http://www.w3.org/2002/07/owl#equivalentClass> ;
+	void:properties "1"^^<http://www.w3.org/2001/XMLSchema#int> ;
+	void:entities "7"^^<http://www.w3.org/2001/XMLSchema#long> ;
+	void:triples "7"^^<http://www.w3.org/2001/XMLSchema#long> ;
+	voidx:tboxTriples "7"^^<http://www.w3.org/2001/XMLSchema#long> ;
+	void:distinctSubjects "7"^^<http://www.w3.org/2001/XMLSchema#long> ;
+	void:distinctObjects "7"^^<http://www.w3.org/2001/XMLSchema#long> .
+
+<http://www.w3.org/2000/01/rdf-schema#subPropertyOf> voidx:label "rdfs:subPropertyOf (329, OF)" ;
+	voidx:type <http://www.w3.org/2002/07/owl#ObjectProperty> , <http://www.w3.org/2002/07/owl#FunctionalProperty> ;
+	voidx:example """
+    <http://www.disit.org/km4city/schema#lastObservationHumidity> rdfs:subPropertyOf <http://www.disit.org/km4city/schema#humidity> .
+    <http://www.semanticweb.org/nicolas/ontologies/2014/9/Smart_Citytotal_collected_municipal_solid_waste_per_capita> rdfs:subPropertyOf <http://www.semanticweb.org/nicolas/ontologies/2014/9/Smart_CitywasteSolid> .
+    <http://www.semanticweb.org/nicolas/ontologies/2014/9/Smart_Citytotal_domestic_water_consumption_per_capita_in_litres_per_day> rdfs:subPropertyOf <http://www.semanticweb.org/nicolas/ontologies/2014/9/Smart_Citywater> .""" ;
+	voidx:globalStats <stats:subPropertyOf> .
+
+<stats:Dataset> void:propertyPartition <stats:subPropertyOf> .
+
+<stats:subPropertyOf> a void:Dataset ;
+	voidx:label "<stats:subPropertyOf> (329, OF)" ;
+	void:property <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> ;
+	void:properties "1"^^<http://www.w3.org/2001/XMLSchema#int> ;
+	void:entities "329"^^<http://www.w3.org/2001/XMLSchema#long> ;
+	void:triples "329"^^<http://www.w3.org/2001/XMLSchema#long> ;
+	voidx:tboxTriples "329"^^<http://www.w3.org/2001/XMLSchema#long> ;
+	void:distinctSubjects "329"^^<http://www.w3.org/2001/XMLSchema#long> ;
+	void:distinctObjects "60"^^<http://www.w3.org/2001/XMLSchema#long> .
+
+<http://www.w3.org/ns/prov#hadPrimarySource> voidx:label "prov:hadPrimarySource (109, OI)" ;
+	voidx:type <http://www.w3.org/2002/07/owl#ObjectProperty> , <http://www.w3.org/2002/07/owl#InverseFunctionalProperty> ;
+	voidx:example """
+    <https://saref.etsi.org/saref4bldg/Damper> prov:hadPrimarySource <http://www.buildingsmart-tech.org/ifc/IFC4/Add1/html/schema/ifchvacdomain/lexical/ifcdamper.htm> .
+    <https://saref.etsi.org/saref4bldg/Damper> prov:hadPrimarySource <http://www.buildingsmart-tech.org/ifc/IFC4/Add1/html/schema/ifchvacdomain/pset/pset_dampertypecommon.htm> .
+    <https://saref.etsi.org/saref4bldg/TransportElement> prov:hadPrimarySource <http://www.buildingsmart-tech.org/ifc/IFC4/Add1/html/schema/ifcproductextension/lexical/ifctransportelement.htm> .""" ;
+	voidx:globalStats <stats:hadPrimarySource> .
+
+<stats:Dataset> void:propertyPartition <stats:hadPrimarySource> .
+
+<stats:hadPrimarySource> a void:Dataset ;
+	voidx:label "<stats:hadPrimarySource> (109, OI)" ;
+	void:property <http://www.w3.org/ns/prov#hadPrimarySource> ;
+	void:properties "1"^^<http://www.w3.org/2001/XMLSchema#int> ;
+	void:entities "58"^^<http://www.w3.org/2001/XMLSchema#long> ;
+	void:triples "109"^^<http://www.w3.org/2001/XMLSchema#long> ;
+	voidx:aboxTriples "109"^^<http://www.w3.org/2001/XMLSchema#long> ;
+	void:distinctSubjects "58"^^<http://www.w3.org/2001/XMLSchema#long> ;
+	void:distinctObjects "109"^^<http://www.w3.org/2001/XMLSchema#long> .
+
+<http://www.w3.org/2000/01/rdf-schema#seeAlso> voidx:label "rdfs:seeAlso (69, PI)" ;
+	voidx:type <http://www.w3.org/1999/02/22-rdf-syntax-ns#Property> , <http://www.w3.org/2002/07/owl#InverseFunctionalProperty> ;
+	voidx:example """
+    <http://schema.rdfs.org/all> rdfs:seeAlso schema: .
+    <http://www.disit.org/km4city/schema#AMQPBroker> rdfs:seeAlso \"https://en.wikipedia.org/wiki/Advanced_Message_Queuing_Protocol\"@en .
+    <http://www.disit.org/km4city/schema#AMQPBroker> rdfs:seeAlso \"https://it.wikipedia.org/wiki/Advanced_Message_Queuing_Protocol\"@it .""" ;
+	voidx:globalStats <stats:seeAlso> .
+
+<stats:Dataset> void:propertyPartition <stats:seeAlso> .
+
+<stats:seeAlso> a void:Dataset ;
+	voidx:label "<stats:seeAlso> (69, PI)" ;
+	void:property <http://www.w3.org/2000/01/rdf-schema#seeAlso> ;
+	void:properties "1"^^<http://www.w3.org/2001/XMLSchema#int> ;
+	void:entities "66"^^<http://www.w3.org/2001/XMLSchema#long> ;
+	void:triples "69"^^<http://www.w3.org/2001/XMLSchema#long> ;
+	voidx:aboxTriples "69"^^<http://www.w3.org/2001/XMLSchema#long> ;
+	void:distinctSubjects "66"^^<http://www.w3.org/2001/XMLSchema#long> ;
+	void:distinctObjects "69"^^<http://www.w3.org/2001/XMLSchema#long> .
+
+<http://www.w3.org/2002/07/owl#inverseOf> voidx:label "owl:inverseOf (39, OFI)" ;
+	voidx:type <http://www.w3.org/2002/07/owl#ObjectProperty> , <http://www.w3.org/2002/07/owl#FunctionalProperty> , <http://www.w3.org/2002/07/owl#InverseFunctionalProperty> ;
+	voidx:example """
+    <http://www.disit.org/km4city/schema#containsElement> owl:inverseOf <http://www.disit.org/km4city/schema#isPartOfRoad> .
+    <http://www.disit.org/km4city/schema#containsSite> owl:inverseOf <http://www.disit.org/saref4bldg-ext/isPartOfIndustrialArea> .
+    <http://www.disit.org/km4city/schema#belongToMunicipality> owl:inverseOf <http://www.disit.org/km4city/schema#hasDistrict> .""" ;
+	voidx:globalStats <stats:inverseOf> .
+
+<stats:Dataset> void:propertyPartition <stats:inverseOf> .
+
+<stats:inverseOf> a void:Dataset ;
+	voidx:label "<stats:inverseOf> (39, OFI)" ;
+	void:property <http://www.w3.org/2002/07/owl#inverseOf> ;
+	void:properties "1"^^<http://www.w3.org/2001/XMLSchema#int> ;
+	void:entities "39"^^<http://www.w3.org/2001/XMLSchema#long> ;
+	void:triples "39"^^<http://www.w3.org/2001/XMLSchema#long> ;
+	voidx:tboxTriples "39"^^<http://www.w3.org/2001/XMLSchema#long> ;
+	void:distinctSubjects "39"^^<http://www.w3.org/2001/XMLSchema#long> ;
+	void:distinctObjects "39"^^<http://www.w3.org/2001/XMLSchema#long> .
+
+<http://www.w3.org/2002/07/owl#disjointWith> voidx:label "owl:disjointWith (12, O)" ;
+	voidx:type <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+	voidx:example """
+    <http://www.disit.org/km4city/schema#Road> owl:disjointWith <http://www.disit.org/km4city/schema#RoadElement> .
+    <http://www.disit.org/km4city/schema#Event> owl:disjointWith <http://www.disit.org/km4city/schema#Service> .
+    <http://www.disit.org/km4city/schema#AdministrativeRoad> owl:disjointWith <http://www.disit.org/km4city/schema#RoadElement> .""" ;
+	voidx:globalStats <stats:disjointWith> .
+
+<stats:Dataset> void:propertyPartition <stats:disjointWith> .
+
+<stats:disjointWith> a void:Dataset ;
+	voidx:label "<stats:disjointWith> (12, O)" ;
+	void:property <http://www.w3.org/2002/07/owl#disjointWith> ;
+	void:properties "1"^^<http://www.w3.org/2001/XMLSchema#int> ;
+	void:entities "10"^^<http://www.w3.org/2001/XMLSchema#long> ;
+	void:triples "12"^^<http://www.w3.org/2001/XMLSchema#long> ;
+	voidx:tboxTriples "12"^^<http://www.w3.org/2001/XMLSchema#long> ;
+	void:distinctSubjects "10"^^<http://www.w3.org/2001/XMLSchema#long> ;
+	void:distinctObjects "10"^^<http://www.w3.org/2001/XMLSchema#long> .
+
+<http://purl.org/dc/terms/hasFormat> voidx:label "dct:hasFormat (5, OI)" ;
+	voidx:type <http://www.w3.org/2002/07/owl#ObjectProperty> , <http://www.w3.org/2002/07/owl#InverseFunctionalProperty> ;
+	voidx:example """
+    <http://schema.rdfs.org/all> dct:hasFormat _:node1g7k3h2c3x6 .
+    <http://schema.rdfs.org/all> dct:hasFormat <http://schema.rdfs.org/all.nt> .
+    <http://schema.rdfs.org/all> dct:hasFormat <http://schema.rdfs.org/all.rdf> .""" ;
+	voidx:globalStats <stats:hasFormat> .
+
+<stats:Dataset> void:propertyPartition <stats:hasFormat> .
+
+<stats:hasFormat> a void:Dataset ;
+	voidx:label "<stats:hasFormat> (5, OI)" ;
+	void:property <http://purl.org/dc/terms/hasFormat> ;
+	void:properties "1"^^<http://www.w3.org/2001/XMLSchema#int> ;
+	void:entities "1"^^<http://www.w3.org/2001/XMLSchema#long> ;
+	void:triples "5"^^<http://www.w3.org/2001/XMLSchema#long> ;
+	voidx:aboxTriples "5"^^<http://www.w3.org/2001/XMLSchema#long> ;
+	void:distinctSubjects "1"^^<http://www.w3.org/2001/XMLSchema#long> ;
+	void:distinctObjects "5"^^<http://www.w3.org/2001/XMLSchema#long> .
+
+<http://purl.org/dc/terms/valid> voidx:label "dct:valid (1, DFI)" ;
+	voidx:type <http://www.w3.org/2002/07/owl#DatatypeProperty> , <http://www.w3.org/2002/07/owl#FunctionalProperty> , <http://www.w3.org/2002/07/owl#InverseFunctionalProperty> ;
+	voidx:example """
+    <http://schema.rdfs.org/all> dct:valid \"2014-04-03\"^^xs:date .""" ;
+	voidx:globalStats <stats:valid> .
+
+<stats:Dataset> void:propertyPartition <stats:valid> .
+
+<stats:valid> a void:Dataset ;
+	voidx:label "<stats:valid> (1, DFI)" ;
+	void:property <http://purl.org/dc/terms/valid> ;
+	void:properties "1"^^<http://www.w3.org/2001/XMLSchema#int> ;
+	void:entities "1"^^<http://www.w3.org/2001/XMLSchema#long> ;
+	void:triples "1"^^<http://www.w3.org/2001/XMLSchema#long> ;
+	voidx:aboxTriples "1"^^<http://www.w3.org/2001/XMLSchema#long> ;
+	void:distinctSubjects "1"^^<http://www.w3.org/2001/XMLSchema#long> ;
+	void:distinctObjects "1"^^<http://www.w3.org/2001/XMLSchema#long> .
+
+<http://xmlns.com/foaf/0.1/page> voidx:label "foaf:page (1, OFI)" ;
+	voidx:type <http://www.w3.org/2002/07/owl#ObjectProperty> , <http://www.w3.org/2002/07/owl#FunctionalProperty> , <http://www.w3.org/2002/07/owl#InverseFunctionalProperty> ;
+	voidx:example """
+    <http://schema.rdfs.org/all> foaf:page <http://schema.rdfs.org/> .""" ;
+	voidx:globalStats <stats:page> .
+
+<stats:Dataset> void:propertyPartition <stats:page> .
+
+<stats:page> a void:Dataset ;
+	voidx:label "<stats:page> (1, OFI)" ;
+	void:property <http://xmlns.com/foaf/0.1/page> ;
+	void:properties "1"^^<http://www.w3.org/2001/XMLSchema#int> ;
+	void:entities "1"^^<http://www.w3.org/2001/XMLSchema#long> ;
+	void:triples "1"^^<http://www.w3.org/2001/XMLSchema#long> ;
+	voidx:aboxTriples "1"^^<http://www.w3.org/2001/XMLSchema#long> ;
+	void:distinctSubjects "1"^^<http://www.w3.org/2001/XMLSchema#long> ;
+	void:distinctObjects "1"^^<http://www.w3.org/2001/XMLSchema#long> .
+
+<http://www.w3.org/2002/07/owl#backwardCompatibleWith> voidx:label "owl:backwardCompatibleWith (1, DFI)" ;
+	voidx:type <http://www.w3.org/2002/07/owl#DatatypeProperty> , <http://www.w3.org/2002/07/owl#FunctionalProperty> , <http://www.w3.org/2002/07/owl#InverseFunctionalProperty> ;
+	voidx:example """
+    <http://www.semanticweb.org/nicolas/ontologies/2014/9/Smart_Cityinternet> owl:backwardCompatibleWith \"Indicators porposed by the Digital...\" .""" ;
+	voidx:globalStats <stats:backwardCompatibleWith> .
+
+<stats:Dataset> void:propertyPartition <stats:backwardCompatibleWith> .
+
+<stats:backwardCompatibleWith> a void:Dataset ;
+	voidx:label "<stats:backwardCompatibleWith> (1, DFI)" ;
+	void:property <http://www.w3.org/2002/07/owl#backwardCompatibleWith> ;
+	void:properties "1"^^<http://www.w3.org/2001/XMLSchema#int> ;
+	void:entities "1"^^<http://www.w3.org/2001/XMLSchema#long> ;
+	void:triples "1"^^<http://www.w3.org/2001/XMLSchema#long> ;
+	voidx:aboxTriples "1"^^<http://www.w3.org/2001/XMLSchema#long> ;
+	void:distinctSubjects "1"^^<http://www.w3.org/2001/XMLSchema#long> ;
+	void:distinctObjects "1"^^<http://www.w3.org/2001/XMLSchema#long> .
+
+<http://www.w3.org/2002/07/owl#equivalentProperty> voidx:label "owl:equivalentProperty (1, OFI)" ;
+	voidx:type <http://www.w3.org/2002/07/owl#ObjectProperty> , <http://www.w3.org/2002/07/owl#FunctionalProperty> , <http://www.w3.org/2002/07/owl#InverseFunctionalProperty> ;
+	voidx:example """
+    <http://www.disit.org/km4city/schema#isInRegion> owl:equivalentProperty <http://www.disit.org/km4city/schema#isPartOfRegion> .""" ;
+	voidx:globalStats <stats:equivalentProperty> .
+
+<stats:Dataset> void:propertyPartition <stats:equivalentProperty> .
+
+<stats:equivalentProperty> a void:Dataset ;
+	voidx:label "<stats:equivalentProperty> (1, OFI)" ;
+	void:property <http://www.w3.org/2002/07/owl#equivalentProperty> ;
+	void:properties "1"^^<http://www.w3.org/2001/XMLSchema#int> ;
+	void:entities "1"^^<http://www.w3.org/2001/XMLSchema#long> ;
+	void:triples "1"^^<http://www.w3.org/2001/XMLSchema#long> ;
+	voidx:tboxTriples "1"^^<http://www.w3.org/2001/XMLSchema#long> ;
+	void:distinctSubjects "1"^^<http://www.w3.org/2001/XMLSchema#long> ;
+	void:distinctObjects "1"^^<http://www.w3.org/2001/XMLSchema#long> .
+
+<http://www.w3.org/2002/07/owl#sameAs> voidx:label "owl:sameAs (1, OFI)" ;
+	voidx:type <http://www.w3.org/2002/07/owl#ObjectProperty> , <http://www.w3.org/2002/07/owl#FunctionalProperty> , <http://www.w3.org/2002/07/owl#InverseFunctionalProperty> ;
+	voidx:example """
+    <http://www.semanticweb.org/nicolas/ontologies/2014/9/Smart_CityJoomla> owl:sameAs <http://www.semanticweb.org/nicolas/ontologies/2014/9/Smart_CityWordPress> .""" ;
+	voidx:globalStats <stats:sameAs> .
+
+<stats:Dataset> void:propertyPartition <stats:sameAs> .
+
+<stats:sameAs> a void:Dataset ;
+	voidx:label "<stats:sameAs> (1, OFI)" ;
+	void:property <http://www.w3.org/2002/07/owl#sameAs> ;
+	void:properties "1"^^<http://www.w3.org/2001/XMLSchema#int> ;
+	void:entities "1"^^<http://www.w3.org/2001/XMLSchema#long> ;
+	void:triples "1"^^<http://www.w3.org/2001/XMLSchema#long> ;
+	voidx:aboxTriples "1"^^<http://www.w3.org/2001/XMLSchema#long> ;
+	voidx:sameAsTriples "1"^^<http://www.w3.org/2001/XMLSchema#long> ;
+	void:distinctSubjects "1"^^<http://www.w3.org/2001/XMLSchema#long> ;
+	void:distinctObjects "1"^^<http://www.w3.org/2001/XMLSchema#long> .
+
+<http://www.w3.org/1999/02/22-rdf-syntax-ns#first> voidx:label "rdf:first (581, OF)" ;
+	voidx:type <http://www.w3.org/2002/07/owl#ObjectProperty> , <http://www.w3.org/2002/07/owl#FunctionalProperty> ;
+	voidx:globalStats <stats:first> .
+
+<stats:Dataset> void:propertyPartition <stats:first> .
+
+<stats:first> a void:Dataset ;
+	voidx:label "<stats:first> (581, OF)" ;
+	void:property <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> ;
+	void:properties "1"^^<http://www.w3.org/2001/XMLSchema#int> ;
+	void:triples "581"^^<http://www.w3.org/2001/XMLSchema#long> ;
+	voidx:tboxTriples "581"^^<http://www.w3.org/2001/XMLSchema#long> ;
+	void:distinctSubjects "581"^^<http://www.w3.org/2001/XMLSchema#long> ;
+	void:distinctObjects "168"^^<http://www.w3.org/2001/XMLSchema#long> .
+
+<http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> voidx:label "rdf:rest (581, OF)" ;
+	voidx:type <http://www.w3.org/2002/07/owl#ObjectProperty> , <http://www.w3.org/2002/07/owl#FunctionalProperty> ;
+	voidx:globalStats <stats:rest> .
+
+<stats:Dataset> void:propertyPartition <stats:rest> .
+
+<stats:rest> a void:Dataset ;
+	voidx:label "<stats:rest> (581, OF)" ;
+	void:property <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> ;
+	void:properties "1"^^<http://www.w3.org/2001/XMLSchema#int> ;
+	void:triples "581"^^<http://www.w3.org/2001/XMLSchema#long> ;
+	voidx:tboxTriples "581"^^<http://www.w3.org/2001/XMLSchema#long> ;
+	void:distinctSubjects "581"^^<http://www.w3.org/2001/XMLSchema#long> ;
+	void:distinctObjects "355"^^<http://www.w3.org/2001/XMLSchema#long> .
+
+<http://www.w3.org/2002/07/owl#onProperty> voidx:label "owl:onProperty (7558, OF)" ;
+	voidx:type <http://www.w3.org/2002/07/owl#ObjectProperty> , <http://www.w3.org/2002/07/owl#FunctionalProperty> ;
+	voidx:globalStats <stats:onProperty> .
+
+<stats:Dataset> void:propertyPartition <stats:onProperty> .
+
+<stats:onProperty> a void:Dataset ;
+	voidx:label "<stats:onProperty> (7558, OF)" ;
+	void:property <http://www.w3.org/2002/07/owl#onProperty> ;
+	void:properties "1"^^<http://www.w3.org/2001/XMLSchema#int> ;
+	void:triples "7558"^^<http://www.w3.org/2001/XMLSchema#long> ;
+	voidx:tboxTriples "7558"^^<http://www.w3.org/2001/XMLSchema#long> ;
+	void:distinctSubjects "7558"^^<http://www.w3.org/2001/XMLSchema#long> ;
+	void:distinctObjects "332"^^<http://www.w3.org/2001/XMLSchema#long> .
+
+<http://www.w3.org/2002/07/owl#someValuesFrom> voidx:label "owl:someValuesFrom (7160, OF)" ;
+	voidx:type <http://www.w3.org/2002/07/owl#ObjectProperty> , <http://www.w3.org/2002/07/owl#FunctionalProperty> ;
+	voidx:globalStats <stats:someValuesFrom> .
+
+<stats:Dataset> void:propertyPartition <stats:someValuesFrom> .
+
+<stats:someValuesFrom> a void:Dataset ;
+	voidx:label "<stats:someValuesFrom> (7160, OF)" ;
+	void:property <http://www.w3.org/2002/07/owl#someValuesFrom> ;
+	void:properties "1"^^<http://www.w3.org/2001/XMLSchema#int> ;
+	void:triples "7160"^^<http://www.w3.org/2001/XMLSchema#long> ;
+	voidx:tboxTriples "7160"^^<http://www.w3.org/2001/XMLSchema#long> ;
+	void:distinctSubjects "7160"^^<http://www.w3.org/2001/XMLSchema#long> ;
+	void:distinctObjects "213"^^<http://www.w3.org/2001/XMLSchema#long> .
+
+<http://www.w3.org/2002/07/owl#unionOf> voidx:label "owl:unionOf (226, OFI)" ;
+	voidx:type <http://www.w3.org/2002/07/owl#ObjectProperty> , <http://www.w3.org/2002/07/owl#FunctionalProperty> , <http://www.w3.org/2002/07/owl#InverseFunctionalProperty> ;
+	voidx:globalStats <stats:unionOf> .
+
+<stats:Dataset> void:propertyPartition <stats:unionOf> .
+
+<stats:unionOf> a void:Dataset ;
+	voidx:label "<stats:unionOf> (226, OFI)" ;
+	void:property <http://www.w3.org/2002/07/owl#unionOf> ;
+	void:properties "1"^^<http://www.w3.org/2001/XMLSchema#int> ;
+	void:triples "226"^^<http://www.w3.org/2001/XMLSchema#long> ;
+	voidx:tboxTriples "226"^^<http://www.w3.org/2001/XMLSchema#long> ;
+	void:distinctSubjects "226"^^<http://www.w3.org/2001/XMLSchema#long> ;
+	void:distinctObjects "226"^^<http://www.w3.org/2001/XMLSchema#long> .
+
+<http://www.w3.org/2002/07/owl#qualifiedCardinality> voidx:label "owl:qualifiedCardinality (49, DF)" ;
+	voidx:type <http://www.w3.org/2002/07/owl#DatatypeProperty> , <http://www.w3.org/2002/07/owl#FunctionalProperty> ;
+	voidx:globalStats <stats:qualifiedCardinality> .
+
+<stats:Dataset> void:propertyPartition <stats:qualifiedCardinality> .
+
+<stats:qualifiedCardinality> a void:Dataset ;
+	voidx:label "<stats:qualifiedCardinality> (49, DF)" ;
+	void:property <http://www.w3.org/2002/07/owl#qualifiedCardinality> ;
+	void:properties "1"^^<http://www.w3.org/2001/XMLSchema#int> ;
+	void:triples "49"^^<http://www.w3.org/2001/XMLSchema#long> ;
+	voidx:tboxTriples "49"^^<http://www.w3.org/2001/XMLSchema#long> ;
+	void:distinctSubjects "49"^^<http://www.w3.org/2001/XMLSchema#long> ;
+	void:distinctObjects "1"^^<http://www.w3.org/2001/XMLSchema#long> .
+
+<http://www.w3.org/2002/07/owl#onClass> voidx:label "owl:onClass (37, OF)" ;
+	voidx:type <http://www.w3.org/2002/07/owl#ObjectProperty> , <http://www.w3.org/2002/07/owl#FunctionalProperty> ;
+	voidx:globalStats <stats:onClass> .
+
+<stats:Dataset> void:propertyPartition <stats:onClass> .
+
+<stats:onClass> a void:Dataset ;
+	voidx:label "<stats:onClass> (37, OF)" ;
+	void:property <http://www.w3.org/2002/07/owl#onClass> ;
+	void:properties "1"^^<http://www.w3.org/2001/XMLSchema#int> ;
+	void:triples "37"^^<http://www.w3.org/2001/XMLSchema#long> ;
+	voidx:tboxTriples "37"^^<http://www.w3.org/2001/XMLSchema#long> ;
+	void:distinctSubjects "37"^^<http://www.w3.org/2001/XMLSchema#long> ;
+	void:distinctObjects "19"^^<http://www.w3.org/2001/XMLSchema#long> .
+
+<http://www.w3.org/2002/07/owl#allValuesFrom> voidx:label "owl:allValuesFrom (334, OF)" ;
+	voidx:type <http://www.w3.org/2002/07/owl#ObjectProperty> , <http://www.w3.org/2002/07/owl#FunctionalProperty> ;
+	voidx:globalStats <stats:allValuesFrom> .
+
+<stats:Dataset> void:propertyPartition <stats:allValuesFrom> .
+
+<stats:allValuesFrom> a void:Dataset ;
+	voidx:label "<stats:allValuesFrom> (334, OF)" ;
+	void:property <http://www.w3.org/2002/07/owl#allValuesFrom> ;
+	void:properties "1"^^<http://www.w3.org/2001/XMLSchema#int> ;
+	void:triples "334"^^<http://www.w3.org/2001/XMLSchema#long> ;
+	voidx:tboxTriples "334"^^<http://www.w3.org/2001/XMLSchema#long> ;
+	void:distinctSubjects "334"^^<http://www.w3.org/2001/XMLSchema#long> ;
+	void:distinctObjects "14"^^<http://www.w3.org/2001/XMLSchema#long> .
+
+<http://www.w3.org/2002/07/owl#onDataRange> voidx:label "owl:onDataRange (22, OF)" ;
+	voidx:type <http://www.w3.org/2002/07/owl#ObjectProperty> , <http://www.w3.org/2002/07/owl#FunctionalProperty> ;
+	voidx:globalStats <stats:onDataRange> .
+
+<stats:Dataset> void:propertyPartition <stats:onDataRange> .
+
+<stats:onDataRange> a void:Dataset ;
+	voidx:label "<stats:onDataRange> (22, OF)" ;
+	void:property <http://www.w3.org/2002/07/owl#onDataRange> ;
+	void:properties "1"^^<http://www.w3.org/2001/XMLSchema#int> ;
+	void:triples "22"^^<http://www.w3.org/2001/XMLSchema#long> ;
+	voidx:tboxTriples "22"^^<http://www.w3.org/2001/XMLSchema#long> ;
+	void:distinctSubjects "22"^^<http://www.w3.org/2001/XMLSchema#long> ;
+	void:distinctObjects "3"^^<http://www.w3.org/2001/XMLSchema#long> .
+
+<http://www.w3.org/2002/07/owl#maxCardinality> voidx:label "owl:maxCardinality (4, DF)" ;
+	voidx:type <http://www.w3.org/2002/07/owl#DatatypeProperty> , <http://www.w3.org/2002/07/owl#FunctionalProperty> ;
+	voidx:globalStats <stats:maxCardinality> .
+
+<stats:Dataset> void:propertyPartition <stats:maxCardinality> .
+
+<stats:maxCardinality> a void:Dataset ;
+	voidx:label "<stats:maxCardinality> (4, DF)" ;
+	void:property <http://www.w3.org/2002/07/owl#maxCardinality> ;
+	void:properties "1"^^<http://www.w3.org/2001/XMLSchema#int> ;
+	void:triples "4"^^<http://www.w3.org/2001/XMLSchema#long> ;
+	voidx:tboxTriples "4"^^<http://www.w3.org/2001/XMLSchema#long> ;
+	void:distinctSubjects "4"^^<http://www.w3.org/2001/XMLSchema#long> ;
+	void:distinctObjects "1"^^<http://www.w3.org/2001/XMLSchema#long> .
+
+<http://www.w3.org/2002/07/owl#minQualifiedCardinality> voidx:label "owl:minQualifiedCardinality (14, DF)" ;
+	voidx:type <http://www.w3.org/2002/07/owl#DatatypeProperty> , <http://www.w3.org/2002/07/owl#FunctionalProperty> ;
+	voidx:globalStats <stats:minQualifiedCardinality> .
+
+<stats:Dataset> void:propertyPartition <stats:minQualifiedCardinality> .
+
+<stats:minQualifiedCardinality> a void:Dataset ;
+	voidx:label "<stats:minQualifiedCardinality> (14, DF)" ;
+	void:property <http://www.w3.org/2002/07/owl#minQualifiedCardinality> ;
+	void:properties "1"^^<http://www.w3.org/2001/XMLSchema#int> ;
+	void:triples "14"^^<http://www.w3.org/2001/XMLSchema#long> ;
+	voidx:tboxTriples "14"^^<http://www.w3.org/2001/XMLSchema#long> ;
+	void:distinctSubjects "14"^^<http://www.w3.org/2001/XMLSchema#long> ;
+	void:distinctObjects "2"^^<http://www.w3.org/2001/XMLSchema#long> .
+
+<http://purl.org/dc/terms/rights> voidx:label "dct:rights (1, DFI)" ;
+	voidx:type <http://www.w3.org/2002/07/owl#DatatypeProperty> , <http://www.w3.org/2002/07/owl#FunctionalProperty> , <http://www.w3.org/2002/07/owl#InverseFunctionalProperty> ;
+	voidx:example """
+    <http://www.disit.org/km4city/schema> dct:rights \"The Knowledge Model for the City - km4city - is available under Creative Commons Attribution-ShareAlike 3.0 Unported license\"@en .""" ;
+	voidx:globalStats <stats:rights_1> .
+
+<stats:Dataset> void:propertyPartition <stats:rights_1> .
+
+<stats:rights_1> a void:Dataset ;
+	voidx:label "<stats:rights_1> (1, DFI)" ;
+	void:property <http://purl.org/dc/terms/rights> ;
+	void:properties "1"^^<http://www.w3.org/2001/XMLSchema#int> ;
+	void:entities "1"^^<http://www.w3.org/2001/XMLSchema#long> ;
+	void:triples "1"^^<http://www.w3.org/2001/XMLSchema#long> ;
+	voidx:aboxTriples "1"^^<http://www.w3.org/2001/XMLSchema#long> ;
+	void:distinctSubjects "1"^^<http://www.w3.org/2001/XMLSchema#long> ;
+	void:distinctObjects "1"^^<http://www.w3.org/2001/XMLSchema#long> .
+
+<http://purl.org/dc/terms/subject> voidx:label "dct:subject (1, DFI)" ;
+	voidx:type <http://www.w3.org/2002/07/owl#DatatypeProperty> , <http://www.w3.org/2002/07/owl#FunctionalProperty> , <http://www.w3.org/2002/07/owl#InverseFunctionalProperty> ;
+	voidx:example """
+    <http://www.disit.org/km4city/schema> dct:subject \"Ontology, Semantic SEO, RDFa, Linked Data, RDF, Semantic Web, Smart Recommender Systems, Smart City, Transportation Network, Smart Mobility, Citizens Services, Semantic Model, knowledge model\"@en .""" ;
+	voidx:globalStats <stats:subject> .
+
+<stats:Dataset> void:propertyPartition <stats:subject> .
+
+<stats:subject> a void:Dataset ;
+	voidx:label "<stats:subject> (1, DFI)" ;
+	void:property <http://purl.org/dc/terms/subject> ;
+	void:properties "1"^^<http://www.w3.org/2001/XMLSchema#int> ;
+	void:entities "1"^^<http://www.w3.org/2001/XMLSchema#long> ;
+	void:triples "1"^^<http://www.w3.org/2001/XMLSchema#long> ;
+	voidx:aboxTriples "1"^^<http://www.w3.org/2001/XMLSchema#long> ;
+	void:distinctSubjects "1"^^<http://www.w3.org/2001/XMLSchema#long> ;
+	void:distinctObjects "1"^^<http://www.w3.org/2001/XMLSchema#long> .
+
+<http://xmlns.com/foaf/0.1/homepage> voidx:label "foaf:homepage (2, OI)" ;
+	voidx:type <http://www.w3.org/2002/07/owl#ObjectProperty> , <http://www.w3.org/2002/07/owl#InverseFunctionalProperty> ;
+	voidx:example """
+    <http://www.disit.org/km4city/schema> foaf:homepage <http://www.disit.org/> .
+    <http://www.disit.org/km4city/schema> foaf:homepage <http://www.km4city.org/> .""" ;
+	voidx:globalStats <stats:homepage> .
+
+<stats:Dataset> void:propertyPartition <stats:homepage> .
+
+<stats:homepage> a void:Dataset ;
+	voidx:label "<stats:homepage> (2, OI)" ;
+	void:property <http://xmlns.com/foaf/0.1/homepage> ;
+	void:properties "1"^^<http://www.w3.org/2001/XMLSchema#int> ;
+	void:entities "1"^^<http://www.w3.org/2001/XMLSchema#long> ;
+	void:triples "2"^^<http://www.w3.org/2001/XMLSchema#long> ;
+	voidx:aboxTriples "2"^^<http://www.w3.org/2001/XMLSchema#long> ;
+	void:distinctSubjects "1"^^<http://www.w3.org/2001/XMLSchema#long> ;
+	void:distinctObjects "2"^^<http://www.w3.org/2001/XMLSchema#long> .
+
+<http://vocab.sindice.net/date> voidx:label "sindice:date (1, DFI)" ;
+	voidx:type <http://www.w3.org/2002/07/owl#DatatypeProperty> , <http://www.w3.org/2002/07/owl#FunctionalProperty> , <http://www.w3.org/2002/07/owl#InverseFunctionalProperty> ;
+	voidx:example """
+    <file:/home/riccyg/schema-tmp/all.ttl> sindice:date \"2014-04-03T05:17:29+01:00\" .""" ;
+	voidx:globalStats <stats:date_1> .
+
+<stats:Dataset> void:propertyPartition <stats:date_1> .
+
+<stats:date_1> a void:Dataset ;
+	voidx:label "<stats:date_1> (1, DFI)" ;
+	void:property <http://vocab.sindice.net/date> ;
+	void:properties "1"^^<http://www.w3.org/2001/XMLSchema#int> ;
+	void:entities "1"^^<http://www.w3.org/2001/XMLSchema#long> ;
+	void:triples "1"^^<http://www.w3.org/2001/XMLSchema#long> ;
+	voidx:aboxTriples "1"^^<http://www.w3.org/2001/XMLSchema#long> ;
+	void:distinctSubjects "1"^^<http://www.w3.org/2001/XMLSchema#long> ;
+	void:distinctObjects "1"^^<http://www.w3.org/2001/XMLSchema#long> .
+
+<http://vocab.sindice.net/size> voidx:label "sindice:size (1, DFI)" ;
+	voidx:type <http://www.w3.org/2002/07/owl#DatatypeProperty> , <http://www.w3.org/2002/07/owl#FunctionalProperty> , <http://www.w3.org/2002/07/owl#InverseFunctionalProperty> ;
+	voidx:example """
+    <file:/home/riccyg/schema-tmp/all.ttl> sindice:size \"9267\"^^xs:int .""" ;
+	voidx:globalStats <stats:size> .
+
+<stats:Dataset> void:propertyPartition <stats:size> .
+
+<stats:size> a void:Dataset ;
+	voidx:label "<stats:size> (1, DFI)" ;
+	void:property <http://vocab.sindice.net/size> ;
+	void:properties "1"^^<http://www.w3.org/2001/XMLSchema#int> ;
+	void:entities "1"^^<http://www.w3.org/2001/XMLSchema#long> ;
+	void:triples "1"^^<http://www.w3.org/2001/XMLSchema#long> ;
+	voidx:aboxTriples "1"^^<http://www.w3.org/2001/XMLSchema#long> ;
+	void:distinctSubjects "1"^^<http://www.w3.org/2001/XMLSchema#long> ;
+	void:distinctObjects "1"^^<http://www.w3.org/2001/XMLSchema#long> .
+
+<http://purl.org/dc/terms/hasPart> voidx:label "dct:hasPart (6, O)" ;
+	voidx:type <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+	voidx:globalStats <stats:hasPart> .
+
+<stats:Dataset> void:propertyPartition <stats:hasPart> .
+
+<stats:hasPart> a void:Dataset ;
+	voidx:label "<stats:hasPart> (6, O)" ;
+	void:property <http://purl.org/dc/terms/hasPart> ;
+	void:properties "1"^^<http://www.w3.org/2001/XMLSchema#int> ;
+	void:triples "6"^^<http://www.w3.org/2001/XMLSchema#long> ;
+	voidx:aboxTriples "6"^^<http://www.w3.org/2001/XMLSchema#long> ;
+	void:distinctSubjects "3"^^<http://www.w3.org/2001/XMLSchema#long> ;
+	void:distinctObjects "2"^^<http://www.w3.org/2001/XMLSchema#long> .
+
+<http://www.w3.org/2002/07/owl#minCardinality> voidx:label "owl:minCardinality (1, DFI)" ;
+	voidx:type <http://www.w3.org/2002/07/owl#DatatypeProperty> , <http://www.w3.org/2002/07/owl#FunctionalProperty> , <http://www.w3.org/2002/07/owl#InverseFunctionalProperty> ;
+	voidx:globalStats <stats:minCardinality> .
+
+<stats:Dataset> void:propertyPartition <stats:minCardinality> .
+
+<stats:minCardinality> a void:Dataset ;
+	voidx:label "<stats:minCardinality> (1, DFI)" ;
+	void:property <http://www.w3.org/2002/07/owl#minCardinality> ;
+	void:properties "1"^^<http://www.w3.org/2001/XMLSchema#int> ;
+	void:triples "1"^^<http://www.w3.org/2001/XMLSchema#long> ;
+	voidx:tboxTriples "1"^^<http://www.w3.org/2001/XMLSchema#long> ;
+	void:distinctSubjects "1"^^<http://www.w3.org/2001/XMLSchema#long> ;
+	void:distinctObjects "1"^^<http://www.w3.org/2001/XMLSchema#long> .
+
+<http://www.w3.org/2002/07/owl#maxQualifiedCardinality> voidx:label "owl:maxQualifiedCardinality (1, DFI)" ;
+	voidx:type <http://www.w3.org/2002/07/owl#DatatypeProperty> , <http://www.w3.org/2002/07/owl#FunctionalProperty> , <http://www.w3.org/2002/07/owl#InverseFunctionalProperty> ;
+	voidx:globalStats <stats:maxQualifiedCardinality> .
+
+<stats:Dataset> void:propertyPartition <stats:maxQualifiedCardinality> .
+
+<stats:maxQualifiedCardinality> a void:Dataset ;
+	voidx:label "<stats:maxQualifiedCardinality> (1, DFI)" ;
+	void:property <http://www.w3.org/2002/07/owl#maxQualifiedCardinality> ;
+	void:properties "1"^^<http://www.w3.org/2001/XMLSchema#int> ;
+	void:triples "1"^^<http://www.w3.org/2001/XMLSchema#long> ;
+	voidx:tboxTriples "1"^^<http://www.w3.org/2001/XMLSchema#long> ;
+	void:distinctSubjects "1"^^<http://www.w3.org/2001/XMLSchema#long> ;
+	void:distinctObjects "1"^^<http://www.w3.org/2001/XMLSchema#long> .
+
+<http://www.w3.org/2002/07/owl#distinctMembers> voidx:label "owl:distinctMembers (1, OFI)" ;
+	voidx:type <http://www.w3.org/2002/07/owl#ObjectProperty> , <http://www.w3.org/2002/07/owl#FunctionalProperty> , <http://www.w3.org/2002/07/owl#InverseFunctionalProperty> ;
+	voidx:globalStats <stats:distinctMembers> .
+
+<stats:Dataset> void:propertyPartition <stats:distinctMembers> .
+
+<stats:distinctMembers> a void:Dataset ;
+	voidx:label "<stats:distinctMembers> (1, OFI)" ;
+	void:property <http://www.w3.org/2002/07/owl#distinctMembers> ;
+	void:properties "1"^^<http://www.w3.org/2001/XMLSchema#int> ;
+	void:triples "1"^^<http://www.w3.org/2001/XMLSchema#long> ;
+	voidx:aboxTriples "1"^^<http://www.w3.org/2001/XMLSchema#long> ;
+	void:distinctSubjects "1"^^<http://www.w3.org/2001/XMLSchema#long> ;
+	void:distinctObjects "1"^^<http://www.w3.org/2001/XMLSchema#long> .
+
+<http://www.w3.org/2002/07/owl#members> voidx:label "owl:members (1, OFI)" ;
+	voidx:type <http://www.w3.org/2002/07/owl#ObjectProperty> , <http://www.w3.org/2002/07/owl#FunctionalProperty> , <http://www.w3.org/2002/07/owl#InverseFunctionalProperty> ;
+	voidx:globalStats <stats:members> .
+
+<stats:Dataset> void:propertyPartition <stats:members> .
+
+<stats:members> a void:Dataset ;
+	voidx:label "<stats:members> (1, OFI)" ;
+	void:property <http://www.w3.org/2002/07/owl#members> ;
+	void:properties "1"^^<http://www.w3.org/2001/XMLSchema#int> ;
+	void:triples "1"^^<http://www.w3.org/2001/XMLSchema#long> ;
+	voidx:tboxTriples "1"^^<http://www.w3.org/2001/XMLSchema#long> ;
+	void:distinctSubjects "1"^^<http://www.w3.org/2001/XMLSchema#long> ;
+	void:distinctObjects "1"^^<http://www.w3.org/2001/XMLSchema#long> .
+
+void:openSearchDescription voidx:label "void:openSearchDescription" .
+
+void:classes voidx:label "void:classes" .
+
+void:documents voidx:label "void:documents" .
+
+void:TechnicalFeature voidx:label "void:TechnicalFeature" .
+
+void:uriLookupEndpoint voidx:label "void:uriLookupEndpoint" .
+
+void:sparqlEndpoint voidx:label "void:sparqlEndpoint" .
+
+void:dataDump voidx:label "void:dataDump" .
+
+void:triples voidx:label "void:triples" .
+
+void:linkPredicate voidx:label "void:linkPredicate" .
+
+void:uriRegexPattern voidx:label "void:uriRegexPattern" .
+
+void:uriSpace voidx:label "void:uriSpace" .
+
+void:properties voidx:label "void:properties" .
+
+void:subset voidx:label "void:subset" .
+
+void:classPartition voidx:label "void:classPartition" .
+
+void:distinctObjects voidx:label "void:distinctObjects" .
+
+void:propertyPartition voidx:label "void:propertyPartition" .
+
+void:inDataset voidx:label "void:inDataset" .
+
+void:Dataset voidx:label "void:Dataset" .
+
+void:objectsTarget voidx:label "void:objectsTarget" .
+
+void:property voidx:label "void:property" .
+
+void:DatasetDescription voidx:label "void:DatasetDescription" .
+
+void:feature voidx:label "void:feature" .
+
+void:class voidx:label "void:class" .
+
+void:subjectsTarget voidx:label "void:subjectsTarget" .
+
+void:target voidx:label "void:target" .
+
+void:entities voidx:label "void:entities" .
+
+void:Linkset voidx:label "void:Linkset" .
+
+void:distinctSubjects voidx:label "void:distinctSubjects" .
+
+void:exampleResource voidx:label "void:exampleResource" .
+
+void:rootResource voidx:label "void:rootResource" .
+
+void:vocabulary voidx:label "void:vocabulary" .
+
+voidx:globalStats voidx:label "<http://rdfpro.fbk.eu/ontologies/voidx#globalStats>" .
+
+voidx:source voidx:label "<http://rdfpro.fbk.eu/ontologies/voidx#source>" .
+
+voidx:type voidx:label "<http://rdfpro.fbk.eu/ontologies/voidx#type>" .
+
+voidx:example voidx:label "<http://rdfpro.fbk.eu/ontologies/voidx#example>" .
+
+voidx:sourceStats voidx:label "<http://rdfpro.fbk.eu/ontologies/voidx#sourceStats>" .
+
+voidx:tboxTriples voidx:label "<http://rdfpro.fbk.eu/ontologies/voidx#tboxTriples>" .
+
+voidx:averageProperties voidx:label "<http://rdfpro.fbk.eu/ontologies/voidx#averageProperties>" .
+
+voidx:label voidx:label "<http://rdfpro.fbk.eu/ontologies/voidx#label>" .
+
+voidx:sameAsTriples voidx:label "<http://rdfpro.fbk.eu/ontologies/voidx#sameAsTriples>" .
+
+voidx:typeTriples voidx:label "<http://rdfpro.fbk.eu/ontologies/voidx#typeTriples>" .
+
+voidx:aboxTriples voidx:label "<http://rdfpro.fbk.eu/ontologies/voidx#aboxTriples>" .
