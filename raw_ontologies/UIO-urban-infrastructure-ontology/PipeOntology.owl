@@ -1,0 +1,1301 @@
+Prefix: : <http://imash.leeds.ac.uk/ontologies/atu/PipeOntology.owl#>
+Prefix: owl: <http://www.w3.org/2002/07/owl#>
+Prefix: rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+Prefix: rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+Prefix: xml: <http://www.w3.org/XML/1998/namespace>
+Prefix: xsd: <http://www.w3.org/2001/XMLSchema#>
+
+
+
+Ontology: <http://imash.leeds.ac.uk/ontologies/atu/PipeOntology.owl>
+
+Annotations:
+	rdfs:Purpose "To describe properties and processes of buried pipes, as well as their relationships.",
+	rdfs:Scope "The ontology describes properties and processes of buried pipes, as well as how they affect each other.",
+	rdfs:KnowledgeSource "The main knowledge sources of this ontology include:
+
+- knowledge of domain experts;
+
+- Clair, A. M. S. & Sinha, S. (2014) Development of a Standard Data Structure for Predicting the Remaining Physical Life and Consequence of Failure of Water Pipes. Journal of Performance of Constructed Facilities, 28, 191-203.",
+	owl:versionInfo "Version 1",
+	rdfs:License "Creative Commons Attribution 4.0 International (CC BY 4.0)",
+	rdfs:comment "Although much care has been taken to provide accurate information, neither the ontology creator, the domain experts, nor the universities involved, nor anyone else associated with this ontology, shall be liable for any loss, damage, or liability directly or indirectly caused or alleged to be caused by this ontology. The material contained herein is not intended to provide specific advice or recommendations for any specific situation.",
+	rdfs:DomainExperts "Prof. Barry Clarke, University of Leeds;
+Dr. Richard Collins, University of Sheffield",
+	rdfs:OntologyCreator "Dr. Heshan Du, University of Leeds, University of Nottingham Ningbo China",
+	rdfs:Date "May 2017",
+	rdfs:Acknowledgments "This research is supported by EPSRC under grant no.EP/K021699/1 (ASSESSING THE UNDERWORLD - AN INTEGRATED PERFORMANCE MODEL OF CITY INFRASTRUCTURES) which we gratefully acknowledge."
+	
+AnnotationProperty: rdfs:comment
+AnnotationProperty: rdfs:Scope
+AnnotationProperty: rdfs:Purpose
+AnnotationProperty: rdfs:KnowledgeSource
+AnnotationProperty: rdfs:OntologyCreator
+AnnotationProperty: rdfs:Date
+AnnotationProperty: rdfs:License
+AnnotationProperty: rdfs:DomainExperts
+AnnotationProperty: rdfs:Acknowledgments
+
+AnnotationProperty: owl:versionInfo
+
+
+    
+Datatype: xsd:string
+
+    
+ObjectProperty: decreasedBy
+
+    SubPropertyOf: 
+        influencedBy
+    
+    Characteristics: 
+        Transitive
+    
+    InverseOf: 
+        decreases
+    
+    
+ObjectProperty: decreases
+
+    SubPropertyOf: 
+        hasImpactOn
+    
+    Characteristics: 
+        Transitive
+    
+    InverseOf: 
+        decreasedBy
+    
+    
+ObjectProperty: hasImpactOn
+
+    Characteristics: 
+        Transitive
+    
+    InverseOf: 
+        influencedBy
+    
+    
+ObjectProperty: increasedBy
+
+    SubPropertyOf: 
+        influencedBy
+    
+    Characteristics: 
+        Transitive
+    
+    InverseOf: 
+        increases
+    
+    
+ObjectProperty: increases
+
+    SubPropertyOf: 
+        hasImpactOn
+    
+    Characteristics: 
+        Transitive
+    
+    InverseOf: 
+        increasedBy
+    
+    
+ObjectProperty: influencedBy
+
+    Characteristics: 
+        Transitive
+    
+    InverseOf: 
+        hasImpactOn
+    
+    
+Class: PipeAge
+
+    Annotations: 
+        rdfs:comment "The age of the pipe, since first burial
+
+"^^xsd:string,
+        rdfs:comment "The length of time (year) that a pipe has existed since its placement
+
+"^^xsd:string,
+        rdfs:comment "Knowledge Source: from a domain expert"^^xsd:string
+    
+    SubClassOf: 
+        PipeGeometryProperty,
+        hasImpactOn some PipeCorrosion,
+        hasImpactOn some PipeCracking,
+        hasImpactOn some PipeDiscoloredWater,
+        hasImpactOn some PipeJointFatigue,
+        hasImpactOn some PipeLeakageRate,
+        hasImpactOn some PipeMaterial,
+        hasImpactOn some PipeTrenchBackfill,
+        hasImpactOn some PipeTrenchWidth,
+        hasImpactOn some PipeTuberculation,
+        hasImpactOn some PipeValveLeaking,
+        hasImpactOn some PipeWallRoughness
+    
+    
+Class: PipeAssessmentCost
+
+    Annotations: 
+        rdfs:comment "Knowledge Source: from a domain expert"^^xsd:string,
+        rdfs:comment "Cost associated with condition assessment of a pipe
+
+"^^xsd:string,
+        rdfs:comment "The cost to undertake an assessment on this pipe
+
+"^^xsd:string
+    
+    SubClassOf: 
+        PipeFinancialProperty,
+        hasImpactOn some PipeOperationPractice,
+        influencedBy some PipeCrackingDensity,
+        influencedBy some PipeCrackingPhysicalProperty,
+        influencedBy some PipeDepth,
+        influencedBy some PipeInstallationCost,
+        influencedBy some PipeMaterial,
+        influencedBy some PipeTrenchBackfill,
+        influencedBy some PipeTrenchWidth
+    
+    
+Class: PipeCathodicProtection
+
+    Annotations: 
+        rdfs:comment "Does the pipe have cathodic protection (y/n)
+
+"^^xsd:string,
+        rdfs:comment "A electrochemical means of increasing the corrosion resistance of pipes
+
+"^^xsd:string,
+        rdfs:comment "Knowledge Source: from a domain expert"^^xsd:string
+    
+    SubClassOf: 
+        PipeMaterialProperty,
+        hasImpactOn some PipeCorrosion,
+        hasImpactOn some PipeCracking,
+        hasImpactOn some PipeCrackingDensity,
+        hasImpactOn some PipeCrackingPhysicalProperty,
+        hasImpactOn some PipeInstallationCost,
+        hasImpactOn some PipeMaintenanceCost,
+        hasImpactOn some PipeReplacementCost
+    
+    
+Class: PipeConditionProperty
+
+    Annotations: 
+        rdfs:comment "Knowledge Source: from a domain expert"^^xsd:string,
+        rdfs:comment "This covers the condition of the pipe including any indirect indicators.
+
+"^^xsd:string
+    
+    SubClassOf: 
+        PipeProperty
+    
+    
+Class: PipeConnectionDensity
+
+    Annotations: 
+        rdfs:comment "Number of pipe connections in a given area
+
+"^^xsd:string,
+        rdfs:comment "The number of service connections per unit length of pipe
+
+"^^xsd:string,
+        rdfs:comment "Knowledge Source: from a domain expert"^^xsd:string
+    
+    SubClassOf: 
+        PipeNetworkProperty,
+        hasImpactOn some PipeInstallationCost,
+        hasImpactOn some PipeJointFatigue,
+        hasImpactOn some PipeLength,
+        hasImpactOn some PipeReplacementCost,
+        influencedBy some PipeLength
+    
+    
+Class: PipeCorrosion
+
+    Annotations: 
+        rdfs:comment "Knowledge Source: from a domain expert"^^xsd:string,
+        rdfs:comment "Corrosion of a pipe wall, the type of corrosion and the extent of the corrosion
+
+"^^xsd:string,
+        rdfs:comment "The chemical action of decreasing the structural material available for containing the fluid
+
+"^^xsd:string
+    
+    SubClassOf: 
+        PipeProcess,
+        hasImpactOn some PipeCrackingDensity,
+        hasImpactOn some PipeCrackingPhysicalProperty,
+        hasImpactOn some PipeDiscoloredWater,
+        hasImpactOn some PipeFailureRecord,
+        hasImpactOn some PipeLeakageRate,
+        hasImpactOn some PipeMaintenanceCost,
+        hasImpactOn some PipeMaintenancePractice,
+        hasImpactOn some PipeOperationPractice,
+        hasImpactOn some PipeOperationalPressure,
+        hasImpactOn some PipeTuberculation,
+        hasImpactOn some PipeWallRoughness,
+        hasImpactOn some PipeWaterCorrosivity,
+        hasImpactOn some PipeWaterDissolvedOxygenContent,
+        hasImpactOn some PipeWaterFlowVelocity,
+        hasImpactOn some PipeWaterPH,
+        hasImpactOn some PipeWaterQualityViolation,
+        influencedBy some PipeAge,
+        influencedBy some PipeCathodicProtection,
+        influencedBy some PipeExternalCoating,
+        influencedBy some PipeFluid,
+        influencedBy some PipeLining,
+        influencedBy some PipeMaintenancePractice,
+        influencedBy some PipeMaterial,
+        influencedBy some PipeOperationPractice,
+        influencedBy some PipeTrenchBackfill,
+        influencedBy some PipeWallRoughness,
+        influencedBy some PipeWaterCorrosivity,
+        influencedBy some PipeWaterDissolvedOxygenContent,
+        influencedBy some PipeWaterPH,
+        influencedBy some PipeWaterTemperature
+    
+    
+Class: PipeCracking
+
+    Annotations: 
+        rdfs:comment "The action of a pathway appearing in a pipe allowing water from inside the pipe to outside
+
+"^^xsd:string,
+        rdfs:comment "Formation of cracks in a pipe wall and the reasons for those cracks (e.g. excess pressure, corrosion)
+
+"^^xsd:string,
+        rdfs:comment "Knowledge Source: from a domain expert"^^xsd:string
+    
+    SubClassOf: 
+        PipeProcess,
+        hasImpactOn some PipeCrackingDensity,
+        hasImpactOn some PipeCrackingPhysicalProperty,
+        hasImpactOn some PipeFailureRecord,
+        hasImpactOn some PipeLeakageRate,
+        hasImpactOn some PipeMaintenanceCost,
+        hasImpactOn some PipeMaintenancePractice,
+        hasImpactOn some PipeOperationPractice,
+        hasImpactOn some PipeOperationalPressure,
+        hasImpactOn some PipeWaterFlowVelocity,
+        hasImpactOn some PipeWaterQualityViolation,
+        influencedBy some PipeAge,
+        influencedBy some PipeCathodicProtection,
+        influencedBy some PipeCrackingDensity,
+        influencedBy some PipeExternalCoating,
+        influencedBy some PipeExternalDiameter,
+        influencedBy some PipeInternalDiameter,
+        influencedBy some PipeLining,
+        influencedBy some PipeMaintenancePractice,
+        influencedBy some PipeMaterial,
+        influencedBy some PipeOperationPractice,
+        influencedBy some PipeTrenchBackfill
+    
+    
+Class: PipeCrackingDensity
+
+    Annotations: 
+        rdfs:comment "The number of cracks in the pipe per unit length
+
+"^^xsd:string,
+        rdfs:comment "Knowledge Source: from a domain expert"^^xsd:string,
+        rdfs:comment "The number of cracks in a length of pipe
+
+"^^xsd:string
+    
+    SubClassOf: 
+        PipeConditionProperty,
+        hasImpactOn some PipeAssessmentCost,
+        hasImpactOn some PipeCracking,
+        hasImpactOn some PipeFailureRecord,
+        hasImpactOn some PipeInspectionRecord,
+        hasImpactOn some PipeLeakageRate,
+        hasImpactOn some PipeMaintenanceBacklog,
+        hasImpactOn some PipeMaintenanceCost,
+        hasImpactOn some PipeMaintenancePractice,
+        influencedBy some PipeCathodicProtection,
+        influencedBy some PipeCorrosion,
+        influencedBy some PipeCracking,
+        influencedBy some PipeMaterial,
+        influencedBy some PipeOperationalPressure,
+        influencedBy some PipeWaterCorrosivity
+    
+    
+Class: PipeCrackingPhysicalProperty
+
+    Annotations: 
+        rdfs:comment "Knowledge Source: from a domain expert"^^xsd:string,
+        rdfs:comment "The width and length of crack
+
+"^^xsd:string
+    
+    SubClassOf: 
+        PipeConditionProperty,
+        hasImpactOn some PipeAssessmentCost,
+        hasImpactOn some PipeFailureRecord,
+        hasImpactOn some PipeInspectionRecord,
+        hasImpactOn some PipeLeakageRate,
+        hasImpactOn some PipeMaintenanceBacklog,
+        hasImpactOn some PipeMaintenanceCost,
+        hasImpactOn some PipeMaintenancePractice,
+        influencedBy some PipeCathodicProtection,
+        influencedBy some PipeCorrosion,
+        influencedBy some PipeCracking,
+        influencedBy some PipeMaterial,
+        influencedBy some PipeOperationalPressure,
+        influencedBy some PipeWaterCorrosivity
+    
+    
+Class: PipeDepth
+
+    Annotations: 
+        rdfs:comment "The installed depth of the pipe below ground level
+
+"^^xsd:string,
+        rdfs:comment "The depth below the ground surface to the base elevation of the pipe
+
+"^^xsd:string,
+        rdfs:comment "Knowledge Source: from a domain expert"^^xsd:string
+    
+    SubClassOf: 
+        PipeGeometryProperty,
+        hasImpactOn some PipeAssessmentCost,
+        hasImpactOn some PipeInstallationCost,
+        hasImpactOn some PipeMaintenanceCost,
+        hasImpactOn some PipeReplacementCost,
+        hasImpactOn some PipeTrenchBackfill,
+        influencedBy some PipeLocation
+    
+    
+Class: PipeDiscoloredWater
+
+    Annotations: 
+        rdfs:comment "Has there been a discoloured water complaint reported in this area (y/n)
+
+"^^xsd:string,
+        rdfs:comment "Knowledge Source: from a domain expert"^^xsd:string
+    
+    SubClassOf: 
+        PipeConditionProperty,
+        influencedBy some PipeAge,
+        influencedBy some PipeCorrosion
+    
+    
+Class: PipeElevation
+
+    Annotations: 
+        rdfs:comment "The elevation of the pipe above a standardised datum (i.e. mean sea level)
+
+"^^xsd:string,
+        rdfs:comment "The elevation of the base of the pipe
+
+"^^xsd:string,
+        rdfs:comment "Knowledge Source: from a domain expert"^^xsd:string
+    
+    SubClassOf: 
+        PipeGeometryProperty,
+        influencedBy some PipeLocation
+    
+    
+Class: PipeExternalCoating
+
+    Annotations: 
+        rdfs:comment "Knowledge Source: from a domain expert"^^xsd:string,
+        rdfs:comment "Type of external coating (or None)
+
+"^^xsd:string,
+        rdfs:comment "An external coating applied to a pipe to protect it from corrosion (typically fusion-bond epoxy powder coating)
+
+"^^xsd:string
+    
+    SubClassOf: 
+        PipeMaterialProperty,
+        hasImpactOn some PipeCorrosion,
+        hasImpactOn some PipeCracking,
+        hasImpactOn some PipeInstallationCost,
+        hasImpactOn some PipeMaintenanceCost,
+        hasImpactOn some PipeReplacementCost
+    
+    
+Class: PipeExternalDiameter
+
+    Annotations: 
+        rdfs:comment "The external diameter of the pipe
+
+"^^xsd:string,
+        rdfs:comment "Knowledge Source: from a domain expert"^^xsd:string,
+        rdfs:comment "The external diameter of the pipe.
+
+"^^xsd:string
+    
+    SubClassOf: 
+        PipeGeometryProperty,
+        hasImpactOn some PipeCracking,
+        hasImpactOn some PipeJointFatigue,
+        hasImpactOn some PipeReplacementCost
+    
+    
+Class: PipeFailureRecord
+
+    Annotations: 
+        rdfs:comment "Knowledge Source: from a domain expert"^^xsd:string,
+        rdfs:comment "The number of times that this pipe has failed in the past expressed as failures / year
+
+"^^xsd:string,
+        rdfs:comment "The number and type of failures of a pipe
+
+"^^xsd:string
+    
+    SubClassOf: 
+        PipeRecord,
+        hasImpactOn some PipeInspectionRecord,
+        hasImpactOn some PipeMaintenanceBacklog,
+        hasImpactOn some PipeMaintenancePractice,
+        hasImpactOn some PipeReplacementCost,
+        influencedBy some PipeCorrosion,
+        influencedBy some PipeCracking,
+        influencedBy some PipeCrackingDensity,
+        influencedBy some PipeCrackingPhysicalProperty,
+        influencedBy some PipeInspectionRecord,
+        influencedBy some PipeJointFatigue,
+        influencedBy some PipeLeakageRate,
+        influencedBy some PipeMaintenanceBacklog,
+        influencedBy some PipeMaintenancePractice,
+        influencedBy some PipeValveLeaking
+    
+    
+Class: PipeFinancialProperty
+
+    Annotations: 
+        rdfs:comment "Knowledge Source: from a domain expert"^^xsd:string,
+        rdfs:comment "This covers the cost of installing, maintaing and replacing the pipe.
+
+"^^xsd:string
+    
+    SubClassOf: 
+        PipeProperty
+    
+    
+Class: PipeFluid
+
+    Annotations: 
+        rdfs:comment "Knowledge Source: from a domain expert"^^xsd:string,
+        rdfs:comment "The fluid being transported inside a pipe (potable, water, sewage, gas, oil, hot water/steam, etc.)
+
+"^^xsd:string,
+        rdfs:comment "Type of fluid carried by the pipe
+
+"^^xsd:string
+    
+    SubClassOf: 
+        PipeFluidProperty,
+        hasImpactOn some PipeCorrosion,
+        hasImpactOn some PipeWaterCorrosivity,
+        hasImpactOn some PipeWaterDissolvedOxygenContent,
+        hasImpactOn some PipeWaterFlowVelocity,
+        hasImpactOn some PipeWaterPH,
+        hasImpactOn some PipeWaterQualityViolation,
+        hasImpactOn some PipeWaterTemperature
+    
+    
+Class: PipeFluidProperty
+
+    Annotations: 
+        rdfs:comment "This covers the properites of the fluid.
+
+"^^xsd:string,
+        rdfs:comment "Knowledge Source: from a domain expert"^^xsd:string
+    
+    SubClassOf: 
+        PipeProperty
+    
+    
+Class: PipeGeometryProperty
+
+    Annotations: 
+        rdfs:comment "Knowledge Source: from a domain expert"^^xsd:string,
+        rdfs:comment "This covers the length between connections and length of pipe sections; depth and elevation; and pipe cross section.
+
+"^^xsd:string
+    
+    SubClassOf: 
+        PipeProperty
+    
+    
+Class: PipeInspectionRecord
+
+    Annotations: 
+        rdfs:comment "Knowledge Source: from a domain expert"^^xsd:string,
+        rdfs:comment "The number and type of inspections of pipe
+
+"^^xsd:string,
+        rdfs:comment "A record of the times that this pipe has been examined, for any reason
+
+"^^xsd:string
+    
+    SubClassOf: 
+        PipeRecord,
+        hasImpactOn some PipeFailureRecord,
+        hasImpactOn some PipeMaintenanceBacklog,
+        hasImpactOn some PipeMaintenanceCost,
+        hasImpactOn some PipeMaintenancePractice,
+        hasImpactOn some PipeOperationPractice,
+        influencedBy some PipeCrackingDensity,
+        influencedBy some PipeCrackingPhysicalProperty,
+        influencedBy some PipeFailureRecord,
+        influencedBy some PipeLeakageRate,
+        influencedBy some PipeMaintenanceBacklog,
+        influencedBy some PipeMaintenancePractice,
+        influencedBy some PipeOperationPractice
+    
+    
+Class: PipeInstallationCost
+
+    Annotations: 
+        rdfs:comment "Cost of the combination of all technical and associated administrative actions to install a pipe
+
+"^^xsd:string,
+        rdfs:comment "The cost to install the pipe in the first place
+
+"^^xsd:string,
+        rdfs:comment "Knowledge Source: from a domain expert"^^xsd:string
+    
+    SubClassOf: 
+        PipeFinancialProperty,
+        hasImpactOn some PipeAssessmentCost,
+        hasImpactOn some PipeMaintenanceCost,
+        influencedBy some PipeCathodicProtection,
+        influencedBy some PipeConnectionDensity,
+        influencedBy some PipeDepth,
+        influencedBy some PipeExternalCoating,
+        influencedBy some PipeJointType,
+        influencedBy some PipeLength,
+        influencedBy some PipeLining,
+        influencedBy some PipeMaterial,
+        influencedBy some PipeTrenchBackfill,
+        influencedBy some PipeTrenchWidth,
+        influencedBy some PipeValveType
+    
+    
+Class: PipeInternalDiameter
+
+    Annotations: 
+        rdfs:comment "The internal diameter of the pipe
+
+"^^xsd:string,
+        rdfs:comment "Knowledge Source: from a domain expert"^^xsd:string
+    
+    SubClassOf: 
+        PipeGeometryProperty,
+        hasImpactOn some PipeCracking,
+        hasImpactOn some PipeJointFatigue
+    
+    
+Class: PipeJointFatigue
+
+    Annotations: 
+        rdfs:comment "Knowledge Source: from a domain expert"^^xsd:string,
+        rdfs:comment "The action of stressing a joint which if repeated could cause a joint to fail
+
+"^^xsd:string
+    
+    SubClassOf: 
+        PipeProcess,
+        hasImpactOn some PipeFailureRecord,
+        hasImpactOn some PipeLeakageRate,
+        hasImpactOn some PipeMaintenanceCost,
+        hasImpactOn some PipeMaintenancePractice,
+        hasImpactOn some PipeOperationPractice,
+        hasImpactOn some PipeOperationalPressure,
+        influencedBy some PipeAge,
+        influencedBy some PipeConnectionDensity,
+        influencedBy some PipeExternalDiameter,
+        influencedBy some PipeInternalDiameter,
+        influencedBy some PipeJointType,
+        influencedBy some PipeMaintenancePractice,
+        influencedBy some PipeMaterial,
+        influencedBy some PipeOperationPractice,
+        influencedBy some PipeOperationalPressure,
+        influencedBy some PipeTrenchBackfill,
+        influencedBy some PipeWaterFlowVelocity
+    
+    
+Class: PipeJointType
+
+    Annotations: 
+        rdfs:comment "Means of connecting two lengths of pipe together; can include welded, flanged, threaded, and bell-and-spigot joints
+
+"^^xsd:string,
+        rdfs:comment "Knowledge Source: from a domain expert"^^xsd:string,
+        rdfs:comment "Type of joining technique used to connect sections of pipes
+
+"^^xsd:string
+    
+    SubClassOf: 
+        PipeMaterialProperty,
+        hasImpactOn some PipeInstallationCost,
+        hasImpactOn some PipeJointFatigue,
+        hasImpactOn some PipeMaintenanceCost,
+        hasImpactOn some PipeReplacementCost
+    
+    
+Class: PipeLeakageRate
+
+    Annotations: 
+        rdfs:comment "The rate of loss of fluid from a pipe
+
+"^^xsd:string,
+        rdfs:comment "Knowledge Source: from a domain expert"^^xsd:string,
+        rdfs:comment "The assumed leakage rate for this pipe 
+
+"^^xsd:string
+    
+    SubClassOf: 
+        PipeConditionProperty,
+        hasImpactOn some PipeFailureRecord,
+        hasImpactOn some PipeInspectionRecord,
+        hasImpactOn some PipeMaintenanceBacklog,
+        hasImpactOn some PipeMaintenancePractice,
+        influencedBy some PipeAge,
+        influencedBy some PipeCorrosion,
+        influencedBy some PipeCracking,
+        influencedBy some PipeCrackingDensity,
+        influencedBy some PipeCrackingPhysicalProperty,
+        influencedBy some PipeJointFatigue,
+        influencedBy some PipeLining,
+        influencedBy some PipeMaterial,
+        influencedBy some PipeOperationalPressure,
+        influencedBy some PipeValveLeaking,
+        influencedBy some PipeWaterFlowVelocity
+    
+    
+Class: PipeLength
+
+    Annotations: 
+        rdfs:comment "The length of pipe between joints
+
+"^^xsd:string,
+        rdfs:comment "The length of the section of pipe
+
+"^^xsd:string,
+        rdfs:comment "Knowledge Source: from a domain expert"^^xsd:string
+    
+    SubClassOf: 
+        PipeGeometryProperty,
+        hasImpactOn some PipeConnectionDensity,
+        hasImpactOn some PipeInstallationCost,
+        hasImpactOn some PipeMaintenanceCost,
+        hasImpactOn some PipeReplacementCost,
+        influencedBy some PipeConnectionDensity
+    
+    
+Class: PipeLining
+
+    Annotations: 
+        rdfs:comment "Lining inside a pipe to repair a pipe including sliplining, thermoformed pipe, shotcrete, gunite, cured-in-place pipe (CIPP), grout-in-place pipe  
+
+"^^xsd:string,
+        rdfs:comment "Knowledge Source: from a domain expert"^^xsd:string,
+        rdfs:comment "Type of internal coating/lining used (or None)
+
+"^^xsd:string
+    
+    SubClassOf: 
+        PipeMaterialProperty,
+        hasImpactOn some PipeCorrosion,
+        hasImpactOn some PipeCracking,
+        hasImpactOn some PipeInstallationCost,
+        hasImpactOn some PipeLeakageRate,
+        hasImpactOn some PipeMaintenanceCost,
+        hasImpactOn some PipeReplacementCost,
+        hasImpactOn some PipeTuberculation,
+        hasImpactOn some PipeWallRoughness
+    
+    
+Class: PipeLocation
+
+    Annotations: 
+        rdfs:comment "Knowledge Source: from a domain expert"^^xsd:string,
+        rdfs:comment "The position of the pipe
+
+"^^xsd:string,
+        rdfs:comment "Road location (e.g. grid references, place)
+
+"^^xsd:string
+    
+    SubClassOf: 
+        PipeProperty,
+        hasImpactOn some PipeDepth,
+        hasImpactOn some PipeElevation
+    
+    
+Class: PipeMaintenanceBacklog
+
+    Annotations: 
+        rdfs:comment "Knowledge Source: from a domain expert"^^xsd:string,
+        rdfs:comment "The number and type of actions needed to maintain a pipe
+
+"^^xsd:string,
+        rdfs:comment "A record of the times that this pipe has been maintained, for any reason
+
+"^^xsd:string
+    
+    SubClassOf: 
+        PipeRecord,
+        hasImpactOn some PipeFailureRecord,
+        hasImpactOn some PipeInspectionRecord,
+        hasImpactOn some PipeMaintenanceCost,
+        hasImpactOn some PipeMaintenancePractice,
+        influencedBy some PipeCrackingDensity,
+        influencedBy some PipeCrackingPhysicalProperty,
+        influencedBy some PipeFailureRecord,
+        influencedBy some PipeInspectionRecord,
+        influencedBy some PipeLeakageRate,
+        influencedBy some PipeMaintenancePractice
+    
+    
+Class: PipeMaintenanceCost
+
+    Annotations: 
+        rdfs:comment "Knowledge Source: from a domain expert"^^xsd:string,
+        rdfs:comment "Cost of the combination of all technical and associated administrative actions during pipe's service life (design life) with the aim of retaining it in a state in which it can perform its required functions 
+
+"^^xsd:string,
+        rdfs:comment "The cost to undertake maintainence on this pipe
+
+"^^xsd:string
+    
+    SubClassOf: 
+        PipeFinancialProperty,
+        hasImpactOn some PipeMaintenancePractice,
+        hasImpactOn some PipeOperationPractice,
+        influencedBy some PipeCathodicProtection,
+        influencedBy some PipeCorrosion,
+        influencedBy some PipeCracking,
+        influencedBy some PipeCrackingDensity,
+        influencedBy some PipeCrackingPhysicalProperty,
+        influencedBy some PipeDepth,
+        influencedBy some PipeExternalCoating,
+        influencedBy some PipeInspectionRecord,
+        influencedBy some PipeInstallationCost,
+        influencedBy some PipeJointFatigue,
+        influencedBy some PipeJointType,
+        influencedBy some PipeLength,
+        influencedBy some PipeLining,
+        influencedBy some PipeMaintenanceBacklog,
+        influencedBy some PipeMaintenancePractice,
+        influencedBy some PipeMaterial,
+        influencedBy some PipeSectionLength,
+        influencedBy some PipeTrenchBackfill,
+        influencedBy some PipeTrenchWidth,
+        influencedBy some PipeValveLeaking,
+        influencedBy some PipeValveType
+    
+    
+Class: PipeMaintenancePractice
+
+    Annotations: 
+        rdfs:comment "Any records of standard techniques used to maintain this pipe
+
+"^^xsd:string,
+        rdfs:comment "Knowledge Source: from a domain expert"^^xsd:string
+    
+    SubClassOf: 
+        PipeRecord,
+        hasImpactOn some PipeCorrosion,
+        hasImpactOn some PipeCracking,
+        hasImpactOn some PipeFailureRecord,
+        hasImpactOn some PipeInspectionRecord,
+        hasImpactOn some PipeJointFatigue,
+        hasImpactOn some PipeMaintenanceBacklog,
+        hasImpactOn some PipeMaintenanceCost,
+        hasImpactOn some PipeValveLeaking,
+        influencedBy some PipeCorrosion,
+        influencedBy some PipeCracking,
+        influencedBy some PipeCrackingDensity,
+        influencedBy some PipeCrackingPhysicalProperty,
+        influencedBy some PipeFailureRecord,
+        influencedBy some PipeInspectionRecord,
+        influencedBy some PipeJointFatigue,
+        influencedBy some PipeLeakageRate,
+        influencedBy some PipeMaintenanceBacklog,
+        influencedBy some PipeMaintenanceCost,
+        influencedBy some PipeOwner,
+        influencedBy some PipeReplacementCost,
+        influencedBy some PipeValveLeaking
+    
+    
+Class: PipeMaterial
+
+    Annotations: 
+        rdfs:comment "Knowledge Source: from a domain expert"^^xsd:string,
+        rdfs:comment "Pipe construction material
+
+"^^xsd:string,
+        rdfs:comment "Material used to form a pipe; usually cast iron, steel, concrete and plastic
+
+"^^xsd:string
+    
+    SubClassOf: 
+        PipeMaterialProperty,
+        hasImpactOn some PipeAssessmentCost,
+        hasImpactOn some PipeCorrosion,
+        hasImpactOn some PipeCracking,
+        hasImpactOn some PipeCrackingDensity,
+        hasImpactOn some PipeCrackingPhysicalProperty,
+        hasImpactOn some PipeInstallationCost,
+        hasImpactOn some PipeJointFatigue,
+        hasImpactOn some PipeLeakageRate,
+        hasImpactOn some PipeMaintenanceCost,
+        hasImpactOn some PipeReplacementCost,
+        hasImpactOn some PipeTuberculation,
+        hasImpactOn some PipeWallRoughness,
+        influencedBy some PipeAge
+    
+    
+Class: PipeMaterialProperty
+
+    Annotations: 
+        rdfs:comment "This covers the material, joint and valves.
+
+"^^xsd:string,
+        rdfs:comment "Knowledge Source: from a domain expert"^^xsd:string
+    
+    SubClassOf: 
+        PipeProperty
+    
+    
+Class: PipeNetworkProperty
+
+    Annotations: 
+        rdfs:comment "Knowledge Source: from a domain expert"^^xsd:string,
+        rdfs:comment "The number of connections in a network
+
+"^^xsd:string
+    
+    SubClassOf: 
+        PipeProperty
+    
+    
+Class: PipeOperationPractice
+
+    Annotations: 
+        rdfs:comment "Knowledge Source: from a domain expert"^^xsd:string,
+        rdfs:comment "Any records of standard techniques used in operating the pipe
+
+"^^xsd:string
+    
+    SubClassOf: 
+        PipeRecord,
+        hasImpactOn some PipeCorrosion,
+        hasImpactOn some PipeCracking,
+        hasImpactOn some PipeInspectionRecord,
+        hasImpactOn some PipeJointFatigue,
+        hasImpactOn some PipeValveLeaking,
+        influencedBy some PipeAssessmentCost,
+        influencedBy some PipeCorrosion,
+        influencedBy some PipeCracking,
+        influencedBy some PipeInspectionRecord,
+        influencedBy some PipeJointFatigue,
+        influencedBy some PipeMaintenanceCost,
+        influencedBy some PipeOperationalPressure,
+        influencedBy some PipeOwner,
+        influencedBy some PipeReplacementCost,
+        influencedBy some PipeValveLeaking,
+        influencedBy some PipeWaterFlowVelocity
+    
+    
+Class: PipeOperationalPressure
+
+    Annotations: 
+        rdfs:comment "The typical fluid pressure inside the pipe
+
+"^^xsd:string,
+        rdfs:comment "Pressure of the fluid in the pipe
+
+"^^xsd:string,
+        rdfs:comment "Knowledge Source: from a domain expert"^^xsd:string
+    
+    SubClassOf: 
+        PipeFluidProperty,
+        hasImpactOn some PipeCrackingDensity,
+        hasImpactOn some PipeCrackingPhysicalProperty,
+        hasImpactOn some PipeJointFatigue,
+        hasImpactOn some PipeLeakageRate,
+        hasImpactOn some PipeOperationPractice,
+        hasImpactOn some PipeValveLeaking,
+        hasImpactOn some PipeWaterDissolvedOxygenContent,
+        hasImpactOn some PipeWaterFlowVelocity,
+        influencedBy some PipeCorrosion,
+        influencedBy some PipeCracking,
+        influencedBy some PipeJointFatigue,
+        influencedBy some PipeValveLeaking,
+        influencedBy some PipeWallRoughness
+    
+    
+Class: PipeOrientation
+
+    Annotations: 
+        rdfs:comment "Knowledge Source: from a domain expert"^^xsd:string,
+        rdfs:comment "The orientation of the section of pipe, typically expressed as ordinal points
+
+"^^xsd:string,
+        rdfs:comment "The azimuth and inclination of the pipe
+
+"^^xsd:string
+    
+    SubClassOf: 
+        PipeGeometryProperty
+    
+    
+Class: PipeOwner
+
+    Annotations: 
+        rdfs:comment "Company or organisation that owns the asset
+
+"^^xsd:string,
+        rdfs:comment "Knowledge Source: from a domain expert"^^xsd:string,
+        rdfs:comment "The owner of the pipe
+
+"^^xsd:string
+    
+    SubClassOf: 
+        PipeProperty,
+        hasImpactOn some PipeMaintenancePractice,
+        hasImpactOn some PipeOperationPractice
+    
+    
+Class: PipeProcess
+
+    
+Class: PipeProperty
+
+    
+Class: PipeRecord
+
+    Annotations: 
+        rdfs:comment "This covers the records of the pipe performance and any changes to the pipe.
+
+"^^xsd:string,
+        rdfs:comment "Knowledge Source: from a domain expert"^^xsd:string
+    
+    SubClassOf: 
+        PipeProperty
+    
+    
+Class: PipeReplacementCost
+
+    Annotations: 
+        rdfs:comment "Knowledge Source: from a domain expert"^^xsd:string,
+        rdfs:comment "The cost to replace the pipe
+
+"^^xsd:string,
+        rdfs:comment "Cost associated with replacement of a pipe (or a section of it)
+
+"^^xsd:string
+    
+    SubClassOf: 
+        PipeFinancialProperty,
+        hasImpactOn some PipeMaintenancePractice,
+        hasImpactOn some PipeOperationPractice,
+        influencedBy some PipeCathodicProtection,
+        influencedBy some PipeConnectionDensity,
+        influencedBy some PipeDepth,
+        influencedBy some PipeExternalCoating,
+        influencedBy some PipeExternalDiameter,
+        influencedBy some PipeFailureRecord,
+        influencedBy some PipeJointType,
+        influencedBy some PipeLength,
+        influencedBy some PipeLining,
+        influencedBy some PipeMaterial,
+        influencedBy some PipeSectionLength,
+        influencedBy some PipeTrenchBackfill,
+        influencedBy some PipeTrenchWidth,
+        influencedBy some PipeValveType
+    
+    
+Class: PipeSectionLength
+
+    Annotations: 
+        rdfs:comment "Knowledge Source: from a domain expert"^^xsd:string,
+        rdfs:comment "The length of the section of pipe
+
+"^^xsd:string,
+        rdfs:comment "The length of the pipe between valves or other connections
+
+"^^xsd:string
+    
+    SubClassOf: 
+        PipeGeometryProperty,
+        hasImpactOn some PipeMaintenanceCost,
+        hasImpactOn some PipeReplacementCost
+    
+    
+Class: PipeTrenchBackfill
+
+    Annotations: 
+        rdfs:comment "Knowledge Source: from a domain expert"^^xsd:string,
+        rdfs:comment "Material used to backfill a trench; usually granular fill, selected unbound fill or bound fill
+
+"^^xsd:string,
+        rdfs:comment "The type of material used to back fill the pipe after burial
+
+"^^xsd:string
+    
+    SubClassOf: 
+        PipeTrenchDimension,
+        hasImpactOn some PipeAssessmentCost,
+        hasImpactOn some PipeCorrosion,
+        hasImpactOn some PipeCracking,
+        hasImpactOn some PipeInstallationCost,
+        hasImpactOn some PipeJointFatigue,
+        hasImpactOn some PipeMaintenanceCost,
+        hasImpactOn some PipeReplacementCost,
+        hasImpactOn some PipeValveLeaking,
+        influencedBy some PipeAge,
+        influencedBy some PipeDepth
+    
+    
+Class: PipeTrenchDimension
+
+    Annotations: 
+        rdfs:comment "Knowledge Source: from a domain expert"^^xsd:string,
+        rdfs:comment "Properties about installation of pipe in a trench
+
+"^^xsd:string
+    
+    SubClassOf: 
+        PipeProperty
+    
+    
+Class: PipeTrenchWidth
+
+    Annotations: 
+        rdfs:comment "Knowledge Source: from a domain expert"^^xsd:string,
+        rdfs:comment "The width of a trench
+
+"^^xsd:string,
+        rdfs:comment "The width of the trench dug to bury the pipe
+
+"^^xsd:string
+    
+    SubClassOf: 
+        PipeTrenchDimension,
+        hasImpactOn some PipeAssessmentCost,
+        hasImpactOn some PipeInstallationCost,
+        hasImpactOn some PipeMaintenanceCost,
+        hasImpactOn some PipeReplacementCost,
+        influencedBy some PipeAge
+    
+    
+Class: PipeTuberculation
+
+    Annotations: 
+        rdfs:comment "The build up of metal based materials on the inside of the pipe
+
+"^^xsd:string,
+        rdfs:comment "Knowledge Source: from a domain expert"^^xsd:string,
+        rdfs:comment "The density of corrosion spots within a pipe
+
+"^^xsd:string
+    
+    SubClassOf: 
+        PipeConditionProperty,
+        hasImpactOn some PipeWallRoughness,
+        influencedBy some PipeAge,
+        influencedBy some PipeCorrosion,
+        influencedBy some PipeLining,
+        influencedBy some PipeMaterial
+    
+    
+Class: PipeValveLeaking
+
+    Annotations: 
+        rdfs:comment "The action of water coming out of the pipe due to a pathway through a valve
+
+"^^xsd:string,
+        rdfs:comment "Knowledge Source: from a domain expert"^^xsd:string,
+        rdfs:comment "Leakage from a pipe valve
+
+"^^xsd:string
+    
+    SubClassOf: 
+        PipeProcess,
+        hasImpactOn some PipeFailureRecord,
+        hasImpactOn some PipeLeakageRate,
+        hasImpactOn some PipeMaintenanceCost,
+        hasImpactOn some PipeMaintenancePractice,
+        hasImpactOn some PipeOperationPractice,
+        hasImpactOn some PipeOperationalPressure,
+        hasImpactOn some PipeWaterFlowVelocity,
+        hasImpactOn some PipeWaterQualityViolation,
+        influencedBy some PipeAge,
+        influencedBy some PipeMaintenancePractice,
+        influencedBy some PipeOperationPractice,
+        influencedBy some PipeOperationalPressure,
+        influencedBy some PipeTrenchBackfill,
+        influencedBy some PipeValveType
+    
+    
+Class: PipeValveType
+
+    Annotations: 
+        rdfs:comment "Knowledge Source: from a domain expert"^^xsd:string,
+        rdfs:comment "Type of valve used on the section of pipe (or None)
+
+"^^xsd:string,
+        rdfs:comment "Valves include ball valve, butterfly valve, ceramic disc valve, clapper valve, check valve or non-return valve, choke valve, diaphragm valve, gate valve, globe valve, knife valve, needle valve, pinch valve, piston valve, plug valve, spool valve, pressure reducing valve, sampling valves and safety valve
+
+"^^xsd:string
+    
+    SubClassOf: 
+        PipeMaterialProperty,
+        hasImpactOn some PipeInstallationCost,
+        hasImpactOn some PipeMaintenanceCost,
+        hasImpactOn some PipeReplacementCost,
+        hasImpactOn some PipeValveLeaking
+    
+    
+Class: PipeWallRoughness
+
+    Annotations: 
+        rdfs:comment "The roughness of the internal wall of a pipe
+
+"^^xsd:string,
+        rdfs:comment "Knowledge Source: from a domain expert"^^xsd:string,
+        rdfs:comment "A measure of the roughness of the internal surface of the pipe as it interacts with water
+
+"^^xsd:string
+    
+    SubClassOf: 
+        PipeConditionProperty,
+        hasImpactOn some PipeCorrosion,
+        hasImpactOn some PipeOperationalPressure,
+        influencedBy some PipeAge,
+        influencedBy some PipeCorrosion,
+        influencedBy some PipeLining,
+        influencedBy some PipeMaterial,
+        influencedBy some PipeTuberculation
+    
+    
+Class: PipeWaterCorrosivity
+
+    Annotations: 
+        rdfs:comment "A metric of how corrosive the fluid is due to its chemistry
+
+"^^xsd:string,
+        rdfs:comment "Knowledge Source: from a domain expert"^^xsd:string,
+        rdfs:comment "Potential corrosive action of the water
+
+"^^xsd:string
+    
+    SubClassOf: 
+        PipeFluidProperty,
+        hasImpactOn some PipeCorrosion,
+        hasImpactOn some PipeCrackingDensity,
+        hasImpactOn some PipeCrackingPhysicalProperty,
+        influencedBy some PipeCorrosion,
+        influencedBy some PipeFluid,
+        influencedBy some PipeWaterPH,
+        influencedBy some PipeWaterTemperature
+    
+    
+Class: PipeWaterDissolvedOxygenContent
+
+    Annotations: 
+        rdfs:comment "The dissolved oxygen in water; a measure of its quality
+
+"^^xsd:string,
+        rdfs:comment "The volume of dissolved oxygen content in the fluid typically expressed as a concentration
+
+"^^xsd:string,
+        rdfs:comment "Knowledge Source: from a domain expert"^^xsd:string
+    
+    SubClassOf: 
+        PipeFluidProperty,
+        hasImpactOn some PipeCorrosion,
+        influencedBy some PipeCorrosion,
+        influencedBy some PipeFluid,
+        influencedBy some PipeOperationalPressure
+    
+    
+Class: PipeWaterFlowVelocity
+
+    Annotations: 
+        rdfs:comment "The typical fluid velocity inside the pipe
+
+"^^xsd:string,
+        rdfs:comment "The speed of flow of water through a pipe
+
+"^^xsd:string,
+        rdfs:comment "Knowledge Source: from a domain expert"^^xsd:string
+    
+    SubClassOf: 
+        PipeFluidProperty,
+        hasImpactOn some PipeJointFatigue,
+        hasImpactOn some PipeLeakageRate,
+        hasImpactOn some PipeOperationPractice,
+        influencedBy some PipeCorrosion,
+        influencedBy some PipeCracking,
+        influencedBy some PipeFluid,
+        influencedBy some PipeOperationalPressure,
+        influencedBy some PipeValveLeaking
+    
+    
+Class: PipeWaterPH
+
+    Annotations: 
+        rdfs:comment "A measure of the acidity of the fluid
+
+"^^xsd:string,
+        rdfs:comment "A numeric scale used to specify the acidity or basicity of the fluid within a pipe
+
+"^^xsd:string,
+        rdfs:comment "Knowledge Source: from a domain expert"^^xsd:string
+    
+    SubClassOf: 
+        PipeFluidProperty,
+        hasImpactOn some PipeCorrosion,
+        hasImpactOn some PipeWaterCorrosivity,
+        influencedBy some PipeCorrosion,
+        influencedBy some PipeFluid
+    
+    
+Class: PipeWaterQualityViolation
+
+    Annotations: 
+        rdfs:comment "Knowledge Source: from a domain expert"^^xsd:string,
+        rdfs:comment "Has there been a water quality violation reported in this area (y/n)
+
+"^^xsd:string,
+        rdfs:comment "The number and type of failures to meet regulatory safety requirements
+
+"^^xsd:string
+    
+    SubClassOf: 
+        PipeFluidProperty,
+        influencedBy some PipeCorrosion,
+        influencedBy some PipeCracking,
+        influencedBy some PipeFluid,
+        influencedBy some PipeValveLeaking
+    
+    
+Class: PipeWaterTemperature
+
+    Annotations: 
+        rdfs:comment "Typical temperature of the fluid inside the pipe
+
+"^^xsd:string,
+        rdfs:comment "Knowledge Source: from a domain expert"^^xsd:string,
+        rdfs:comment "The temperature of the fluid in the pipe
+
+"^^xsd:string
+    
+    SubClassOf: 
+        PipeFluidProperty,
+        hasImpactOn some PipeCorrosion,
+        hasImpactOn some PipeWaterCorrosivity,
+        influencedBy some PipeFluid
+    
+    

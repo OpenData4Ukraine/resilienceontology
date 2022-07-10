@@ -1,0 +1,63 @@
+{
+    "features": [
+        {
+            "lon": "30.52",
+            "lat": "50.44",
+            "style": "red",
+            "name": "Kyiv",
+            "date": "24/02/2022",
+            "remark": "Ukraine has been at war since February 24 The towns and villages of the Kyiv region were among the first to be horrified by the horrors of the war."
+        },
+        {
+            "lon": "34.48797",
+            "lat": "50.05548",
+            "style": "orange",
+            "name": "TEST1",
+            "date": "15/03/2022",
+            "remark": "",
+            "COUNTRY": "Ukraine",
+            "BRIEF DESCRIPTION": "Civillian casualty from artillery strike.",
+            "VIOLENCE LEVEL:": "1"
+        },
+        {
+            "lon": "32.48908",
+            "lat": "48.456",
+            "style": "yellow",
+            "name": "TEST2",
+            "date": "22/04/2022",
+            "remark": "VIOLENCE LEVEL: 2"
+        },
+        {
+            "lon": "31.48908",
+            "lat": "47.456",
+            "style": "green",
+            "name": "TEST3",
+            "date": "01/05/2022",
+            "remark": "VIOLENCE LEVEL: GRAPHIC"
+        },
+        {
+            "lon": "35.1052",
+            "lat": "47.8104",
+            "style": "cyan",
+            "name": "TEST4",
+            "date": "17/03/2022",
+            "remark": "VIOLENCE LEVEL: GRAPHIC"
+        },
+        {
+            "lon": "39.28",
+            "lat": "48.55",
+            "style": "blue",
+            "name": "TEST5",
+            "date": "12/04/2022",
+            "remark": "VIOLENCE LEVEL: GRAPHIC"
+        },
+        {
+            "lon": "31.1456",
+            "lat": "50.9345",
+            "style": "grey",
+            "name": "TEST6",
+            "date": "28/04/2022",
+            "remark": "VIOLENCE LEVEL: GRAPHIC"
+        }
+    ]
+}
