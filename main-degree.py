@@ -53,12 +53,12 @@ for file in files:
 	ct_in = Counter()
 	ct_out = Counter()
 	for s, p, o in triples:
-		if str(s)[0] != '"':
+		if str(s)[0] != '"' and str(s)[0] != '_' and str(s)[1] != ':':
 			entities.add(s)
 		# else:
 			# print ('Subject - not an entity but a string/number',s)
 
-		if str(o)[0] != '"':
+		if str(o)[0] != '"' and str(s)[0] != '_' and str(s)[1] != ':':
 			entities.add(o)
 		# else:
 			# print ('Object - not an entity but a string/number',o)
@@ -114,16 +114,19 @@ g = nx.DiGraph()
 ct_in = Counter()
 ct_out = Counter()
 for s, p, o in triples:
-	if str(s)[0] != '"':
+	if str(s)[0] != '"' and str(s)[0] != '_' and str(s)[1] != ':' :
 		entities.add(s)
 	# else:
 		# print ('Subject - not an entity but a string/number',s)
 
-	if str(o)[0] != '"':
+	if str(o)[0] != '"' and str(s)[0] != '_' and str(s)[1] != ':':
 		entities.add(o)
 	# else:
 		# print ('Object - not an entity but a string/number',o)
 		g.add_edge(s, o)
+
+	# if "hasImpactOn" in str(o):
+	# 		print (s, p, o)
 
 print ('\n\nKG ', file, 'has ', cardinality, 'triples')
 print ('\t with ', len (entities), ' entities')
@@ -135,11 +138,11 @@ except Exception as e:
 for n in g.nodes():
 	d = g.in_degree(n)
 	ct_in[d] += 1
-	if d > 1000:
+	if d > 200:
 		collect_big_in[n] = d
 	d = g.out_degree(n)
 	ct_out[d] += 1
-	if d > 1000:
+	if d > 500:
 		collect_big_out[n] = d
 
 print ('in: ',ct_in)
